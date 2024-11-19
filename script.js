@@ -9,11 +9,14 @@ let offsetY = 0;
 
 // Dragging functionality
 header.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  offsetX = e.clientX - terminal.offsetLeft;
-  offsetY = e.clientY - terminal.offsetTop;
-  document.body.style.userSelect = 'none';
-});
+    const isResizing = e.target === terminal && e.offsetX >= terminal.offsetWidth - 10 && e.offsetY >= terminal.offsetHeight - 10;
+    if (isResizing) return; // Ignore dragging if resizing
+    isDragging = true;
+    offsetX = e.clientX - terminal.offsetLeft;
+    offsetY = e.clientY - terminal.offsetTop;
+    document.body.style.userSelect = 'none';
+  });
+  
 
 document.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
