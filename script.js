@@ -1,5 +1,5 @@
 // main.js
-import { createChiwiwisWindow } from './chiwiwis.js';
+import { createChiwiwisWindow } from './js/commands/chiwiwis.js';
 import WindowBuilder from './WindowBuilder.js';
 
 let isTerminalOpen = false;
