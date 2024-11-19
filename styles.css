@@ -1,3 +1,4 @@
+/* Base body styling */
 body {
     margin: 0;
     height: 100vh;
@@ -5,144 +6,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #282c34;
-    font-family: 'Courier New', monospace;
+    font-family: monospace;
     color: #fff;
-  }
-  
-  #canvas {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  #terminal {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 400px;
-    height: 300px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    cursor: move;
-    resize: both; /* Allow resizing */
-    min-width: 300px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column; /* header stays at top */
-  }
-  
-  #terminal-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5px 10px;
-    background-color: #333;
-    cursor: move;
-    flex-shrink: 0; /* Prevent shrinking during resizing */
-  }
-  
-  #terminal-header .dot {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    margin: 0 5px;
-  }
-  
-  #terminal-header .dot.red {
-    background-color: #ff5f56;
-  }
-  
-  #terminal-header .dot.yellow {
-    background-color: #ffbd2e;
-  }
-  
-  #terminal-header .dot.green {
-    background-color: #27c93f;
-  }
-  
-  #terminal-header .title {
-    margin-left: 10px;
-    font-size: 14px;
-    color: #ccc;
-  }
+}
 
-  #terminal-content {
-    flex-grow: 1; /* Take up the remaining space */
-    padding: 15px;
-    font-size: 14px;
-    white-space: pre-wrap;
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* Adjust spacing between elements */
-    overflow-y: auto; /* Enable scrolling if content exceeds height */
-    background-color: #1e1e1e;
-  }
-  
-  #output p {
-    margin: 0;
-    line-height: 1.2; /* Reduced line spacing */
-  }
-  
-  #input-line {
-    display: flex;
-    align-items: center;
-    margin-top: auto; /* Push input line to the bottom of the terminal */
-  }
-  
-  .prompt {
-    color: #00ff00;
-    margin-right: 5px;
-    font-weight: bold;
-  }
-  
-  #terminal-input {
-    flex-grow: 1;
-    background: none;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    caret-color: #00ff00;
-  }
-  
-
-  html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden; /* Prevent scrolling */
-  }
-  
-  #canvas {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Prevent content overflow */
-  }
-  
-  /* dark scroll bar */
-#terminal-content::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-  }
-  
-  #terminal-content::-webkit-scrollbar-thumb {
-    background: #444; 
-    border-radius: 4px; 
-  }
-  
-  #terminal-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  #terminal-content::-webkit-scrollbar-track {
-    background: #222; 
-  }
-
-
-/* Styling for the chiwiwis window */
-.chiwiwis-window {
+/* Common window styling */
+.window {
     position: absolute;
     width: 400px;
     height: 300px;
@@ -152,9 +21,15 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     overflow: hidden;
-  }
-  
-  .chiwiwis-header {
+    display: flex;
+    flex-direction: column; /* Ensures header stays at top */
+    resize: both;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+/* Common header styling for windows */
+.window-header {
     background-color: #333;
     height: 30px;
     display: flex;
@@ -165,37 +40,181 @@ body {
     font-weight: bold;
     cursor: move;
     position: relative;
-  }
-  
-  .button-container {
+}
+
+/* Common button container styling */
+.button-container {
     display: flex;
-    gap: 10px; /* Adds space between the buttons */
+    gap: 10px;
     position: absolute;
     left: 10px;
-  }
-  
-  .window-button {
+}
+
+/* Common window button styling */
+.window-button {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: #bbb;
     cursor: pointer;
-  }
-  
-  .minimize-button {
-    background-color: #ffcc00;
-  }
-  
-  .maximize-button {
-    background-color: #66cc66;
-  }
-  
-  .close-button {
-    background-color: #ff4c4c;
-  }
-  
-  /* Hover effect */
-  .window-button:hover {
+}
+
+.window-button:hover {
     opacity: 0.7;
-  }
-  
+}
+
+/* Button colors */
+.minimize-button {
+    background-color: #ffcc00;
+}
+
+.maximize-button {
+    background-color: #66cc66;
+}
+
+.close-button {
+    background-color: #ff4c4c;
+}
+
+/* Scrollbar styling for content areas */
+.window-content {
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+}
+
+.window-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.window-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Terminal-specific styles */
+#terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    background-color: #333;
+    cursor: move;
+    flex-shrink: 0;
+}
+
+#terminal-header .dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+#terminal-header .dot.red {
+    background-color: #ff5f56;
+}
+
+#terminal-header .dot.yellow {
+    background-color: #ffbd2e;
+}
+
+#terminal-header .dot.green {
+    background-color: #27c93f;
+}
+
+#terminal-header .title {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+#terminal-content {
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 14px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+}
+
+#output p {
+    margin: 0;
+    line-height: 1.2;
+    font-family: monospace;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#terminal-input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: monospace;
+    font-size: 20px;
+    caret-color: #00ff00;
+}
+
+/* New window and button styles */
+.window-header .dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.window-header .dot.red {
+    background-color: #ff5f56;
+}
+
+.window-header .dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.window-header .dot.green {
+    background-color: #27c93f;
+}
+
+.window-header .title {
+    margin-left: 10px;
+}
+
+.terminal-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.directory-indicator {
+    font-family: monospace;
+    font-size: 20px;
+    color: green;
+}

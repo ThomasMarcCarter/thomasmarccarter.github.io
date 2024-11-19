@@ -8,94 +8,111 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Enter') {
         const command = terminalInput.value.trim();
         if (command) {
-          appendToOutput(`> ${command}`);
-          handleCommand(command);
+          appendToOutput(`> ${command}`); // Display the command
+          handleCommand(command); // Handle the command
         }
-        terminalInput.value = '';
+        terminalInput.value = ''; // Clear the input field after command is submitted
       }
     });
   });
   
-  // Function to create the terminal window
   function createTerminalWindow() {
     const terminalWindow = document.createElement('div');
-    terminalWindow.classList.add('terminal-window');
+    terminalWindow.classList.add('window');  // Apply the .window class
     document.body.appendChild(terminalWindow);
-  
-    // Create the terminal header
+
+    // Create the header
     const header = document.createElement('div');
-    header.classList.add('terminal-header');
+    header.classList.add('window-header');  // Apply the .window-header class
     terminalWindow.appendChild(header);
-  
+
     // Create the round buttons (minimize, maximize, close)
     createWindowButtons(header);
-  
-    // Create terminal content area (where output is displayed)
+
+    // Create terminal content area
     const terminalContent = document.createElement('div');
-    terminalContent.classList.add('terminal-content');
+    terminalContent.classList.add('window-content');  // Apply the .window-content class
     terminalWindow.appendChild(terminalContent);
-  
-    // Create the input area
+
+    // Create the input area with directory indicator
+    const terminalInputContainer = document.createElement('div');
+    terminalInputContainer.classList.add('terminal-input-container');
+    terminalWindow.appendChild(terminalInputContainer);
+
+    const directoryIndicator = document.createElement('span');
+    directoryIndicator.classList.add('directory-indicator');
+    directoryIndicator.textContent = '$';  // Or any other symbol like '~'
+    terminalInputContainer.appendChild(directoryIndicator);
+
     const terminalInput = document.createElement('input');
     terminalInput.id = 'terminal-input';
-    terminalInput.classList.add('terminal-input');
-    terminalWindow.appendChild(terminalInput);
-  
+    terminalInput.classList.add('window-input');  // Apply the .window-input class
+    terminalInputContainer.appendChild(terminalInput);
+
     // Append terminal content and input fields
     const output = document.createElement('div');
     output.id = 'output';
     terminalContent.appendChild(output);
-  
+
+    // Add the welcome message and the ">" prompt to the terminal output
+    appendToOutput('Welcome to ThomOS');
+    appendToOutput('Type "help" for available commands.');
+
     // Make the terminal window draggable
     makeDraggableAndResizable(terminalWindow, header);
-  
+
     // Set the terminal to auto-focus
     terminalInput.focus();
-  
+
     // Make sure the terminal scrolls to the bottom when typing
     terminalInput.addEventListener('input', () => {
       scrollToBottom();
     });
-  }
+}
+
   
   // Function to append text to the terminal output
   function appendToOutput(text) {
-    const output = document.getElementById('output');
-    const line = document.createElement('p');
-    line.textContent = text;
-    output.appendChild(line);
-    scrollToBottom(); // Auto-scroll to the bottom
+    const output = document.querySelector('#output');
+    const newLine = document.createElement('p');
+    newLine.textContent = text;
+    output.appendChild(newLine);
+    scrollToBottom();
   }
   
-  // Function to handle commands
-  function handleCommand(command) {
+// Function to handle commands with a switch-case structure
+function handleCommand(command) {
     switch (command.toLowerCase()) {
-      case 'help':
-        appendToOutput('Available commands: help, about, clear, chiwiwis');
-        break;
-      case 'about':
-        appendToOutput('This is an interactive portfolio terminal.');
-        break;
-      case 'clear':
-        document.getElementById('output').innerHTML = '';
+      case 'hello':
+        appendToOutput('Hello, world!');
         break;
       case 'chiwiwis':
-        createChiwiwisWindow();  // Handle the chiwiwis command
+        createChiwiwisWindow();  // Call the function to create the chiwiwis window
+        appendToOutput('Opening chiwiwis window...');
+        break;
+      case 'help':
+        appendToOutput('Available commands: hello, chiwiwis, help, clear');
+        break;
+      case 'clear':
+        // Clear the terminal output
+        const output = document.querySelector('#output');
+        output.innerHTML = ''; // Clear the content
         break;
       default:
-        appendToOutput(`Unknown command: ${command}`);
+        appendToOutput(`Command not recognized: ${command}`);
     }
   }
   
-  // Function to create the chiwiwis window
+  
+  // Function to create the chiwiwis window (same as before)
   function createChiwiwisWindow() {
     const chiwiwisWindow = document.createElement('div');
-    chiwiwisWindow.classList.add('chiwiwis-window');
+    chiwiwisWindow.classList.add('window');
     document.body.appendChild(chiwiwisWindow);
   
     // Create the header for the chiwiwis window
     const header = document.createElement('div');
-    header.classList.add('chiwiwis-header');
+    header.classList.add('window-header');
     chiwiwisWindow.appendChild(header);
   
     // Create the round buttons (minimize, maximize, close) for chiwiwis window
@@ -103,11 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Create the YouTube iframe
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/vVNFEpJ1Mvo?autoplay=1'; // Replace with your YouTube video URL
+    iframe.src = 'https://www.youtube.com/embed/vVNFEpJ1Mvo?autoplay=1';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
     iframe.style.width = '100%';
-    iframe.style.height = 'calc(100% - 30px)'; // Adjust height to exclude header
+    iframe.style.height = 'calc(100% - 30px)';
     iframe.style.border = 'none';
     chiwiwisWindow.appendChild(iframe);
   
@@ -126,6 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');
     headerElement.appendChild(buttonContainer);
+
+    const closeButton = document.createElement('div');
+    closeButton.classList.add('window-button', 'close-button');
+    buttonContainer.appendChild(closeButton);
   
     const minimizeButton = document.createElement('div');
     minimizeButton.classList.add('window-button', 'minimize-button');
@@ -135,23 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
     maximizeButton.classList.add('window-button', 'maximize-button');
     buttonContainer.appendChild(maximizeButton);
   
-    const closeButton = document.createElement('div');
-    closeButton.classList.add('window-button', 'close-button');
-    buttonContainer.appendChild(closeButton);
-  
     // Add event listeners to buttons
     closeButton.addEventListener('click', () => {
-      // Close functionality: remove the window when close button is clicked
-      headerElement.closest('.terminal-window, .chiwiwis-window').remove();
+      headerElement.closest('.window').remove();  // Close the window
     });
   
     minimizeButton.addEventListener('click', () => {
-      // Minimize functionality: add your logic here
       console.log("Minimize button clicked");
     });
   
     maximizeButton.addEventListener('click', () => {
-      // Maximize functionality: add your logic here
       console.log("Maximize button clicked");
     });
   }
@@ -199,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     windowElement.style.overflow = 'hidden';
   }
   
-  // Scroll to the bottom of the terminal content
+  // Function to scroll to the bottom of the terminal content
   function scrollToBottom() {
-    const terminalContent = document.querySelector('.terminal-content');
+    const terminalContent = document.querySelector('.window-content');
     terminalContent.scrollTop = terminalContent.scrollHeight;
   }
   
