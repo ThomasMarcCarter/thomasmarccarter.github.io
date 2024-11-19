@@ -60,12 +60,46 @@ body {
     font-size: 14px;
     color: #ccc;
   }
-  
+
   #terminal-content {
     padding: 15px;
     font-size: 14px;
     white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+    overflow-y: auto; /* Enable scrolling for output if needed */
+    background-color: #1e1e1e;
   }
+  
+  #output {
+    flex-grow: 1;
+    color: #fff;
+  }
+  
+  #input-line {
+    display: flex;
+    align-items: center;
+  }
+  
+  .prompt {
+    color: #00ff00;
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  
+  #terminal-input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    caret-color: #00ff00;
+  }
+  
 
   html, body {
     margin: 0;
