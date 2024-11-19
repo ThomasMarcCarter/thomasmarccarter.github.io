@@ -180,7 +180,7 @@ body {
     outline: none;
     color: #fff;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 14px;
     caret-color: #00ff00;
 }
 
@@ -215,6 +215,6 @@ body {
 
 .directory-indicator {
     font-family: monospace;
-    font-size: 20px;
+    font-size: 14px;
     color: green;
 }
