@@ -295,6 +295,7 @@ function createSnakeWindow() {
     ) {
       gameOver = true;
       alert('Game Over!');
+      //TODO: close window automatically after game loss, maybe display score in seperate window.
       return;
     }
 
