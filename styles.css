@@ -13,8 +13,8 @@ body {
 /* Common window styling */
 .window {
     position: absolute;
-    width: 800px;
-    height: 550px;
+    width: 600px;
+    height: 600px;
     background-color: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -232,4 +232,9 @@ body {
 
 .taskbar-icon:active {
     background-color: #666;
+}
+
+#board{
+    padding-top: 30px;
+    overflow: hidden;
 }
