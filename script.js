@@ -1,7 +1,9 @@
 let isTerminalOpen = false; // Flag to track if a terminal is open
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Listen for click on terminal icon
+
+createTerminalWindow();
+  // listen for terminal icon
   const terminalIcon = document.getElementById('terminal-icon');
   terminalIcon.addEventListener('click', () => {
     if (!isTerminalOpen) {
