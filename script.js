@@ -166,11 +166,10 @@ function createTerminalWindow() {
   const output = document.createElement('div');
   output.id = 'output';
 
-  // Use the WindowBuilder to create and structure the terminal window
   new WindowBuilder()
-    .setHeader('Terminal') // Add terminal title
+    .setHeader('Terminal')
     .addContent(output)
-    .addContent(terminalInputContainer) // The input container will always stay at the bottom
+    .addContent(terminalInputContainer)
     .hasButtons()
     .isDraggable()
     .isResizable()
