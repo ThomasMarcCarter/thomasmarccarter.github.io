@@ -389,7 +389,11 @@ function handleCommand(command) {
     case 'snake':
       createSnakeWindow();
       appendToOutput("Lets play!");
-    break;
+      break;
+    case 'github':
+      openGithub();
+      appendToOutput("GitHub opened in new tab...");
+      break;
     default:
       appendToOutput(`Command not recognized: ${command}`);
   }
@@ -438,3 +442,11 @@ function makeDraggableAndResizable(windowElement, headerElement) {
     document.body.style.userSelect = 'auto';
   });
 }
+
+//function to open github in new tab
+
+function openGithub() {
+  const url = "https://github.com/ThomasMarcCarter";
+  window.open(url, "_blank");
+}
+
