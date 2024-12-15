@@ -375,7 +375,7 @@ function handleCommand(command) {
       appendToOutput('Opening chiwiwis window...');
       break;
     case 'help':
-      appendToOutput('Available commands: hello, chiwiwis, help, clear, education, snake');
+      appendToOutput('Available commands: hello, chiwiwis, help, clear, education, snake, github, linkedin');
       break;
     case 'clear':
       const output = document.querySelector('#output');
@@ -391,9 +391,13 @@ function handleCommand(command) {
       appendToOutput("Lets play!");
       break;
     case 'github':
-      openGithub();
+      openNewTab("https://github.com/ThomasMarcCarter");
       appendToOutput("GitHub opened in new tab...");
       break;
+      case 'linkedin':
+        openNewTab("https://www.linkedin.com/in/thomas-marc-carter/");
+        appendToOutput("LinkedIn opened in new tab...");
+        break;
     default:
       appendToOutput(`Command not recognized: ${command}`);
   }
@@ -443,10 +447,9 @@ function makeDraggableAndResizable(windowElement, headerElement) {
   });
 }
 
-//function to open github in new tab
+// open link in new tab
 
-function openGithub() {
-  const url = "https://github.com/ThomasMarcCarter";
+function openNewTab(url) {
   window.open(url, "_blank");
 }
 
