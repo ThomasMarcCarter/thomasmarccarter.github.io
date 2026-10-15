@@ -19,7 +19,7 @@ npm run check    # type-check .astro and .ts files
 
 ```
 src/
-  components/        Header, Footer, Section, ProjectList, ThemeToggle
+  components/        Header, Footer, Section, ProjectPosts, Carousel, RadarScope, ThemeToggle
   content/projects/  One Markdown file per project
   data/site.ts       Name, tagline, email, social links, nav and skills
   layouts/           BaseLayout (head, meta, theme, header/footer)
@@ -29,17 +29,31 @@ src/
 
 ### Adding a project
 
-Create `src/content/projects/my-project.md`:
+Put images in `src/assets/projects/my-project/` and videos in `public/projects/my-project/`, then create
+`src/content/projects/my-project.md`:
 
 ```md
 ---
 title: My Project
-description: One-sentence summary shown on the card.
+description: One-sentence summary shown on the post.
 date: 2026-10-01
 tags: [React, TypeScript]
 repo: https://github.com/you/my-project   # optional
 demo: https://my-project.example.com      # optional
 featured: true                            # show on the home page
+skin: default                             # or "radar" for the military radar theme
+cover:
+  src: ../../assets/projects/my-project/cover.png
+  alt: What the cover image shows
+media:                                    # gallery, shown after the cover
+  - type: image
+    src: ../../assets/projects/my-project/screen.png
+    alt: What the image shows
+    caption: Optional caption
+  - type: video
+    src: projects/my-project/demo.mp4     # path inside public/
+    poster: ../../assets/projects/my-project/cover.png
+    alt: What the video shows
 ---
 
 Write-up goes here.

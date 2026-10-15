@@ -1,6 +1,8 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Carousel, { type MediaItem } from '../../components/Carousel.astro';
+import RadarScope from '../../components/RadarScope.astro';
 import { url } from '../../data/site';
 
 export async function getStaticPaths() {
@@ -13,38 +15,88 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, description, date, tags, repo, demo } = project.data;
+const { title, description, date, tags, repo, demo, skin, cover, media } = project.data;
 const { Content } = await render(project);
+const radar = skin === 'radar';
+const items: MediaItem[] = [{ type: 'image', ...cover }, ...media];
+
+const facts = [
+  { label: 'Year', value: String(date.getFullYear()) },
+  { label: 'Built with', value: tags.join(', ') },
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <article class="pt-12 pb-20 sm:pt-16">
+<BaseLayout title={title} description={description} skin={skin}>
+  <article class="pt-10 pb-20 sm:pt-14">
     <a href={url('/#work')} class="link text-[0.9375rem] text-muted">Back to work</a>
-    <h1 class="mt-10 text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95] font-extrabold tracking-[-0.04em]">{title}</h1>
-    <p class="mt-6 max-w-[48ch] text-xl leading-snug sm:text-2xl">{description}</p>
 
-    <dl class="mt-12 grid gap-6 border-t border-line pt-6 text-[0.9375rem] sm:grid-cols-3">
+    <header class:list={['mt-10', radar && 'grid items-center gap-12 lg:grid-cols-[1fr_auto]']}>
       <div>
-        <dt class="text-muted">Year</dt>
-        <dd class="mt-1"><time datetime={date.toISOString()}>{date.getFullYear()}</time></dd>
+        <h1 class:list={['leading-[0.95]', radar ? 'text-[clamp(2.5rem,7vw,5rem)]' : 'text-[clamp(2.75rem,8vw,5.5rem)] font-extrabold tracking-[-0.04em]']}>
+          {title}
+        </h1>
+        <p class="mt-6 max-w-[48ch] text-xl leading-snug sm:text-2xl">{description}</p>
+
+        <dl class:list={['mt-10 grid gap-6 border-t border-line pt-6 text-[0.9375rem] sm:grid-cols-3', radar && 'uppercase tracking-widest']}>
+          {facts.map((f) => (
+            <div>
+              <dt class="text-muted">{f.label}</dt>
+              <dd class="mt-1">{f.value}</dd>
+            </div>
+          ))}
+          {(repo || demo) && (
+            <div>
+              <dt class="text-muted">Links</dt>
+              <dd class="mt-1 flex gap-5">
+                {repo && <a href={repo} class="link" target="_blank" rel="noopener">Source code</a>}
+                {demo && <a href={demo} class="link" target="_blank" rel="noopener">Live site</a>}
+              </dd>
+            </div>
+          )}
+        </dl>
       </div>
-      <div>
-        <dt class="text-muted">Built with</dt>
-        <dd class="mt-1">{tags.join(', ')}</dd>
-      </div>
-      {(repo || demo) && (
-        <div>
-          <dt class="text-muted">Links</dt>
-          <dd class="mt-1 flex gap-5">
-            {repo && <a href={repo} class="link" target="_blank" rel="noopener">Source code</a>}
-            {demo && <a href={demo} class="link" target="_blank" rel="noopener">Live site</a>}
-          </dd>
+      {radar && (
+        <div class="mx-auto w-64 sm:w-80 lg:w-[22rem]">
+          <RadarScope />
         </div>
       )}
-    </dl>
+    </header>
 
-    <div class="mt-14 max-w-[65ch] space-y-5 text-lg [&_a]:link [&_h2]:pt-6 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight [&_li]:pl-1 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5 [&_ul]:marker:text-accent">
+    <div class:list={['mt-14', radar && 'hud']}>
+      <Carousel items={items} label={`${title} gallery`} transitionName={`cover-${project.id}`} />
+    </div>
+
+    <div class="mt-16 max-w-[65ch] space-y-5 text-lg [&_a]:link [&_h2]:pt-6 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight [&_li]:pl-1 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5 [&_ul]:marker:text-accent">
       <Content />
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  /* Targeting brackets around the gallery on radar-skinned pages. */
+  .hud :global(.carousel-frame) {
+    border-radius: 0;
+    box-shadow: 0 0 0 1px var(--line), 0 0 40px rgb(57 255 106 / 0.08);
+  }
+  .hud :global(.carousel-frame)::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      linear-gradient(var(--ink), var(--ink)) top left / 28px 2px,
+      linear-gradient(var(--ink), var(--ink)) top left / 2px 28px,
+      linear-gradient(var(--ink), var(--ink)) top right / 28px 2px,
+      linear-gradient(var(--ink), var(--ink)) top right / 2px 28px,
+      linear-gradient(var(--ink), var(--ink)) bottom left / 28px 2px,
+      linear-gradient(var(--ink), var(--ink)) bottom left / 2px 28px,
+      linear-gradient(var(--ink), var(--ink)) bottom right / 28px 2px,
+      linear-gradient(var(--ink), var(--ink)) bottom right / 2px 28px;
+    background-repeat: no-repeat;
+  }
+  .hud :global(.carousel-btn),
+  .hud :global(.carousel-thumb) {
+    border-radius: 0;
+  }
+</style>

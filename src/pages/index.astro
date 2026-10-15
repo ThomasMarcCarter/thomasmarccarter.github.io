@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
-import ProjectList from '../components/ProjectList.astro';
+import ProjectPosts from '../components/ProjectPosts.astro';
 import { site, url } from '../data/site';
 
 const allProjects = await getCollection('projects');
@@ -10,41 +10,70 @@ const featured = allProjects
   .filter(({ data }) => data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 4);
+
+// Break the name after its hyphen and split each line into letters for the entrance animation.
 const [firstName, ...rest] = site.name.split('-');
+const lines = [`${firstName}-`, rest.join('-')];
+let letterIndex = 0;
+const nameLines = lines.map((line) => [...line].map((char) => ({ char, i: letterIndex++ })));
+
+// A wave path two viewBox-widths long, so sliding it left by one width loops seamlessly.
+const wave = (amplitude: number, period: number, y: number) => {
+  let d = `M0 ${y} Q ${period / 4} ${y - amplitude} ${period / 2} ${y}`;
+  for (let x = period; x <= 2400; x += period / 2) d += ` T ${x} ${y}`;
+  return d;
+};
+const waves = [
+  { d: wave(7, 400, 20), speed: 26, opacity: 1 },
+  { d: wave(5, 300, 30), speed: 38, opacity: 0.55 },
+  { d: wave(4, 240, 40), speed: 54, opacity: 0.3 },
+];
 ---
 
 <BaseLayout>
   <section class="pt-16 pb-4 sm:pt-28 sm:pb-6" aria-labelledby="intro-title">
-    <h1 id="intro-title" class="text-[clamp(3.25rem,13vw,9.5rem)] leading-[0.88] font-extrabold tracking-[-0.045em]">
-      {firstName}-<br />{rest.join('-')}
-    </h1>
-    <p class="mt-8 max-w-[34ch] text-xl leading-snug sm:mt-10 sm:text-2xl">
-      {site.role} in {site.location}. {site.availability}
-    </p>
-    <p class="mt-8 flex flex-wrap gap-x-7 gap-y-3">
-      <a href={`mailto:${site.email}`} class="font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2">
-        Email me
-      </a>
-      {site.socials.map((s) => (
-        <a href={s.href} class="link" rel="me noopener" target="_blank">{s.label}</a>
+    <h1
+      id="intro-title"
+      class="text-[clamp(3.25rem,13vw,9.5rem)] leading-[0.88] font-extrabold tracking-[-0.045em]"
+      aria-label={site.name}
+    >
+      {nameLines.map((line) => (
+        <span class="block" aria-hidden="true">
+          {line.map(({ char, i }) => (
+            <span class="rise inline-block" style={`--i:${i}`}>{char === ' ' ? ' ' : char}</span>
+          ))}
+        </span>
       ))}
-    </p>
-    <svg class="tide mt-14 h-6 w-full text-accent sm:mt-20" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
-      <path
-        d="M0 12 C 100 2, 200 22, 300 12 S 500 2, 600 12 S 800 22, 900 12 S 1100 2, 1200 12"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        vector-effect="non-scaling-stroke"
-        pathLength="1"
-      />
+    </h1>
+    <div class="intro-copy">
+      <p class="mt-8 max-w-[34ch] text-xl leading-snug sm:mt-10 sm:text-2xl">
+        {site.role} in {site.location}. {site.availability}
+      </p>
+      <p class="mt-4 text-muted" data-clock-line hidden>
+        It's <time class="text-ink" data-clock></time> in Torquay right now.
+      </p>
+      <p class="mt-8 flex flex-wrap gap-x-7 gap-y-3">
+        <a href={`mailto:${site.email}`} class="font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2">
+          Email me
+        </a>
+        {site.socials.map((s) => (
+          <a href={s.href} class="link" rel="me noopener" target="_blank">{s.label}</a>
+        ))}
+      </p>
+    </div>
+    <svg class="sea mt-14 h-12 w-full text-accent sm:mt-20" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+      {waves.map((w) => (
+        <g class="swell" style={`--speed:${w.speed}s`}>
+          <path d={w.d} fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" opacity={w.opacity} />
+        </g>
+      ))}
     </svg>
   </section>
 
   <Section id="work" title="Selected work" divider={false}>
-    <ProjectList projects={featured} />
+    <ProjectPosts projects={featured} />
     {allProjects.length > featured.length && (
-      <p class="mt-8"><a href={url('projects/')} class="link">See all projects</a></p>
+      <p class="mt-10"><a href={url('projects/')} class="link">See all projects</a></p>
     )}
   </Section>
 
@@ -88,21 +117,57 @@ const [firstName, ...rest] = site.name.split('-');
 </BaseLayout>
 
 <style>
-  /* One orchestrated moment: the tide line draws itself across the page on load. */
-  .tide path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+  /* Letters of the name rise into place one after another. */
+  .rise {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+    animation-delay: calc(var(--i) * 35ms);
   }
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
+  @keyframes rise {
+    from {
+      transform: translateY(0.45em);
+      opacity: 0;
     }
   }
+  .intro-copy {
+    animation: fade 0.8s ease-out 0.55s both;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  /* Each wave line slides left forever at its own speed. */
+  .swell {
+    animation: swell var(--speed) linear infinite;
+  }
+  @keyframes swell {
+    to {
+      transform: translateX(-1200px);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .tide path {
+    .rise,
+    .intro-copy,
+    .swell {
       animation: none;
-      stroke-dashoffset: 0;
     }
   }
 </style>
+
+<script>
+  let timer: ReturnType<typeof setInterval> | undefined;
+
+  // Show the current time in Torquay, refreshed every 15 seconds.
+  document.addEventListener('astro:page-load', () => {
+    clearInterval(timer);
+    const clock = document.querySelector<HTMLTimeElement>('[data-clock]');
+    if (!clock) return;
+    const format = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+    const tick = () => (clock.textContent = format.format(new Date()));
+    tick();
+    clock.closest<HTMLElement>('[data-clock-line]')!.hidden = false;
+    timer = setInterval(tick, 15000);
+  });
+</script>

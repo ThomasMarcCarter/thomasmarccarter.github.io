@@ -9,6 +9,7 @@ export default defineConfig({
   site: process.env.SITE,
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'ignore',
+  devToolbar: { enabled: false },
   vite: {
     plugins: [tailwindcss()]
   }

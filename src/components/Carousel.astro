@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { url } from '../data/site';
+
+export type MediaItem =
+  | { type: 'image'; src: ImageMetadata; alt: string; caption?: string }
+  | { type: 'video'; src: string; poster?: ImageMetadata; alt: string; caption?: string };
+
+interface Props {
+  items: MediaItem[];
+  label: string;
+  transitionName?: string;
+}
+
+const { items, label, transitionName } = Astro.props;
+const sizes = '(min-width: 1152px) 1088px, 100vw';
+---
+
+<div class="carousel" data-carousel aria-roledescription="carousel" aria-label={label}>
+  <div class="carousel-frame relative overflow-hidden rounded-md bg-ink/5" transition:name={transitionName}>
+    <div
+      class="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      data-track
+      tabindex="0"
+      aria-label={`${label}. Use the arrow keys to move between slides.`}
+    >
+      {items.map((item, i) => (
+        <figure
+          class="aspect-[16/10] w-full shrink-0 snap-center snap-always"
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${i + 1} of ${items.length}`}
+          data-slide
+          data-caption={item.caption ?? ''}
+        >
+          {item.type === 'image' ? (
+            <Image src={item.src} alt={item.alt} sizes={sizes} widths={[640, 1088, 1600]} class="h-full w-full object-contain" loading={i === 0 ? 'eager' : 'lazy'} />
+          ) : (
+            <video
+              class="h-full w-full bg-black object-contain"
+              src={url(item.src)}
+              poster={item.poster?.src}
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              aria-label={item.alt}
+            />
+          )}
+        </figure>
+      ))}
+    </div>
+  </div>
+
+  {items.length > 1 && (
+    <div class="mt-4 flex items-center gap-4">
+      <button type="button" class="carousel-btn" data-prev aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.75" /></svg>
+      </button>
+      <button type="button" class="carousel-btn" data-next aria-label="Next slide">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.75" /></svg>
+      </button>
+      <p class="tabular-nums text-muted" aria-live="polite"><span data-index>1</span> of {items.length}</p>
+      <p class="ml-auto hidden truncate text-right text-muted sm:block" data-caption-out>{items[0].caption}</p>
+    </div>
+    <ol class="mt-4 flex gap-2 overflow-x-auto pb-1">
+      {items.map((item, i) => (
+        <li class="shrink-0">
+          <button
+            type="button"
+            class="carousel-thumb block h-14 w-22 overflow-hidden rounded-sm opacity-50 ring-accent transition hover:opacity-100 aria-[current=true]:opacity-100 aria-[current=true]:ring-2"
+            data-thumb={i}
+            aria-label={`Show slide ${i + 1}${item.caption ? `: ${item.caption}` : ''}`}
+            aria-current={i === 0 ? 'true' : undefined}
+          >
+            {item.type === 'image' ? (
+              <Image src={item.src} alt="" width={176} class="h-full w-full object-cover" />
+            ) : item.poster ? (
+              <Image src={item.poster} alt="" width={176} class="h-full w-full object-cover" />
+            ) : (
+              <span class="grid h-full w-full place-items-center bg-ink/10">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
+              </span>
+            )}
+          </button>
+        </li>
+      ))}
+    </ol>
+  )}
+  {items.length === 1 && items[0].caption && <p class="mt-3 text-muted">{items[0].caption}</p>}
+</div>
+
+<script>
+  const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setup(root: HTMLElement) {
+    const track = root.querySelector<HTMLElement>('[data-track]')!;
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    const thumbs = [...root.querySelectorAll<HTMLButtonElement>('[data-thumb]')];
+    const indexOut = root.querySelector('[data-index]');
+    const captionOut = root.querySelector('[data-caption-out]');
+    let current = 0;
+    // The slide being scrolled to, so repeated clicks build on each other before the scroll settles.
+    let target = 0;
+    let settle: ReturnType<typeof setTimeout> | undefined;
+
+    const goTo = (i: number) => {
+      target = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[target].offsetLeft, behavior: reduceMotion() ? 'auto' : 'smooth' });
+      clearTimeout(settle);
+      settle = setTimeout(() => (settle = undefined), 900);
+    };
+
+    const update = (i: number) => {
+      if (!settle) target = i;
+      if (i === current) return;
+      current = i;
+      if (indexOut) indexOut.textContent = String(i + 1);
+      if (captionOut) captionOut.textContent = slides[i].dataset.caption ?? '';
+      thumbs.forEach((t, n) => (n === i ? t.setAttribute('aria-current', 'true') : t.removeAttribute('aria-current')));
+      thumbs[i]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      // Only the visible slide's video may keep playing.
+      slides.forEach((s, n) => n !== i && s.querySelector('video')?.pause());
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && update(slides.indexOf(e.target as HTMLElement))),
+      { root: track, threshold: 0.6 },
+    );
+    slides.forEach((s) => observer.observe(s));
+
+    root.querySelector('[data-prev]')?.addEventListener('click', () => goTo(target - 1));
+    root.querySelector('[data-next]')?.addEventListener('click', () => goTo(target + 1));
+    thumbs.forEach((t, n) => t.addEventListener('click', () => goTo(n)));
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') goTo(target + 1);
+      else if (e.key === 'ArrowLeft') goTo(target - 1);
+      else return;
+      e.preventDefault();
+    });
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(setup);
+  });
+</script>

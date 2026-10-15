@@ -8,6 +8,7 @@
   --muted: #56707a;
   --line: #d5dfe1;
   --accent: #0f7479;
+  --body-font: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {
@@ -19,7 +20,7 @@
 }
 
 @theme inline {
-  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--body-font);
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
@@ -42,13 +43,94 @@
   }
 }
 
+/* Round icon button used by the carousel controls. */
+@utility carousel-btn {
+  @apply grid h-10 w-10 place-items-center rounded-full border border-line transition-colors hover:border-accent hover:text-accent;
+}
+
 /* Underlined text link that shifts to the accent colour on hover. */
 @utility link {
   @apply underline decoration-line decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+}
+
+/* Cover images drift slightly as they scroll through the viewport. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .drift {
+      animation: drift linear both;
+      animation-timeline: view();
+    }
+    @keyframes drift {
+      from {
+        translate: 0 -4%;
+        scale: 1.1;
+      }
+      to {
+        translate: 0 4%;
+        scale: 1.1;
+      }
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ---------- Radar skin: military radar display for game projects ---------- */
+
+:root[data-skin="radar"] {
+  --paper: #020a04;
+  --ink: #39ff6a;
+  --muted: #1f8f43;
+  --line: #0d3a1a;
+  --accent: #ffb000;
+  --body-font: "Share Tech Mono", ui-monospace, monospace;
+  --display-font: "Black Ops One", "Share Tech Mono", system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+:root[data-skin="radar"] body {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 50% 30%, rgb(57 255 106 / 0.07), transparent 70%),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    linear-gradient(rgb(13 58 26 / 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(13 58 26 / 0.45) 1px, transparent 1px);
+  background-size: 100% 100%, 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+}
+
+/* Faint CRT scanlines over the whole page. */
+:root[data-skin="radar"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  background: repeating-linear-gradient(transparent 0 2px, rgb(0 0 0 / 0.22) 2px 3px);
+}
+
+:root[data-skin="radar"] :is(h1, h2, h3) {
+  font-family: var(--display-font);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 18px rgb(57 255 106 / 0.45);
+}
+
+:root[data-skin="radar"] #theme-toggle {
+  display: none;
+}
+
+/* The monospace face runs wider, so tighten the nav to fit small screens. */
+:root[data-skin="radar"] nav ul {
+  gap: 0.875rem;
+  font-size: 0.875rem;
 }

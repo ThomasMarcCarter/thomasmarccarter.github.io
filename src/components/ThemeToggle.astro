@@ -4,14 +4,16 @@
   aria-label="Switch between light and dark theme"
   class="-mr-2 grid h-9 w-9 place-items-center rounded-full text-muted transition-colors hover:text-ink"
 >
-  <svg class="h-[1.125rem] w-[1.125rem]" viewBox="0 0 24 24" aria-hidden="true">
+  <svg class="h-[1.125rem] w-[1.125rem] transition-transform duration-500 dark:rotate-180" viewBox="0 0 24 24" aria-hidden="true">
     <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.75" />
     <path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" />
   </svg>
 </button>
 
 <script>
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+  // Delegated so it keeps working after page transitions replace the button.
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('#theme-toggle')) return;
     const dark = document.documentElement.classList.toggle('dark');
     try {
       localStorage.setItem('theme', dark ? 'dark' : 'light');
