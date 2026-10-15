@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site, url } from '../data/site';
+
+const featured = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+---
+
+<BaseLayout>
+  <section class="py-20 sm:py-28">
+    <p class="font-medium text-accent">Hi, I'm {site.name}</p>
+    <h1 class="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl dark:text-white">
+      {site.tagline}
+    </h1>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href={url('projects/')} class="rounded-lg bg-accent px-5 py-2.5 font-medium text-white transition hover:opacity-90">
+        View my work
+      </a>
+      <a href="#contact" class="rounded-lg border border-zinc-300 px-5 py-2.5 font-medium transition hover:border-accent hover:text-accent dark:border-zinc-700">
+        Get in touch
+      </a>
+    </div>
+  </section>
+
+  <section id="projects" class="scroll-mt-20 py-12">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Featured projects</h2>
+      <a href={url('projects/')} class="text-sm text-accent hover:underline">All projects →</a>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <section id="about" class="scroll-mt-20 py-12">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">About</h2>
+    <div class="mt-4 max-w-2xl space-y-4 text-zinc-600 dark:text-zinc-400">
+      <p>
+        I'm a {site.role.toLowerCase()} who enjoys turning ideas into polished, performant products.
+        Replace this paragraph with a short introduction about yourself.
+      </p>
+    </div>
+    <h3 class="mt-8 font-semibold text-zinc-900 dark:text-white">Skills</h3>
+    <ul class="mt-3 flex flex-wrap gap-2">
+      {site.skills.map((skill) => (
+        <li class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-800">{skill}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="contact" class="scroll-mt-20 py-12 pb-20">
+    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Contact</h2>
+    <p class="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
+      Open to new opportunities and collaborations. The best way to reach me is by email.
+    </p>
+    <a href={`mailto:${site.email}`} class="mt-6 inline-block rounded-lg bg-accent px-5 py-2.5 font-medium text-white transition hover:opacity-90">
+      {site.email}
+    </a>
+  </section>
+</BaseLayout>

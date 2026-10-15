@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../data/site';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, tags } = project.data;
+---
+
+<article class="group relative flex flex-col rounded-xl border border-zinc-200 p-6 transition hover:border-accent hover:shadow-lg hover:shadow-accent-soft dark:border-zinc-800">
+  <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">
+    <a href={url(`projects/${project.id}/`)} class="after:absolute after:inset-0">
+      {title}
+    </a>
+  </h3>
+  <p class="mt-2 flex-1 text-zinc-600 dark:text-zinc-400">{description}</p>
+  <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+    {tags.map((tag) => (
+      <li class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent">{tag}</li>
+    ))}
+  </ul>
+</article>
