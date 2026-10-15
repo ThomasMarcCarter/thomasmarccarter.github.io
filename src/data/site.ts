@@ -1,20 +1,26 @@
 // Central place for personal details and links used across the site.
 export const site = {
   name: 'Thomas-Marc Carter',
-  role: 'Web Developer',
-  tagline: 'I build fast, accessible websites and web apps.',
-  description: 'Portfolio of Thomas-Marc Carter, a web developer building fast, accessible websites and web apps.',
-  email: 'hello@example.com',
+  role: 'Full-stack developer',
+  location: 'Torquay, Devon',
+  availability: 'Looking for junior and graduate developer roles, and happy to relocate.',
+  description:
+    'Thomas-Marc Carter is a full-stack developer in Torquay, Devon, looking for junior and graduate developer roles.',
+  email: 'thomasmarccarter@icloud.com',
   socials: [
-    { label: 'GitHub', href: 'https://github.com/your-username' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-profile' },
+    { label: 'GitHub', href: 'https://github.com/ThomasMarcCarter' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thomas-marc-carter/' },
   ],
   nav: [
-    { label: 'Projects', href: 'projects/' },
+    { label: 'Work', href: '#work' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ],
-  skills: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'Astro', 'React', 'Tailwind CSS', 'Node.js', 'Git'],
+  skills: [
+    { group: 'Web', items: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'React', 'Astro', 'Tailwind CSS', 'Node.js'] },
+    { group: 'Game development', items: ['Unity', 'C#'] },
+    { group: 'Tools', items: ['Git'] },
+  ],
 };
 
 // Prefix a site-relative path with the configured base (needed for GitHub Pages project sites).

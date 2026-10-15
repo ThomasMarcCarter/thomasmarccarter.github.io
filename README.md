@@ -19,7 +19,7 @@ npm run check    # type-check .astro and .ts files
 
 ```
 src/
-  components/        Header, Footer, ProjectCard, ThemeToggle
+  components/        Header, Footer, Section, ProjectList, ThemeToggle
   content/projects/  One Markdown file per project
   data/site.ts       Name, tagline, email, social links, nav and skills
   layouts/           BaseLayout (head, meta, theme, header/footer)

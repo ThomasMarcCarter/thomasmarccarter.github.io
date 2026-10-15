@@ -10,11 +10,11 @@ interface Props {
 }
 
 const { title, description = site.description } = Astro.props;
-const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.role}`;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name}, ${site.role}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +24,7 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.rol
     <link rel="icon" href={url('favicon.ico')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -37,11 +37,11 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.rol
     </script>
   </head>
   <body class="flex min-h-screen flex-col">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:px-3 focus:py-2 focus:text-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-paper">
       Skip to content
     </a>
     <Header />
-    <main id="main" class="mx-auto w-full max-w-5xl flex-1 px-4 sm:px-6">
+    <main id="main" class="mx-auto w-full max-w-6xl flex-1 px-4 sm:px-8">
       <slot />
     </main>
     <Footer />

@@ -1,19 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import ProjectList from '../../components/ProjectList.astro';
 
 const projects = (await getCollection('projects')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
-<BaseLayout title="Projects" description="A selection of projects I've built.">
-  <section class="py-16">
-    <h1 class="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">Projects</h1>
-    <p class="mt-3 text-zinc-600 dark:text-zinc-400">A selection of things I've built.</p>
-    <div class="mt-10 grid gap-6 sm:grid-cols-2">
-      {projects.map((project) => <ProjectCard project={project} />)}
+<BaseLayout title="Projects" description="Projects built by Thomas-Marc Carter.">
+  <section class="pt-16 pb-20 sm:pt-24">
+    <h1 class="text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95] font-extrabold tracking-[-0.04em]">Projects</h1>
+    <div class="mt-14">
+      <ProjectList projects={projects} />
     </div>
   </section>
 </BaseLayout>

@@ -1,63 +1,108 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Section from '../components/Section.astro';
+import ProjectList from '../components/ProjectList.astro';
 import { site, url } from '../data/site';
 
-const featured = (await getCollection('projects', ({ data }) => data.featured))
+const allProjects = await getCollection('projects');
+const featured = allProjects
+  .filter(({ data }) => data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 4);
+const [firstName, ...rest] = site.name.split('-');
 ---
 
 <BaseLayout>
-  <section class="py-20 sm:py-28">
-    <p class="font-medium text-accent">Hi, I'm {site.name}</p>
-    <h1 class="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl dark:text-white">
-      {site.tagline}
+  <section class="pt-16 pb-4 sm:pt-28 sm:pb-6" aria-labelledby="intro-title">
+    <h1 id="intro-title" class="text-[clamp(3.25rem,13vw,9.5rem)] leading-[0.88] font-extrabold tracking-[-0.045em]">
+      {firstName}-<br />{rest.join('-')}
     </h1>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href={url('projects/')} class="rounded-lg bg-accent px-5 py-2.5 font-medium text-white transition hover:opacity-90">
-        View my work
+    <p class="mt-8 max-w-[34ch] text-xl leading-snug sm:mt-10 sm:text-2xl">
+      {site.role} in {site.location}. {site.availability}
+    </p>
+    <p class="mt-8 flex flex-wrap gap-x-7 gap-y-3">
+      <a href={`mailto:${site.email}`} class="font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2">
+        Email me
       </a>
-      <a href="#contact" class="rounded-lg border border-zinc-300 px-5 py-2.5 font-medium transition hover:border-accent hover:text-accent dark:border-zinc-700">
-        Get in touch
-      </a>
-    </div>
+      {site.socials.map((s) => (
+        <a href={s.href} class="link" rel="me noopener" target="_blank">{s.label}</a>
+      ))}
+    </p>
+    <svg class="tide mt-14 h-6 w-full text-accent sm:mt-20" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+      <path
+        d="M0 12 C 100 2, 200 22, 300 12 S 500 2, 600 12 S 800 22, 900 12 S 1100 2, 1200 12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        vector-effect="non-scaling-stroke"
+        pathLength="1"
+      />
+    </svg>
   </section>
 
-  <section id="projects" class="scroll-mt-20 py-12">
-    <div class="flex items-baseline justify-between gap-4">
-      <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Featured projects</h2>
-      <a href={url('projects/')} class="text-sm text-accent hover:underline">All projects →</a>
-    </div>
-    <div class="mt-6 grid gap-6 sm:grid-cols-2">
-      {featured.map((project) => <ProjectCard project={project} />)}
-    </div>
-  </section>
+  <Section id="work" title="Selected work" divider={false}>
+    <ProjectList projects={featured} />
+    {allProjects.length > featured.length && (
+      <p class="mt-8"><a href={url('projects/')} class="link">See all projects</a></p>
+    )}
+  </Section>
 
-  <section id="about" class="scroll-mt-20 py-12">
-    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">About</h2>
-    <div class="mt-4 max-w-2xl space-y-4 text-zinc-600 dark:text-zinc-400">
+  <Section id="about" title="About">
+    <div class="max-w-[62ch] space-y-5 text-lg">
       <p>
-        I'm a {site.role.toLowerCase()} who enjoys turning ideas into polished, performant products.
-        Replace this paragraph with a short introduction about yourself.
+        I'm a full-stack developer based in Torquay, looking for my first junior or graduate role. I like building
+        things end to end, from the interface people use to the APIs and data behind it.
+      </p>
+      <p>
+        Outside web development I make games in Unity, which is where I learned C#. I'm happy to relocate for the
+        right team.
       </p>
     </div>
-    <h3 class="mt-8 font-semibold text-zinc-900 dark:text-white">Skills</h3>
-    <ul class="mt-3 flex flex-wrap gap-2">
-      {site.skills.map((skill) => (
-        <li class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-800">{skill}</li>
+    <dl class="mt-12 grid gap-6 sm:grid-cols-3">
+      {site.skills.map((s) => (
+        <div>
+          <dt class="text-[0.9375rem] text-muted">{s.group}</dt>
+          <dd class="mt-2 leading-snug">{s.items.join(', ')}</dd>
+        </div>
       ))}
-    </ul>
-  </section>
+    </dl>
+  </Section>
 
-  <section id="contact" class="scroll-mt-20 py-12 pb-20">
-    <h2 class="text-2xl font-bold text-zinc-900 dark:text-white">Contact</h2>
-    <p class="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-400">
-      Open to new opportunities and collaborations. The best way to reach me is by email.
+  <Section id="contact" title="Contact">
+    <p class="max-w-[50ch] text-lg">
+      The quickest way to reach me is by email. I'll reply within a couple of days.
     </p>
-    <a href={`mailto:${site.email}`} class="mt-6 inline-block rounded-lg bg-accent px-5 py-2.5 font-medium text-white transition hover:opacity-90">
+    <a
+      href={`mailto:${site.email}`}
+      class="mt-6 inline-block text-[clamp(1.25rem,5.2vw,3rem)] font-bold tracking-tight [overflow-wrap:anywhere] underline decoration-line decoration-2 underline-offset-[0.2em] transition-colors hover:text-accent hover:decoration-accent"
+    >
       {site.email}
     </a>
-  </section>
+    <p class="mt-8 flex gap-7">
+      {site.socials.map((s) => (
+        <a href={s.href} class="link" rel="me noopener" target="_blank">{s.label}</a>
+      ))}
+    </p>
+  </Section>
 </BaseLayout>
+
+<style>
+  /* One orchestrated moment: the tide line draws itself across the page on load. */
+  .tide path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tide path {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

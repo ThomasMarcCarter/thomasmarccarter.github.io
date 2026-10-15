@@ -2,10 +2,29 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-accent: oklch(0.6 0.19 260);
-  --color-accent-soft: oklch(0.6 0.19 260 / 0.12);
+:root {
+  --paper: #f4f7f7;
+  --ink: #0e2a33;
+  --muted: #56707a;
+  --line: #d5dfe1;
+  --accent: #0f7479;
+}
+
+.dark {
+  --paper: #0b1d23;
+  --ink: #e4edee;
+  --muted: #8ea5ac;
+  --line: #1f363d;
+  --accent: #5cc4be;
+}
+
+@theme inline {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
 }
 
 @layer base {
@@ -13,9 +32,23 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200;
+    @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-accent text-paper;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent;
+    @apply rounded-sm outline-2 outline-offset-4 outline-accent;
+  }
+}
+
+/* Underlined text link that shifts to the accent colour on hover. */
+@utility link {
+  @apply underline decoration-line decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

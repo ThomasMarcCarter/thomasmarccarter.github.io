@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  divider?: boolean;
+}
+
+const { id, title, divider = true } = Astro.props;
+---
+
+<section id={id} class:list={["grid scroll-mt-8 gap-6 py-14 sm:py-20 md:grid-cols-[11rem_1fr] md:gap-10", divider && "border-t border-line"]} aria-labelledby={`${id}-title`}>
+  <h2 id={`${id}-title`} class="text-[0.9375rem] font-medium text-muted">{title}</h2>
+  <div>
+    <slot />
+  </div>
+</section>
