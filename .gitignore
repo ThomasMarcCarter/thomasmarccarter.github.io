@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# raw capture footage (compressed copies live in src/assets and public)
+Footage/

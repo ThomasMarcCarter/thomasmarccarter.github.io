@@ -27,7 +27,7 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
     >
       {items.map((item, i) => (
         <figure
-          class="aspect-[16/10] w-full shrink-0 snap-center snap-always"
+          class="relative aspect-[16/10] w-full shrink-0 snap-center snap-always"
           role="group"
           aria-roledescription="slide"
           aria-label={`${i + 1} of ${items.length}`}
@@ -37,16 +37,34 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
           {item.type === 'image' ? (
             <Image src={item.src} alt={item.alt} sizes={sizes} widths={[640, 1088, 1600]} class="h-full w-full object-contain" loading={i === 0 ? 'eager' : 'lazy'} />
           ) : (
-            <video
-              class="h-full w-full bg-black object-contain"
-              src={url(item.src)}
-              poster={item.poster?.src}
-              controls
-              muted
-              playsinline
-              preload="metadata"
-              aria-label={item.alt}
-            />
+            <>
+              <video
+                class="h-full w-full cursor-pointer bg-black object-contain"
+                src={url(item.src)}
+                poster={item.poster?.src}
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label={item.alt}
+              />
+              <span class="vid-line" aria-hidden="true"></span>
+              <div class="vid-bar" data-controls>
+                <button type="button" class="vid-btn" data-play aria-label="Play">
+                  <svg viewBox="0 0 24 24" class="i-play" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor" /></svg>
+                  <svg viewBox="0 0 24 24" class="i-pause" aria-hidden="true"><path d="M6.5 4.5h4v15h-4zm7 0h4v15h-4z" fill="currentColor" /></svg>
+                </button>
+                <input type="range" class="vid-seek" min="0" max="1000" step="1" value="0" aria-label="Seek" data-seek />
+                <span class="vid-time" data-time>00:00 / 00:00</span>
+                <button type="button" class="vid-btn" data-mute aria-label="Unmute">
+                  <svg viewBox="0 0 24 24" class="i-sound" aria-hidden="true"><path d="M4 9h4l5-4.5v15L8 15H4z" fill="currentColor" /><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.75" /></svg>
+                  <svg viewBox="0 0 24 24" class="i-muted" aria-hidden="true"><path d="M4 9h4l5-4.5v15L8 15H4z" fill="currentColor" /><path d="M16 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.75" /></svg>
+                </button>
+                <button type="button" class="vid-btn" data-fullscreen aria-label="Full screen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="1.75" /></svg>
+                </button>
+              </div>
+            </>
           )}
         </figure>
       ))}
@@ -64,7 +82,7 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
       <p class="tabular-nums text-muted" aria-live="polite"><span data-index>1</span> of {items.length}</p>
       <p class="ml-auto hidden truncate text-right text-muted sm:block" data-caption-out>{items[0].caption}</p>
     </div>
-    <ol class="mt-4 flex gap-2 overflow-x-auto pb-1">
+    <ol class="-mx-1 mt-3 flex gap-2 overflow-x-auto p-1">
       {items.map((item, i) => (
         <li class="shrink-0">
           <button
@@ -77,7 +95,12 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
             {item.type === 'image' ? (
               <Image src={item.src} alt="" width={176} class="h-full w-full object-cover" />
             ) : item.poster ? (
-              <Image src={item.poster} alt="" width={176} class="h-full w-full object-cover" />
+              <span class="relative block h-full w-full">
+                <Image src={item.poster} alt="" width={176} class="h-full w-full object-cover" />
+                <span class="thumb-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
+                </span>
+              </span>
             ) : (
               <span class="grid h-full w-full place-items-center bg-ink/10">
                 <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
@@ -91,8 +114,300 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
   {items.length === 1 && items[0].caption && <p class="mt-3 text-muted">{items[0].caption}</p>}
 </div>
 
+<style>
+  /* Video controls, built from the page's colour tokens so each skin restyles them. */
+  .vid-bar {
+    position: absolute;
+    inset-inline: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem 0.375rem 0.375rem;
+    border-radius: 999px;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--paper) 82%, transparent);
+    border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    backdrop-filter: blur(10px);
+    touch-action: pan-y;
+    transition: opacity 0.25s ease;
+  }
+  .vid-btn {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    transition: color 0.15s, background-color 0.15s;
+  }
+  .vid-btn:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--ink) 8%, transparent);
+  }
+  .vid-btn svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  .vid-time {
+    flex: none;
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+  }
+
+  /* Scrubber: --p is the played fraction, set from the script. */
+  .vid-seek {
+    flex: 1;
+    min-width: 3rem;
+    height: 1.25rem;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+  }
+  .vid-seek::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--track);
+  }
+  .vid-seek::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--track);
+  }
+  .vid-seek::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+    border-radius: 999px;
+    background: var(--accent);
+    border: 0;
+  }
+  .vid-seek::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--accent);
+    border: 0;
+  }
+  figure {
+    --track: linear-gradient(var(--accent), var(--accent)) 0 / var(--p, 0%) 100% no-repeat,
+      color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  /* A thin progress line stands in for the bar while a video plays untouched. */
+  .vid-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 2px;
+    width: var(--p, 0%);
+    background: var(--accent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .i-pause,
+  .i-muted {
+    display: none;
+  }
+  figure[data-playing] .i-play,
+  figure[data-muted] .i-sound {
+    display: none;
+  }
+  figure[data-playing] .i-pause,
+  figure[data-muted] .i-muted {
+    display: block;
+  }
+
+  @media (hover: hover) {
+    figure[data-playing]:not(:hover, :focus-within) .vid-bar {
+      opacity: 0;
+    }
+    figure[data-playing]:not(:hover, :focus-within) .vid-line {
+      opacity: 1;
+    }
+  }
+
+  figure:fullscreen {
+    aspect-ratio: auto;
+    background: #000;
+  }
+
+  .thumb-badge {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    display: grid;
+    place-items: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--ink);
+  }
+  .thumb-badge svg {
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+
+  /* Radar skin: square HUD panels with a segmented scrubber, like the game's ammo bar. */
+  :global(:root[data-skin='radar']) .vid-bar {
+    inset-inline: 3rem;
+    bottom: 1.25rem;
+    padding: 0.25rem 0.625rem 0.25rem 0.25rem;
+    border-radius: 0;
+    background: rgb(2 10 4 / 0.82);
+    border-color: var(--muted);
+    box-shadow: 0 0 18px rgb(57 255 106 / 0.12);
+    backdrop-filter: none;
+  }
+  :global(:root[data-skin='radar']) .vid-btn {
+    border-radius: 0;
+    border: 1px solid var(--line);
+  }
+  :global(:root[data-skin='radar']) .vid-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgb(255 176 0 / 0.08);
+  }
+  :global(:root[data-skin='radar']) .vid-time {
+    color: var(--ink);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 8px rgb(57 255 106 / 0.5);
+  }
+  :global(:root[data-skin='radar']) figure {
+    --track: repeating-linear-gradient(90deg, transparent 0 6px, var(--paper) 6px 8px),
+      linear-gradient(var(--ink), var(--ink)) 0 / var(--p, 0%) 100% no-repeat, var(--line);
+  }
+  :global(:root[data-skin='radar']) .vid-seek::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 0;
+  }
+  :global(:root[data-skin='radar']) .vid-seek::-moz-range-track {
+    height: 8px;
+    border-radius: 0;
+  }
+  :global(:root[data-skin='radar']) .vid-seek::-webkit-slider-thumb {
+    width: 4px;
+    height: 16px;
+    margin-top: -4px;
+    border-radius: 0;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  :global(:root[data-skin='radar']) .vid-seek::-moz-range-thumb {
+    width: 4px;
+    height: 16px;
+    border-radius: 0;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  :global(:root[data-skin='radar']) .vid-line {
+    background: var(--ink);
+    box-shadow: 0 0 8px var(--ink);
+  }
+  :global(:root[data-skin='radar']) .thumb-badge {
+    border-radius: 0;
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  @media (max-width: 639px) {
+    .vid-bar {
+      inset-inline: 0.5rem;
+      bottom: 0.5rem;
+      gap: 0.375rem;
+      padding: 0.125rem 0.5rem 0.125rem 0.125rem;
+    }
+    .vid-btn {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+    .vid-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    .vid-time {
+      display: none;
+    }
+    :global(:root[data-skin='radar']) .vid-bar {
+      inset-inline: 1.25rem;
+      bottom: 0.625rem;
+      padding: 0.125rem 0.5rem 0.125rem 0.125rem;
+    }
+  }
+</style>
+
 <script>
   const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clock = (s: number) => {
+    const t = Number.isFinite(s) ? Math.floor(s) : 0;
+    return `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`;
+  };
+
+  // Wire up the custom controls for one video slide.
+  function setupVideo(slide: HTMLElement, video: HTMLVideoElement) {
+    const playBtn = slide.querySelector<HTMLButtonElement>('[data-play]')!;
+    const muteBtn = slide.querySelector<HTMLButtonElement>('[data-mute]')!;
+    const seek = slide.querySelector<HTMLInputElement>('[data-seek]')!;
+    const time = slide.querySelector('[data-time]')!;
+    let frame = 0;
+
+    const render = () => {
+      const p = video.duration ? video.currentTime / video.duration : 0;
+      slide.style.setProperty('--p', `${p * 100}%`);
+      seek.value = String(Math.round(p * 1000));
+      seek.setAttribute('aria-valuetext', clock(video.currentTime));
+      time.textContent = `${clock(video.currentTime)} / ${clock(video.duration)}`;
+    };
+    const tick = () => {
+      render();
+      frame = requestAnimationFrame(tick);
+    };
+    const syncMuted = () => {
+      slide.toggleAttribute('data-muted', video.muted);
+      muteBtn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
+    };
+
+    video.addEventListener('play', () => {
+      slide.toggleAttribute('data-playing', true);
+      playBtn.setAttribute('aria-label', 'Pause');
+      cancelAnimationFrame(frame);
+      tick();
+    });
+    video.addEventListener('pause', () => {
+      slide.toggleAttribute('data-playing', false);
+      playBtn.setAttribute('aria-label', 'Play');
+      cancelAnimationFrame(frame);
+      render();
+    });
+    video.addEventListener('loadedmetadata', render);
+    video.addEventListener('volumechange', syncMuted);
+
+    // A pause chosen by the viewer sticks; autoplay won't restart this video.
+    const toggle = () => {
+      slide.toggleAttribute('data-held', !video.paused);
+      video.paused ? video.play().catch(() => {}) : video.pause();
+    };
+    playBtn.addEventListener('click', toggle);
+    video.addEventListener('click', toggle);
+    muteBtn.addEventListener('click', () => (video.muted = !video.muted));
+    seek.addEventListener('input', () => {
+      video.currentTime = (Number(seek.value) / 1000) * (video.duration || 0);
+      render();
+    });
+    slide.querySelector('[data-fullscreen]')!.addEventListener('click', () => {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (slide.requestFullscreen) slide.requestFullscreen();
+      else (video as HTMLVideoElement & { webkitEnterFullscreen?: () => void }).webkitEnterFullscreen?.();
+    });
+
+    syncMuted();
+    render();
+  }
 
   function setup(root: HTMLElement) {
     const track = root.querySelector<HTMLElement>('[data-track]')!;
@@ -104,6 +419,29 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
     // The slide being scrolled to, so repeated clicks build on each other before the scroll settles.
     let target = 0;
     let settle: ReturnType<typeof setTimeout> | undefined;
+    let onScreen = false;
+
+    slides.forEach((s) => {
+      const video = s.querySelector('video');
+      if (video) setupVideo(s, video);
+    });
+
+    // Only the current slide's video plays, and only while the carousel is on screen.
+    const syncVideos = () => {
+      slides.forEach((s, n) => {
+        const video = s.querySelector('video');
+        if (!video) return;
+        if (n === current && onScreen && !reduceMotion() && !s.hasAttribute('data-held')) video.play().catch(() => {});
+        else if (n !== current || !onScreen) video.pause();
+      });
+    };
+    new IntersectionObserver(
+      ([e]) => {
+        onScreen = e.isIntersecting;
+        syncVideos();
+      },
+      { threshold: 0.4 },
+    ).observe(track);
 
     const goTo = (i: number) => {
       target = (i + slides.length) % slides.length;
@@ -120,8 +458,7 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
       if (captionOut) captionOut.textContent = slides[i].dataset.caption ?? '';
       thumbs.forEach((t, n) => (n === i ? t.setAttribute('aria-current', 'true') : t.removeAttribute('aria-current')));
       thumbs[i]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-      // Only the visible slide's video may keep playing.
-      slides.forEach((s, n) => n !== i && s.querySelector('video')?.pause());
+      syncVideos();
     };
 
     const observer = new IntersectionObserver(
@@ -134,6 +471,8 @@ const sizes = '(min-width: 1152px) 1088px, 100vw';
     root.querySelector('[data-next]')?.addEventListener('click', () => goTo(target + 1));
     thumbs.forEach((t, n) => t.addEventListener('click', () => goTo(n)));
     track.addEventListener('keydown', (e) => {
+      // Arrow keys on the video controls (the scrubber especially) belong to those controls.
+      if ((e.target as HTMLElement).closest('[data-controls]')) return;
       if (e.key === 'ArrowRight') goTo(target + 1);
       else if (e.key === 'ArrowLeft') goTo(target - 1);
       else return;
