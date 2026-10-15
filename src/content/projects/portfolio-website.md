@@ -3,7 +3,7 @@ title: Portfolio Website
 description: This site. A fast, static portfolio built with Astro, Tailwind CSS and TypeScript, deployed to GitHub Pages.
 date: 2026-10-15
 tags: [Astro, Tailwind CSS, TypeScript]
-repo: https://github.com/ThomasMarcCarter/Portfolio-Website
+repo: https://github.com/ThomasMarcCarter/thomasmarccarter.github.io
 featured: true
 cover:
   src: ../../assets/projects/portfolio-website/cover.png
