@@ -10,10 +10,10 @@ cover:
   alt: The portfolio home page with a large two-line name heading
 media:
   - type: video
-    src: projects/portfolio-website/walkthrough.webm
+    src: projects/portfolio-website/walkthrough.mp4
     poster: ../../assets/projects/portfolio-website/cover.png
-    alt: A walkthrough of the site, from the home page into the Two-Stick Z Shooter project and back
-    caption: Walkthrough of the site and page transitions
+    alt: A walkthrough of the site, from the home page into the Two-Stick Z Shooter page and its gameplay gallery, then back home and into dark mode
+    caption: Walkthrough of the site, including the Z Shooter page
   - type: image
     src: ../../assets/projects/portfolio-website/home-dark.png
     alt: Project posts on the home page in dark mode
