@@ -23,6 +23,13 @@ const wave = (amplitude: number, period: number, y: number) => {
   for (let x = period; x <= 2400; x += period / 2) d += ` T ${x} ${y}`;
   return d;
 };
+// "2025-12" -> "Dec 2025"
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const month = (iso: string) => {
+  const [year, m] = iso.split('-');
+  return `${months[Number(m) - 1]} ${year}`;
+};
+
 const waves = [
   { d: wave(7, 400, 20), speed: 26, opacity: 1 },
   { d: wave(5, 300, 30), speed: 38, opacity: 0.55 },
@@ -96,6 +103,33 @@ const waves = [
         </div>
       ))}
     </dl>
+  </Section>
+
+  <Section id="experience" title="Experience">
+    <ol class="max-w-[62ch] space-y-12">
+      {site.experience.map((job) => (
+        <li>
+          <h3 class="flex flex-wrap items-baseline justify-between gap-x-6 text-lg">
+            <span class="font-semibold">{job.company}</span>
+            <span class="text-[0.9375rem] text-muted">{job.location}</span>
+          </h3>
+          <dl class="mt-1 space-y-0.5">
+            {job.roles.map((role) => (
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6">
+                <dt>{role.title}</dt>
+                <dd class="text-[0.9375rem] text-muted tabular-nums">
+                  <time datetime={role.start}>{month(role.start)}</time> –{' '}
+                  {role.end ? <time datetime={role.end}>{month(role.end)}</time> : 'Present'}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-accent">
+            {job.points.map((point) => <li class="pl-1">{point}</li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
   </Section>
 
   <Section id="contact" title="Contact">
