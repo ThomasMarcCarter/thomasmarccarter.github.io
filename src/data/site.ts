@@ -62,10 +62,22 @@ export const site = {
       ],
     },
   ],
+  education: [
+    {
+      company: 'Bournemouth University',
+      roles: [{ title: 'BSc (Hons) Software Engineering', start: '2019-09', end: '2023-04' }],
+      points: [
+        'Designed and built software in Java, Python, JavaScript, HTML and CSS, applying object-oriented design.',
+        'Worked across the full development life cycle, from requirements and design through to testing and deployment.',
+        'Delivered team projects in Agile teams, using Git for version control and Jira for planning.',
+      ],
+    },
+  ],
   skills: [
     { group: 'Web', items: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'React', 'Astro', 'Tailwind CSS', 'Node.js'] },
+    { group: 'Back end and data', items: ['Java (Spring Boot)', 'Python', 'SQL'] },
     { group: 'Game development', items: ['Unity', 'C#'] },
-    { group: 'Tools', items: ['Git'] },
+    { group: 'Tools', items: ['Git', 'Jira'] },
   ],
 };
 
