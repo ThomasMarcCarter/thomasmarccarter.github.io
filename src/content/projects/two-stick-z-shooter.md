@@ -96,9 +96,10 @@ media:
     caption: Signal lost
 ---
 
-## Overview
+<div class="writeup-cols">
+<div>
 
-<div class="overview">
+## Overview
 
 A top-down twin-stick roguelike set after a zombie outbreak. Each run starts in a survivor hideout, and from there you deploy into one of four zones: a Military Base, a Shopping Mall, a Hospital and an Airport. Each zone is a stack of procedurally generated floors. Doors lock the moment you step into a room and don't open until every zombie is dead. Between fights you scavenge guns, attachments, ammo and medkits, then take on the floor's boss and head down to the next floor.
 
@@ -107,8 +108,6 @@ The world is dark. Rooms are lit by flickering fluorescent tubes and your flashl
 What you bring home carries over between runs. Scrap buys permanent upgrades at the hideout's stations, rescued survivors move in and each has a goal that drives the story, and recovered truck parts unlock travel to the other zones. The last step is finding the radio parts that call in the evacuation helicopter.
 
 It's all shown through a CRT military terminal, with screen curvature, scanlines and a green-phosphor UI. The characters, guns and items are pixel-art sprites in a lit 3D world, so they catch real light and cast real shadows.
-
-</div>
 
 ## Features
 
@@ -124,6 +123,9 @@ It's all shown through a CRT military terminal, with screen curvature, scanlines
 - A HUD with a radar-style minimap and a full tactical map, all drawn in code as vector line art
 - Keyboard and mouse or gamepad, with hot-swapping between them and in-game rebinding
 
+</div>
+<div>
+
 ## How it's built
 
 - Around 220 C# scripts and 35,000 lines in Unity 6, split by system. The game runs from a single scene, with rooms, walls, pickups, effects, menus and the HUD all built in code at runtime
@@ -134,3 +136,6 @@ It's all shown through a CRT military terminal, with screen curvature, scanlines
 - Positional audio where footsteps also feed the AI's hearing, crossfading music for the hideout, exploration and bosses, and placeholder sounds synthesised in code
 - Low-poly guns, characters, items and props generated with Python scripts in Blender
 - One JSON save per profile, written atomically, holding scrap, upgrades, rescued survivors and story progress
+
+</div>
+</div>

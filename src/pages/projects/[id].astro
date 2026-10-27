@@ -73,18 +73,23 @@ const facts = [
 </BaseLayout>
 
 <style>
-  /* Wrapped overview paragraphs sit in two columns on 16:9 and wider screens. */
-  .writeup :global(.overview > * + *) {
+  /* Write-ups wrapped in .writeup-cols split into side-by-side columns on 16:9 and wider screens. */
+  .writeup :global(.writeup-cols > div) {
+    max-width: 65ch;
+  }
+  .writeup :global(.writeup-cols > div > * + *),
+  .writeup :global(.writeup-cols > div + div) {
     margin-top: 1.25rem;
   }
   @media (min-aspect-ratio: 16/9) and (min-width: 64rem) {
-    .writeup :global(.overview) {
+    .writeup :global(.writeup-cols) {
       max-width: none;
-      columns: 2;
-      column-gap: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
     }
-    .writeup :global(.overview p) {
-      break-inside: avoid;
+    .writeup :global(.writeup-cols > div + div) {
+      margin-top: 0;
     }
   }
 
