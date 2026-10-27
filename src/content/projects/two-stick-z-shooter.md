@@ -98,6 +98,8 @@ media:
 
 ## Overview
 
+<div class="overview">
+
 A top-down twin-stick roguelike set after a zombie outbreak. Each run starts in a survivor hideout, and from there you deploy into one of four zones: a Military Base, a Shopping Mall, a Hospital and an Airport. Each zone is a stack of procedurally generated floors. Doors lock the moment you step into a room and don't open until every zombie is dead. Between fights you scavenge guns, attachments, ammo and medkits, then take on the floor's boss and head down to the next floor.
 
 The world is dark. Rooms are lit by flickering fluorescent tubes and your flashlight, and zombies hunt by sight and sound, so gunfire, reloads and footsteps all draw the horde in. You can sneak and melee quietly, or go loud and deal with what comes.
@@ -105,6 +107,8 @@ The world is dark. Rooms are lit by flickering fluorescent tubes and your flashl
 What you bring home carries over between runs. Scrap buys permanent upgrades at the hideout's stations, rescued survivors move in and each has a goal that drives the story, and recovered truck parts unlock travel to the other zones. The last step is finding the radio parts that call in the evacuation helicopter.
 
 It's all shown through a CRT military terminal, with screen curvature, scanlines and a green-phosphor UI. The characters, guns and items are pixel-art sprites in a lit 3D world, so they catch real light and cast real shadows.
+
+</div>
 
 ## Features
 
