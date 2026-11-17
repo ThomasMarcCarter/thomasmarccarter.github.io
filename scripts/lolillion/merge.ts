@@ -113,7 +113,7 @@ export function mergeChampions(src: Sources, overrides: Record<string, Partial<C
         releaseYear: merakiYear || universeYear,
         icon: dd.image.full,
         ...override,
-        aliases: [...new Set([normalise(dd.name), normalise(dd.id), ...(override.aliases ?? [])])],
+        aliases: [...new Set([normalise(dd.name), normalise(dd.id), ...(override.aliases ?? []).map(normalise)])],
       };
 
       const absent = REQUIRED.filter((field) => {

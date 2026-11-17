@@ -84,6 +84,11 @@ describe('mergeChampions', () => {
     expect(byId(result, 'Garen').region).toBe('Noxus');
   });
 
+  it('normalises override aliases', () => {
+    const result = mergeChampions(sources, { MonkeyKing: { aliases: ['Wu.', 'MK'] } });
+    expect(byId(result, 'MonkeyKing').aliases).toEqual(['wukong', 'monkeyking', 'wu', 'mk']);
+  });
+
   it('reports overrides for unknown champions', () => {
     expect(mergeChampions(sources, { Nobody: {} }).unknownOverrides).toEqual(['Nobody']);
   });

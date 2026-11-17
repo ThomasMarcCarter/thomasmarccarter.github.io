@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import data from './champions.json';
+import { normalise } from '../normalise';
 import { CLASSES, GENDERS, POSITIONS, RANGE_TYPES, REGIONS, type Champion, type ChampionData } from './types';
 
 const { ddragonVersion, champions } = data as ChampionData;
@@ -31,6 +32,22 @@ describe('champions.json', () => {
 
   it('has unique ids', () => {
     expect(new Set(champions.map((c) => c.id)).size).toBe(champions.length);
+  });
+
+  it('stores aliases in normalised form', () => {
+    for (const c of champions) expect(c.aliases, c.id).toEqual(c.aliases.map(normalise));
+  });
+
+  it('never gives two champions the same alias', () => {
+    const owners = new Map<string, string>();
+    const shared = champions.flatMap((c) =>
+      c.aliases.flatMap((a) => {
+        const other = owners.get(a);
+        owners.set(a, c.id);
+        return other && other !== c.id ? [`${a}: ${other}, ${c.id}`] : [];
+      }),
+    );
+    expect(shared).toEqual([]);
   });
 
   it('ranks popularity 1 to N with no gaps or ties', () => {
