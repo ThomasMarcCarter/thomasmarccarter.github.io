@@ -6,7 +6,7 @@ describe('tiers', () => {
     expect(tiers.map((t) => t.name)).toEqual(['Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Challenger']);
   });
   it('awards the planned points, rising with rarity', () => {
-    expect(tiers.map((t) => t.points)).toEqual([10, 20, 35, 55, 75, 100]);
+    expect(tiers.map((t) => t.points)).toEqual([20, 40, 50, 75, 90, 100]);
   });
   it('splits all valid answers between the tiers', () => {
     expect(tiers.reduce((sum, t) => sum + t.share, 0)).toBeCloseTo(1);
