@@ -1,0 +1,712 @@
+{
+  "1001": {
+    "popularity": 4
+  },
+  "1004": {
+    "popularity": 171
+  },
+  "1006": {
+    "popularity": 170
+  },
+  "1011": {
+    "popularity": 35
+  },
+  "1018": {
+    "popularity": 34
+  },
+  "1026": {
+    "popularity": 30
+  },
+  "1027": {
+    "popularity": 28
+  },
+  "1028": {
+    "popularity": 9
+  },
+  "1029": {
+    "popularity": 11
+  },
+  "1031": {
+    "popularity": 36
+  },
+  "1033": {
+    "popularity": 27
+  },
+  "1036": {
+    "popularity": 5
+  },
+  "1037": {
+    "popularity": 25
+  },
+  "1038": {
+    "popularity": 24
+  },
+  "1042": {
+    "popularity": 26
+  },
+  "1043": {
+    "popularity": 33
+  },
+  "1052": {
+    "popularity": 10
+  },
+  "1053": {
+    "popularity": 44
+  },
+  "1054": {
+    "popularity": 17
+  },
+  "1055": {
+    "popularity": 6
+  },
+  "1056": {
+    "popularity": 7
+  },
+  "1057": {
+    "popularity": 37
+  },
+  "1058": {
+    "popularity": 31
+  },
+  "1082": {
+    "popularity": 88
+  },
+  "1083": {
+    "popularity": 201
+  },
+  "1086": {
+    "popularity": 199
+  },
+  "1101": {
+    "popularity": 19
+  },
+  "1102": {
+    "popularity": 20
+  },
+  "1103": {
+    "popularity": 21
+  },
+  "1120": {
+    "popularity": 200
+  },
+  "2003": {
+    "popularity": 1
+  },
+  "2019": {
+    "popularity": 172
+  },
+  "2020": {
+    "popularity": 175,
+    "aliases": [
+      "brutalizer"
+    ]
+  },
+  "2021": {
+    "popularity": 174
+  },
+  "2022": {
+    "popularity": 210
+  },
+  "2031": {
+    "popularity": 22
+  },
+  "2051": {
+    "popularity": 205
+  },
+  "2055": {
+    "popularity": 3
+  },
+  "2065": {
+    "popularity": 151
+  },
+  "2138": {
+    "popularity": 206
+  },
+  "2139": {
+    "popularity": 207
+  },
+  "2140": {
+    "popularity": 208
+  },
+  "2141": {
+    "popularity": 209
+  },
+  "2420": {
+    "popularity": 80
+  },
+  "2501": {
+    "popularity": 177
+  },
+  "2502": {
+    "popularity": 121
+  },
+  "2503": {
+    "popularity": 113
+  },
+  "2504": {
+    "popularity": 122
+  },
+  "2508": {
+    "popularity": 168
+  },
+  "2510": {
+    "popularity": 187
+  },
+  "2512": {
+    "popularity": 188
+  },
+  "2517": {
+    "popularity": 186
+  },
+  "2520": {
+    "popularity": 184
+  },
+  "2522": {
+    "popularity": 180
+  },
+  "2523": {
+    "popularity": 185
+  },
+  "2524": {
+    "popularity": 181
+  },
+  "2525": {
+    "popularity": 182
+  },
+  "2526": {
+    "popularity": 183
+  },
+  "3003": {
+    "popularity": 109
+  },
+  "3004": {
+    "popularity": 110
+  },
+  "3006": {
+    "popularity": 12,
+    "aliases": [
+      "zerkers",
+      "berserkers"
+    ]
+  },
+  "3008": {
+    "popularity": 197
+  },
+  "3009": {
+    "popularity": 190,
+    "aliases": [
+      "swifties"
+    ]
+  },
+  "3020": {
+    "popularity": 14,
+    "aliases": [
+      "sorcs"
+    ]
+  },
+  "3024": {
+    "popularity": 83
+  },
+  "3026": {
+    "popularity": 56
+  },
+  "3031": {
+    "popularity": 32
+  },
+  "3032": {
+    "popularity": 60
+  },
+  "3033": {
+    "popularity": 72
+  },
+  "3035": {
+    "popularity": 85
+  },
+  "3036": {
+    "popularity": 53,
+    "aliases": [
+      "ldr",
+      "dominik"
+    ]
+  },
+  "3041": {
+    "popularity": 89
+  },
+  "3044": {
+    "popularity": 41
+  },
+  "3046": {
+    "popularity": 68
+  },
+  "3047": {
+    "popularity": 13,
+    "aliases": [
+      "steelcaps",
+      "tabis"
+    ]
+  },
+  "3050": {
+    "popularity": 150
+  },
+  "3051": {
+    "popularity": 162
+  },
+  "3053": {
+    "popularity": 57
+  },
+  "3057": {
+    "popularity": 40
+  },
+  "3065": {
+    "popularity": 91
+  },
+  "3066": {
+    "popularity": 160
+  },
+  "3067": {
+    "popularity": 29
+  },
+  "3068": {
+    "popularity": 62
+  },
+  "3070": {
+    "popularity": 39
+  },
+  "3071": {
+    "popularity": 50
+  },
+  "3072": {
+    "popularity": 52
+  },
+  "3073": {
+    "popularity": 126,
+    "aliases": [
+      "hexplate"
+    ]
+  },
+  "3074": {
+    "popularity": 76
+  },
+  "3075": {
+    "popularity": 61
+  },
+  "3076": {
+    "popularity": 46
+  },
+  "3077": {
+    "popularity": 79
+  },
+  "3078": {
+    "popularity": 51
+  },
+  "3082": {
+    "popularity": 94
+  },
+  "3083": {
+    "popularity": 189,
+    "aliases": [
+      "warmogs"
+    ]
+  },
+  "3084": {
+    "popularity": 63
+  },
+  "3085": {
+    "popularity": 102
+  },
+  "3086": {
+    "popularity": 45
+  },
+  "3087": {
+    "popularity": 66
+  },
+  "3089": {
+    "popularity": 48,
+    "aliases": [
+      "deathcap",
+      "dcap"
+    ]
+  },
+  "3091": {
+    "popularity": 99
+  },
+  "3094": {
+    "popularity": 67
+  },
+  "3095": {
+    "popularity": 211
+  },
+  "3100": {
+    "popularity": 104
+  },
+  "3102": {
+    "popularity": 90
+  },
+  "3107": {
+    "popularity": 146
+  },
+  "3108": {
+    "popularity": 81
+  },
+  "3109": {
+    "popularity": 149
+  },
+  "3110": {
+    "popularity": 93
+  },
+  "3111": {
+    "popularity": 15,
+    "aliases": [
+      "mercs",
+      "merc"
+    ]
+  },
+  "3112": {
+    "popularity": 204
+  },
+  "3113": {
+    "popularity": 156
+  },
+  "3114": {
+    "popularity": 155
+  },
+  "3115": {
+    "popularity": 101
+  },
+  "3116": {
+    "popularity": 114
+  },
+  "3118": {
+    "popularity": 106
+  },
+  "3119": {
+    "popularity": 167
+  },
+  "3123": {
+    "popularity": 84
+  },
+  "3124": {
+    "popularity": 100,
+    "aliases": [
+      "rageblade"
+    ]
+  },
+  "3133": {
+    "popularity": 42
+  },
+  "3134": {
+    "popularity": 43
+  },
+  "3135": {
+    "popularity": 64
+  },
+  "3137": {
+    "popularity": 107
+  },
+  "3139": {
+    "popularity": 164
+  },
+  "3140": {
+    "popularity": 163
+  },
+  "3142": {
+    "popularity": 58,
+    "aliases": [
+      "youmuus",
+      "ghostblade"
+    ]
+  },
+  "3143": {
+    "popularity": 92
+  },
+  "3144": {
+    "popularity": 86
+  },
+  "3145": {
+    "popularity": 82
+  },
+  "3146": {
+    "popularity": 119
+  },
+  "3147": {
+    "popularity": 176
+  },
+  "3152": {
+    "popularity": 118
+  },
+  "3153": {
+    "popularity": 59
+  },
+  "3155": {
+    "popularity": 98
+  },
+  "3156": {
+    "popularity": 97,
+    "aliases": [
+      "maw",
+      "malmortius"
+    ]
+  },
+  "3157": {
+    "popularity": 47,
+    "aliases": [
+      "zhonyas",
+      "hourglass"
+    ]
+  },
+  "3158": {
+    "popularity": 16,
+    "aliases": [
+      "lucidity"
+    ]
+  },
+  "3161": {
+    "popularity": 73,
+    "aliases": [
+      "shojin"
+    ]
+  },
+  "3165": {
+    "popularity": 111
+  },
+  "3168": {
+    "popularity": 198
+  },
+  "3170": {
+    "popularity": 195
+  },
+  "3171": {
+    "popularity": 196
+  },
+  "3172": {
+    "popularity": 191
+  },
+  "3173": {
+    "popularity": 192
+  },
+  "3174": {
+    "popularity": 193
+  },
+  "3175": {
+    "popularity": 194
+  },
+  "3177": {
+    "popularity": 202
+  },
+  "3179": {
+    "popularity": 131
+  },
+  "3181": {
+    "popularity": 129
+  },
+  "3184": {
+    "popularity": 203
+  },
+  "3190": {
+    "popularity": 148
+  },
+  "3211": {
+    "popularity": 161
+  },
+  "3222": {
+    "popularity": 147
+  },
+  "3302": {
+    "popularity": 103
+  },
+  "3340": {
+    "popularity": 2
+  },
+  "3363": {
+    "popularity": 23
+  },
+  "3364": {
+    "popularity": 8
+  },
+  "3504": {
+    "popularity": 153
+  },
+  "3508": {
+    "popularity": 166
+  },
+  "3742": {
+    "popularity": 95
+  },
+  "3748": {
+    "popularity": 77
+  },
+  "3801": {
+    "popularity": 159
+  },
+  "3802": {
+    "popularity": 38
+  },
+  "3803": {
+    "popularity": 158
+  },
+  "3814": {
+    "popularity": 130
+  },
+  "3865": {
+    "popularity": 18
+  },
+  "3869": {
+    "popularity": 138
+  },
+  "3870": {
+    "popularity": 139
+  },
+  "3871": {
+    "popularity": 140
+  },
+  "3876": {
+    "popularity": 141
+  },
+  "3877": {
+    "popularity": 137
+  },
+  "3916": {
+    "popularity": 112
+  },
+  "4005": {
+    "popularity": 152
+  },
+  "4401": {
+    "popularity": 96
+  },
+  "4628": {
+    "popularity": 115
+  },
+  "4629": {
+    "popularity": 116
+  },
+  "4630": {
+    "popularity": 120
+  },
+  "4632": {
+    "popularity": 157
+  },
+  "4633": {
+    "popularity": 117
+  },
+  "4642": {
+    "popularity": 154
+  },
+  "4645": {
+    "popularity": 65
+  },
+  "4646": {
+    "popularity": 105
+  },
+  "6333": {
+    "popularity": 71,
+    "aliases": [
+      "dd"
+    ]
+  },
+  "6609": {
+    "popularity": 136
+  },
+  "6610": {
+    "popularity": 127,
+    "aliases": [
+      "sky"
+    ]
+  },
+  "6616": {
+    "popularity": 143
+  },
+  "6617": {
+    "popularity": 142
+  },
+  "6620": {
+    "popularity": 144,
+    "aliases": [
+      "helia"
+    ]
+  },
+  "6621": {
+    "popularity": 145
+  },
+  "6631": {
+    "popularity": 128
+  },
+  "6653": {
+    "popularity": 54
+  },
+  "6655": {
+    "popularity": 55
+  },
+  "6657": {
+    "popularity": 108
+  },
+  "6660": {
+    "popularity": 169
+  },
+  "6662": {
+    "popularity": 125
+  },
+  "6664": {
+    "popularity": 124
+  },
+  "6665": {
+    "popularity": 123,
+    "aliases": [
+      "jaksho"
+    ]
+  },
+  "6670": {
+    "popularity": 87
+  },
+  "6672": {
+    "popularity": 49
+  },
+  "6673": {
+    "popularity": 165,
+    "aliases": [
+      "shieldbow"
+    ]
+  },
+  "6675": {
+    "popularity": 69,
+    "aliases": [
+      "navori"
+    ]
+  },
+  "6676": {
+    "popularity": 70,
+    "aliases": [
+      "collector"
+    ]
+  },
+  "6690": {
+    "popularity": 173
+  },
+  "6692": {
+    "popularity": 74
+  },
+  "6694": {
+    "popularity": 132
+  },
+  "6695": {
+    "popularity": 135
+  },
+  "6696": {
+    "popularity": 133
+  },
+  "6697": {
+    "popularity": 75
+  },
+  "6698": {
+    "popularity": 78
+  },
+  "6699": {
+    "popularity": 134
+  },
+  "8010": {
+    "popularity": 178
+  },
+  "8020": {
+    "popularity": 179
+  }
+}
