@@ -288,8 +288,9 @@
       "popularity": 151,
       "aliases": [
         "aurelionsol",
-        "asol",
-        "aurelion"
+        "aurelion",
+        "sol",
+        "asol"
       ]
     },
     {
@@ -1244,8 +1245,8 @@
       "popularity": 65,
       "aliases": [
         "jarvaniv",
-        "j4",
-        "jarvan"
+        "jarvan",
+        "j4"
       ]
     },
     {
@@ -1729,7 +1730,8 @@
       "popularity": 2,
       "aliases": [
         "leesin",
-        "lee"
+        "lee",
+        "sin"
       ]
     },
     {
@@ -2000,6 +2002,7 @@
       "popularity": 25,
       "aliases": [
         "masteryi",
+        "master",
         "yi"
       ]
     },
@@ -2074,6 +2077,8 @@
       "popularity": 13,
       "aliases": [
         "missfortune",
+        "miss",
+        "fortune",
         "mf"
       ]
     },
@@ -2373,6 +2378,7 @@
       "aliases": [
         "nunuwillump",
         "nunu",
+        "nunuandwillump",
         "willump"
       ]
     },
@@ -2686,7 +2692,8 @@
       "popularity": 143,
       "aliases": [
         "renataglasc",
-        "renata"
+        "renata",
+        "glasc"
       ]
     },
     {
@@ -3275,8 +3282,9 @@
       "popularity": 135,
       "aliases": [
         "tahmkench",
-        "tk",
-        "tahm"
+        "tahm",
+        "kench",
+        "tk"
       ]
     },
     {
@@ -3502,6 +3510,8 @@
       "popularity": 94,
       "aliases": [
         "twistedfate",
+        "twisted",
+        "fate",
         "tf"
       ]
     },
@@ -3922,7 +3932,8 @@
       "popularity": 116,
       "aliases": [
         "xinzhao",
-        "xin"
+        "xin",
+        "zhao"
       ]
     },
     {

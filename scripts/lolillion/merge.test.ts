@@ -115,3 +115,26 @@ describe('mergeChampions', () => {
     });
   });
 });
+
+describe('word aliases', () => {
+  const words = (...names: [string, string][]) =>
+    mergeChampions(
+      { ddragon: names.map(([id, name]) => dd(id, name, 175)), meraki: {}, universe: [] },
+      {},
+    ).champions;
+
+  it('accepts each word of a multi-word name when no other champion uses it', () => {
+    const [nunu, tahm] = words(['Nunu', 'Nunu & Willump'], ['TahmKench', 'Tahm Kench']);
+    expect(nunu.aliases).toEqual(expect.arrayContaining(['willump', 'nunuandwillump']));
+    expect(tahm.aliases).toEqual(expect.arrayContaining(['tahm', 'kench']));
+  });
+
+  it('skips short words and words two champions share', () => {
+    const [mundo, lee, leo] = words(['DrMundo', 'Dr. Mundo'], ['LeeSin', 'Lee Sin'], ['LeeTwo', 'Lee Two']);
+    expect(mundo.aliases).toContain('mundo');
+    expect(mundo.aliases).not.toContain('dr');
+    expect(lee.aliases).not.toContain('lee');
+    expect(leo.aliases).not.toContain('lee');
+    expect(lee.aliases).toContain('sin');
+  });
+});

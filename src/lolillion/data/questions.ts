@@ -173,6 +173,12 @@ const statQuestions: ItemStat[] = [
   'Omnivamp',
 ];
 
+// How players say it, where Data Dragon's label differs.
+const statWording: Partial<Record<ItemStat, string>> = {
+  'Base Mana Regen': 'Mana Regen',
+  'Base Health Regen': 'Health Regen',
+};
+
 // Components that build directly into at least six items.
 const components = [
   'Long Sword',
@@ -221,7 +227,9 @@ const isBoots = (i: Item) => bootIds.has(i.id) || i.from.some((id) => bootIds.ha
 const hasStat = (i: Item, s: ItemStat) => i.stats[s] !== undefined;
 
 const itemQuestions: ItemQuestion[] = [
-  ...statQuestions.map((s) => item(`item-stat-${slug(s)}`, `Name an item that gives ${s}`, (i) => hasStat(i, s))),
+  ...statQuestions.map((s) =>
+    item(`item-stat-${slug(s)}`, `Name an item that gives ${statWording[s] ?? s}`, (i) => hasStat(i, s)),
+  ),
   item('item-cost-3000-plus', `Name an item that costs ${PRICEY} gold or more`, (i) => i.cost >= PRICEY),
   item('item-cost-under-1000', 'Name an item that costs less than 1000 gold', (i) => i.cost < 1000),
   item('item-cost-2500s', 'Name an item that costs from 2500 to 2999 gold', (i) => i.cost >= 2500 && i.cost < PRICEY),

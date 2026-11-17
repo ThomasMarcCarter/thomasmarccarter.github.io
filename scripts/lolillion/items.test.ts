@@ -64,6 +64,16 @@ describe('buildItems', () => {
     expect(ids(buildItems(dd, {}))).not.toContain('323003');
   });
 
+  it('adds override stats to the parsed ones', () => {
+    const r = buildItems(dd, { '3031': { stats: { 'Ability Haste': 25 } } });
+    expect(get(r, '3031').stats).toEqual({
+      'Attack Damage': 75,
+      'Critical Strike Chance': 25,
+      'Critical Strike Damage': 30,
+      'Ability Haste': 25,
+    });
+  });
+
   it('drops joke nicknames', () => {
     const r = buildItems({ '2051': item("Guardian's Horn", { colloq: ';horn;goldenarmofkobe;manwolf' }) }, {});
     expect(get(r, '2051').aliases).toEqual(['guardianshorn', 'horn']);

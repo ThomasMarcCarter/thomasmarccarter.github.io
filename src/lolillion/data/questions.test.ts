@@ -48,3 +48,12 @@ describe('boots', () => {
     expect(boots).toContain('Boots');
   });
 });
+
+describe('wording', () => {
+  it('uses player wording for regen stats', () => {
+    expect(questions.find((q) => q.id === 'item-stat-base-mana-regen')?.prompt).toBe('Name an item that gives Mana Regen');
+    expect(questions.find((q) => q.id === 'item-stat-base-health-regen')?.prompt).toBe(
+      'Name an item that gives Health Regen',
+    );
+  });
+});

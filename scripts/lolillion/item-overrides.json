@@ -256,7 +256,10 @@
     "popularity": 162
   },
   "3053": {
-    "popularity": 57
+    "popularity": 57,
+    "stats": {
+      "Attack Damage": 0
+    }
   },
   "3057": {
     "popularity": 40
@@ -468,7 +471,10 @@
     "popularity": 73,
     "aliases": [
       "shojin"
-    ]
+    ],
+    "stats": {
+      "Ability Haste": 25
+    }
   },
   "3165": {
     "popularity": 111

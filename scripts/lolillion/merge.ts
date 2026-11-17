@@ -75,6 +75,9 @@ const REQUIRED: (keyof Champion)[] = [
   'icon',
 ];
 
+// "Dr" or "IV" alone are too short to mean anyone.
+const MIN_WORD_ALIAS = 3;
+
 // Melee champions' basic attack range tops out at 250 in Data Dragon; ranged starts well above.
 const MELEE_MAX_RANGE = 300;
 
@@ -82,6 +85,14 @@ export function mergeChampions(src: Sources, overrides: Record<string, Partial<C
   const universeByName = new Map(src.universe.map((u) => [normalise(u.name), u]));
   const missing: MergeResult['missing'] = [];
   const conflicts: MergeResult['conflicts'] = [];
+
+  // Single words of multi-word names ("kench", "willump") are answers too, unless two champions share one.
+  const wordsOf = (name: string) =>
+    name.includes(' ') ? name.split(/[\s.&]+/).map(normalise).filter((w) => w.length >= MIN_WORD_ALIAS) : [];
+  const wordUses = new Map<string, number>();
+  for (const dd of src.ddragon) for (const w of new Set(wordsOf(dd.name))) wordUses.set(w, (wordUses.get(w) ?? 0) + 1);
+  const fullNames = new Set(src.ddragon.flatMap((dd) => [normalise(dd.name), normalise(dd.id)]));
+  const wordAliases = (name: string) => wordsOf(name).filter((w) => wordUses.get(w) === 1 && !fullNames.has(w));
 
   const champions = [...src.ddragon]
     .sort((a, b) => a.id.localeCompare(b.id))
@@ -113,7 +124,15 @@ export function mergeChampions(src: Sources, overrides: Record<string, Partial<C
         releaseYear: merakiYear || universeYear,
         icon: dd.image.full,
         ...override,
-        aliases: [...new Set([normalise(dd.name), normalise(dd.id), ...(override.aliases ?? []).map(normalise)])],
+        aliases: [
+          ...new Set([
+            normalise(dd.name),
+            normalise(dd.id),
+            normalise(dd.name.replace(/&/g, 'and')),
+            ...wordAliases(dd.name),
+            ...(override.aliases ?? []).map(normalise),
+          ]),
+        ],
       };
 
       const absent = REQUIRED.filter((field) => {

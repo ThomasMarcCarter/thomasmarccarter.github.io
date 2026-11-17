@@ -7,9 +7,6 @@
       "cost": 300,
       "combineCost": 300,
       "sell": 210,
-      "stats": {
-        "Move Speed": 25
-      },
       "tags": [
         "Boots"
       ],
@@ -25,6 +22,9 @@
       ],
       "icon": "1001.png",
       "popularity": 4,
+      "stats": {
+        "Move Speed": 25
+      },
       "aliases": [
         "boots"
       ]
@@ -35,9 +35,6 @@
       "cost": 200,
       "combineCost": 200,
       "sell": 140,
-      "stats": {
-        "Base Mana Regen": 50
-      },
       "tags": [
         "ManaRegen"
       ],
@@ -48,6 +45,9 @@
       ],
       "icon": "1004.png",
       "popularity": 171,
+      "stats": {
+        "Base Mana Regen": 50
+      },
       "aliases": [
         "faeriecharm"
       ]
@@ -58,9 +58,6 @@
       "cost": 300,
       "combineCost": 300,
       "sell": 120,
-      "stats": {
-        "Base Health Regen": 100
-      },
       "tags": [
         "HealthRegen"
       ],
@@ -72,6 +69,9 @@
       ],
       "icon": "1006.png",
       "popularity": 170,
+      "stats": {
+        "Base Health Regen": 100
+      },
       "aliases": [
         "rejuvenationbead"
       ]
@@ -82,9 +82,6 @@
       "cost": 900,
       "combineCost": 500,
       "sell": 630,
-      "stats": {
-        "Health": 350
-      },
       "tags": [
         "Health"
       ],
@@ -104,6 +101,9 @@
       ],
       "icon": "1011.png",
       "popularity": 35,
+      "stats": {
+        "Health": 350
+      },
       "aliases": [
         "giantsbelt"
       ]
@@ -114,9 +114,6 @@
       "cost": 600,
       "combineCost": 600,
       "sell": 420,
-      "stats": {
-        "Critical Strike Chance": 15
-      },
       "tags": [
         "CriticalStrike"
       ],
@@ -132,6 +129,9 @@
       ],
       "icon": "1018.png",
       "popularity": 34,
+      "stats": {
+        "Critical Strike Chance": 15
+      },
       "aliases": [
         "cloakofagility"
       ]
@@ -142,9 +142,6 @@
       "cost": 850,
       "combineCost": 850,
       "sell": 595,
-      "stats": {
-        "Ability Power": 45
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -163,6 +160,9 @@
       ],
       "icon": "1026.png",
       "popularity": 30,
+      "stats": {
+        "Ability Power": 45
+      },
       "aliases": [
         "blastingwand"
       ]
@@ -173,9 +173,6 @@
       "cost": 300,
       "combineCost": 300,
       "sell": 210,
-      "stats": {
-        "Mana": 300
-      },
       "tags": [
         "Mana"
       ],
@@ -187,6 +184,9 @@
       ],
       "icon": "1027.png",
       "popularity": 28,
+      "stats": {
+        "Mana": 300
+      },
       "aliases": [
         "sapphirecrystal"
       ]
@@ -197,9 +197,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 280,
-      "stats": {
-        "Health": 150
-      },
       "tags": [
         "Health"
       ],
@@ -228,6 +225,9 @@
       ],
       "icon": "1028.png",
       "popularity": 9,
+      "stats": {
+        "Health": 150
+      },
       "aliases": [
         "rubycrystal"
       ]
@@ -238,9 +238,6 @@
       "cost": 300,
       "combineCost": 300,
       "sell": 210,
-      "stats": {
-        "Armor": 15
-      },
       "tags": [
         "Armor"
       ],
@@ -259,6 +256,9 @@
       ],
       "icon": "1029.png",
       "popularity": 11,
+      "stats": {
+        "Armor": 15
+      },
       "aliases": [
         "clotharmor"
       ]
@@ -269,9 +269,6 @@
       "cost": 800,
       "combineCost": 500,
       "sell": 560,
-      "stats": {
-        "Armor": 40
-      },
       "tags": [
         "Armor"
       ],
@@ -289,6 +286,9 @@
       ],
       "icon": "1031.png",
       "popularity": 36,
+      "stats": {
+        "Armor": 40
+      },
       "aliases": [
         "chainvest"
       ]
@@ -299,9 +299,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 280,
-      "stats": {
-        "Magic Resist": 20
-      },
       "tags": [
         "SpellBlock"
       ],
@@ -319,6 +316,9 @@
       ],
       "icon": "1033.png",
       "popularity": 27,
+      "stats": {
+        "Magic Resist": 20
+      },
       "aliases": [
         "nullmagicmantle"
       ]
@@ -329,9 +329,6 @@
       "cost": 350,
       "combineCost": 350,
       "sell": 245,
-      "stats": {
-        "Attack Damage": 10
-      },
       "tags": [
         "Damage",
         "Lane"
@@ -361,6 +358,9 @@
       ],
       "icon": "1036.png",
       "popularity": 5,
+      "stats": {
+        "Attack Damage": 10
+      },
       "aliases": [
         "longsword"
       ]
@@ -371,9 +371,6 @@
       "cost": 875,
       "combineCost": 875,
       "sell": 613,
-      "stats": {
-        "Attack Damage": 25
-      },
       "tags": [
         "Damage"
       ],
@@ -400,6 +397,9 @@
       ],
       "icon": "1037.png",
       "popularity": 25,
+      "stats": {
+        "Attack Damage": 25
+      },
       "aliases": [
         "pickaxe"
       ]
@@ -410,9 +410,6 @@
       "cost": 1300,
       "combineCost": 1300,
       "sell": 910,
-      "stats": {
-        "Attack Damage": 40
-      },
       "tags": [
         "Damage"
       ],
@@ -426,6 +423,9 @@
       ],
       "icon": "1038.png",
       "popularity": 24,
+      "stats": {
+        "Attack Damage": 40
+      },
       "aliases": [
         "bfsword",
         "bf"
@@ -437,9 +437,6 @@
       "cost": 250,
       "combineCost": 250,
       "sell": 175,
-      "stats": {
-        "Attack Speed": 10
-      },
       "tags": [
         "AttackSpeed"
       ],
@@ -458,6 +455,9 @@
       ],
       "icon": "1042.png",
       "popularity": 26,
+      "stats": {
+        "Attack Speed": 10
+      },
       "aliases": [
         "dagger"
       ]
@@ -468,9 +468,6 @@
       "cost": 700,
       "combineCost": 450,
       "sell": 490,
-      "stats": {
-        "Attack Speed": 15
-      },
       "tags": [
         "AttackSpeed",
         "OnHit"
@@ -488,6 +485,9 @@
       ],
       "icon": "1043.png",
       "popularity": 33,
+      "stats": {
+        "Attack Speed": 15
+      },
       "aliases": [
         "recurvebow"
       ]
@@ -498,9 +498,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 280,
-      "stats": {
-        "Ability Power": 20
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -525,6 +522,9 @@
       ],
       "icon": "1052.png",
       "popularity": 10,
+      "stats": {
+        "Ability Power": 20
+      },
       "aliases": [
         "amplifyingtome",
         "amptome"
@@ -536,10 +536,6 @@
       "cost": 900,
       "combineCost": 550,
       "sell": 630,
-      "stats": {
-        "Attack Damage": 15,
-        "Life Steal": 7
-      },
       "tags": [
         "Damage",
         "LifeSteal"
@@ -556,6 +552,10 @@
       ],
       "icon": "1053.png",
       "popularity": 44,
+      "stats": {
+        "Attack Damage": 15,
+        "Life Steal": 7
+      },
       "aliases": [
         "vampiricscepter"
       ]
@@ -566,9 +566,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 180,
-      "stats": {
-        "Health": 110
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -578,6 +575,9 @@
       "into": [],
       "icon": "1054.png",
       "popularity": 17,
+      "stats": {
+        "Health": 110
+      },
       "aliases": [
         "doransshield",
         "dshield"
@@ -589,11 +589,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 180,
-      "stats": {
-        "Attack Damage": 10,
-        "Health": 80,
-        "Omnivamp": 2.5
-      },
       "tags": [
         "Health",
         "Damage",
@@ -605,6 +600,11 @@
       "into": [],
       "icon": "1055.png",
       "popularity": 6,
+      "stats": {
+        "Attack Damage": 10,
+        "Health": 80,
+        "Omnivamp": 2.5
+      },
       "aliases": [
         "doransblade"
       ]
@@ -615,10 +615,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 160,
-      "stats": {
-        "Ability Power": 18,
-        "Health": 90
-      },
       "tags": [
         "Health",
         "Lane",
@@ -629,6 +625,10 @@
       "into": [],
       "icon": "1056.png",
       "popularity": 7,
+      "stats": {
+        "Ability Power": 18,
+        "Health": 90
+      },
       "aliases": [
         "doransring",
         "dring"
@@ -640,9 +640,6 @@
       "cost": 850,
       "combineCost": 450,
       "sell": 595,
-      "stats": {
-        "Magic Resist": 45
-      },
       "tags": [
         "SpellBlock"
       ],
@@ -658,6 +655,9 @@
       ],
       "icon": "1057.png",
       "popularity": 37,
+      "stats": {
+        "Magic Resist": 45
+      },
       "aliases": [
         "negatroncloak"
       ]
@@ -668,9 +668,6 @@
       "cost": 1200,
       "combineCost": 1200,
       "sell": 840,
-      "stats": {
-        "Ability Power": 65
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -683,6 +680,9 @@
       ],
       "icon": "1058.png",
       "popularity": 31,
+      "stats": {
+        "Ability Power": 65
+      },
       "aliases": [
         "needlesslylargerod",
         "nlr"
@@ -694,10 +694,6 @@
       "cost": 350,
       "combineCost": 350,
       "sell": 140,
-      "stats": {
-        "Ability Power": 15,
-        "Health": 50
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -709,6 +705,10 @@
       ],
       "icon": "1082.png",
       "popularity": 88,
+      "stats": {
+        "Ability Power": 15,
+        "Health": 50
+      },
       "aliases": [
         "darkseal"
       ]
@@ -719,9 +719,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 180,
-      "stats": {
-        "Attack Damage": 7
-      },
       "tags": [
         "Damage",
         "OnHit",
@@ -731,6 +728,9 @@
       "into": [],
       "icon": "1083.png",
       "popularity": 201,
+      "stats": {
+        "Attack Damage": 7
+      },
       "aliases": [
         "cull"
       ]
@@ -741,11 +741,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 160,
-      "stats": {
-        "Attack Damage": 7,
-        "Attack Speed": 15,
-        "Omnivamp": 1.5
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -756,6 +751,11 @@
       "into": [],
       "icon": "1086.png",
       "popularity": 199,
+      "stats": {
+        "Attack Damage": 7,
+        "Attack Speed": 15,
+        "Omnivamp": 1.5
+      },
       "aliases": [
         "doransbow"
       ]
@@ -766,7 +766,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Jungle"
       ],
@@ -774,6 +773,7 @@
       "into": [],
       "icon": "1101.png",
       "popularity": 19,
+      "stats": {},
       "aliases": [
         "scorchclawpup"
       ]
@@ -784,7 +784,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Jungle"
       ],
@@ -792,6 +791,7 @@
       "into": [],
       "icon": "1102.png",
       "popularity": 20,
+      "stats": {},
       "aliases": [
         "gustwalkerhatchling"
       ]
@@ -802,7 +802,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Jungle"
       ],
@@ -810,6 +809,7 @@
       "into": [],
       "icon": "1103.png",
       "popularity": 21,
+      "stats": {},
       "aliases": [
         "mosstomperseedling"
       ]
@@ -820,11 +820,6 @@
       "cost": 450,
       "combineCost": 450,
       "sell": 180,
-      "stats": {
-        "Health": 150,
-        "Armor": 8,
-        "Magic Resist": 8
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -835,6 +830,11 @@
       "into": [],
       "icon": "1120.png",
       "popularity": 200,
+      "stats": {
+        "Health": 150,
+        "Armor": 8,
+        "Magic Resist": 8
+      },
       "aliases": [
         "doranshelm"
       ]
@@ -845,7 +845,6 @@
       "cost": 50,
       "combineCost": 50,
       "sell": 20,
-      "stats": {},
       "tags": [
         "HealthRegen",
         "Consumable",
@@ -856,6 +855,7 @@
       "into": [],
       "icon": "2003.png",
       "popularity": 1,
+      "stats": {},
       "aliases": [
         "healthpotion"
       ]
@@ -866,10 +866,6 @@
       "cost": 1100,
       "combineCost": 150,
       "sell": 770,
-      "stats": {
-        "Attack Damage": 15,
-        "Armor": 30
-      },
       "tags": [
         "Armor",
         "Damage"
@@ -885,6 +881,10 @@
       ],
       "icon": "2019.png",
       "popularity": 172,
+      "stats": {
+        "Attack Damage": 15,
+        "Armor": 30
+      },
       "aliases": [
         "steelsigil"
       ]
@@ -895,11 +895,6 @@
       "cost": 1337,
       "combineCost": 212,
       "sell": 936,
-      "stats": {
-        "Attack Damage": 25,
-        "Ability Haste": 10,
-        "Lethality": 5
-      },
       "tags": [
         "Damage",
         "CooldownReduction",
@@ -920,7 +915,12 @@
       "aliases": [
         "thebrutalizer",
         "brutalizer"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 25,
+        "Ability Haste": 10,
+        "Lethality": 5
+      }
     },
     {
       "id": "2021",
@@ -928,10 +928,6 @@
       "cost": 1150,
       "combineCost": 400,
       "sell": 805,
-      "stats": {
-        "Attack Damage": 15,
-        "Health": 250
-      },
       "tags": [
         "Health",
         "Damage"
@@ -952,6 +948,10 @@
       ],
       "icon": "2021.png",
       "popularity": 174,
+      "stats": {
+        "Attack Damage": 15,
+        "Health": 250
+      },
       "aliases": [
         "tunneler"
       ]
@@ -962,9 +962,6 @@
       "cost": 250,
       "combineCost": 250,
       "sell": 175,
-      "stats": {
-        "Ability Haste": 5
-      },
       "tags": [
         "CooldownReduction"
       ],
@@ -983,6 +980,9 @@
       ],
       "icon": "2022.png",
       "popularity": 210,
+      "stats": {
+        "Ability Haste": 5
+      },
       "aliases": [
         "glowingmote"
       ]
@@ -993,7 +993,6 @@
       "cost": 150,
       "combineCost": 150,
       "sell": 60,
-      "stats": {},
       "tags": [
         "HealthRegen",
         "Consumable",
@@ -1005,6 +1004,7 @@
       "into": [],
       "icon": "2031.png",
       "popularity": 22,
+      "stats": {},
       "aliases": [
         "refillablepotion"
       ]
@@ -1015,9 +1015,6 @@
       "cost": 950,
       "combineCost": 950,
       "sell": 665,
-      "stats": {
-        "Health": 150
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -1027,6 +1024,9 @@
       "into": [],
       "icon": "2051.png",
       "popularity": 205,
+      "stats": {
+        "Health": 150
+      },
       "aliases": [
         "guardianshorn",
         "horn"
@@ -1038,7 +1038,6 @@
       "cost": 75,
       "combineCost": 75,
       "sell": 30,
-      "stats": {},
       "tags": [
         "Consumable",
         "Lane",
@@ -1053,7 +1052,8 @@
         "controlward",
         "pink",
         "pinkward"
-      ]
+      ],
+      "stats": {}
     },
     {
       "id": "2065",
@@ -1061,12 +1061,6 @@
       "cost": 2200,
       "combineCost": 400,
       "sell": 1540,
-      "stats": {
-        "Ability Power": 50,
-        "Ability Haste": 15,
-        "Move Speed": 4,
-        "Base Mana Regen": 125
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen",
@@ -1082,6 +1076,12 @@
       "into": [],
       "icon": "2065.png",
       "popularity": 151,
+      "stats": {
+        "Ability Power": 50,
+        "Ability Haste": 15,
+        "Move Speed": 4,
+        "Base Mana Regen": 125
+      },
       "aliases": [
         "shurelyasbattlesong",
         "shurelya"
@@ -1093,7 +1093,6 @@
       "cost": 500,
       "combineCost": 500,
       "sell": 200,
-      "stats": {},
       "tags": [
         "Health",
         "Consumable",
@@ -1104,6 +1103,7 @@
       "into": [],
       "icon": "2138.png",
       "popularity": 206,
+      "stats": {},
       "aliases": [
         "elixirofiron"
       ]
@@ -1114,7 +1114,6 @@
       "cost": 500,
       "combineCost": 500,
       "sell": 200,
-      "stats": {},
       "tags": [
         "Consumable",
         "ManaRegen",
@@ -1124,6 +1123,7 @@
       "into": [],
       "icon": "2139.png",
       "popularity": 207,
+      "stats": {},
       "aliases": [
         "elixirofsorcery"
       ]
@@ -1134,7 +1134,6 @@
       "cost": 500,
       "combineCost": 500,
       "sell": 200,
-      "stats": {},
       "tags": [
         "Consumable",
         "Damage",
@@ -1145,6 +1144,7 @@
       "into": [],
       "icon": "2140.png",
       "popularity": 208,
+      "stats": {},
       "aliases": [
         "elixirofwrath"
       ]
@@ -1155,7 +1155,6 @@
       "cost": 300,
       "combineCost": 300,
       "sell": 300,
-      "stats": {},
       "tags": [
         "Damage",
         "Consumable"
@@ -1164,6 +1163,7 @@
       "into": [],
       "icon": "2141.png",
       "popularity": 209,
+      "stats": {},
       "aliases": [
         "cappajuice"
       ]
@@ -1174,10 +1174,6 @@
       "cost": 1600,
       "combineCost": 500,
       "sell": 640,
-      "stats": {
-        "Ability Power": 40,
-        "Armor": 25
-      },
       "tags": [
         "Armor",
         "SpellDamage",
@@ -1193,6 +1189,10 @@
       ],
       "icon": "2420.png",
       "popularity": 80,
+      "stats": {
+        "Ability Power": 40,
+        "Armor": 25
+      },
       "aliases": [
         "seekersarmguard"
       ]
@@ -1203,10 +1203,6 @@
       "cost": 3300,
       "combineCost": 1000,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 40,
-        "Health": 550
-      },
       "tags": [
         "Health",
         "Damage"
@@ -1218,6 +1214,10 @@
       "into": [],
       "icon": "2501.png",
       "popularity": 177,
+      "stats": {
+        "Attack Damage": 40,
+        "Health": 550
+      },
       "aliases": [
         "overlordsbloodmail"
       ]
@@ -1228,11 +1228,6 @@
       "cost": 2800,
       "combineCost": 800,
       "sell": 1960,
-      "stats": {
-        "Health": 400,
-        "Armor": 50,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Armor",
@@ -1247,6 +1242,11 @@
       "into": [],
       "icon": "2502.png",
       "popularity": 121,
+      "stats": {
+        "Health": 400,
+        "Armor": 50,
+        "Ability Haste": 15
+      },
       "aliases": [
         "unendingdespair"
       ]
@@ -1257,11 +1257,6 @@
       "cost": 2800,
       "combineCost": 700,
       "sell": 1960,
-      "stats": {
-        "Ability Power": 80,
-        "Mana": 600,
-        "Ability Haste": 20
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -1275,6 +1270,11 @@
       "into": [],
       "icon": "2503.png",
       "popularity": 113,
+      "stats": {
+        "Ability Power": 80,
+        "Mana": 600,
+        "Ability Haste": 20
+      },
       "aliases": [
         "blackfiretorch"
       ]
@@ -1285,11 +1285,6 @@
       "cost": 2900,
       "combineCost": 800,
       "sell": 2030,
-      "stats": {
-        "Health": 400,
-        "Magic Resist": 80,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -1302,6 +1297,11 @@
       "into": [],
       "icon": "2504.png",
       "popularity": 122,
+      "stats": {
+        "Health": 400,
+        "Magic Resist": 80,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "kaenicrookern"
       ]
@@ -1312,9 +1312,6 @@
       "cost": 900,
       "combineCost": 500,
       "sell": 630,
-      "stats": {
-        "Ability Power": 30
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -1327,6 +1324,9 @@
       ],
       "icon": "2508.png",
       "popularity": 168,
+      "stats": {
+        "Ability Power": 30
+      },
       "aliases": [
         "fatedashes"
       ]
@@ -1337,12 +1337,6 @@
       "cost": 3100,
       "combineCost": 300,
       "sell": 2170,
-      "stats": {
-        "Health": 300,
-        "Ability Power": 60,
-        "Ability Haste": 20,
-        "Attack Speed": 20
-      },
       "tags": [
         "Health",
         "AttackSpeed",
@@ -1359,6 +1353,12 @@
       "into": [],
       "icon": "2510.png",
       "popularity": 187,
+      "stats": {
+        "Health": 300,
+        "Ability Power": 60,
+        "Ability Haste": 20,
+        "Attack Speed": 20
+      },
       "aliases": [
         "duskanddawn"
       ]
@@ -1369,11 +1369,6 @@
       "cost": 2650,
       "combineCost": 850,
       "sell": 1855,
-      "stats": {
-        "Attack Speed": 45,
-        "Critical Strike Chance": 25,
-        "Move Speed": 4
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -1387,6 +1382,11 @@
       "into": [],
       "icon": "2512.png",
       "popularity": 188,
+      "stats": {
+        "Attack Speed": 45,
+        "Critical Strike Chance": 25,
+        "Move Speed": 4
+      },
       "aliases": [
         "fiendhunterbolts"
       ]
@@ -1397,11 +1397,6 @@
       "cost": 3100,
       "combineCost": 825,
       "sell": 2170,
-      "stats": {
-        "Attack Damage": 65,
-        "Omnivamp": 5,
-        "Tenacity": 20
-      },
       "tags": [
         "Damage",
         "LifeSteal",
@@ -1417,6 +1412,11 @@
       "into": [],
       "icon": "2517.png",
       "popularity": 186,
+      "stats": {
+        "Attack Damage": 65,
+        "Omnivamp": 5,
+        "Tenacity": 20
+      },
       "aliases": [
         "endlesshunger"
       ]
@@ -1427,11 +1427,6 @@
       "cost": 3000,
       "combineCost": 663,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 18,
-        "Ability Haste": 15
-      },
       "tags": [
         "Damage",
         "ArmorPenetration",
@@ -1444,6 +1439,11 @@
       "into": [],
       "icon": "2520.png",
       "popularity": 184,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 18,
+        "Ability Haste": 15
+      },
       "aliases": [
         "bastionbreaker"
       ]
@@ -1454,11 +1454,6 @@
       "cost": 2800,
       "combineCost": 750,
       "sell": 1960,
-      "stats": {
-        "Ability Power": 90,
-        "Mana": 300,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -1471,6 +1466,11 @@
       "into": [],
       "icon": "2522.png",
       "popularity": 180,
+      "stats": {
+        "Ability Power": 90,
+        "Mana": 300,
+        "Ability Haste": 10
+      },
       "aliases": [
         "actualizer"
       ]
@@ -1481,10 +1481,6 @@
       "cost": 2800,
       "combineCost": 275,
       "sell": 1960,
-      "stats": {
-        "Attack Damage": 55,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike"
@@ -1497,6 +1493,10 @@
       "into": [],
       "icon": "2523.png",
       "popularity": 185,
+      "stats": {
+        "Attack Damage": 55,
+        "Critical Strike Chance": 25
+      },
       "aliases": [
         "hexopticsc44"
       ]
@@ -1507,12 +1507,6 @@
       "cost": 2300,
       "combineCost": 800,
       "sell": 1610,
-      "stats": {
-        "Health": 200,
-        "Ability Haste": 15,
-        "Armor": 20,
-        "Magic Resist": 20
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -1529,6 +1523,12 @@
       "into": [],
       "icon": "2524.png",
       "popularity": 181,
+      "stats": {
+        "Health": 200,
+        "Ability Haste": 15,
+        "Armor": 20,
+        "Magic Resist": 20
+      },
       "aliases": [
         "bandlepipes"
       ]
@@ -1539,10 +1539,6 @@
       "cost": 2600,
       "combineCost": 900,
       "sell": 1820,
-      "stats": {
-        "Health": 600,
-        "Ability Haste": 20
-      },
       "tags": [
         "Health",
         "NonbootsMovement",
@@ -1556,6 +1552,10 @@
       "into": [],
       "icon": "2525.png",
       "popularity": 182,
+      "stats": {
+        "Health": 600,
+        "Ability Haste": 20
+      },
       "aliases": [
         "protoplasmharness"
       ]
@@ -1566,12 +1566,6 @@
       "cost": 2250,
       "combineCost": 850,
       "sell": 1575,
-      "stats": {
-        "Health": 200,
-        "Heal and Shield Power": 8,
-        "Base Mana Regen": 75,
-        "Mana": 300
-      },
       "tags": [
         "Health",
         "Mana",
@@ -1585,6 +1579,12 @@
       "into": [],
       "icon": "2526.png",
       "popularity": 183,
+      "stats": {
+        "Health": 200,
+        "Heal and Shield Power": 8,
+        "Base Mana Regen": 75,
+        "Mana": 300
+      },
       "aliases": [
         "whisperingcirclet"
       ]
@@ -1595,11 +1595,6 @@
       "cost": 2900,
       "combineCost": 450,
       "sell": 2030,
-      "stats": {
-        "Ability Power": 70,
-        "Mana": 600,
-        "Ability Haste": 25
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -1613,6 +1608,11 @@
       "into": [],
       "icon": "3003.png",
       "popularity": 109,
+      "stats": {
+        "Ability Power": 70,
+        "Mana": 600,
+        "Ability Haste": 25
+      },
       "aliases": [
         "archangelsstaff"
       ]
@@ -1623,11 +1623,6 @@
       "cost": 2900,
       "combineCost": 1100,
       "sell": 2030,
-      "stats": {
-        "Attack Damage": 35,
-        "Mana": 500,
-        "Ability Haste": 15
-      },
       "tags": [
         "Damage",
         "Mana",
@@ -1643,6 +1638,11 @@
       "into": [],
       "icon": "3004.png",
       "popularity": 110,
+      "stats": {
+        "Attack Damage": 35,
+        "Mana": 500,
+        "Ability Haste": 15
+      },
       "aliases": [
         "manamune"
       ]
@@ -1653,10 +1653,6 @@
       "cost": 1100,
       "combineCost": 300,
       "sell": 770,
-      "stats": {
-        "Attack Speed": 30,
-        "Move Speed": 45
-      },
       "tags": [
         "AttackSpeed",
         "Boots"
@@ -1675,7 +1671,11 @@
         "berserkersgreaves",
         "zerkers",
         "berserkers"
-      ]
+      ],
+      "stats": {
+        "Attack Speed": 30,
+        "Move Speed": 45
+      }
     },
     {
       "id": "3008",
@@ -1683,10 +1683,6 @@
       "cost": 1100,
       "combineCost": 800,
       "sell": 770,
-      "stats": {
-        "Move Speed": 45,
-        "Omnivamp": 4
-      },
       "tags": [
         "LifeSteal",
         "SpellVamp",
@@ -1700,6 +1696,10 @@
       ],
       "icon": "3008.png",
       "popularity": 197,
+      "stats": {
+        "Move Speed": 45,
+        "Omnivamp": 4
+      },
       "aliases": [
         "gluttonousgreaves"
       ]
@@ -1710,9 +1710,6 @@
       "cost": 1000,
       "combineCost": 700,
       "sell": 700,
-      "stats": {
-        "Move Speed": 55
-      },
       "tags": [
         "Boots"
       ],
@@ -1727,7 +1724,10 @@
       "aliases": [
         "bootsofswiftness",
         "swifties"
-      ]
+      ],
+      "stats": {
+        "Move Speed": 55
+      }
     },
     {
       "id": "3020",
@@ -1735,10 +1735,6 @@
       "cost": 1100,
       "combineCost": 800,
       "sell": 770,
-      "stats": {
-        "Magic Penetration": 12,
-        "Move Speed": 45
-      },
       "tags": [
         "Boots",
         "MagicPenetration"
@@ -1754,7 +1750,11 @@
       "aliases": [
         "sorcerersshoes",
         "sorcs"
-      ]
+      ],
+      "stats": {
+        "Magic Penetration": 12,
+        "Move Speed": 45
+      }
     },
     {
       "id": "3024",
@@ -1762,11 +1762,6 @@
       "cost": 900,
       "combineCost": 50,
       "sell": 630,
-      "stats": {
-        "Armor": 25,
-        "Mana": 300,
-        "Ability Haste": 10
-      },
       "tags": [
         "Armor",
         "Mana",
@@ -1783,6 +1778,11 @@
       ],
       "icon": "3024.png",
       "popularity": 83,
+      "stats": {
+        "Armor": 25,
+        "Mana": 300,
+        "Ability Haste": 10
+      },
       "aliases": [
         "glacialbuckler"
       ]
@@ -1793,10 +1793,6 @@
       "cost": 3200,
       "combineCost": 800,
       "sell": 1280,
-      "stats": {
-        "Attack Damage": 55,
-        "Armor": 45
-      },
       "tags": [
         "Armor",
         "Damage"
@@ -1808,6 +1804,10 @@
       "into": [],
       "icon": "3026.png",
       "popularity": 56,
+      "stats": {
+        "Attack Damage": 55,
+        "Armor": 45
+      },
       "aliases": [
         "guardianangel",
         "ga"
@@ -1819,11 +1819,6 @@
       "cost": 3500,
       "combineCost": 725,
       "sell": 2450,
-      "stats": {
-        "Attack Damage": 75,
-        "Critical Strike Chance": 25,
-        "Critical Strike Damage": 30
-      },
       "tags": [
         "CriticalStrike",
         "Damage"
@@ -1836,6 +1831,11 @@
       "into": [],
       "icon": "3031.png",
       "popularity": 32,
+      "stats": {
+        "Attack Damage": 75,
+        "Critical Strike Chance": 25,
+        "Critical Strike Damage": 30
+      },
       "aliases": [
         "infinityedge",
         "ie"
@@ -1847,11 +1847,6 @@
       "cost": 3000,
       "combineCost": 750,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 50,
-        "Attack Speed": 45,
-        "Critical Strike Chance": 0
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -1865,6 +1860,11 @@
       "into": [],
       "icon": "3032.png",
       "popularity": 60,
+      "stats": {
+        "Attack Damage": 50,
+        "Attack Speed": 45,
+        "Critical Strike Chance": 0
+      },
       "aliases": [
         "yuntalwildarrows"
       ]
@@ -1875,11 +1875,6 @@
       "cost": 3000,
       "combineCost": 150,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 35,
-        "Armor Penetration": 30,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -1893,6 +1888,11 @@
       "into": [],
       "icon": "3033.png",
       "popularity": 72,
+      "stats": {
+        "Attack Damage": 35,
+        "Armor Penetration": 30,
+        "Critical Strike Chance": 25
+      },
       "aliases": [
         "mortalreminder"
       ]
@@ -1903,10 +1903,6 @@
       "cost": 1450,
       "combineCost": 750,
       "sell": 1015,
-      "stats": {
-        "Attack Damage": 20,
-        "Armor Penetration": 18
-      },
       "tags": [
         "ArmorPenetration",
         "Damage"
@@ -1922,6 +1918,10 @@
       ],
       "icon": "3035.png",
       "popularity": 85,
+      "stats": {
+        "Attack Damage": 20,
+        "Armor Penetration": 18
+      },
       "aliases": [
         "lastwhisper"
       ]
@@ -1932,11 +1932,6 @@
       "cost": 3300,
       "combineCost": 550,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 35,
-        "Armor Penetration": 35,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -1953,7 +1948,12 @@
         "lorddominiksregards",
         "ldr",
         "dominik"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 35,
+        "Armor Penetration": 35,
+        "Critical Strike Chance": 25
+      }
     },
     {
       "id": "3041",
@@ -1961,10 +1961,6 @@
       "cost": 1500,
       "combineCost": 1150,
       "sell": 1050,
-      "stats": {
-        "Ability Power": 20,
-        "Health": 100
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -1976,6 +1972,10 @@
       "into": [],
       "icon": "3041.png",
       "popularity": 89,
+      "stats": {
+        "Ability Power": 20,
+        "Health": 100
+      },
       "aliases": [
         "mejaissoulstealer"
       ]
@@ -1986,10 +1986,6 @@
       "cost": 1100,
       "combineCost": 350,
       "sell": 770,
-      "stats": {
-        "Attack Damage": 15,
-        "Health": 200
-      },
       "tags": [
         "Health",
         "Damage",
@@ -2007,6 +2003,10 @@
       ],
       "icon": "3044.png",
       "popularity": 41,
+      "stats": {
+        "Attack Damage": 15,
+        "Health": 200
+      },
       "aliases": [
         "phage"
       ]
@@ -2017,11 +2017,6 @@
       "cost": 2650,
       "combineCost": 950,
       "sell": 1855,
-      "stats": {
-        "Attack Speed": 65,
-        "Critical Strike Chance": 25,
-        "Move Speed": 10
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -2035,6 +2030,11 @@
       "into": [],
       "icon": "3046.png",
       "popularity": 68,
+      "stats": {
+        "Attack Speed": 65,
+        "Critical Strike Chance": 25,
+        "Move Speed": 10
+      },
       "aliases": [
         "phantomdancer",
         "pd"
@@ -2046,10 +2046,6 @@
       "cost": 1200,
       "combineCost": 600,
       "sell": 840,
-      "stats": {
-        "Armor": 25,
-        "Move Speed": 45
-      },
       "tags": [
         "Armor",
         "Boots"
@@ -2067,7 +2063,11 @@
         "platedsteelcaps",
         "steelcaps",
         "tabis"
-      ]
+      ],
+      "stats": {
+        "Armor": 25,
+        "Move Speed": 45
+      }
     },
     {
       "id": "3050",
@@ -2075,12 +2075,6 @@
       "cost": 2200,
       "combineCost": 700,
       "sell": 1540,
-      "stats": {
-        "Health": 300,
-        "Armor": 25,
-        "Magic Resist": 25,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -2095,6 +2089,12 @@
       "into": [],
       "icon": "3050.png",
       "popularity": 150,
+      "stats": {
+        "Health": 300,
+        "Armor": 25,
+        "Magic Resist": 25,
+        "Ability Haste": 10
+      },
       "aliases": [
         "zekesconvergence"
       ]
@@ -2105,10 +2105,6 @@
       "cost": 1200,
       "combineCost": 250,
       "sell": 840,
-      "stats": {
-        "Attack Damage": 20,
-        "Attack Speed": 20
-      },
       "tags": [
         "Damage",
         "AttackSpeed"
@@ -2125,6 +2121,10 @@
       ],
       "icon": "3051.png",
       "popularity": 162,
+      "stats": {
+        "Attack Damage": 20,
+        "Attack Speed": 20
+      },
       "aliases": [
         "hearthboundaxe"
       ]
@@ -2135,10 +2135,6 @@
       "cost": 3200,
       "combineCost": 775,
       "sell": 2240,
-      "stats": {
-        "Health": 400,
-        "Tenacity": 20
-      },
       "tags": [
         "Health",
         "Damage",
@@ -2152,6 +2148,11 @@
       "into": [],
       "icon": "3053.png",
       "popularity": 57,
+      "stats": {
+        "Health": 400,
+        "Tenacity": 20,
+        "Attack Damage": 0
+      },
       "aliases": [
         "steraksgage"
       ]
@@ -2162,9 +2163,6 @@
       "cost": 900,
       "combineCost": 650,
       "sell": 630,
-      "stats": {
-        "Ability Haste": 10
-      },
       "tags": [
         "OnHit",
         "AbilityHaste"
@@ -2181,6 +2179,9 @@
       ],
       "icon": "3057.png",
       "popularity": 40,
+      "stats": {
+        "Ability Haste": 10
+      },
       "aliases": [
         "sheen"
       ]
@@ -2191,12 +2192,6 @@
       "cost": 2700,
       "combineCost": 650,
       "sell": 1890,
-      "stats": {
-        "Health": 400,
-        "Magic Resist": 50,
-        "Ability Haste": 10,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -2211,6 +2206,12 @@
       "into": [],
       "icon": "3065.png",
       "popularity": 91,
+      "stats": {
+        "Health": 400,
+        "Magic Resist": 50,
+        "Ability Haste": 10,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "spiritvisage",
         "sv"
@@ -2222,10 +2223,6 @@
       "cost": 800,
       "combineCost": 400,
       "sell": 560,
-      "stats": {
-        "Health": 200,
-        "Move Speed": 4
-      },
       "tags": [
         "Health",
         "NonbootsMovement"
@@ -2240,6 +2237,10 @@
       ],
       "icon": "3066.png",
       "popularity": 160,
+      "stats": {
+        "Health": 200,
+        "Move Speed": 4
+      },
       "aliases": [
         "wingedmoonplate"
       ]
@@ -2250,10 +2251,6 @@
       "cost": 800,
       "combineCost": 150,
       "sell": 560,
-      "stats": {
-        "Health": 200,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "CooldownReduction",
@@ -2284,6 +2281,10 @@
       ],
       "icon": "3067.png",
       "popularity": 29,
+      "stats": {
+        "Health": 200,
+        "Ability Haste": 10
+      },
       "aliases": [
         "kindlegem"
       ]
@@ -2294,11 +2295,6 @@
       "cost": 2800,
       "combineCost": 700,
       "sell": 1960,
-      "stats": {
-        "Health": 350,
-        "Armor": 50,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "Armor",
@@ -2313,6 +2309,11 @@
       "into": [],
       "icon": "3068.png",
       "popularity": 62,
+      "stats": {
+        "Health": 350,
+        "Armor": 50,
+        "Ability Haste": 10
+      },
       "aliases": [
         "sunfireaegis"
       ]
@@ -2323,9 +2324,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 280,
-      "stats": {
-        "Mana": 240
-      },
       "tags": [
         "Mana",
         "ManaRegen"
@@ -2339,6 +2337,9 @@
       ],
       "icon": "3070.png",
       "popularity": 39,
+      "stats": {
+        "Mana": 240
+      },
       "aliases": [
         "tearofthegoddess"
       ]
@@ -2349,11 +2350,6 @@
       "cost": 3000,
       "combineCost": 225,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 45,
-        "Health": 400,
-        "Ability Haste": 20
-      },
       "tags": [
         "Health",
         "Damage",
@@ -2371,6 +2367,11 @@
       "into": [],
       "icon": "3071.png",
       "popularity": 50,
+      "stats": {
+        "Attack Damage": 45,
+        "Health": 400,
+        "Ability Haste": 20
+      },
       "aliases": [
         "blackcleaver",
         "bc"
@@ -2382,10 +2383,6 @@
       "cost": 3400,
       "combineCost": 325,
       "sell": 2380,
-      "stats": {
-        "Attack Damage": 80,
-        "Life Steal": 15
-      },
       "tags": [
         "Damage",
         "LifeSteal"
@@ -2398,6 +2395,10 @@
       "into": [],
       "icon": "3072.png",
       "popularity": 52,
+      "stats": {
+        "Attack Damage": 80,
+        "Life Steal": 15
+      },
       "aliases": [
         "bloodthirster",
         "bt"
@@ -2409,11 +2410,6 @@
       "cost": 3000,
       "combineCost": 500,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 40,
-        "Attack Speed": 20,
-        "Health": 450
-      },
       "tags": [
         "Health",
         "Damage",
@@ -2433,7 +2429,12 @@
       "aliases": [
         "experimentalhexplate",
         "hexplate"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 40,
+        "Attack Speed": 20,
+        "Health": 450
+      }
     },
     {
       "id": "3074",
@@ -2441,11 +2442,6 @@
       "cost": 3300,
       "combineCost": 150,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 65,
-        "Ability Haste": 15,
-        "Life Steal": 12
-      },
       "tags": [
         "Damage",
         "LifeSteal",
@@ -2461,6 +2457,11 @@
       "into": [],
       "icon": "3074.png",
       "popularity": 76,
+      "stats": {
+        "Attack Damage": 65,
+        "Ability Haste": 15,
+        "Life Steal": 12
+      },
       "aliases": [
         "ravenoushydra"
       ]
@@ -2471,10 +2472,6 @@
       "cost": 2450,
       "combineCost": 450,
       "sell": 1715,
-      "stats": {
-        "Health": 150,
-        "Armor": 75
-      },
       "tags": [
         "Health",
         "Armor"
@@ -2487,6 +2484,10 @@
       "into": [],
       "icon": "3075.png",
       "popularity": 61,
+      "stats": {
+        "Health": 150,
+        "Armor": 75
+      },
       "aliases": [
         "thornmail"
       ]
@@ -2497,9 +2498,6 @@
       "cost": 800,
       "combineCost": 200,
       "sell": 560,
-      "stats": {
-        "Armor": 30
-      },
       "tags": [
         "Armor"
       ],
@@ -2512,6 +2510,9 @@
       ],
       "icon": "3076.png",
       "popularity": 46,
+      "stats": {
+        "Armor": 30
+      },
       "aliases": [
         "bramblevest"
       ]
@@ -2522,9 +2523,6 @@
       "cost": 1200,
       "combineCost": 500,
       "sell": 840,
-      "stats": {
-        "Attack Damage": 25
-      },
       "tags": [
         "Damage",
         "OnHit"
@@ -2541,6 +2539,9 @@
       ],
       "icon": "3077.png",
       "popularity": 79,
+      "stats": {
+        "Attack Damage": 25
+      },
       "aliases": [
         "tiamat"
       ]
@@ -2551,12 +2552,6 @@
       "cost": 3333,
       "combineCost": 133,
       "sell": 2333,
-      "stats": {
-        "Attack Damage": 36,
-        "Attack Speed": 30,
-        "Health": 333,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Damage",
@@ -2574,6 +2569,12 @@
       "into": [],
       "icon": "3078.png",
       "popularity": 51,
+      "stats": {
+        "Attack Damage": 36,
+        "Attack Speed": 30,
+        "Health": 333,
+        "Ability Haste": 15
+      },
       "aliases": [
         "trinityforce",
         "triforce"
@@ -2585,9 +2586,6 @@
       "cost": 1000,
       "combineCost": 400,
       "sell": 700,
-      "stats": {
-        "Armor": 40
-      },
       "tags": [
         "Armor"
       ],
@@ -2601,6 +2599,9 @@
       ],
       "icon": "3082.png",
       "popularity": 94,
+      "stats": {
+        "Armor": 40
+      },
       "aliases": [
         "wardensmail"
       ]
@@ -2611,10 +2612,6 @@
       "cost": 3100,
       "combineCost": 500,
       "sell": 2170,
-      "stats": {
-        "Health": 1000,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "HealthRegen"
@@ -2630,7 +2627,11 @@
       "aliases": [
         "warmogsarmor",
         "warmogs"
-      ]
+      ],
+      "stats": {
+        "Health": 1000,
+        "Base Health Regen": 100
+      }
     },
     {
       "id": "3084",
@@ -2638,10 +2639,6 @@
       "cost": 3000,
       "combineCost": 400,
       "sell": 2100,
-      "stats": {
-        "Health": 900,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "HealthRegen"
@@ -2654,6 +2651,10 @@
       "into": [],
       "icon": "3084.png",
       "popularity": 63,
+      "stats": {
+        "Health": 900,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "heartsteel"
       ]
@@ -2664,11 +2665,6 @@
       "cost": 2650,
       "combineCost": 850,
       "sell": 1855,
-      "stats": {
-        "Attack Speed": 40,
-        "Critical Strike Chance": 25,
-        "Move Speed": 5
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -2682,6 +2678,11 @@
       "into": [],
       "icon": "3085.png",
       "popularity": 102,
+      "stats": {
+        "Attack Speed": 40,
+        "Critical Strike Chance": 25,
+        "Move Speed": 5
+      },
       "aliases": [
         "runaanshurricane"
       ]
@@ -2692,11 +2693,6 @@
       "cost": 1200,
       "combineCost": 350,
       "sell": 840,
-      "stats": {
-        "Attack Speed": 15,
-        "Critical Strike Chance": 15,
-        "Move Speed": 4
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -2715,6 +2711,11 @@
       ],
       "icon": "3086.png",
       "popularity": 45,
+      "stats": {
+        "Attack Speed": 15,
+        "Critical Strike Chance": 15,
+        "Move Speed": 4
+      },
       "aliases": [
         "zeal"
       ]
@@ -2725,12 +2726,6 @@
       "cost": 3000,
       "combineCost": 625,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 45,
-        "Ability Power": 45,
-        "Attack Speed": 30,
-        "Move Speed": 4
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -2746,6 +2741,12 @@
       "into": [],
       "icon": "3087.png",
       "popularity": 66,
+      "stats": {
+        "Attack Damage": 45,
+        "Ability Power": 45,
+        "Attack Speed": 30,
+        "Move Speed": 4
+      },
       "aliases": [
         "statikkshiv"
       ]
@@ -2756,9 +2757,6 @@
       "cost": 3500,
       "combineCost": 1100,
       "sell": 2450,
-      "stats": {
-        "Ability Power": 130
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -2774,7 +2772,10 @@
         "dc",
         "deathcap",
         "dcap"
-      ]
+      ],
+      "stats": {
+        "Ability Power": 130
+      }
     },
     {
       "id": "3091",
@@ -2782,11 +2783,6 @@
       "cost": 2800,
       "combineCost": 550,
       "sell": 1960,
-      "stats": {
-        "Attack Speed": 50,
-        "Magic Resist": 45,
-        "Tenacity": 20
-      },
       "tags": [
         "SpellBlock",
         "AttackSpeed",
@@ -2801,6 +2797,11 @@
       "into": [],
       "icon": "3091.png",
       "popularity": 99,
+      "stats": {
+        "Attack Speed": 50,
+        "Magic Resist": 45,
+        "Tenacity": 20
+      },
       "aliases": [
         "witsend"
       ]
@@ -2811,11 +2812,6 @@
       "cost": 2650,
       "combineCost": 850,
       "sell": 1855,
-      "stats": {
-        "Attack Speed": 35,
-        "Critical Strike Chance": 25,
-        "Move Speed": 4
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -2828,6 +2824,11 @@
       "into": [],
       "icon": "3094.png",
       "popularity": 67,
+      "stats": {
+        "Attack Speed": 35,
+        "Critical Strike Chance": 25,
+        "Move Speed": 4
+      },
       "aliases": [
         "rapidfirecannon",
         "rapidfire",
@@ -2840,11 +2841,6 @@
       "cost": 3200,
       "combineCost": 700,
       "sell": 2240,
-      "stats": {
-        "Attack Damage": 50,
-        "Attack Speed": 25,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -2859,6 +2855,11 @@
       "into": [],
       "icon": "3095.png",
       "popularity": 211,
+      "stats": {
+        "Attack Damage": 50,
+        "Attack Speed": 25,
+        "Critical Strike Chance": 25
+      },
       "aliases": [
         "stormrazor"
       ]
@@ -2869,11 +2870,6 @@
       "cost": 2900,
       "combineCost": 250,
       "sell": 2030,
-      "stats": {
-        "Ability Power": 100,
-        "Move Speed": 6,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "OnHit",
@@ -2888,6 +2884,11 @@
       "into": [],
       "icon": "3100.png",
       "popularity": 104,
+      "stats": {
+        "Ability Power": 100,
+        "Move Speed": 6,
+        "Ability Haste": 10
+      },
       "aliases": [
         "lichbane"
       ]
@@ -2898,10 +2899,6 @@
       "cost": 3000,
       "combineCost": 200,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 105,
-        "Magic Resist": 40
-      },
       "tags": [
         "SpellBlock",
         "SpellDamage"
@@ -2913,6 +2910,10 @@
       "into": [],
       "icon": "3102.png",
       "popularity": 90,
+      "stats": {
+        "Ability Power": 105,
+        "Magic Resist": 40
+      },
       "aliases": [
         "bansheesveil",
         "bv"
@@ -2924,12 +2925,6 @@
       "cost": 2300,
       "combineCost": 850,
       "sell": 1610,
-      "stats": {
-        "Ability Power": 30,
-        "Ability Haste": 15,
-        "Base Mana Regen": 100,
-        "Heal and Shield Power": 10
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen",
@@ -2943,6 +2938,12 @@
       "into": [],
       "icon": "3107.png",
       "popularity": 146,
+      "stats": {
+        "Ability Power": 30,
+        "Ability Haste": 15,
+        "Base Mana Regen": 100,
+        "Heal and Shield Power": 10
+      },
       "aliases": [
         "redemption"
       ]
@@ -2953,10 +2954,6 @@
       "cost": 850,
       "combineCost": 200,
       "sell": 595,
-      "stats": {
-        "Ability Power": 25,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "CooldownReduction",
@@ -2979,6 +2976,10 @@
       ],
       "icon": "3108.png",
       "popularity": 81,
+      "stats": {
+        "Ability Power": 25,
+        "Ability Haste": 10
+      },
       "aliases": [
         "fiendishcodex"
       ]
@@ -2989,12 +2990,6 @@
       "cost": 2300,
       "combineCost": 400,
       "sell": 1610,
-      "stats": {
-        "Health": 200,
-        "Armor": 40,
-        "Ability Haste": 10,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -3012,6 +3007,12 @@
       "into": [],
       "icon": "3109.png",
       "popularity": 149,
+      "stats": {
+        "Health": 200,
+        "Armor": 40,
+        "Ability Haste": 10,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "knightsvow"
       ]
@@ -3022,11 +3023,6 @@
       "cost": 2500,
       "combineCost": 600,
       "sell": 1750,
-      "stats": {
-        "Armor": 75,
-        "Mana": 400,
-        "Ability Haste": 20
-      },
       "tags": [
         "Armor",
         "Mana",
@@ -3041,6 +3037,11 @@
       "into": [],
       "icon": "3110.png",
       "popularity": 93,
+      "stats": {
+        "Armor": 75,
+        "Mana": 400,
+        "Ability Haste": 20
+      },
       "aliases": [
         "frozenheart",
         "fh"
@@ -3052,11 +3053,6 @@
       "cost": 1250,
       "combineCost": 550,
       "sell": 875,
-      "stats": {
-        "Magic Resist": 20,
-        "Move Speed": 45,
-        "Tenacity": 30
-      },
       "tags": [
         "Boots",
         "SpellBlock",
@@ -3075,7 +3071,12 @@
         "mercurystreads",
         "mercs",
         "merc"
-      ]
+      ],
+      "stats": {
+        "Magic Resist": 20,
+        "Move Speed": 45,
+        "Tenacity": 30
+      }
     },
     {
       "id": "3112",
@@ -3083,10 +3084,6 @@
       "cost": 950,
       "combineCost": 950,
       "sell": 665,
-      "stats": {
-        "Ability Power": 50,
-        "Health": 150
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -3097,6 +3094,10 @@
       "into": [],
       "icon": "3112.png",
       "popularity": 204,
+      "stats": {
+        "Ability Power": 50,
+        "Health": 150
+      },
       "aliases": [
         "guardiansorb"
       ]
@@ -3107,10 +3108,6 @@
       "cost": 900,
       "combineCost": 500,
       "sell": 630,
-      "stats": {
-        "Ability Power": 30,
-        "Move Speed": 4
-      },
       "tags": [
         "NonbootsMovement",
         "SpellDamage"
@@ -3128,6 +3125,10 @@
       ],
       "icon": "3113.png",
       "popularity": 156,
+      "stats": {
+        "Ability Power": 30,
+        "Move Speed": 4
+      },
       "aliases": [
         "aetherwisp"
       ]
@@ -3138,10 +3139,6 @@
       "cost": 600,
       "combineCost": 400,
       "sell": 420,
-      "stats": {
-        "Base Mana Regen": 50,
-        "Heal and Shield Power": 8
-      },
       "tags": [
         "ManaRegen"
       ],
@@ -3158,6 +3155,10 @@
       ],
       "icon": "3114.png",
       "popularity": 155,
+      "stats": {
+        "Base Mana Regen": 50,
+        "Heal and Shield Power": 8
+      },
       "aliases": [
         "forbiddenidol"
       ]
@@ -3168,11 +3169,6 @@
       "cost": 2900,
       "combineCost": 500,
       "sell": 2030,
-      "stats": {
-        "Ability Power": 80,
-        "Attack Speed": 50,
-        "Ability Haste": 15
-      },
       "tags": [
         "AttackSpeed",
         "SpellDamage",
@@ -3187,6 +3183,11 @@
       "into": [],
       "icon": "3115.png",
       "popularity": 101,
+      "stats": {
+        "Ability Power": 80,
+        "Attack Speed": 50,
+        "Ability Haste": 15
+      },
       "aliases": [
         "nashorstooth"
       ]
@@ -3197,10 +3198,6 @@
       "cost": 2600,
       "combineCost": 450,
       "sell": 1820,
-      "stats": {
-        "Ability Power": 65,
-        "Health": 400
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -3214,6 +3211,10 @@
       "into": [],
       "icon": "3116.png",
       "popularity": 114,
+      "stats": {
+        "Ability Power": 65,
+        "Health": 400
+      },
       "aliases": [
         "rylaiscrystalscepter"
       ]
@@ -3224,11 +3225,6 @@
       "cost": 2700,
       "combineCost": 650,
       "sell": 1890,
-      "stats": {
-        "Ability Power": 90,
-        "Mana": 600,
-        "Ability Haste": 15
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -3241,6 +3237,11 @@
       "into": [],
       "icon": "3118.png",
       "popularity": 106,
+      "stats": {
+        "Ability Power": 90,
+        "Mana": 600,
+        "Ability Haste": 15
+      },
       "aliases": [
         "malignance"
       ]
@@ -3251,11 +3252,6 @@
       "cost": 2400,
       "combineCost": 300,
       "sell": 1680,
-      "stats": {
-        "Health": 550,
-        "Mana": 500,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Mana",
@@ -3269,6 +3265,11 @@
       "into": [],
       "icon": "3119.png",
       "popularity": 167,
+      "stats": {
+        "Health": 550,
+        "Mana": 500,
+        "Ability Haste": 15
+      },
       "aliases": [
         "wintersapproach"
       ]
@@ -3279,9 +3280,6 @@
       "cost": 800,
       "combineCost": 450,
       "sell": 560,
-      "stats": {
-        "Attack Damage": 15
-      },
       "tags": [
         "Damage"
       ],
@@ -3294,6 +3292,9 @@
       ],
       "icon": "3123.png",
       "popularity": 84,
+      "stats": {
+        "Attack Damage": 15
+      },
       "aliases": [
         "executionerscalling"
       ]
@@ -3304,11 +3305,6 @@
       "cost": 3000,
       "combineCost": 1025,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 30,
-        "Ability Power": 30,
-        "Attack Speed": 25
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -3326,7 +3322,12 @@
       "aliases": [
         "guinsoosrageblade",
         "rageblade"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 30,
+        "Ability Power": 30,
+        "Attack Speed": 25
+      }
     },
     {
       "id": "3133",
@@ -3334,10 +3335,6 @@
       "cost": 1050,
       "combineCost": 100,
       "sell": 735,
-      "stats": {
-        "Attack Damage": 20,
-        "Ability Haste": 10
-      },
       "tags": [
         "Damage",
         "CooldownReduction",
@@ -3365,6 +3362,10 @@
       ],
       "icon": "3133.png",
       "popularity": 42,
+      "stats": {
+        "Attack Damage": 20,
+        "Ability Haste": 10
+      },
       "aliases": [
         "caulfieldswarhammer"
       ]
@@ -3375,10 +3376,6 @@
       "cost": 1000,
       "combineCost": 300,
       "sell": 700,
-      "stats": {
-        "Attack Damage": 20,
-        "Lethality": 10
-      },
       "tags": [
         "Damage",
         "ArmorPenetration"
@@ -3398,6 +3395,10 @@
       ],
       "icon": "3134.png",
       "popularity": 43,
+      "stats": {
+        "Attack Damage": 20,
+        "Lethality": 10
+      },
       "aliases": [
         "serrateddirk"
       ]
@@ -3408,10 +3409,6 @@
       "cost": 3000,
       "combineCost": 1050,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 95,
-        "Magic Penetration": 40
-      },
       "tags": [
         "MagicPenetration",
         "SpellDamage"
@@ -3423,6 +3420,10 @@
       "into": [],
       "icon": "3135.png",
       "popularity": 64,
+      "stats": {
+        "Ability Power": 95,
+        "Magic Penetration": 40
+      },
       "aliases": [
         "voidstaff"
       ]
@@ -3433,11 +3434,6 @@
       "cost": 3000,
       "combineCost": 200,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 75,
-        "Magic Penetration": 30,
-        "Ability Haste": 20
-      },
       "tags": [
         "SpellDamage",
         "MagicPenetration",
@@ -3451,6 +3447,11 @@
       "into": [],
       "icon": "3137.png",
       "popularity": 107,
+      "stats": {
+        "Ability Power": 75,
+        "Magic Penetration": 30,
+        "Ability Haste": 20
+      },
       "aliases": [
         "cryptbloom"
       ]
@@ -3461,11 +3462,6 @@
       "cost": 3200,
       "combineCost": 125,
       "sell": 2240,
-      "stats": {
-        "Attack Damage": 50,
-        "Magic Resist": 35,
-        "Life Steal": 10
-      },
       "tags": [
         "SpellBlock",
         "Damage",
@@ -3482,6 +3478,11 @@
       "into": [],
       "icon": "3139.png",
       "popularity": 164,
+      "stats": {
+        "Attack Damage": 50,
+        "Magic Resist": 35,
+        "Life Steal": 10
+      },
       "aliases": [
         "mercurialscimitar"
       ]
@@ -3492,9 +3493,6 @@
       "cost": 1300,
       "combineCost": 900,
       "sell": 910,
-      "stats": {
-        "Magic Resist": 30
-      },
       "tags": [
         "Active",
         "SpellBlock"
@@ -3507,6 +3505,9 @@
       ],
       "icon": "3140.png",
       "popularity": 163,
+      "stats": {
+        "Magic Resist": 30
+      },
       "aliases": [
         "quicksilversash",
         "qss"
@@ -3518,11 +3519,6 @@
       "cost": 2800,
       "combineCost": 675,
       "sell": 1960,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 18,
-        "Move Speed": 4
-      },
       "tags": [
         "Damage",
         "Active",
@@ -3541,7 +3537,12 @@
         "youmuusghostblade",
         "youmuus",
         "ghostblade"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 18,
+        "Move Speed": 4
+      }
     },
     {
       "id": "3143",
@@ -3549,10 +3550,6 @@
       "cost": 2700,
       "combineCost": 800,
       "sell": 1890,
-      "stats": {
-        "Health": 350,
-        "Armor": 75
-      },
       "tags": [
         "Health",
         "Armor",
@@ -3566,6 +3563,10 @@
       "into": [],
       "icon": "3143.png",
       "popularity": 92,
+      "stats": {
+        "Health": 350,
+        "Armor": 75
+      },
       "aliases": [
         "randuinsomen"
       ]
@@ -3576,9 +3577,6 @@
       "cost": 600,
       "combineCost": 100,
       "sell": 420,
-      "stats": {
-        "Attack Speed": 20
-      },
       "tags": [
         "AttackSpeed"
       ],
@@ -3596,6 +3594,9 @@
       ],
       "icon": "3144.png",
       "popularity": 86,
+      "stats": {
+        "Attack Speed": 20
+      },
       "aliases": [
         "scoutsslingshot"
       ]
@@ -3606,9 +3607,6 @@
       "cost": 1100,
       "combineCost": 300,
       "sell": 770,
-      "stats": {
-        "Ability Power": 45
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -3625,6 +3623,9 @@
       ],
       "icon": "3145.png",
       "popularity": 82,
+      "stats": {
+        "Ability Power": 45
+      },
       "aliases": [
         "hextechalternator"
       ]
@@ -3635,11 +3636,6 @@
       "cost": 3000,
       "combineCost": 600,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 80,
-        "Attack Damage": 40,
-        "Omnivamp": 10
-      },
       "tags": [
         "Damage",
         "LifeSteal",
@@ -3655,6 +3651,11 @@
       "into": [],
       "icon": "3146.png",
       "popularity": 119,
+      "stats": {
+        "Ability Power": 80,
+        "Attack Damage": 40,
+        "Omnivamp": 10
+      },
       "aliases": [
         "hextechgunblade"
       ]
@@ -3665,10 +3666,6 @@
       "cost": 1300,
       "combineCost": 500,
       "sell": 910,
-      "stats": {
-        "Ability Power": 30,
-        "Health": 200
-      },
       "tags": [
         "Health",
         "SpellDamage"
@@ -3684,6 +3681,10 @@
       ],
       "icon": "3147.png",
       "popularity": 176,
+      "stats": {
+        "Ability Power": 30,
+        "Health": 200
+      },
       "aliases": [
         "hauntingguise"
       ]
@@ -3694,11 +3695,6 @@
       "cost": 2650,
       "combineCost": 350,
       "sell": 1855,
-      "stats": {
-        "Ability Power": 60,
-        "Health": 350,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -3715,6 +3711,11 @@
       "into": [],
       "icon": "3152.png",
       "popularity": 118,
+      "stats": {
+        "Ability Power": 60,
+        "Health": 350,
+        "Ability Haste": 10
+      },
       "aliases": [
         "hextechrocketbelt",
         "rocketbelt"
@@ -3726,11 +3727,6 @@
       "cost": 3200,
       "combineCost": 725,
       "sell": 2240,
-      "stats": {
-        "Attack Damage": 40,
-        "Attack Speed": 25,
-        "Life Steal": 10
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -3746,6 +3742,11 @@
       "into": [],
       "icon": "3153.png",
       "popularity": 59,
+      "stats": {
+        "Attack Damage": 40,
+        "Attack Speed": 25,
+        "Life Steal": 10
+      },
       "aliases": [
         "bladeoftheruinedking",
         "brk",
@@ -3759,10 +3760,6 @@
       "cost": 1300,
       "combineCost": 200,
       "sell": 910,
-      "stats": {
-        "Attack Damage": 25,
-        "Magic Resist": 25
-      },
       "tags": [
         "Damage",
         "SpellBlock"
@@ -3777,6 +3774,10 @@
       ],
       "icon": "3155.png",
       "popularity": 98,
+      "stats": {
+        "Attack Damage": 25,
+        "Magic Resist": 25
+      },
       "aliases": [
         "hexdrinker"
       ]
@@ -3787,11 +3788,6 @@
       "cost": 3100,
       "combineCost": 750,
       "sell": 2170,
-      "stats": {
-        "Attack Damage": 60,
-        "Ability Haste": 15,
-        "Magic Resist": 40
-      },
       "tags": [
         "SpellBlock",
         "Damage",
@@ -3810,7 +3806,12 @@
         "mawofmalmortius",
         "maw",
         "malmortius"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 60,
+        "Ability Haste": 15,
+        "Magic Resist": 40
+      }
     },
     {
       "id": "3157",
@@ -3818,10 +3819,6 @@
       "cost": 3250,
       "combineCost": 450,
       "sell": 2275,
-      "stats": {
-        "Ability Power": 105,
-        "Armor": 50
-      },
       "tags": [
         "Armor",
         "SpellDamage",
@@ -3838,7 +3835,11 @@
         "zhonyashourglass",
         "zhonyas",
         "hourglass"
-      ]
+      ],
+      "stats": {
+        "Ability Power": 105,
+        "Armor": 50
+      }
     },
     {
       "id": "3158",
@@ -3846,10 +3847,6 @@
       "cost": 900,
       "combineCost": 350,
       "sell": 630,
-      "stats": {
-        "Ability Haste": 10,
-        "Move Speed": 45
-      },
       "tags": [
         "Boots",
         "CooldownReduction"
@@ -3866,7 +3863,11 @@
       "aliases": [
         "ionianbootsoflucidity",
         "lucidity"
-      ]
+      ],
+      "stats": {
+        "Ability Haste": 10,
+        "Move Speed": 45
+      }
     },
     {
       "id": "3161",
@@ -3874,10 +3875,6 @@
       "cost": 3100,
       "combineCost": 675,
       "sell": 2170,
-      "stats": {
-        "Attack Damage": 45,
-        "Health": 450
-      },
       "tags": [
         "Health",
         "Damage",
@@ -3894,7 +3891,12 @@
       "aliases": [
         "spearofshojin",
         "shojin"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 45,
+        "Health": 450,
+        "Ability Haste": 25
+      }
     },
     {
       "id": "3165",
@@ -3902,11 +3904,6 @@
       "cost": 2850,
       "combineCost": 400,
       "sell": 1995,
-      "stats": {
-        "Ability Power": 75,
-        "Health": 350,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -3921,6 +3918,11 @@
       "into": [],
       "icon": "3165.png",
       "popularity": 111,
+      "stats": {
+        "Ability Power": 75,
+        "Health": 350,
+        "Ability Haste": 15
+      },
       "aliases": [
         "morellonomicon"
       ]
@@ -3931,10 +3933,6 @@
       "cost": 1100,
       "combineCost": 0,
       "sell": 770,
-      "stats": {
-        "Move Speed": 45,
-        "Omnivamp": 4
-      },
       "tags": [
         "LifeSteal",
         "SpellVamp",
@@ -3946,6 +3944,10 @@
       "into": [],
       "icon": "3168.png",
       "popularity": 198,
+      "stats": {
+        "Move Speed": 45,
+        "Omnivamp": 4
+      },
       "aliases": [
         "immortalpath"
       ]
@@ -3956,9 +3958,6 @@
       "cost": 1000,
       "combineCost": 0,
       "sell": 700,
-      "stats": {
-        "Move Speed": 65
-      },
       "tags": [
         "Boots"
       ],
@@ -3968,6 +3967,9 @@
       "into": [],
       "icon": "3170.png",
       "popularity": 195,
+      "stats": {
+        "Move Speed": 65
+      },
       "aliases": [
         "swiftmarch"
       ]
@@ -3978,10 +3980,6 @@
       "cost": 900,
       "combineCost": 0,
       "sell": 630,
-      "stats": {
-        "Ability Haste": 20,
-        "Move Speed": 45
-      },
       "tags": [
         "CooldownReduction",
         "Boots"
@@ -3992,6 +3990,10 @@
       "into": [],
       "icon": "3171.png",
       "popularity": 196,
+      "stats": {
+        "Ability Haste": 20,
+        "Move Speed": 45
+      },
       "aliases": [
         "crimsonlucidity"
       ]
@@ -4002,11 +4004,6 @@
       "cost": 1100,
       "combineCost": 0,
       "sell": 770,
-      "stats": {
-        "Attack Speed": 45,
-        "Move Speed": 45,
-        "Life Steal": 5
-      },
       "tags": [
         "AttackSpeed",
         "LifeSteal",
@@ -4018,6 +4015,11 @@
       "into": [],
       "icon": "3172.png",
       "popularity": 191,
+      "stats": {
+        "Attack Speed": 45,
+        "Move Speed": 45,
+        "Life Steal": 5
+      },
       "aliases": [
         "gunmetalgreaves"
       ]
@@ -4028,11 +4030,6 @@
       "cost": 1250,
       "combineCost": 0,
       "sell": 875,
-      "stats": {
-        "Magic Resist": 25,
-        "Move Speed": 45,
-        "Tenacity": 30
-      },
       "tags": [
         "SpellBlock",
         "Boots",
@@ -4045,6 +4042,11 @@
       "into": [],
       "icon": "3173.png",
       "popularity": 192,
+      "stats": {
+        "Magic Resist": 25,
+        "Move Speed": 45,
+        "Tenacity": 30
+      },
       "aliases": [
         "chainlacedcrushers"
       ]
@@ -4055,10 +4057,6 @@
       "cost": 1200,
       "combineCost": 0,
       "sell": 840,
-      "stats": {
-        "Armor": 35,
-        "Move Speed": 45
-      },
       "tags": [
         "Armor",
         "Boots"
@@ -4069,6 +4067,10 @@
       "into": [],
       "icon": "3174.png",
       "popularity": 193,
+      "stats": {
+        "Armor": 35,
+        "Move Speed": 45
+      },
       "aliases": [
         "armoredadvance"
       ]
@@ -4079,10 +4081,6 @@
       "cost": 1100,
       "combineCost": 0,
       "sell": 770,
-      "stats": {
-        "Magic Penetration": 8,
-        "Move Speed": 45
-      },
       "tags": [
         "Boots",
         "MagicPenetration"
@@ -4093,6 +4091,10 @@
       "into": [],
       "icon": "3175.png",
       "popularity": 194,
+      "stats": {
+        "Magic Penetration": 8,
+        "Move Speed": 45
+      },
       "aliases": [
         "spellslingersshoes"
       ]
@@ -4103,11 +4105,6 @@
       "cost": 950,
       "combineCost": 950,
       "sell": 665,
-      "stats": {
-        "Attack Damage": 30,
-        "Health": 150,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Damage",
@@ -4118,6 +4115,11 @@
       "into": [],
       "icon": "3177.png",
       "popularity": 202,
+      "stats": {
+        "Attack Damage": 30,
+        "Health": 150,
+        "Ability Haste": 15
+      },
       "aliases": [
         "guardiansblade"
       ]
@@ -4128,11 +4130,6 @@
       "cost": 2800,
       "combineCost": 750,
       "sell": 1960,
-      "stats": {
-        "Attack Damage": 60,
-        "Lethality": 18,
-        "Ability Haste": 15
-      },
       "tags": [
         "Damage",
         "Vision",
@@ -4147,6 +4144,11 @@
       "into": [],
       "icon": "3179.png",
       "popularity": 131,
+      "stats": {
+        "Attack Damage": 60,
+        "Lethality": 18,
+        "Ability Haste": 15
+      },
       "aliases": [
         "umbralglaive"
       ]
@@ -4157,11 +4159,6 @@
       "cost": 3000,
       "combineCost": 175,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 40,
-        "Health": 500,
-        "Move Speed": 4
-      },
       "tags": [
         "Health",
         "Damage",
@@ -4175,6 +4172,11 @@
       "into": [],
       "icon": "3181.png",
       "popularity": 129,
+      "stats": {
+        "Attack Damage": 40,
+        "Health": 500,
+        "Move Speed": 4
+      },
       "aliases": [
         "hullbreaker"
       ]
@@ -4185,11 +4187,6 @@
       "cost": 950,
       "combineCost": 950,
       "sell": 665,
-      "stats": {
-        "Attack Damage": 25,
-        "Health": 150,
-        "Life Steal": 5
-      },
       "tags": [
         "Health",
         "Damage",
@@ -4200,6 +4197,11 @@
       "into": [],
       "icon": "3184.png",
       "popularity": 203,
+      "stats": {
+        "Attack Damage": 25,
+        "Health": 150,
+        "Life Steal": 5
+      },
       "aliases": [
         "guardianshammer"
       ]
@@ -4210,12 +4212,6 @@
       "cost": 2200,
       "combineCost": 700,
       "sell": 1540,
-      "stats": {
-        "Health": 200,
-        "Armor": 30,
-        "Magic Resist": 30,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -4233,6 +4229,12 @@
       "into": [],
       "icon": "3190.png",
       "popularity": 148,
+      "stats": {
+        "Health": 200,
+        "Armor": 30,
+        "Magic Resist": 30,
+        "Ability Haste": 10
+      },
       "aliases": [
         "locketoftheironsolari"
       ]
@@ -4243,11 +4245,6 @@
       "cost": 1250,
       "combineCost": 150,
       "sell": 875,
-      "stats": {
-        "Health": 200,
-        "Magic Resist": 35,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4265,6 +4262,11 @@
       ],
       "icon": "3211.png",
       "popularity": 161,
+      "stats": {
+        "Health": 200,
+        "Magic Resist": 35,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "spectrescowl"
       ]
@@ -4275,12 +4277,6 @@
       "cost": 2300,
       "combineCost": 900,
       "sell": 1610,
-      "stats": {
-        "Health": 250,
-        "Base Mana Regen": 100,
-        "Heal and Shield Power": 12,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "ManaRegen",
@@ -4296,6 +4292,12 @@
       "into": [],
       "icon": "3222.png",
       "popularity": 147,
+      "stats": {
+        "Health": 250,
+        "Base Mana Regen": 100,
+        "Heal and Shield Power": 12,
+        "Ability Haste": 15
+      },
       "aliases": [
         "mikaelsblessing"
       ]
@@ -4306,10 +4308,6 @@
       "cost": 3000,
       "combineCost": 1100,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 30,
-        "Attack Speed": 35
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -4324,6 +4322,10 @@
       "into": [],
       "icon": "3302.png",
       "popularity": 103,
+      "stats": {
+        "Attack Damage": 30,
+        "Attack Speed": 35
+      },
       "aliases": [
         "terminus"
       ]
@@ -4334,7 +4336,6 @@
       "cost": 0,
       "combineCost": 0,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Active",
         "Jungle",
@@ -4349,7 +4350,8 @@
       "aliases": [
         "stealthward",
         "ward"
-      ]
+      ],
+      "stats": {}
     },
     {
       "id": "3363",
@@ -4357,7 +4359,6 @@
       "cost": 0,
       "combineCost": 0,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Active",
         "Trinket",
@@ -4367,6 +4368,7 @@
       "into": [],
       "icon": "3363.png",
       "popularity": 23,
+      "stats": {},
       "aliases": [
         "farsightalteration"
       ]
@@ -4377,7 +4379,6 @@
       "cost": 0,
       "combineCost": 0,
       "sell": 0,
-      "stats": {},
       "tags": [
         "Active",
         "Trinket",
@@ -4387,6 +4388,7 @@
       "into": [],
       "icon": "3364.png",
       "popularity": 8,
+      "stats": {},
       "aliases": [
         "oraclelens",
         "lens"
@@ -4398,12 +4400,6 @@
       "cost": 2200,
       "combineCost": 700,
       "sell": 1540,
-      "stats": {
-        "Ability Power": 45,
-        "Heal and Shield Power": 10,
-        "Base Mana Regen": 125,
-        "Move Speed": 4
-      },
       "tags": [
         "AttackSpeed",
         "SpellDamage",
@@ -4417,6 +4413,12 @@
       "into": [],
       "icon": "3504.png",
       "popularity": 153,
+      "stats": {
+        "Ability Power": 45,
+        "Heal and Shield Power": 10,
+        "Base Mana Regen": 125,
+        "Move Speed": 4
+      },
       "aliases": [
         "ardentcenser"
       ]
@@ -4427,11 +4429,6 @@
       "cost": 3050,
       "combineCost": 500,
       "sell": 2135,
-      "stats": {
-        "Attack Damage": 50,
-        "Ability Haste": 20,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -4448,6 +4445,11 @@
       "into": [],
       "icon": "3508.png",
       "popularity": 166,
+      "stats": {
+        "Attack Damage": 50,
+        "Ability Haste": 20,
+        "Critical Strike Chance": 25
+      },
       "aliases": [
         "essencereaver"
       ]
@@ -4458,11 +4460,6 @@
       "cost": 2900,
       "combineCost": 900,
       "sell": 2030,
-      "stats": {
-        "Health": 350,
-        "Armor": 55,
-        "Move Speed": 4
-      },
       "tags": [
         "Health",
         "Armor",
@@ -4477,6 +4474,11 @@
       "into": [],
       "icon": "3742.png",
       "popularity": 95,
+      "stats": {
+        "Health": 350,
+        "Armor": 55,
+        "Move Speed": 4
+      },
       "aliases": [
         "deadmansplate"
       ]
@@ -4487,10 +4489,6 @@
       "cost": 3300,
       "combineCost": 50,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 40,
-        "Health": 600
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4505,6 +4503,10 @@
       "into": [],
       "icon": "3748.png",
       "popularity": 77,
+      "stats": {
+        "Attack Damage": 40,
+        "Health": 600
+      },
       "aliases": [
         "titanichydra"
       ]
@@ -4515,10 +4517,6 @@
       "cost": 800,
       "combineCost": 100,
       "sell": 560,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "HealthRegen"
@@ -4533,6 +4531,10 @@
       ],
       "icon": "3801.png",
       "popularity": 159,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "crystallinebracer"
       ]
@@ -4543,11 +4545,6 @@
       "cost": 1200,
       "combineCost": 250,
       "sell": 840,
-      "stats": {
-        "Ability Power": 40,
-        "Mana": 300,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -4569,6 +4566,11 @@
       ],
       "icon": "3802.png",
       "popularity": 38,
+      "stats": {
+        "Ability Power": 40,
+        "Mana": 300,
+        "Ability Haste": 10
+      },
       "aliases": [
         "lostchapter"
       ]
@@ -4579,10 +4581,6 @@
       "cost": 1300,
       "combineCost": 200,
       "sell": 910,
-      "stats": {
-        "Health": 300,
-        "Mana": 375
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4599,6 +4597,10 @@
       ],
       "icon": "3803.png",
       "popularity": 158,
+      "stats": {
+        "Health": 300,
+        "Mana": 375
+      },
       "aliases": [
         "catalystofaeons"
       ]
@@ -4609,11 +4611,6 @@
       "cost": 3000,
       "combineCost": 850,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 50,
-        "Lethality": 15,
-        "Health": 250
-      },
       "tags": [
         "Health",
         "Damage",
@@ -4626,6 +4623,11 @@
       "into": [],
       "icon": "3814.png",
       "popularity": 130,
+      "stats": {
+        "Attack Damage": 50,
+        "Lethality": 15,
+        "Health": 250
+      },
       "aliases": [
         "edgeofnight"
       ]
@@ -4636,7 +4638,6 @@
       "cost": 400,
       "combineCost": 400,
       "sell": 160,
-      "stats": {},
       "tags": [
         "Health",
         "ManaRegen",
@@ -4648,6 +4649,7 @@
       "into": [],
       "icon": "3865.png",
       "popularity": 18,
+      "stats": {},
       "aliases": [
         "worldatlas"
       ]
@@ -4658,12 +4660,6 @@
       "cost": 400,
       "combineCost": 0,
       "sell": 160,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4676,6 +4672,12 @@
       "into": [],
       "icon": "3869.png",
       "popularity": 138,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "celestialopposition"
       ]
@@ -4686,12 +4688,6 @@
       "cost": 400,
       "combineCost": 0,
       "sell": 160,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4704,6 +4700,12 @@
       "into": [],
       "icon": "3870.png",
       "popularity": 139,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "dreammaker"
       ]
@@ -4714,12 +4716,6 @@
       "cost": 400,
       "combineCost": 0,
       "sell": 160,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4732,6 +4728,12 @@
       "into": [],
       "icon": "3871.png",
       "popularity": 140,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "zazzaksrealmspike"
       ]
@@ -4742,12 +4744,6 @@
       "cost": 400,
       "combineCost": 0,
       "sell": 160,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4760,6 +4756,12 @@
       "into": [],
       "icon": "3876.png",
       "popularity": 141,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "solsticesleigh"
       ]
@@ -4770,12 +4772,6 @@
       "cost": 400,
       "combineCost": 0,
       "sell": 160,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -4788,6 +4784,12 @@
       "into": [],
       "icon": "3877.png",
       "popularity": 137,
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "bloodsong"
       ]
@@ -4798,9 +4800,6 @@
       "cost": 800,
       "combineCost": 400,
       "sell": 560,
-      "stats": {
-        "Ability Power": 25
-      },
       "tags": [
         "SpellDamage"
       ],
@@ -4812,6 +4811,9 @@
       ],
       "icon": "3916.png",
       "popularity": 112,
+      "stats": {
+        "Ability Power": 25
+      },
       "aliases": [
         "oblivionorb"
       ]
@@ -4822,11 +4824,6 @@
       "cost": 2400,
       "combineCost": 700,
       "sell": 1680,
-      "stats": {
-        "Ability Power": 60,
-        "Ability Haste": 15,
-        "Base Mana Regen": 150
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen",
@@ -4841,6 +4838,11 @@
       "into": [],
       "icon": "4005.png",
       "popularity": 152,
+      "stats": {
+        "Ability Power": 60,
+        "Ability Haste": 15,
+        "Base Mana Regen": 150
+      },
       "aliases": [
         "imperialmandate"
       ]
@@ -4851,11 +4853,6 @@
       "cost": 2800,
       "combineCost": 750,
       "sell": 1960,
-      "stats": {
-        "Health": 400,
-        "Magic Resist": 55,
-        "Move Speed": 4
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -4869,6 +4866,11 @@
       "into": [],
       "icon": "4401.png",
       "popularity": 96,
+      "stats": {
+        "Health": 400,
+        "Magic Resist": 55,
+        "Move Speed": 4
+      },
       "aliases": [
         "forceofnature",
         "fon"
@@ -4880,10 +4882,6 @@
       "cost": 2700,
       "combineCost": 600,
       "sell": 1890,
-      "stats": {
-        "Ability Power": 75,
-        "Ability Haste": 25
-      },
       "tags": [
         "SpellDamage",
         "AbilityHaste"
@@ -4896,6 +4894,10 @@
       "into": [],
       "icon": "4628.png",
       "popularity": 115,
+      "stats": {
+        "Ability Power": 75,
+        "Ability Haste": 25
+      },
       "aliases": [
         "horizonfocus"
       ]
@@ -4906,12 +4908,6 @@
       "cost": 3000,
       "combineCost": 450,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 70,
-        "Health": 350,
-        "Ability Haste": 25,
-        "Move Speed": 4
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -4926,6 +4922,12 @@
       "into": [],
       "icon": "4629.png",
       "popularity": 116,
+      "stats": {
+        "Ability Power": 70,
+        "Health": 350,
+        "Ability Haste": 25,
+        "Move Speed": 4
+      },
       "aliases": [
         "cosmicdrive"
       ]
@@ -4936,10 +4938,6 @@
       "cost": 1100,
       "combineCost": 700,
       "sell": 770,
-      "stats": {
-        "Ability Power": 25,
-        "Magic Penetration": 13
-      },
       "tags": [
         "MagicPenetration",
         "SpellDamage"
@@ -4953,6 +4951,10 @@
       ],
       "icon": "4630.png",
       "popularity": 120,
+      "stats": {
+        "Ability Power": 25,
+        "Magic Penetration": 13
+      },
       "aliases": [
         "blightingjewel"
       ]
@@ -4963,10 +4965,6 @@
       "cost": 1600,
       "combineCost": 400,
       "sell": 1120,
-      "stats": {
-        "Ability Power": 40,
-        "Magic Resist": 25
-      },
       "tags": [
         "SpellBlock",
         "SpellDamage"
@@ -4981,6 +4979,10 @@
       ],
       "icon": "4632.png",
       "popularity": 157,
+      "stats": {
+        "Ability Power": 40,
+        "Magic Resist": 25
+      },
       "aliases": [
         "verdantbarrier"
       ]
@@ -4991,11 +4993,6 @@
       "cost": 3100,
       "combineCost": 950,
       "sell": 2170,
-      "stats": {
-        "Ability Power": 70,
-        "Health": 350,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -5009,6 +5006,11 @@
       "into": [],
       "icon": "4633.png",
       "popularity": 117,
+      "stats": {
+        "Ability Power": 70,
+        "Health": 350,
+        "Ability Haste": 15
+      },
       "aliases": [
         "riftmaker"
       ]
@@ -5019,11 +5021,6 @@
       "cost": 900,
       "combineCost": 50,
       "sell": 630,
-      "stats": {
-        "Ability Power": 20,
-        "Base Mana Regen": 100,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen",
@@ -5043,6 +5040,11 @@
       ],
       "icon": "4642.png",
       "popularity": 154,
+      "stats": {
+        "Ability Power": 20,
+        "Base Mana Regen": 100,
+        "Ability Haste": 10
+      },
       "aliases": [
         "bandleglassmirror"
       ]
@@ -5053,10 +5055,6 @@
       "cost": 3200,
       "combineCost": 900,
       "sell": 2240,
-      "stats": {
-        "Ability Power": 110,
-        "Magic Penetration": 15
-      },
       "tags": [
         "SpellDamage",
         "MagicPenetration"
@@ -5068,6 +5066,10 @@
       "into": [],
       "icon": "4645.png",
       "popularity": 65,
+      "stats": {
+        "Ability Power": 110,
+        "Magic Penetration": 15
+      },
       "aliases": [
         "shadowflame"
       ]
@@ -5078,11 +5080,6 @@
       "cost": 2800,
       "combineCost": 800,
       "sell": 1960,
-      "stats": {
-        "Ability Power": 90,
-        "Magic Penetration": 15,
-        "Move Speed": 6
-      },
       "tags": [
         "SpellDamage",
         "GoldPer",
@@ -5096,6 +5093,11 @@
       "into": [],
       "icon": "4646.png",
       "popularity": 105,
+      "stats": {
+        "Ability Power": 90,
+        "Magic Penetration": 15,
+        "Move Speed": 6
+      },
       "aliases": [
         "stormsurge"
       ]
@@ -5106,11 +5108,6 @@
       "cost": 3300,
       "combineCost": 275,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 60,
-        "Armor": 50,
-        "Ability Haste": 15
-      },
       "tags": [
         "Armor",
         "Damage",
@@ -5127,7 +5124,12 @@
       "aliases": [
         "deathsdance",
         "dd"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 60,
+        "Armor": 50,
+        "Ability Haste": 15
+      }
     },
     {
       "id": "6609",
@@ -5135,11 +5137,6 @@
       "cost": 3000,
       "combineCost": 250,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 45,
-        "Health": 450,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Damage",
@@ -5154,6 +5151,11 @@
       "into": [],
       "icon": "6609.png",
       "popularity": 136,
+      "stats": {
+        "Attack Damage": 45,
+        "Health": 450,
+        "Ability Haste": 15
+      },
       "aliases": [
         "chempunkchainsword"
       ]
@@ -5164,11 +5166,6 @@
       "cost": 3100,
       "combineCost": 900,
       "sell": 2170,
-      "stats": {
-        "Attack Damage": 40,
-        "Health": 400,
-        "Ability Haste": 10
-      },
       "tags": [
         "Health",
         "Damage",
@@ -5185,7 +5182,12 @@
       "aliases": [
         "sunderedsky",
         "sky"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 40,
+        "Health": 400,
+        "Ability Haste": 10
+      }
     },
     {
       "id": "6616",
@@ -5193,12 +5195,6 @@
       "cost": 2250,
       "combineCost": 800,
       "sell": 1575,
-      "stats": {
-        "Ability Power": 35,
-        "Heal and Shield Power": 10,
-        "Base Mana Regen": 125,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen",
@@ -5212,6 +5208,12 @@
       "into": [],
       "icon": "6616.png",
       "popularity": 143,
+      "stats": {
+        "Ability Power": 35,
+        "Heal and Shield Power": 10,
+        "Base Mana Regen": 125,
+        "Ability Haste": 10
+      },
       "aliases": [
         "staffofflowingwater"
       ]
@@ -5222,12 +5224,6 @@
       "cost": 2200,
       "combineCost": 500,
       "sell": 1540,
-      "stats": {
-        "Ability Power": 25,
-        "Health": 200,
-        "Ability Haste": 20,
-        "Base Mana Regen": 125
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -5242,6 +5238,12 @@
       "into": [],
       "icon": "6617.png",
       "popularity": 142,
+      "stats": {
+        "Ability Power": 25,
+        "Health": 200,
+        "Ability Haste": 20,
+        "Base Mana Regen": 125
+      },
       "aliases": [
         "moonstonerenewer"
       ]
@@ -5252,12 +5254,6 @@
       "cost": 2200,
       "combineCost": 500,
       "sell": 1540,
-      "stats": {
-        "Ability Power": 35,
-        "Health": 200,
-        "Ability Haste": 20,
-        "Base Mana Regen": 125
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -5275,7 +5271,13 @@
       "aliases": [
         "echoesofhelia",
         "helia"
-      ]
+      ],
+      "stats": {
+        "Ability Power": 35,
+        "Health": 200,
+        "Ability Haste": 20,
+        "Base Mana Regen": 125
+      }
     },
     {
       "id": "6621",
@@ -5283,11 +5285,6 @@
       "cost": 2500,
       "combineCost": 450,
       "sell": 1750,
-      "stats": {
-        "Ability Power": 45,
-        "Heal and Shield Power": 16,
-        "Base Mana Regen": 100
-      },
       "tags": [
         "SpellDamage",
         "ManaRegen"
@@ -5300,6 +5297,11 @@
       "into": [],
       "icon": "6621.png",
       "popularity": 145,
+      "stats": {
+        "Ability Power": 45,
+        "Heal and Shield Power": 16,
+        "Base Mana Regen": 100
+      },
       "aliases": [
         "dawncore"
       ]
@@ -5310,11 +5312,6 @@
       "cost": 3300,
       "combineCost": 750,
       "sell": 2310,
-      "stats": {
-        "Attack Damage": 40,
-        "Attack Speed": 25,
-        "Health": 450
-      },
       "tags": [
         "Health",
         "Damage",
@@ -5329,6 +5326,11 @@
       "into": [],
       "icon": "6631.png",
       "popularity": 128,
+      "stats": {
+        "Attack Damage": 40,
+        "Attack Speed": 25,
+        "Health": 450
+      },
       "aliases": [
         "stridebreaker"
       ]
@@ -5339,10 +5341,6 @@
       "cost": 3000,
       "combineCost": 800,
       "sell": 2100,
-      "stats": {
-        "Ability Power": 60,
-        "Health": 300
-      },
       "tags": [
         "Health",
         "SpellDamage"
@@ -5354,6 +5352,10 @@
       "into": [],
       "icon": "6653.png",
       "popularity": 54,
+      "stats": {
+        "Ability Power": 60,
+        "Health": 300
+      },
       "aliases": [
         "liandrystorment"
       ]
@@ -5364,11 +5366,6 @@
       "cost": 2750,
       "combineCost": 450,
       "sell": 1925,
-      "stats": {
-        "Ability Power": 100,
-        "Mana": 600,
-        "Ability Haste": 10
-      },
       "tags": [
         "SpellDamage",
         "Mana",
@@ -5382,6 +5379,11 @@
       "into": [],
       "icon": "6655.png",
       "popularity": 55,
+      "stats": {
+        "Ability Power": 100,
+        "Mana": 600,
+        "Ability Haste": 10
+      },
       "aliases": [
         "ludensecho"
       ]
@@ -5392,11 +5394,6 @@
       "cost": 2600,
       "combineCost": 450,
       "sell": 1820,
-      "stats": {
-        "Ability Power": 45,
-        "Health": 350,
-        "Mana": 500
-      },
       "tags": [
         "Health",
         "HealthRegen",
@@ -5411,6 +5408,11 @@
       "into": [],
       "icon": "6657.png",
       "popularity": 108,
+      "stats": {
+        "Ability Power": 45,
+        "Health": 350,
+        "Mana": 500
+      },
       "aliases": [
         "rodofages"
       ]
@@ -5421,10 +5423,6 @@
       "cost": 900,
       "combineCost": 250,
       "sell": 630,
-      "stats": {
-        "Health": 150,
-        "Ability Haste": 5
-      },
       "tags": [
         "Health",
         "AbilityHaste"
@@ -5439,6 +5437,10 @@
       ],
       "icon": "6660.png",
       "popularity": 169,
+      "stats": {
+        "Health": 150,
+        "Ability Haste": 5
+      },
       "aliases": [
         "bamiscinder"
       ]
@@ -5449,11 +5451,6 @@
       "cost": 2900,
       "combineCost": 800,
       "sell": 2030,
-      "stats": {
-        "Health": 300,
-        "Armor": 50,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "Armor",
@@ -5470,6 +5467,11 @@
       "into": [],
       "icon": "6662.png",
       "popularity": 125,
+      "stats": {
+        "Health": 300,
+        "Armor": 50,
+        "Ability Haste": 15
+      },
       "aliases": [
         "iceborngauntlet"
       ]
@@ -5480,12 +5482,6 @@
       "cost": 2800,
       "combineCost": 650,
       "sell": 1960,
-      "stats": {
-        "Health": 400,
-        "Magic Resist": 40,
-        "Ability Haste": 10,
-        "Base Health Regen": 100
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -5501,6 +5497,12 @@
       "into": [],
       "icon": "6664.png",
       "popularity": 124,
+      "stats": {
+        "Health": 400,
+        "Magic Resist": 40,
+        "Ability Haste": 10,
+        "Base Health Regen": 100
+      },
       "aliases": [
         "hollowradiance"
       ]
@@ -5511,11 +5513,6 @@
       "cost": 3200,
       "combineCost": 650,
       "sell": 2240,
-      "stats": {
-        "Health": 350,
-        "Armor": 45,
-        "Magic Resist": 45
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -5533,7 +5530,12 @@
       "aliases": [
         "jakshotheprotean",
         "jaksho"
-      ]
+      ],
+      "stats": {
+        "Health": 350,
+        "Armor": 45,
+        "Magic Resist": 45
+      }
     },
     {
       "id": "6670",
@@ -5541,10 +5543,6 @@
       "cost": 1300,
       "combineCost": 350,
       "sell": 910,
-      "stats": {
-        "Attack Damage": 15,
-        "Critical Strike Chance": 20
-      },
       "tags": [
         "Damage",
         "CriticalStrike"
@@ -5560,6 +5558,10 @@
       ],
       "icon": "6670.png",
       "popularity": 87,
+      "stats": {
+        "Attack Damage": 15,
+        "Critical Strike Chance": 20
+      },
       "aliases": [
         "noonquiver"
       ]
@@ -5570,11 +5572,6 @@
       "cost": 3000,
       "combineCost": 325,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 45,
-        "Attack Speed": 40,
-        "Move Speed": 4
-      },
       "tags": [
         "Damage",
         "AttackSpeed",
@@ -5589,6 +5586,11 @@
       "into": [],
       "icon": "6672.png",
       "popularity": 49,
+      "stats": {
+        "Attack Damage": 45,
+        "Attack Speed": 40,
+        "Move Speed": 4
+      },
       "aliases": [
         "krakenslayer"
       ]
@@ -5599,10 +5601,6 @@
       "cost": 3000,
       "combineCost": 825,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 55,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike"
@@ -5617,7 +5615,11 @@
       "aliases": [
         "immortalshieldbow",
         "shieldbow"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 55,
+        "Critical Strike Chance": 25
+      }
     },
     {
       "id": "6675",
@@ -5625,11 +5627,6 @@
       "cost": 2650,
       "combineCost": 950,
       "sell": 1855,
-      "stats": {
-        "Attack Speed": 40,
-        "Critical Strike Chance": 25,
-        "Move Speed": 4
-      },
       "tags": [
         "CriticalStrike",
         "AttackSpeed",
@@ -5646,7 +5643,12 @@
       "aliases": [
         "navoriflickerblade",
         "navori"
-      ]
+      ],
+      "stats": {
+        "Attack Speed": 40,
+        "Critical Strike Chance": 25,
+        "Move Speed": 4
+      }
     },
     {
       "id": "6676",
@@ -5654,11 +5656,6 @@
       "cost": 3000,
       "combineCost": 525,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 50,
-        "Lethality": 10,
-        "Critical Strike Chance": 25
-      },
       "tags": [
         "Damage",
         "CriticalStrike",
@@ -5675,7 +5672,12 @@
       "aliases": [
         "thecollector",
         "collector"
-      ]
+      ],
+      "stats": {
+        "Attack Damage": 50,
+        "Lethality": 10,
+        "Critical Strike Chance": 25
+      }
     },
     {
       "id": "6690",
@@ -5683,10 +5685,6 @@
       "cost": 775,
       "combineCost": 425,
       "sell": 543,
-      "stats": {
-        "Attack Damage": 15,
-        "Move Speed": 4
-      },
       "tags": [
         "Damage",
         "NonbootsMovement"
@@ -5700,6 +5698,10 @@
       ],
       "icon": "6690.png",
       "popularity": 173,
+      "stats": {
+        "Attack Damage": 15,
+        "Move Speed": 4
+      },
       "aliases": [
         "rectrix"
       ]
@@ -5710,10 +5712,6 @@
       "cost": 2900,
       "combineCost": 625,
       "sell": 2030,
-      "stats": {
-        "Attack Damage": 60,
-        "Ability Haste": 15
-      },
       "tags": [
         "Damage",
         "CooldownReduction",
@@ -5727,6 +5725,10 @@
       "into": [],
       "icon": "6692.png",
       "popularity": 74,
+      "stats": {
+        "Attack Damage": 60,
+        "Ability Haste": 15
+      },
       "aliases": [
         "eclipse"
       ]
@@ -5737,11 +5739,6 @@
       "cost": 3000,
       "combineCost": 500,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 45,
-        "Armor Penetration": 35,
-        "Ability Haste": 15
-      },
       "tags": [
         "Damage",
         "CooldownReduction",
@@ -5755,6 +5752,11 @@
       "into": [],
       "icon": "6694.png",
       "popularity": 132,
+      "stats": {
+        "Attack Damage": 45,
+        "Armor Penetration": 35,
+        "Ability Haste": 15
+      },
       "aliases": [
         "seryldasgrudge"
       ]
@@ -5765,10 +5767,6 @@
       "cost": 2500,
       "combineCost": 625,
       "sell": 1750,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 15
-      },
       "tags": [
         "Damage",
         "ArmorPenetration"
@@ -5780,6 +5778,10 @@
       "into": [],
       "icon": "6695.png",
       "popularity": 135,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 15
+      },
       "aliases": [
         "serpentsfang"
       ]
@@ -5790,11 +5792,6 @@
       "cost": 2750,
       "combineCost": 363,
       "sell": 1925,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 18,
-        "Ability Haste": 20
-      },
       "tags": [
         "Damage",
         "ArmorPenetration",
@@ -5807,6 +5804,11 @@
       "into": [],
       "icon": "6696.png",
       "popularity": 133,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 18,
+        "Ability Haste": 20
+      },
       "aliases": [
         "axiomarc"
       ]
@@ -5817,11 +5819,6 @@
       "cost": 2800,
       "combineCost": 750,
       "sell": 1960,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 18,
-        "Ability Haste": 10
-      },
       "tags": [
         "Damage",
         "Active",
@@ -5836,6 +5833,11 @@
       "into": [],
       "icon": "6697.png",
       "popularity": 75,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 18,
+        "Ability Haste": 10
+      },
       "aliases": [
         "hubris"
       ]
@@ -5846,11 +5848,6 @@
       "cost": 2850,
       "combineCost": 313,
       "sell": 1995,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 18,
-        "Ability Haste": 10
-      },
       "tags": [
         "Damage",
         "Active",
@@ -5865,6 +5862,11 @@
       "into": [],
       "icon": "6698.png",
       "popularity": 78,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 18,
+        "Ability Haste": 10
+      },
       "aliases": [
         "profanehydra"
       ]
@@ -5875,11 +5877,6 @@
       "cost": 3000,
       "combineCost": 963,
       "sell": 2100,
-      "stats": {
-        "Attack Damage": 55,
-        "Lethality": 10,
-        "Ability Haste": 10
-      },
       "tags": [
         "Damage",
         "Active",
@@ -5895,6 +5892,11 @@
       "into": [],
       "icon": "6699.png",
       "popularity": 134,
+      "stats": {
+        "Attack Damage": 55,
+        "Lethality": 10,
+        "Ability Haste": 10
+      },
       "aliases": [
         "voltaiccyclosword"
       ]
@@ -5905,11 +5907,6 @@
       "cost": 2900,
       "combineCost": 750,
       "sell": 2030,
-      "stats": {
-        "Ability Power": 65,
-        "Health": 400,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "SpellDamage",
@@ -5923,6 +5920,11 @@
       "into": [],
       "icon": "8010.png",
       "popularity": 178,
+      "stats": {
+        "Ability Power": 65,
+        "Health": 400,
+        "Ability Haste": 15
+      },
       "aliases": [
         "bloodletterscurse"
       ]
@@ -5933,11 +5935,6 @@
       "cost": 2650,
       "combineCost": 1000,
       "sell": 1855,
-      "stats": {
-        "Health": 350,
-        "Magic Resist": 45,
-        "Ability Haste": 15
-      },
       "tags": [
         "Health",
         "SpellBlock",
@@ -5952,6 +5949,11 @@
       "into": [],
       "icon": "8020.png",
       "popularity": 179,
+      "stats": {
+        "Health": 350,
+        "Magic Resist": 45,
+        "Ability Haste": 15
+      },
       "aliases": [
         "abyssalmask"
       ]
