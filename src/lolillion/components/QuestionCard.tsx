@@ -23,16 +23,20 @@ export function Progress({ done, total }: { done: number; total: number }) {
 }
 
 const LOW_TIME_S = 5;
+const ANNOUNCE_AT = [10, 5];
 
 export default function QuestionCard({ question, index, total, remaining, entries, onSubmit }: Props) {
   const seconds = Math.ceil(remaining / 1000);
+  const promptId = `prompt-${question.id}`;
   return (
     <div>
       <Progress done={index} total={total} />
       <p className="mt-5 text-xs tracking-[0.14em] text-accent uppercase">
         {question.pool === 'champion' ? 'Champion' : 'Item'} · {index + 1} of {total}
       </p>
-      <h1 className="lol-display mt-1 mb-5 text-[clamp(1.5rem,6vw,2rem)] leading-tight font-semibold">{question.prompt}</h1>
+      <h1 id={promptId} className="lol-display mt-1 mb-5 text-[clamp(1.5rem,6vw,2rem)] leading-tight font-semibold">
+        {question.prompt}
+      </h1>
       <div
         className="h-1.5 overflow-hidden rounded-full bg-line"
         role="progressbar"
@@ -51,7 +55,11 @@ export default function QuestionCard({ question, index, total, remaining, entrie
       >
         {seconds}s
       </p>
-      <AnswerInput key={question.id} pool={question.pool} entries={entries} onSubmit={onSubmit} />
+      {/* Spoken only at a few points, so screen readers aren't flooded every second. */}
+      <p className="sr-only" aria-live="polite">
+        {ANNOUNCE_AT.includes(seconds) ? `${seconds} seconds left` : ''}
+      </p>
+      <AnswerInput key={question.id} pool={question.pool} entries={entries} onSubmit={onSubmit} describedBy={promptId} />
     </div>
   );
 }

@@ -8,10 +8,12 @@ interface Props {
   pool: Question['pool'];
   entries: readonly Entry[];
   onSubmit: (entry: Entry, input: string) => void;
+  /** Id of the prompt text, read out when the input gets focus. */
+  describedBy: string;
 }
 
 /** Combobox over every entry in the pool, so suggestions never reveal which answers are right. */
-export default function AnswerInput({ pool, entries, onSubmit }: Props) {
+export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Props) {
   const id = useId();
   const [input, setInput] = useState('');
   // -1 means "whatever Enter would match", which may be nothing when two spellings tie.
@@ -56,7 +58,7 @@ export default function AnswerInput({ pool, entries, onSubmit }: Props) {
         aria-controls={listId}
         aria-autocomplete="list"
         aria-activedescendant={highlightedIndex >= 0 ? optionId(highlightedIndex) : undefined}
-        aria-describedby={`${id}-hint`}
+        aria-describedby={`${describedBy} ${id}-hint`}
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}

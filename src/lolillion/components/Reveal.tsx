@@ -25,19 +25,32 @@ export default function Reveal({ question, entry, index, total, onNext }: Props)
     <div className="text-center">
       <Progress done={index + 1} total={total} />
       <p className="mt-5 text-xs tracking-[0.14em] text-accent uppercase">{question.prompt}</p>
-      <p className="mt-4 flex items-center justify-center gap-3 text-lg font-bold">
+      <p id="reveal-answer" className="mt-4 flex items-center justify-center gap-3 text-lg font-bold">
         {entry && <img src={iconUrl(question.pool, entry.icon)} alt="" width={40} height={40} />}
         {entry ? entry.name : "Time's up"}
       </p>
       <div className="mt-4">
         <TierBadge tier={tier?.name ?? null} />
       </div>
-      <h1 className="lol-display mt-2 text-2xl font-bold" style={{ color: colour }}>
+      <h1 id="reveal-tier" className="lol-display mt-2 text-2xl font-bold" style={{ color: colour }}>
         {heading}
       </h1>
-      <p className="lol-display my-1 text-4xl font-bold">+{points} LP</p>
-      {tier && entry && <p className="text-muted">{rarityLine(rarityPercent(question, entry.id))}</p>}
-      <button type="button" className="lol-button mt-8" onClick={onNext} autoFocus>
+      <p id="reveal-lp" className="lol-display my-1 text-4xl font-bold">
+        +{points} LP
+      </p>
+      {tier && entry && (
+        <p id="reveal-rarity" className="text-muted">
+          {rarityLine(rarityPercent(question, entry.id))}
+        </p>
+      )}
+      {/* Focus lands on the button, so it carries the outcome for screen readers. */}
+      <button
+        type="button"
+        className="lol-button mt-8"
+        onClick={onNext}
+        autoFocus
+        aria-describedby={`reveal-answer reveal-tier reveal-lp${tier && entry ? ' reveal-rarity' : ''}`}
+      >
         {index + 1 === total ? 'See results' : 'Next prompt'}
       </button>
     </div>

@@ -9,6 +9,7 @@ import {
   expireIfTimedOut,
   finishDay,
   isFinished,
+  mergeProgress,
   recordAnswer,
   remainingMs,
   startPrompt,
@@ -46,6 +47,31 @@ export default function Game() {
 
   useEffect(() => writeJson(`day:${day}`, progress), [day, progress]);
 
+  // Another tab playing the same day: adopt whichever copy is further along so prompts can't be replayed.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (!e.newValue) return;
+      try {
+        if (e.key === `lolillion:day:${day}`) setProgress((p) => mergeProgress(p, JSON.parse(e.newValue!)));
+        if (e.key === 'lolillion:stats') {
+          const other: Stats = JSON.parse(e.newValue);
+          setStats((s) => (other.played > s.played ? other : s));
+        }
+      } catch {
+        // A malformed value from elsewhere is ignored.
+      }
+    };
+    addEventListener('storage', onStorage);
+    return () => removeEventListener('storage', onStorage);
+  }, [day]);
+
+  /** Applies an action only if no other tab has moved today's game on in the meantime. */
+  const act = (action: (p: DayProgress) => DayProgress) =>
+    setProgress((p) => {
+      const latest = mergeProgress(p, readJson(`day:${day}`, p));
+      return latest === p ? action(p) : latest;
+    });
+
   useEffect(() => {
     if (!finished) return;
     setStats((s) => {
@@ -63,13 +89,13 @@ export default function Game() {
   }, [asking, progress, now]);
 
   const submit = (entry: Entry, input: string) => {
-    setProgress((p) => recordAnswer(p, entry.id, input));
+    act((p) => recordAnswer(p, entry.id, input));
     setRevealing(true);
   };
 
   const next = () => {
     setRevealing(false);
-    if (!finished) setProgress((p) => startPrompt(p, Date.now()));
+    if (!finished) act((p) => startPrompt(p, Date.now()));
   };
 
   const index = progress.answers.length;
@@ -107,7 +133,7 @@ export default function Game() {
         played={stats.played}
         best={stats.best}
         resuming={index > 0}
-        onPlay={() => setProgress((p) => startPrompt(p, Date.now()))}
+        onPlay={() => act((p) => startPrompt(p, Date.now()))}
       />
     );
   }

@@ -31,8 +31,16 @@ export function startPrompt(p: DayProgress, now: number): DayProgress {
   return { ...p, startedAt: now };
 }
 
+/** Records the answer to the running prompt; does nothing when no prompt is running (e.g. it already timed out). */
 export function recordAnswer(p: DayProgress, entryId: string | null, input: string): DayProgress {
+  if (p.startedAt === null) return p;
   return { answers: [...p.answers, { entryId, input }], startedAt: null };
+}
+
+/** Two tabs can hold different copies of today; the one further along wins, so no prompt can be replayed. */
+export function mergeProgress(a: DayProgress, b: DayProgress): DayProgress {
+  if (a.answers.length !== b.answers.length) return a.answers.length > b.answers.length ? a : b;
+  return a.startedAt === null && b.startedAt !== null ? b : a;
 }
 
 export function remainingMs(p: DayProgress, now: number): number {

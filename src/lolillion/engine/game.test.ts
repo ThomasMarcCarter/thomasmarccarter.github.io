@@ -4,6 +4,7 @@ import { validAnswers } from '../data/questions';
 import {
   PROMPT_MS,
   currentStreak,
+  mergeProgress,
   emptyProgress,
   expireIfTimedOut,
   finishDay,
@@ -42,20 +43,43 @@ describe('answers', () => {
     expect(p).toEqual({ answers: [{ entryId: 'Garen', input: 'garen' }], startedAt: null });
   });
 
+  const answer = (p: ReturnType<typeof emptyProgress>, id: string | null) => recordAnswer(startPrompt(p, T0), id, id ?? '');
+
   it('finishes after every prompt has an answer', () => {
     let p = emptyProgress();
-    for (let i = 0; i < 7; i++) p = recordAnswer(p, null, '');
+    for (let i = 0; i < 7; i++) p = answer(p, null);
     expect(isFinished(p, 7)).toBe(true);
-    expect(isFinished(recordAnswer(emptyProgress(), null, ''), 7)).toBe(false);
+    expect(isFinished(answer(emptyProgress(), null), 7)).toBe(false);
   });
 
   it('adds up LP from each answer tier', () => {
     const qs = getDailyQuestions(new Date(T0));
     const rarest = qs.map((q) => validAnswers(q).at(-1)!.id);
     let p = emptyProgress();
-    for (const id of rarest) p = recordAnswer(p, id, id);
+    for (const id of rarest) p = answer(p, id);
     expect(totalLp(qs, p)).toBe(700);
     expect(totalLp(qs, emptyProgress())).toBe(0);
+  });
+
+  it('ignores an answer when no prompt is running, so a late click cannot be recorded twice', () => {
+    const timedOut = expireIfTimedOut(startPrompt(emptyProgress(), T0), T0 + PROMPT_MS);
+    expect(recordAnswer(timedOut, 'Garen', 'garen')).toEqual(timedOut);
+  });
+});
+
+describe('mergeProgress', () => {
+  const one = recordAnswer(startPrompt(emptyProgress(), T0), 'Garen', 'garen');
+  const two = recordAnswer(startPrompt(one, T0), 'Jinx', 'jinx');
+
+  it('keeps whichever copy has more answers, so another tab cannot replay a prompt', () => {
+    expect(mergeProgress(one, two)).toBe(two);
+    expect(mergeProgress(two, one)).toBe(two);
+  });
+
+  it('prefers the copy with a running prompt when both have the same answers', () => {
+    const running = startPrompt(one, T0 + 5000);
+    expect(mergeProgress(one, running)).toBe(running);
+    expect(mergeProgress(running, one)).toBe(running);
   });
 });
 
