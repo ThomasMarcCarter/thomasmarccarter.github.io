@@ -153,7 +153,20 @@
   --tier-diamond: #6f9bff;
   --tier-master: #c27ce8;
   --tier-challenger: #f2c94c;
+  --rank-iron: #9a8f88;
+  --rank-bronze: #c47d4f;
+  --rank-silver: var(--tier-silver);
+  --rank-gold: var(--tier-gold);
+  --rank-platinum: var(--tier-platinum);
+  --rank-diamond: var(--tier-diamond);
+  --rank-master: var(--tier-master);
+  --rank-challenger: var(--tier-challenger);
   color-scheme: dark;
+}
+
+/* Reveal rays spin wider than the panel; keep them from adding a sideways scroll. */
+:root[data-skin="lolillion"] main {
+  overflow-x: clip;
 }
 
 /* The skin is dark-only, so the theme toggle has nothing to switch. */

@@ -8,6 +8,6 @@ describe('buildShareString', () => {
         { number: 42, tiers: ['Gold', 'Platinum', 'Silver', 'Master', null, 'Diamond', 'Challenger'] },
         'https://example.com/lolillion/',
       ),
-    ).toBe('Lolillion #42  295 LP\n🟨🟩⬜🟪❌🟦🟥\nhttps://example.com/lolillion/');
+    ).toBe('Lolillion #42  Silver, 295 LP\n🟨🟩⬜🟪❌🟦🟥\nhttps://example.com/lolillion/');
   });
 });

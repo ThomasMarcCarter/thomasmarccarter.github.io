@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Question } from '../data/questions';
 import type { Entry } from '../data/types';
 import { msUntilNextPuzzle, totalLp, type DayProgress } from '../engine/game';
+import { finalRank, nextRank } from '../engine/ranks';
 import { rarestAnswer, scoreAnswer } from '../engine/score';
 import { buildShareString } from '../engine/share';
 import { useCountUp } from '../hooks/useCountUp';
@@ -35,6 +36,11 @@ export default function Results({ number, questions, progress, entryFor }: Props
   });
   const total = totalLp(questions, progress);
   const shownTotal = useCountUp(total);
+  const rank = finalRank(total);
+  const next = nextRank(total);
+  const rankColour = `var(--rank-${rank.name.toLowerCase()})`;
+
+  useEffect(() => play(rank.name === 'Challenger' ? 'challenger' : rank.min >= 500 ? 'diamond' : 'gold'), [rank]);
   const share = buildShareString(
     { number, tiers: rows.map((r) => r.tier?.name ?? null) },
     `${location.origin}${location.pathname}`,
@@ -61,11 +67,25 @@ export default function Results({ number, questions, progress, entryFor }: Props
       <h1
         ref={headingRef}
         tabIndex={-1}
-        aria-label={`${total} LP`}
-        className="lol-display lol-title mt-1 text-center text-6xl font-bold focus:outline-none"
+        aria-label={`${rank.name}, ${total} LP`}
+        className="focus:outline-none"
       >
-        {shownTotal} LP
+        <span className="lol-rank mt-4 grid place-items-center" style={{ ['--c' as string]: rankColour }}>
+          <span className="lol-badge lol-pop" style={{ width: 120, height: 120 }} aria-hidden="true">
+            <span className="lol-rays" />
+            <span className="lol-ring" />
+          </span>
+          <span className="lol-display mt-3 block text-4xl font-bold" style={{ color: rankColour }}>
+            {rank.name}
+          </span>
+        </span>
+        <span className="lol-display lol-title mt-1 block text-center text-5xl font-bold">{shownTotal} LP</span>
       </h1>
+      {next && (
+        <p className="mt-2 text-center text-sm text-muted">
+          {next.min - total} LP short of {next.name}
+        </p>
+      )}
       <p className="mt-6 text-center text-sm text-muted">Select a prompt to see every right answer and its LP.</p>
       <ol className="mt-3 space-y-1">
         {rows.map(({ q, entry, tier, points }) => {

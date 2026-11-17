@@ -1,3 +1,4 @@
+import { finalRank } from './ranks';
 import { tiers, type TierName } from './tiers';
 
 const MISS = '❌';
@@ -7,5 +8,5 @@ export function buildShareString(result: { number: number; tiers: (TierName | nu
   const byName = new Map(tiers.map((t) => [t.name, t]));
   const score = result.tiers.reduce((sum, name) => sum + (name ? byName.get(name)!.points : 0), 0);
   const squares = result.tiers.map((name) => (name ? byName.get(name)!.emoji : MISS)).join('');
-  return `Lolillion #${result.number}  ${score} LP\n${squares}\n${url}`;
+  return `Lolillion #${result.number}  ${finalRank(score).name}, ${score} LP\n${squares}\n${url}`;
 }
