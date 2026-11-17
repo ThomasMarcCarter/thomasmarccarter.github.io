@@ -14,7 +14,7 @@ const projects = defineCollection({
       demo: z.url().optional(),
       featured: z.boolean().default(false),
       // Visual style for the project page: the site default, or a themed skin.
-      skin: z.enum(['default', 'radar']).default('default'),
+      skin: z.enum(['default', 'radar', 'lolillion']).default('default'),
       cover: z.object({ src: image(), alt: z.string() }),
       // Photos and videos shown in the carousel. Videos live in public/ and are referenced by path.
       media: z

@@ -134,3 +134,19 @@
   gap: 0.875rem;
   font-size: 0.875rem;
 }
+
+/* ---------- Lolillion skin: dark navy and gold for the trivia game ---------- */
+
+:root[data-skin="lolillion"] {
+  --paper: #0b0f1a;
+  --ink: #ece6d6;
+  --muted: #8f8a7c;
+  --line: #232a3b;
+  --accent: #c9a24c;
+  color-scheme: dark;
+}
+
+/* The skin is dark-only, so the theme toggle has nothing to switch. */
+:root[data-skin="lolillion"] #theme-toggle {
+  display: none;
+}

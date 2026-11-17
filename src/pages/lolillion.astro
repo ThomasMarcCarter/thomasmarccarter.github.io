@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Game from '../lolillion/components/Game';
+---
+
+<BaseLayout
+  title="Lolillion"
+  description="A daily League of Legends trivia game where rarer answers score more."
+  skin="lolillion"
+>
+  <Game client:load />
+</BaseLayout>

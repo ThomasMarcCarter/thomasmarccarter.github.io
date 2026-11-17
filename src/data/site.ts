@@ -16,6 +16,7 @@ export const site = {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
+    { label: 'Lolillion', href: 'lolillion/' },
   ],
   // Most recent first. Dates are ISO months; an end of null means the role is current.
   experience: [

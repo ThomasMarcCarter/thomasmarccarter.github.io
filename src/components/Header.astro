@@ -15,14 +15,38 @@ const initials = site.name.split(/[\s-]+/).map((part) => part[0]).join('');
       <span class="hidden sm:inline">{site.name}</span>
     </a>
     <div class="flex items-center gap-1 sm:gap-6">
-      <ul class="flex items-center gap-2.5 text-sm text-muted sm:gap-7 sm:text-[0.9375rem]">
+      <!-- A popover on small screens (the links don't fit in one row), a plain row from sm up. -->
+      <ul
+        id="nav-menu"
+        popover
+        class="inset-auto top-18 right-4 m-0 min-w-44 flex-col gap-1 rounded-md border border-line bg-paper p-2 text-muted shadow-lg open:flex sm:static sm:flex sm:min-w-0 sm:flex-row sm:items-center sm:gap-7 sm:overflow-visible sm:border-0 sm:bg-transparent sm:p-0 sm:text-[0.9375rem] sm:shadow-none"
+      >
         {site.nav.map((item) => (
           <li>
-            <a href={navHref(item.href)} class="transition-colors hover:text-ink">{item.label}</a>
+            <a href={navHref(item.href)} class="block rounded-sm px-3 py-2.5 transition-colors hover:text-ink sm:p-0">{item.label}</a>
           </li>
         ))}
       </ul>
+      <button
+        type="button"
+        popovertarget="nav-menu"
+        aria-label="Menu"
+        class="grid h-9 w-9 place-items-center rounded-full text-muted transition-colors hover:text-ink sm:hidden"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+        </svg>
+      </button>
       <ThemeToggle />
     </div>
   </nav>
 </header>
+
+<script>
+  // Close the mobile menu after picking a link, since same-page anchors don't reload the page.
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('#nav-menu a')) return;
+    const menu = document.getElementById('nav-menu');
+    if (menu?.matches(':popover-open')) menu.hidePopover();
+  });
+</script>
