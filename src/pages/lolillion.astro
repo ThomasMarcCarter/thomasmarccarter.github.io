@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Game from '../lolillion/components/Game';
+import championData from '../lolillion/data/champions.json';
+
+const rift = `https://ddragon.leagueoflegends.com/cdn/${championData.ddragonVersion}/img/map/map11.png`;
 ---
 
 <BaseLayout
@@ -8,10 +11,13 @@ import Game from '../lolillion/components/Game';
   description="A daily League of Legends trivia game where rarer answers score more."
   skin="lolillion"
 >
+  <div class="lol-rift" style={`--rift: url(${rift})`} aria-hidden="true"></div>
   <Game client:only="react" />
   <p class="mx-auto max-w-xl pb-16 text-center text-xs leading-relaxed text-muted">
     Lolillion isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially
     involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or
     registered trademarks of Riot Games, Inc.
+    <br />
+    Interface sounds by <a href="https://kenney.nl" class="link" rel="noopener" target="_blank">Kenney</a>.
   </p>
 </BaseLayout>

@@ -17,8 +17,10 @@ import {
   type DayProgress,
   type Stats,
 } from '../engine/game';
+import { isRightAnswer } from '../engine/score';
 import { readJson, writeJson } from '../engine/storage';
 import { useNow } from '../hooks/useNow';
+import MuteButton from './MuteButton';
 import QuestionCard from './QuestionCard';
 import Results from './Results';
 import Reveal from './Reveal';
@@ -88,9 +90,12 @@ export default function Game() {
     }
   }, [asking, progress, now]);
 
+  /** A wrong guess only costs time: the prompt stays open until a right answer or the timer runs out. */
   const submit = (entry: Entry, input: string) => {
+    if (!isRightAnswer(questions[index], entry.id)) return false;
     act((p) => recordAnswer(p, entry.id, input));
     setRevealing(true);
+    return true;
   };
 
   const next = () => {
@@ -142,5 +147,12 @@ export default function Game() {
     );
   }
 
-  return <section className="mx-auto max-w-xl pt-8 pb-12 sm:pt-14">{screen}</section>;
+  return (
+    <section className="mx-auto max-w-xl pt-6 pb-10 sm:pt-12">
+      <div className="mb-3 flex justify-end">
+        <MuteButton />
+      </div>
+      <div className="lol-panel px-5 py-7 sm:px-9 sm:py-10">{screen}</div>
+    </section>
+  );
 }

@@ -38,3 +38,8 @@ export function rarityPercent(question: Question, entryId: string): number {
   const answers = validAnswers(question);
   return Math.round((100 * answers.findIndex((a) => a.id === entryId)) / answers.length);
 }
+
+/** Wrong guesses don't end a prompt; only a right answer or the timer does. */
+export function isRightAnswer(question: Question, entryId: string): boolean {
+  return tierOf(question, entryId) !== null;
+}

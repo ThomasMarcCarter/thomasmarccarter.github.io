@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import type { Question } from '../data/questions';
 import type { Entry } from '../data/types';
 import { PROMPT_MS } from '../engine/game';
+import { play } from '../sound';
 import AnswerInput from './AnswerInput';
 
 interface Props {
@@ -9,14 +11,15 @@ interface Props {
   total: number;
   remaining: number;
   entries: readonly Entry[];
-  onSubmit: (entry: Entry, input: string) => void;
+  /** Returns false for a wrong guess, which keeps the prompt open. */
+  onSubmit: (entry: Entry, input: string) => boolean;
 }
 
 export function Progress({ done, total }: { done: number; total: number }) {
   return (
-    <div className="flex gap-1.5" aria-hidden="true">
+    <div className="lol-progress flex gap-1.5" aria-hidden="true">
       {Array.from({ length: total }, (_, i) => (
-        <span key={i} className={`h-1 flex-1 ${i < done ? 'bg-accent' : 'bg-line'}`} />
+        <span key={i} className={`h-1 flex-1 ${i < done ? 'is-done' : ''}`} />
       ))}
     </div>
   );
@@ -27,32 +30,33 @@ const ANNOUNCE_AT = [10, 5];
 
 export default function QuestionCard({ question, index, total, remaining, entries, onSubmit }: Props) {
   const seconds = Math.ceil(remaining / 1000);
+  const low = seconds <= LOW_TIME_S;
   const promptId = `prompt-${question.id}`;
+
+  useEffect(() => {
+    if (seconds > 0 && seconds <= LOW_TIME_S) play('tick');
+  }, [seconds]);
+
   return (
     <div>
       <Progress done={index} total={total} />
-      <p className="mt-5 text-xs tracking-[0.14em] text-accent uppercase">
-        {question.pool === 'champion' ? 'Champion' : 'Item'} · {index + 1} of {total}
+      <p className="lol-display mt-6 text-sm text-accent">
+        {question.pool === 'champion' ? 'Champion' : 'Item'} prompt {index + 1} of {total}
       </p>
-      <h1 id={promptId} className="lol-display mt-1 mb-5 text-[clamp(1.5rem,6vw,2rem)] leading-tight font-semibold">
+      <h1 id={promptId} className="lol-display mt-2 mb-6 text-[clamp(1.6rem,6vw,2.25rem)] leading-tight font-semibold">
         {question.prompt}
       </h1>
       <div
-        className="h-1.5 overflow-hidden rounded-full bg-line"
+        className={`lol-timer ${low ? 'is-low' : ''}`}
         role="progressbar"
         aria-label="Seconds left"
         aria-valuemin={0}
         aria-valuemax={PROMPT_MS / 1000}
         aria-valuenow={seconds}
       >
-        <i
-          className="block h-full bg-gradient-to-r from-accent to-[#f0d58a] transition-[width] duration-300 ease-linear motion-reduce:transition-none"
-          style={{ width: `${(remaining / PROMPT_MS) * 100}%` }}
-        />
+        <i style={{ width: `${(remaining / PROMPT_MS) * 100}%` }} />
       </div>
-      <p
-        className={`mt-1 mb-4 text-right text-sm tabular-nums ${seconds <= LOW_TIME_S ? 'text-[var(--tier-challenger)]' : 'text-muted'}`}
-      >
+      <p className={`mt-1.5 mb-4 text-right text-sm tabular-nums ${low ? 'text-[var(--wrong)]' : 'text-muted'}`}>
         {seconds}s
       </p>
       {/* Spoken only at a few points, so screen readers aren't flooded every second. */}

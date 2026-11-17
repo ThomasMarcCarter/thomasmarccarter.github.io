@@ -1,3 +1,4 @@
+import { play } from '../sound';
 import HowToPlay from './HowToPlay';
 
 interface Props {
@@ -11,33 +12,38 @@ interface Props {
 
 export default function StartScreen({ number, streak, played, best, resuming, onPlay }: Props) {
   const stats: [string, number][] = [
-    ['day streak', streak],
-    ['played', played],
-    ['best LP', best],
+    ['Day streak', streak],
+    ['Played', played],
+    ['Best LP', best],
   ];
   return (
-    <div>
-      <div className="lol-frame p-6">
-        <h1 className="lol-display text-[clamp(2.5rem,10vw,3.5rem)] leading-none font-bold text-accent">Lolillion</h1>
-        <p className="mt-3 text-muted">
-          Seven prompts. Any right answer climbs. The rarer your answer, the more LP you gain.
-        </p>
-        <button type="button" className="lol-button mt-6" onClick={onPlay}>
-          {resuming ? `Continue #${number}` : `Play #${number}`}
-        </button>
-        <div className="mt-3">
-          <HowToPlay />
-        </div>
+    <div className="text-center">
+      <h1 className="lol-display lol-title text-[clamp(3rem,13vw,4.75rem)] leading-none font-bold">Lolillion</h1>
+      <p className="mx-auto mt-4 max-w-[34ch] text-lg text-ink/85">
+        Seven prompts a day. Any right answer climbs, but the rarer it is, the more LP you gain.
+      </p>
+      <button
+        type="button"
+        className="lol-button mt-8"
+        onClick={() => {
+          play('click');
+          onPlay();
+        }}
+      >
+        {resuming ? `Continue puzzle #${number}` : `Play puzzle #${number}`}
+      </button>
+      <div className="mt-3">
+        <HowToPlay />
       </div>
-      <dl className="mt-8 grid grid-cols-3 text-center text-sm text-muted">
+      <dl className="lol-stats mt-8 grid grid-cols-3">
         {stats.map(([label, value]) => (
-          <div key={label} className="flex flex-col-reverse">
-            <dt>{label}</dt>
-            <dd className="lol-display text-2xl font-bold text-ink">{value}</dd>
+          <div key={label} className="flex flex-col-reverse py-3">
+            <dt className="text-sm text-muted">{label}</dt>
+            <dd className="lol-display text-3xl font-bold text-ink">{value}</dd>
           </div>
         ))}
       </dl>
-      <p className="mt-8 text-center text-sm text-muted">4 champion prompts · 3 item prompts · 25 seconds each</p>
+      <p className="mt-6 text-sm text-muted">4 champion prompts and 3 item prompts, 25 seconds each</p>
     </div>
   );
 }

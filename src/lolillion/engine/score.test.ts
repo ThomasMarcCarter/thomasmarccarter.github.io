@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { questions, validAnswers, type Question } from '../data/questions';
-import { rarestAnswer, rarityPercent, scoreAnswer, tierForRank, tierOf } from './score';
+import { isRightAnswer, rarestAnswer, rarityPercent, scoreAnswer, tierForRank, tierOf } from './score';
 
 const names = (n: number) => Array.from({ length: n }, (_, i) => tierForRank(i, n).name);
 
@@ -46,5 +46,13 @@ describe('rarityPercent', () => {
   it('is 0 for the most popular answer and highest for the rarest', () => {
     expect(rarityPercent(question, answers[0].id)).toBe(0);
     expect(rarityPercent(question, answers.at(-1)!.id)).toBe(Math.round((100 * (answers.length - 1)) / answers.length));
+  });
+});
+
+describe('isRightAnswer', () => {
+  const question = questions.find((q) => q.id === 'region-demacia') as Question;
+  it('accepts valid answers and rejects the rest', () => {
+    expect(isRightAnswer(question, 'Garen')).toBe(true);
+    expect(isRightAnswer(question, 'Jinx')).toBe(false);
   });
 });

@@ -2,12 +2,14 @@ import { useId, useMemo, useState, type KeyboardEvent } from 'react';
 import type { Entry } from '../data/types';
 import type { Question } from '../data/questions';
 import { matchAnswer, suggest } from '../engine/match';
+import { play } from '../sound';
 import { iconUrl } from './icons';
 
 interface Props {
   pool: Question['pool'];
   entries: readonly Entry[];
-  onSubmit: (entry: Entry, input: string) => void;
+  /** Returns false for a wrong guess, which keeps the prompt open. */
+  onSubmit: (entry: Entry, input: string) => boolean;
   /** Id of the prompt text, read out when the input gets focus. */
   describedBy: string;
 }
@@ -19,14 +21,30 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
   // -1 means "whatever Enter would match", which may be nothing when two spellings tie.
   const [active, setActive] = useState(-1);
   const [hint, setHint] = useState('');
+  const [wrong, setWrong] = useState(false);
+  // Bumped on every wrong guess so the shake animation restarts even for repeat misses.
+  const [shakes, setShakes] = useState(0);
   const options = useMemo(() => suggest(input, entries), [input, entries]);
   const best = useMemo(() => matchAnswer(input, entries), [input, entries]);
   const highlighted = active >= 0 ? options[active] : best;
   const highlightedIndex = highlighted ? options.indexOf(highlighted) : -1;
 
+  const reset = () => {
+    setInput('');
+    setActive(-1);
+  };
+
   const choose = (entry: Entry | null | undefined) => {
-    if (entry) onSubmit(entry, input);
-    else if (input.trim()) setHint('No exact match. Pick one of the suggestions.');
+    if (!entry) {
+      if (input.trim()) setHint('No exact match. Pick one of the suggestions.');
+      return;
+    }
+    if (onSubmit(entry, input)) return;
+    play('wrong');
+    setWrong(true);
+    setShakes((n) => n + 1);
+    setHint(`${entry.name} isn’t a right answer. Try another.`);
+    reset();
   };
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -37,12 +55,12 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
       // With nothing highlighted, Down goes to the first suggestion and Up to the last.
       const from = highlightedIndex === -1 && step < 0 ? options.length : highlightedIndex;
       setActive((from + step + options.length) % options.length);
+      play('select');
     } else if (e.key === 'Enter') {
       e.preventDefault();
       choose(highlighted);
     } else if (e.key === 'Escape') {
-      setInput('');
-      setActive(-1);
+      reset();
       setHint('');
     }
   };
@@ -53,6 +71,7 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
   return (
     <div>
       <input
+        key={shakes}
         type="text"
         role="combobox"
         aria-label={pool === 'champion' ? 'Your answer: a champion' : 'Your answer: an item'}
@@ -61,6 +80,7 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
         aria-autocomplete="list"
         aria-activedescendant={highlightedIndex >= 0 ? optionId(highlightedIndex) : undefined}
         aria-describedby={`${describedBy} ${id}-hint`}
+        aria-invalid={wrong}
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}
@@ -71,11 +91,12 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
           setInput(e.target.value);
           setActive(-1);
           setHint('');
+          setWrong(false);
         }}
         onKeyDown={onKeyDown}
-        className="w-full border border-accent bg-[var(--panel)] px-4 py-3.5 text-lg text-ink placeholder:text-muted"
+        className={`lol-input w-full px-4 py-3.5 text-lg text-ink placeholder:text-muted ${shakes && wrong ? 'lol-shake' : ''}`}
       />
-      <ul id={listId} role="listbox" aria-label="Suggestions" className="border-x border-b border-line empty:hidden">
+      <ul id={listId} role="listbox" aria-label="Suggestions" className="lol-suggestions empty:hidden">
         {options.map((entry, i) => (
           <li
             key={entry.id}
@@ -84,17 +105,19 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
             aria-selected={i === highlightedIndex}
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => choose(entry)}
-            className={`flex min-h-13 cursor-pointer items-center gap-3 border-t border-line px-3 py-2 first:border-t-0 ${
-              i === highlightedIndex ? 'bg-accent/20' : 'hover:bg-accent/10'
-            }`}
+            className="lol-option flex min-h-13 cursor-pointer items-center gap-3 px-3 py-2"
           >
-            <img src={iconUrl(pool, entry.icon)} alt="" width={32} height={32} className="border border-accent/30" />
+            <img src={iconUrl(pool, entry.icon)} alt="" width={32} height={32} />
             {entry.name}
-            {i === highlightedIndex && <span className="ml-auto text-xs text-muted">Enter</span>}
+            {i === highlightedIndex && <kbd className="ml-auto text-xs text-muted">Enter</kbd>}
           </li>
         ))}
       </ul>
-      <p id={`${id}-hint`} role="status" className="mt-2 min-h-5 text-sm text-muted">
+      <p
+        id={`${id}-hint`}
+        role="status"
+        className={`mt-2 min-h-5 text-sm ${wrong ? 'text-[var(--wrong)]' : 'text-muted'}`}
+      >
         {hint}
       </p>
     </div>
