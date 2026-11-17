@@ -4,12 +4,14 @@ import { finalRank, ranks } from '../engine/ranks';
 
 // Original pixel art: a spear-carrying warrior climbing a sandstone peak under the stars, drawn into a small buffer
 // each frame and scaled up by a whole number without smoothing. The scene fills the window behind the game; the
-// warrior walks the switchback trail as LP comes in, each rank has a flag at its corner, and starlight pours down
-// on the summit.
+// warrior walks the switchback trail as LP comes in, each rank has a flag at its corner, a pennant marks the best
+// day so far, and starlight pours down on the summit.
 
 interface Props {
   /** Today's LP so far; a change walks the climber to the new spot. */
   lp: number;
+  /** Best day's LP, marked on the trail with a pennant; 0 hides it. */
+  best: number;
   /** The open area above the game panel: the camera keeps the climber inside it. */
   focus: RefObject<HTMLElement | null>;
 }
@@ -26,18 +28,6 @@ function fitView(): View {
   return { w: Math.ceil(innerWidth / scale), h: Math.ceil(innerHeight / scale), scale };
 }
 
-// Mirrors the --rank-* colours in global.css; the canvas can't read CSS variables cheaply per pixel.
-const RANK_COLOURS: Record<string, string> = {
-  Iron: '#9a8f88',
-  Bronze: '#c47d4f',
-  Silver: '#b8c0cc',
-  Gold: '#e3b341',
-  Platinum: '#3fc1a5',
-  Diamond: '#6f9bff',
-  Master: '#c27ce8',
-  Challenger: '#f2c94c',
-};
-
 /** #rrggbb to a little-endian RGBA word for a Uint32Array view of ImageData. */
 const px = (hex: string) => {
   const n = parseInt(hex.slice(1), 16);
@@ -45,10 +35,10 @@ const px = (hex: string) => {
 };
 
 const C = {
-  ground: px('#5e4630'),
-  groundDark: px('#4a3624'),
-  grass: px('#b08d5a'),
-  grassDark: px('#8a6c44'),
+  soil: px('#5e4630'),
+  soilDark: px('#4a3624'),
+  sand: px('#b08d5a'),
+  sandDark: px('#8a6c44'),
   ridgeFar: px('#2b2a5e'),
   ridgeNear: px('#1e1f47'),
   cloud: px('#4d4788'),
@@ -68,8 +58,20 @@ const C = {
   flagOff: px('#4a4560'),
   beam: px('#5d6fc4'),
   beamBright: px('#a9b8ff'),
+  best: px('#fff6dc'),
+  bestBeaten: px('#f0d58a'),
 };
-const FLAG_COLOURS = Object.fromEntries(Object.entries(RANK_COLOURS).map(([k, v]) => [k, px(v)]));
+
+/** Rank flag colours, read once from the --rank-* variables in global.css so the two can't drift apart. */
+function rankColours(): Record<string, number> {
+  const css = getComputedStyle(document.documentElement);
+  return Object.fromEntries(
+    ranks.map((r) => {
+      const value = css.getPropertyValue(`--rank-${r.name.toLowerCase()}`).trim();
+      return [r.name, /^#[0-9a-f]{6}$/i.test(value) ? px(value) : C.pole];
+    }),
+  );
+}
 const SKY = ['#3b4a85', '#34306e', '#221d4d', '#140f33', '#09071d'].map(px);
 const SKY_STEP = 95;
 const SNOW_LINE = 228;
@@ -148,7 +150,7 @@ const STRIDE = warrior(['..p.ol...lo.', '..p.oo...oo.']);
 const PASS = warrior(['..p...olo...', '..p...ooo...']);
 const SPRITE_HALF = 6;
 
-const PINE: Sprite = {
+const SHRUB: Sprite = {
   rows: ['..g..', '.ggg.', '..g..', '.ggg.', 'ggggg', '..t..'],
   colours: { g: px('#4f5a2e'), t: px('#4a3324') },
 };
@@ -156,14 +158,21 @@ const TENT: Sprite = {
   rows: ['...o...', '..oro..', '.orrro.', 'orrdrro', 'orrdrro'],
   colours: { o: px('#3a1a1a'), r: px('#b8473a'), d: px('#140c1c') },
 };
-/** Pine positions in world pixels; the ones past either edge fill wide screens. */
-const PINES = [-30, -14, 4, 146, 155, 172, 190];
+/** Shrub positions in world pixels; the ones past either edge fill wide screens. */
+const SHRUBS = [-30, -14, 4, 146, 155, 172, 190];
+/** Swallowtail pennant for the best day, pointing right; flipped to trail behind the climber. */
+const PENNANT = ['wwwww', 'www..', 'wwwww'];
 
-export default function Climb({ lp, focus }: Props) {
+export default function Climb({ lp, best, focus }: Props) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const [view, setView] = useState<View | null>(null);
   // Animation state lives in a ref: it changes every frame and React never needs to see it.
-  const anim = useRef({ shown: 0, from: 0, to: 0, start: 0, cam: Number.NaN, dirty: true });
+  const anim = useRef({ shown: 0, from: 0, to: 0, start: 0, cam: Number.NaN, best: 0, dirty: true });
+
+  useEffect(() => {
+    anim.current.best = Math.min(Math.max(best, 0), CLIMB_MAX_LP);
+    anim.current.dirty = true;
+  }, [best]);
 
   useEffect(() => {
     const fit = () =>
@@ -193,6 +202,7 @@ export default function Climb({ lp, focus }: Props) {
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const a = anim.current;
     a.dirty = true;
+    const flagColours = rankColours();
     // The mountain lives in a fixed 160-pixel-wide world, centred on whatever width the window gives.
     const offX = Math.floor((W - VIEW_W) / 2);
     const farRidge = Array.from({ length: W }, (_, x) => ridgeFar(x - offX));
@@ -243,7 +253,7 @@ export default function Climb({ lp, focus }: Props) {
           const i = row * W + x;
           const wx = x - offX;
           if (alt < 0) {
-            buf[i] = alt === -1 ? C.grass : alt >= -3 ? C.grassDark : hash(wx, alt) < 0.12 ? C.groundDark : C.ground;
+            buf[i] = alt === -1 ? C.sand : alt >= -3 ? C.sandDark : hash(wx, alt) < 0.12 ? C.soilDark : C.soil;
             continue;
           }
           const rel = (wx + 0.5 - CENTRE) / w;
@@ -280,7 +290,7 @@ export default function Climb({ lp, focus }: Props) {
               continue;
             }
           }
-          const density = (0.006 + Math.min(1, Math.max(0, (alt - 30) / 240)) * 0.03);
+          const density = 0.006 + Math.min(1, Math.max(0, (alt - 30) / 240)) * 0.03;
           if (hash(wx, alt) < density) {
             const twinkle = !reduced && hash(wx * 3 + Math.floor(t * 2.5), alt) < 0.18;
             buf[i] = twinkle ? C.starDim : C.star;
@@ -294,7 +304,7 @@ export default function Climb({ lp, focus }: Props) {
         }
       }
 
-      PINES.forEach((x, k) => blit(PINE, offX + x - 2, rowOf(0) - 1 + (k % 2)));
+      SHRUBS.forEach((x, k) => blit(SHRUB, offX + x - 2, rowOf(0) - 1 + (k % 2)));
       blit(TENT, offX + 12, rowOf(0) - 1);
 
       // Shadows first, so where legs meet at a corner the trail itself stays on top.
@@ -303,12 +313,11 @@ export default function Climb({ lp, focus }: Props) {
 
       // A flag at every rank corner: grey until reached, then in the rank's colour.
       ranks.forEach((rank, k) => {
-        if (rank.min > CLIMB_MAX_LP) return;
         const spot = trailPoint(rank.min);
         const x = offX + Math.round(spot.x) + (k === 0 ? -3 : k % 2 === 1 ? 2 : -2);
         const base = rowOf(spot.alt);
         const reached = a.shown >= rank.min;
-        const colour = reached ? FLAG_COLOURS[rank.name] : C.flagOff;
+        const colour = reached ? flagColours[rank.name] : C.flagOff;
         const big = rank.min === CLIMB_MAX_LP;
         const tall = big ? 11 : 8;
         for (let h = 1; h <= tall; h++) set(x, base - h, C.pole);
@@ -318,6 +327,26 @@ export default function Climb({ lp, focus }: Props) {
           for (let c = 0; c < flagW; c++) set(x + 1 + c, base - tall + r + (c >= flagW / 2 ? wave : 0), colour);
         }
       });
+
+      // The best day so far: a cream pennant with a sparkle above it, gold once today's climb has passed it.
+      if (a.best > 0) {
+        const spot = trailPoint(a.best);
+        // On a rank corner, step inward so it doesn't sit on the rank flag.
+        const nudge = a.best % 100 === 0 ? (spot.x < CENTRE ? 4 : -4) : 0;
+        const x = offX + Math.round(spot.x) + nudge;
+        const base = rowOf(spot.alt);
+        const beaten = a.shown > a.best;
+        const tall = 7;
+        for (let h = 1; h <= tall; h++) set(x, base - h, C.pole);
+        PENNANT.forEach((line, r) => {
+          [...line].forEach((ch, c) => {
+            if (ch === 'w') set(x + (spot.dir === 1 ? -1 - c : 1 + c), base - tall + r, beaten ? C.bestBeaten : C.best);
+          });
+        });
+        if (!beaten && (reduced || Math.floor(t * 3) % 2 === 0)) {
+          for (const [dx, dy] of [[0, 0], [-1, 0], [1, 0], [0, -1], [0, 1]]) set(x + dx, base - tall - 3 + dy, C.star);
+        }
+      }
 
       // The climber: strides while walking, faces the way the trail runs, cheers at the summit.
       const summit = !moving && summitLit;
@@ -335,8 +364,9 @@ export default function Climb({ lp, focus }: Props) {
     let lastAnchor = Number.NaN;
     const loop = (now: number) => {
       frame = requestAnimationFrame(loop);
-      // 30 fps is plenty for pixel art; reduced motion only redraws when something changed.
-      if (now - last < 33) return;
+      // 30 fps while walking or panning; 8 fps is enough for twinkling stars and waving flags when idle.
+      // Reduced motion only redraws when something changed.
+      if (now - last < (a.dirty ? 33 : 125)) return;
       if (reduced) {
         const anchor = anchorRow();
         if (!a.dirty && anchor === lastAnchor) return;
@@ -351,7 +381,11 @@ export default function Climb({ lp, focus }: Props) {
 
   const rank = finalRank(lp);
   return (
-    <div className="lol-climb" role="img" aria-label={`Your climb: ${rank.name}, ${lp} of ${CLIMB_MAX_LP} LP`}>
+    <div
+      className="lol-climb"
+      role="img"
+      aria-label={`Your climb: ${rank.name}, ${lp} of ${CLIMB_MAX_LP} LP${best > 0 ? `. Best day: ${best} LP` : ''}`}
+    >
       {view && (
         <canvas
           ref={canvas}
@@ -363,6 +397,7 @@ export default function Climb({ lp, focus }: Props) {
       <div className="lol-hud" aria-hidden="true">
         <span style={{ color: `var(--rank-${rank.name.toLowerCase()})` }}>{rank.name}</span>
         <span>{lp} LP</span>
+        {best > 0 && <span className="lol-hud-best">Best {best}</span>}
       </div>
     </div>
   );

@@ -48,6 +48,7 @@ export default function Game() {
   const sky = useRef<HTMLDivElement>(null);
 
   const finished = isFinished(progress, questions.length);
+  const lp = totalLp(questions, progress);
   const asking = progress.startedAt !== null && !finished;
   const now = useNow(asking);
 
@@ -81,11 +82,11 @@ export default function Game() {
   useEffect(() => {
     if (!finished) return;
     setStats((s) => {
-      const next = finishDay(s, day, totalLp(questions, progress));
+      const next = finishDay(s, day, lp);
       if (next !== s) writeJson('stats', next);
       return next;
     });
-  }, [finished, day, questions, progress]);
+  }, [finished, day, lp]);
 
   useEffect(() => {
     if (asking && remainingMs(progress, now) === 0) {
@@ -155,7 +156,7 @@ export default function Game() {
   // so the page never scrolls the climber out of view. The empty `sky` area is where the camera keeps them.
   return (
     <section className="lol-game mx-auto flex h-dvh max-w-xl flex-col pt-3 pb-2">
-      <Climb lp={totalLp(questions, progress)} focus={sky} />
+      <Climb lp={lp} best={stats.best} focus={sky} />
       <div className="lol-topbar flex items-center justify-between">
         <a href={url('/')} className="text-sm transition-colors hover:text-accent">
           Thomas-Marc Carter

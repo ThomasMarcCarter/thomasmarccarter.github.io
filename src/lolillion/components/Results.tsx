@@ -70,7 +70,7 @@ export default function Results({ number, questions, progress, entryFor }: Props
         aria-label={`${rank.name}, ${total} LP`}
         className="focus:outline-none"
       >
-        <span className="lol-rank mt-2 grid place-items-center" style={{ ['--c' as string]: rankColour }}>
+        <span className="mt-2 grid place-items-center">
           <TierBadge tier={null} colour={rankColour} size="clamp(52px, 11dvh, 104px)" celebrate />
           <span className="lol-display mt-2 block text-[clamp(1.5rem,5dvh,2.25rem)] font-bold" style={{ color: rankColour }}>
             {rank.name}

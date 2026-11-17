@@ -1,4 +1,4 @@
-import { useId, useState, type FormEvent } from 'react';
+import { useId, useState, type SubmitEvent } from 'react';
 import type { Entry } from '../data/types';
 import type { Question } from '../data/questions';
 import { resolveAnswer } from '../engine/match';
@@ -44,7 +44,7 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
     setInput('');
   };
 
-  const submit = (e: FormEvent) => {
+  const submit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Second Enter on an unchanged "Did you mean" confirms it.
     if (feedback?.kind === 'guess') return answer(feedback.entry);
