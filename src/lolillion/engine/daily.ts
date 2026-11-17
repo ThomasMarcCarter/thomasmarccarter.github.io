@@ -41,12 +41,22 @@ function shuffle<T>(list: readonly T[], random: () => number): T[] {
   return out;
 }
 
+// One fixed shuffled order per pool. Each day takes the next few, so nothing repeats until the whole pool has been used.
+const order = (pool: Question['pool']) =>
+  shuffle(
+    questions.filter((q) => q.pool === pool),
+    seeded(hash(`lolillion-${pool}`)),
+  );
+const championOrder = order('champion');
+const itemOrder = order('item');
+
+function take(list: Question[], day: number, count: number): Question[] {
+  const mod = (n: number) => ((n % list.length) + list.length) % list.length;
+  return Array.from({ length: count }, (_, j) => list[mod(day * count + j)]);
+}
+
 export function getDailyQuestions(date: Date): Question[] {
-  const random = seeded(hash(utcDay(date)));
-  const pick = (pool: Question['pool'], count: number) =>
-    shuffle(
-      questions.filter((q) => q.pool === pool),
-      random,
-    ).slice(0, count);
-  return shuffle([...pick('champion', CHAMPION_PROMPTS), ...pick('item', ITEM_PROMPTS)], random);
+  const day = puzzleNumber(date);
+  const picked = [...take(championOrder, day, CHAMPION_PROMPTS), ...take(itemOrder, day, ITEM_PROMPTS)];
+  return shuffle(picked, seeded(hash(utcDay(date))));
 }

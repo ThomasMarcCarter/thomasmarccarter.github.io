@@ -67,8 +67,8 @@ const buyableOnRift = (id: string, i: DdItem) =>
   !i.requiredChampion &&
   !i.requiredAlly;
 
-// Riot's in-joke nicknames would look like bugs in autocomplete.
-const JOKE_NICKNAMES = new Set([
+// Riot's in-joke nicknames and shop search colours would look like bugs in autocomplete.
+const IGNORED_NICKNAMES = new Set([
   'goldenarmofkobe',
   'goldenbicepofkobe',
   'hornofthemanwolf',
@@ -76,13 +76,23 @@ const JOKE_NICKNAMES = new Set([
   'haroldandkumar',
   'banksys',
   'tonsofdamage',
+  'white',
+  'yellow',
+  'orange',
+  'noxian',
+  'primal',
+  'windblade',
+  'canon',
+  'dreadnought',
+  'reverie',
+  'nmst',
 ]);
 
 const nicknames = (i: DdItem) =>
   i.colloq
     .split(';')
     .map(normalise)
-    .filter((n) => n && !JOKE_NICKNAMES.has(n));
+    .filter((n) => n && !IGNORED_NICKNAMES.has(n));
 
 export function buildItems(dd: Record<string, DdItem>, overrides: Record<string, Partial<Item>>): ItemBuildResult {
   // Some items appear twice under different ids; keep the lowest.

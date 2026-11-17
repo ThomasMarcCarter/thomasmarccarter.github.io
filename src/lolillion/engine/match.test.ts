@@ -58,3 +58,29 @@ describe('suggest', () => {
     expect(suggest('  ', champions)).toEqual([]);
   });
 });
+
+describe('typo and prefix traps', () => {
+  it('prefers the entry whose name is closest, then the more popular one', () => {
+    expect(matchAnswer('ami', champions)?.name).toBe('Nami');
+    expect(matchAnswer('nass', champions)?.name).toBe('Nasus');
+  });
+
+  it('refuses to guess between equally close spellings', () => {
+    expect(matchAnswer('kaista', champions)).toBeNull();
+    expect(matchAnswer('jnx', champions)).toBeNull();
+    expect(names(suggest('jnx', champions)).slice(0, 2)).toEqual(['Jinx', 'Jax']);
+    expect(names(suggest('kaista', champions))).toEqual(expect.arrayContaining(["Kai'Sa", 'Kalista']));
+  });
+
+  it('ranks names that start with the input above nickname-only hits', () => {
+    expect(names(suggest('m', champions))[0]).toBe('Malphite');
+    expect(names(suggest('drea', items))[0]).toBe('Dream Maker');
+    expect(names(suggest('win', items))[0]).toMatch(/^Win/);
+    expect(names(suggest('hor', items))[0]).toBe('Horizon Focus');
+  });
+
+  it('understands common item shorthand', () => {
+    expect(matchAnswer('ward', items)?.name).toBe('Stealth Ward');
+    expect(matchAnswer('pink', items)?.name).toBe('Control Ward');
+  });
+});

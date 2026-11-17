@@ -36,3 +36,13 @@ describe('getDailyQuestions', () => {
     expect(new Set(sets).size).toBeGreaterThanOrEqual(25);
   });
 });
+
+describe('variety', () => {
+  it('never repeats a question on consecutive days', () => {
+    const repeats = Array.from({ length: 120 }, (_, i) => {
+      const today = new Set(ids(new Date(Date.UTC(2026, 10, 17 + i))));
+      return ids(new Date(Date.UTC(2026, 10, 18 + i))).filter((id) => today.has(id));
+    }).flat();
+    expect(repeats).toEqual([]);
+  });
+});

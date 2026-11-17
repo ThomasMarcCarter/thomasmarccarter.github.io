@@ -40,3 +40,11 @@ describe('questions', () => {
     expect(ids('item-from-long-sword')).not.toContain('Long Sword');
   });
 });
+
+describe('boots', () => {
+  it('counts upgraded boots even when Data Dragon forgets the Boots tag', () => {
+    const boots = validAnswers(questions.find((q) => q.id === 'item-boots')!).map((a) => a.name);
+    expect(boots).toContain('Gunmetal Greaves');
+    expect(boots).toContain('Boots');
+  });
+});

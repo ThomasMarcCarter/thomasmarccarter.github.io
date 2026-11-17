@@ -21,24 +21,52 @@ export function editDistance(a: string, b: string): number {
 const maxTypos = (query: string) => (query.length <= 5 ? 1 : 2);
 const byName = (a: Entry, b: Entry) => a.name.localeCompare(b.name);
 
-/** Autocomplete over one pool: exact aliases, then prefix matches by name, then near-misses by closeness. */
-export function suggest(input: string, pool: readonly Entry[], limit = DEFAULT_LIMIT): Entry[] {
-  const query = normalise(input);
-  if (!query) return [];
-
-  const exact = pool.filter((e) => e.aliases.includes(query));
-  const prefix = pool.filter((e) => !exact.includes(e) && e.aliases.some((a) => a.startsWith(query))).sort(byName);
-  const fuzzy = pool
-    .filter((e) => !exact.includes(e) && !prefix.includes(e))
-    .map((e) => ({ e, distance: Math.min(...e.aliases.map((a) => editDistance(query, a))) }))
-    .filter(({ distance }) => distance <= maxTypos(query))
-    .sort((x, y) => x.distance - y.distance || byName(x.e, y.e))
-    .map(({ e }) => e);
-
-  return [...exact, ...prefix, ...fuzzy].slice(0, limit);
+interface Ranked {
+  /** Exact alias hits, then names starting with the query, then other aliases starting with it. */
+  sure: Entry[];
+  /** Near-misses, closest first; `key` compares how close, so equal keys are a genuine tie. */
+  fuzzy: { e: Entry; key: [number, number] }[];
 }
 
-/** The entry a submitted answer means: an exact alias, otherwise the top suggestion. */
+function rank(input: string, pool: readonly Entry[]): Ranked {
+  const query = normalise(input);
+  if (!query) return { sure: [], fuzzy: [] };
+
+  // aliases[0] is always the normalised name.
+  const exact = pool.filter((e) => e.aliases.includes(query));
+  const namePrefix = pool.filter((e) => !exact.includes(e) && e.aliases[0].startsWith(query)).sort(byName);
+  const aliasPrefix = pool
+    .filter((e) => !exact.includes(e) && !namePrefix.includes(e) && e.aliases.some((a) => a.startsWith(query)))
+    .sort(byName);
+  const sure = [...exact, ...namePrefix, ...aliasPrefix];
+
+  const fuzzy = pool
+    .filter((e) => !sure.includes(e))
+    .map((e) => ({
+      e,
+      key: [Math.min(...e.aliases.map((a) => editDistance(query, a))), editDistance(query, e.aliases[0])] as [
+        number,
+        number,
+      ],
+    }))
+    .filter(({ key }) => key[0] <= maxTypos(query))
+    .sort((x, y) => x.key[0] - y.key[0] || x.key[1] - y.key[1] || x.e.popularity - y.e.popularity);
+
+  return { sure, fuzzy };
+}
+
+/** Autocomplete over one pool: exact aliases, names starting with the input, other aliases, then near-misses. */
+export function suggest(input: string, pool: readonly Entry[], limit = DEFAULT_LIMIT): Entry[] {
+  const { sure, fuzzy } = rank(input, pool);
+  return [...sure, ...fuzzy.map(({ e }) => e)].slice(0, limit);
+}
+
+/** The entry a submitted answer means, or null when it matches nothing or two spellings are equally close. */
 export function matchAnswer(input: string, pool: readonly Entry[]): Entry | null {
-  return suggest(input, pool, 1)[0] ?? null;
+  const { sure, fuzzy } = rank(input, pool);
+  if (sure.length) return sure[0];
+  const [best, next] = fuzzy;
+  if (!best) return null;
+  const tied = next && next.key[0] === best.key[0] && next.key[1] === best.key[1];
+  return tied ? null : best.e;
 }

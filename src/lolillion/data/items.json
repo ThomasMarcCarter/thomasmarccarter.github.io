@@ -710,8 +710,7 @@
       "icon": "1082.png",
       "popularity": 88,
       "aliases": [
-        "darkseal",
-        "noxian"
+        "darkseal"
       ]
     },
     {
@@ -1052,7 +1051,8 @@
       "popularity": 3,
       "aliases": [
         "controlward",
-        "orange"
+        "pink",
+        "pinkward"
       ]
     },
     {
@@ -1084,8 +1084,7 @@
       "popularity": 151,
       "aliases": [
         "shurelyasbattlesong",
-        "shurelya",
-        "reverie"
+        "shurelya"
       ]
     },
     {
@@ -1106,8 +1105,7 @@
       "icon": "2138.png",
       "popularity": 206,
       "aliases": [
-        "elixirofiron",
-        "white"
+        "elixirofiron"
       ]
     },
     {
@@ -2155,8 +2153,7 @@
       "icon": "3053.png",
       "popularity": 57,
       "aliases": [
-        "steraksgage",
-        "primal"
+        "steraksgage"
       ]
     },
     {
@@ -2833,7 +2830,6 @@
       "popularity": 67,
       "aliases": [
         "rapidfirecannon",
-        "canon",
         "rapidfire",
         "rfc"
       ]
@@ -2864,8 +2860,7 @@
       "icon": "3095.png",
       "popularity": 211,
       "aliases": [
-        "stormrazor",
-        "windblade"
+        "stormrazor"
       ]
     },
     {
@@ -3927,8 +3922,7 @@
       "icon": "3165.png",
       "popularity": 111,
       "aliases": [
-        "morellonomicon",
-        "nmst"
+        "morellonomicon"
       ]
     },
     {
@@ -4354,7 +4348,7 @@
       "popularity": 2,
       "aliases": [
         "stealthward",
-        "yellow"
+        "ward"
       ]
     },
     {
@@ -4484,8 +4478,7 @@
       "icon": "3742.png",
       "popularity": 95,
       "aliases": [
-        "deadmansplate",
-        "dreadnought"
+        "deadmansplate"
       ]
     },
     {

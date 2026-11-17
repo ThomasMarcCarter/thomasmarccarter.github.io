@@ -215,6 +215,9 @@ const statCostCombos: [ItemStat, 'over' | 'under'][] = [
 ];
 
 const PRICEY = 3000;
+// Data Dragon leaves the Boots tag off some upgraded boots (Gunmetal Greaves), so also count anything built from boots.
+const bootIds = new Set(items.filter((i) => i.tags.includes('Boots')).map((i) => i.id));
+const isBoots = (i: Item) => bootIds.has(i.id) || i.from.some((id) => bootIds.has(id));
 const hasStat = (i: Item, s: ItemStat) => i.stats[s] !== undefined;
 
 const itemQuestions: ItemQuestion[] = [
@@ -227,7 +230,7 @@ const itemQuestions: ItemQuestion[] = [
     const id = idOf(name);
     return item(`item-from-${slug(name)}`, `Name an item built directly from ${name}`, (i) => i.from.includes(id));
   }),
-  item('item-boots', 'Name a pair of boots', (i) => i.tags.includes('Boots')),
+  item('item-boots', 'Name a pair of boots', isBoots),
   item('item-consumable', 'Name a consumable', (i) => i.tags.includes('Consumable')),
   ...statCostCombos.map(([s, band]) =>
     item(
