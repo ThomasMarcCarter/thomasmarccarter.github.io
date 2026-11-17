@@ -571,7 +571,8 @@
       "icon": "1054.png",
       "popularity": 17,
       "stats": {
-        "Health": 110
+        "Health": 110,
+        "Base Health Regen": 4
       },
       "tags": [
         "Health",
@@ -2934,7 +2935,7 @@
     {
       "id": "3107",
       "name": "Redemption",
-      "cost": 2300,
+      "cost": 2250,
       "combineCost": 850,
       "sell": 1610,
       "from": [
@@ -4658,7 +4659,11 @@
       "into": [],
       "icon": "3865.png",
       "popularity": 18,
-      "stats": {},
+      "stats": {
+        "Base Health Regen": 50,
+        "Base Mana Regen": 25,
+        "Gold Per 10 Seconds": 3
+      },
       "tags": [
         "Health",
         "ManaRegen",

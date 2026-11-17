@@ -72,4 +72,6 @@ if (wikiSource === null) {
   for (const d of report.priceDiffs) console.log(`    ${d.name}: ours ${d.ours}, wiki ${d.wiki}`);
   console.log(`  Recipe differences (${report.recipeDiffs.length}):`);
   for (const d of report.recipeDiffs) console.log(`    ${d.name}: ours [${d.ours.join(', ')}], wiki [${d.wiki.join(', ')}]`);
+  console.log(`  Stat differences (${report.statDiffs.length} items):`);
+  for (const d of report.statDiffs) console.log(`    ${d.name}: ${d.diffs.join('; ')}`);
 }

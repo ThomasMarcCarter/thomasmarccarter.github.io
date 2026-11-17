@@ -54,7 +54,10 @@
     "popularity": 44
   },
   "1054": {
-    "popularity": 17
+    "popularity": 17,
+    "stats": {
+      "Base Health Regen": 4
+    }
   },
   "1055": {
     "popularity": 6
@@ -359,7 +362,8 @@
     "popularity": 90
   },
   "3107": {
-    "popularity": 146
+    "popularity": 146,
+    "cost": 2250
   },
   "3108": {
     "popularity": 81
@@ -576,7 +580,12 @@
     "popularity": 130
   },
   "3865": {
-    "popularity": 18
+    "popularity": 18,
+    "stats": {
+      "Base Health Regen": 50,
+      "Base Mana Regen": 25,
+      "Gold Per 10 Seconds": 3
+    }
   },
   "3869": {
     "popularity": 138,
