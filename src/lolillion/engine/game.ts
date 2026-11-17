@@ -68,3 +68,8 @@ export function msUntilNextPuzzle(now: Date): number {
   const next = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   return next - now.getTime();
 }
+
+/** The streak to show today: it survives until a whole UTC day is missed. */
+export function currentStreak(stats: Stats, today: string): number {
+  return stats.lastDay === today || stats.lastDay === previousDay(today) ? stats.streak : 0;
+}

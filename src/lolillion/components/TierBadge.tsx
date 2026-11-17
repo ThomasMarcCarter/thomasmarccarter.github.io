@@ -4,7 +4,7 @@ import type { TierName } from '../engine/tiers';
 export default function TierBadge({ tier, size = 92 }: { tier: TierName | null; size?: number }) {
   return (
     <span
-      className="lol-badge lol-pop inline-grid"
+      className="lol-badge lol-pop"
       style={{
         width: size,
         height: size,

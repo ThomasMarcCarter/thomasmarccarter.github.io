@@ -189,7 +189,8 @@
 /* Tier badge: an original framed gem in the tier colour (set --c). */
 .lol-badge {
   position: relative;
-  display: grid;
+  display: inline-grid;
+  vertical-align: middle;
   place-items: center;
 }
 .lol-badge::before,

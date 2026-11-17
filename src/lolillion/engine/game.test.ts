@@ -3,6 +3,7 @@ import { getDailyQuestions } from './daily';
 import { validAnswers } from '../data/questions';
 import {
   PROMPT_MS,
+  currentStreak,
   emptyProgress,
   expireIfTimedOut,
   finishDay,
@@ -84,5 +85,16 @@ describe('finishDay', () => {
 describe('msUntilNextPuzzle', () => {
   it('counts down to the next UTC midnight', () => {
     expect(msUntilNextPuzzle(new Date('2026-12-01T23:00:00Z'))).toBe(3_600_000);
+  });
+});
+
+describe('currentStreak', () => {
+  const stats: Stats = { played: 5, streak: 4, best: 300, lastDay: '2026-12-01' };
+  it('shows the streak while it is still alive', () => {
+    expect(currentStreak(stats, '2026-12-01')).toBe(4);
+    expect(currentStreak(stats, '2026-12-02')).toBe(4);
+  });
+  it('shows 0 once a day has been missed', () => {
+    expect(currentStreak(stats, '2026-12-03')).toBe(0);
   });
 });
