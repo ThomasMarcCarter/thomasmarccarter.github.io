@@ -4,6 +4,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { mergeChampions, type DdChampion, type MerakiChampion, type UniverseChampion } from './merge.ts';
 import { buildItems, type DdItem } from './items.ts';
+import { compareWithWiki, parseLuaTable } from './wiki.ts';
 import type { Champion, ChampionData, Item, ItemData } from '../../src/lolillion/data/types.ts';
 
 const OUTPUT = new URL('../../src/lolillion/data/champions.json', import.meta.url);
@@ -56,3 +57,19 @@ console.log(`Missing item fields (${itemResult.missing.length} items):`);
 for (const m of itemResult.missing) console.log(`  ${m.id}: ${m.fields.join(', ')}`);
 console.log(`Unknown stat labels (${itemResult.unknownStats.length}): ${itemResult.unknownStats.join(', ')}`);
 console.log(`Item overrides for unknown ids (${itemResult.unknownOverrides.length}): ${itemResult.unknownOverrides.join(', ')}`);
+
+// Optional cross-check against a hand-saved copy of the wiki's item module (see wiki.ts).
+const WIKI = new URL('./wiki-itemdata.lua', import.meta.url);
+const wikiSource = await readFile(WIKI, 'utf8').catch(() => null);
+if (wikiSource === null) {
+  console.log('\nWiki cross-check skipped: save Module:ItemData/data?action=raw as scripts/lolillion/wiki-itemdata.lua to run it.');
+} else {
+  const report = compareWithWiki(itemResult.items, parseLuaTable(wikiSource) as Record<string, Record<string, unknown>>);
+  console.log('\nWiki cross-check (League of Legends Wiki, CC BY-SA):');
+  console.log(`  On the wiki's Rift list but not ours (${report.missingFromOurs.length}): ${report.missingFromOurs.join(', ')}`);
+  console.log(`  Ours but not on the wiki's Rift list (${report.notOnWikiRift.length}): ${report.notOnWikiRift.join(', ')}`);
+  console.log(`  Price differences (${report.priceDiffs.length}):`);
+  for (const d of report.priceDiffs) console.log(`    ${d.name}: ours ${d.ours}, wiki ${d.wiki}`);
+  console.log(`  Recipe differences (${report.recipeDiffs.length}):`);
+  for (const d of report.recipeDiffs) console.log(`    ${d.name}: ours [${d.ours.join(', ')}], wiki [${d.wiki.join(', ')}]`);
+}

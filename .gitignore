@@ -31,3 +31,6 @@ desktop.ini
 
 # working copies of website content
 Website content - zshooter/
+
+# hand-saved wiki item data for the local cross-check (CC BY-SA, not published)
+scripts/lolillion/wiki-itemdata.lua
