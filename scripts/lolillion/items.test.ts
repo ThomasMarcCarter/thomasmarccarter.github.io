@@ -74,6 +74,11 @@ describe('buildItems', () => {
     });
   });
 
+  it('tags any item whose description has an active as Active', () => {
+    const r = buildItems({ '3077': item('Tiamat', { description: '<mainText><active>Crescent</active></mainText>' }) }, {});
+    expect(get(r, '3077').tags).toEqual(['Damage', 'Active']);
+  });
+
   it('adds override tags to the Data Dragon ones', () => {
     const r = buildItems(dd, { '3031': { tags: ['Slow'] } });
     expect(get(r, '3031').tags).toEqual(['Damage', 'Slow']);

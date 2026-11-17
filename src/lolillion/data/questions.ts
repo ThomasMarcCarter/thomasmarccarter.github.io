@@ -353,7 +353,6 @@ function moreItemQuestions(): ItemQuestion[] {
     item('item-cost-2000s', 'Name an item that costs from 2000 to 2499 gold', (i) => i.cost >= 2000 && i.cost < 2500),
     item('item-cost-under-500', 'Name an item that costs less than 500 gold', (i) => i.cost < 500),
     item('item-active', 'Name an item with an active you can use', (i) => i.tags.includes('Active')),
-    item('item-jungle', 'Name a jungle item', (i) => i.tags.includes('Jungle')),
     item('item-starter', 'Name a starting item', (i) => i.tags.includes('Lane') && i.cost <= 500 && i.from.length === 0),
     item('item-vision', 'Name an item that helps with vision', (i) => i.tags.includes('Vision')),
     item('item-slow', 'Name an item that slows enemies', (i) => i.tags.includes('Slow')),

@@ -723,14 +723,15 @@
       "into": [],
       "icon": "1083.png",
       "popularity": 201,
-      "stats": {
-        "Attack Damage": 7
-      },
       "tags": [
         "Damage",
         "OnHit",
-        "Lane"
+        "Lane",
+        "GoldPer"
       ],
+      "stats": {
+        "Attack Damage": 7
+      },
       "aliases": [
         "cull"
       ]
@@ -855,7 +856,8 @@
         "HealthRegen",
         "Consumable",
         "Lane",
-        "Jungle"
+        "Jungle",
+        "Active"
       ],
       "aliases": [
         "healthpotion"
@@ -1053,7 +1055,8 @@
         "Consumable",
         "Lane",
         "Stealth",
-        "Vision"
+        "Vision",
+        "Active"
       ]
     },
     {
@@ -1103,7 +1106,8 @@
         "Health",
         "Consumable",
         "NonbootsMovement",
-        "Tenacity"
+        "Tenacity",
+        "Active"
       ],
       "aliases": [
         "elixirofiron"
@@ -1123,7 +1127,8 @@
       "tags": [
         "Consumable",
         "ManaRegen",
-        "SpellDamage"
+        "SpellDamage",
+        "Active"
       ],
       "aliases": [
         "elixirofsorcery"
@@ -1144,7 +1149,8 @@
         "Consumable",
         "Damage",
         "LifeSteal",
-        "SpellVamp"
+        "SpellVamp",
+        "Active"
       ],
       "aliases": [
         "elixirofwrath"
@@ -1163,7 +1169,8 @@
       "stats": {},
       "tags": [
         "Damage",
-        "Consumable"
+        "Consumable",
+        "Active"
       ],
       "aliases": [
         "cappajuice"
@@ -1470,7 +1477,8 @@
       "tags": [
         "SpellDamage",
         "Mana",
-        "AbilityHaste"
+        "AbilityHaste",
+        "Active"
       ],
       "aliases": [
         "actualizer"
@@ -2462,7 +2470,8 @@
         "LifeSteal",
         "CooldownReduction",
         "OnHit",
-        "AbilityHaste"
+        "AbilityHaste",
+        "Active"
       ],
       "aliases": [
         "ravenoushydra"
@@ -2542,7 +2551,8 @@
       },
       "tags": [
         "Damage",
-        "OnHit"
+        "OnHit",
+        "Active"
       ],
       "aliases": [
         "tiamat"
@@ -2944,7 +2954,8 @@
         "SpellDamage",
         "ManaRegen",
         "CooldownReduction",
-        "AbilityHaste"
+        "AbilityHaste",
+        "Active"
       ],
       "aliases": [
         "redemption"
@@ -4410,18 +4421,19 @@
       "into": [],
       "icon": "3504.png",
       "popularity": 153,
+      "tags": [
+        "AttackSpeed",
+        "SpellDamage",
+        "ManaRegen",
+        "NonbootsMovement",
+        "OnHit"
+      ],
       "stats": {
         "Ability Power": 45,
         "Heal and Shield Power": 10,
         "Base Mana Regen": 125,
         "Move Speed": 4
       },
-      "tags": [
-        "AttackSpeed",
-        "SpellDamage",
-        "ManaRegen",
-        "NonbootsMovement"
-      ],
       "aliases": [
         "ardentcenser"
       ]
@@ -4508,7 +4520,8 @@
         "Health",
         "HealthRegen",
         "Damage",
-        "OnHit"
+        "OnHit",
+        "Active"
       ],
       "aliases": [
         "titanichydra"
@@ -4674,6 +4687,7 @@
         "Vision",
         "GoldPer",
         "Lane",
+        "Active",
         "Slow"
       ],
       "stats": {
@@ -4696,20 +4710,22 @@
       "into": [],
       "icon": "3870.png",
       "popularity": 139,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
         "ManaRegen",
         "Vision",
         "GoldPer",
-        "Lane"
+        "Lane",
+        "Active",
+        "OnHit"
       ],
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "dreammaker"
       ]
@@ -4736,7 +4752,8 @@
         "ManaRegen",
         "Vision",
         "GoldPer",
-        "Lane"
+        "Lane",
+        "Active"
       ],
       "aliases": [
         "zazzaksrealmspike"
@@ -4764,7 +4781,8 @@
         "ManaRegen",
         "Vision",
         "GoldPer",
-        "Lane"
+        "Lane",
+        "Active"
       ],
       "aliases": [
         "solsticesleigh"
@@ -4780,20 +4798,22 @@
       "into": [],
       "icon": "3877.png",
       "popularity": 137,
-      "stats": {
-        "Health": 200,
-        "Base Health Regen": 75,
-        "Base Mana Regen": 75,
-        "Gold Per 10 Seconds": 9
-      },
       "tags": [
         "Health",
         "HealthRegen",
         "ManaRegen",
         "Vision",
         "GoldPer",
-        "Lane"
+        "Lane",
+        "Active",
+        "OnHit"
       ],
+      "stats": {
+        "Health": 200,
+        "Base Health Regen": 75,
+        "Base Mana Regen": 75,
+        "Gold Per 10 Seconds": 9
+      },
       "aliases": [
         "bloodsong"
       ]
@@ -4894,14 +4914,15 @@
       "into": [],
       "icon": "4628.png",
       "popularity": 115,
+      "tags": [
+        "SpellDamage",
+        "AbilityHaste",
+        "Vision"
+      ],
       "stats": {
         "Ability Power": 75,
         "Ability Haste": 25
       },
-      "tags": [
-        "SpellDamage",
-        "AbilityHaste"
-      ],
       "aliases": [
         "horizonfocus"
       ]
@@ -5333,7 +5354,8 @@
         "Health",
         "Damage",
         "AttackSpeed",
-        "Slow"
+        "Slow",
+        "Active"
       ],
       "aliases": [
         "stridebreaker"
@@ -5672,16 +5694,17 @@
         "thecollector",
         "collector"
       ],
+      "tags": [
+        "Damage",
+        "CriticalStrike",
+        "ArmorPenetration",
+        "GoldPer"
+      ],
       "stats": {
         "Attack Damage": 50,
         "Lethality": 10,
         "Critical Strike Chance": 25
-      },
-      "tags": [
-        "Damage",
-        "CriticalStrike",
-        "ArmorPenetration"
-      ]
+      }
     },
     {
       "id": "6690",
