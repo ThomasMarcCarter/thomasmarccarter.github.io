@@ -176,7 +176,10 @@ export default function Game() {
           </span>
         </div>
         <div ref={sky} className="min-h-[16cqh] flex-1" />
-        <div className="lol-panel min-h-0 shrink overflow-y-auto px-4 py-[clamp(0.75rem,3cqh,2.25rem)] sm:px-8">{screen}</div>
+        {/* The frame doesn't scroll; the inner box does, so scrolled text is cut off inside the gold border. */}
+        <div className="lol-panel flex min-h-0 shrink flex-col">
+          <div className="lol-scroll min-h-0 overflow-y-auto px-4 py-[clamp(0.75rem,3cqh,2.25rem)] sm:px-8">{screen}</div>
+        </div>
         {/* Hidden while answering, to give the prompt every pixel; How to play carries the full disclaimer. */}
         {!asking && (
           <p className="lol-legal mt-1.5 text-center text-[0.7rem] leading-tight">

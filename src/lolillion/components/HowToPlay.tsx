@@ -22,10 +22,10 @@ export default function HowToPlay({ className = 'lol-button-ghost' }: { classNam
       <dialog
         ref={dialog}
         aria-labelledby="how-to-play-title"
-        className="lol-panel m-auto max-h-[calc(100dvh-2rem)] w-[min(32rem,calc(100%-2rem))] overflow-y-auto p-0 text-ink backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+        className="lol-panel m-auto max-h-[calc(100dvh-2rem)] w-[min(32rem,calc(100%-2rem))] text-ink open:flex open:flex-col backdrop:bg-black/70 backdrop:backdrop-blur-sm"
         onClick={(e) => e.target === dialog.current && dialog.current.close()}
       >
-        <div className="p-6">
+        <div className="lol-scroll min-h-0 overflow-y-auto p-6">
           <h2 id="how-to-play-title" className="lol-display text-2xl font-bold text-accent">
             How to play
           </h2>
