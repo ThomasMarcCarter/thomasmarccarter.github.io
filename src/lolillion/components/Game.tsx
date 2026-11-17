@@ -20,6 +20,7 @@ import {
 import { isRightAnswer } from '../engine/score';
 import { readJson, writeJson } from '../engine/storage';
 import { useNow } from '../hooks/useNow';
+import { url } from '../../data/site';
 import MuteButton from './MuteButton';
 import QuestionCard from './QuestionCard';
 import Results from './Results';
@@ -149,7 +150,10 @@ export default function Game() {
 
   return (
     <section className="mx-auto max-w-xl pt-6 pb-10 sm:pt-12">
-      <div className="mb-3 flex justify-end">
+      <div className="mb-3 flex items-center justify-between">
+        <a href={url('/')} className="text-sm text-muted transition-colors hover:text-accent">
+          Thomas-Marc Carter
+        </a>
         <MuteButton />
       </div>
       <div className="lol-panel px-5 py-7 sm:px-9 sm:py-10">{screen}</div>

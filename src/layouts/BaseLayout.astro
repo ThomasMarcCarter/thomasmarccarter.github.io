@@ -9,9 +9,11 @@ interface Props {
   title?: string;
   description?: string;
   skin?: 'default' | 'radar' | 'lolillion';
+  /** Leave out the site header and footer, for full-screen pages like the game. */
+  bare?: boolean;
 }
 
-const { title, description = site.description, skin = 'default' } = Astro.props;
+const { title, description = site.description, skin = 'default', bare = false } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name}, ${site.role}`;
 const fonts = [
   'family=Schibsted+Grotesk:wght@400;500;700;800',
@@ -52,10 +54,10 @@ const fonts = [
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-paper">
       Skip to content
     </a>
-    <Header />
+    {!bare && <Header />}
     <main id="main" class="mx-auto w-full max-w-6xl flex-1 px-4 sm:px-8">
       <slot />
     </main>
-    <Footer />
+    {!bare && <Footer />}
   </body>
 </html>
