@@ -1030,11 +1030,7 @@
       "popularity": 205,
       "aliases": [
         "guardianshorn",
-        "goldenarmofkobe",
-        "goldenbicepofkobe",
-        "horn",
-        "hornofthemanwolf",
-        "manwolf"
+        "horn"
       ]
     },
     {
@@ -2102,8 +2098,7 @@
       "icon": "3050.png",
       "popularity": 150,
       "aliases": [
-        "zekesconvergence",
-        "haroldandkumar"
+        "zekesconvergence"
       ]
     },
     {
@@ -2584,8 +2579,7 @@
       "popularity": 51,
       "aliases": [
         "trinityforce",
-        "triforce",
-        "tonsofdamage"
+        "triforce"
       ]
     },
     {
@@ -2781,7 +2775,6 @@
       "aliases": [
         "rabadonsdeathcap",
         "dc",
-        "banksys",
         "deathcap",
         "dcap"
       ]

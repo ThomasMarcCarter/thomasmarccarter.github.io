@@ -64,6 +64,11 @@ describe('buildItems', () => {
     expect(ids(buildItems(dd, {}))).not.toContain('323003');
   });
 
+  it('drops joke nicknames', () => {
+    const r = buildItems({ '2051': item("Guardian's Horn", { colloq: ';horn;goldenarmofkobe;manwolf' }) }, {});
+    expect(get(r, '2051').aliases).toEqual(['guardianshorn', 'horn']);
+  });
+
   it('drops nicknames that more than one item uses', () => {
     const r = buildItems(
       {
