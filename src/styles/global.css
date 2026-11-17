@@ -139,14 +139,84 @@
 
 :root[data-skin="lolillion"] {
   --paper: #0b0f1a;
+  --panel: #111827;
   --ink: #ece6d6;
   --muted: #8f8a7c;
   --line: #232a3b;
   --accent: #c9a24c;
+  --display-font: "Cinzel", Georgia, serif;
+  --tier-silver: #b8c0cc;
+  --tier-gold: #e3b341;
+  --tier-platinum: #3fc1a5;
+  --tier-diamond: #5b8def;
+  --tier-master: #b06ad9;
+  --tier-challenger: #f2c94c;
   color-scheme: dark;
+}
+
+:root[data-skin="lolillion"] body {
+  background-image: radial-gradient(ellipse 80% 40% at 50% 0%, rgb(201 162 76 / 0.12), transparent 70%);
 }
 
 /* The skin is dark-only, so the theme toggle has nothing to switch. */
 :root[data-skin="lolillion"] #theme-toggle {
   display: none;
+}
+
+/* Double gold frame used around game panels. */
+.lol-frame {
+  border: 1px solid rgb(201 162 76 / 0.35);
+  outline: 1px solid rgb(201 162 76 / 0.2);
+  outline-offset: 4px;
+}
+
+.lol-display {
+  font-family: var(--display-font);
+}
+
+.lol-button {
+  @apply block w-full px-4 py-3.5 text-center font-bold tracking-[0.06em] uppercase transition;
+  background: linear-gradient(#d4b25e, #a8822f);
+  color: #1a1406;
+}
+.lol-button:hover {
+  filter: brightness(1.08);
+}
+.lol-button-ghost {
+  @apply block w-full border border-accent px-4 py-3.5 text-center font-bold tracking-[0.06em] text-accent uppercase transition hover:bg-accent/10;
+}
+
+/* Tier badge: an original framed gem in the tier colour (set --c). */
+.lol-badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.lol-badge::before,
+.lol-badge::after {
+  content: "";
+  position: absolute;
+  rotate: 45deg;
+  border: 1px solid var(--c);
+}
+.lol-badge::before {
+  inset: 11%;
+  border-width: 3px;
+  background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--c) 45%, transparent), transparent 70%);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--c) 50%, transparent);
+}
+.lol-badge::after {
+  inset: 28%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lol-pop {
+    animation: lol-pop 0.45s cubic-bezier(0.2, 0.8, 0.2, 1.2) both;
+  }
+  @keyframes lol-pop {
+    from {
+      scale: 0.6;
+      opacity: 0;
+    }
+  }
 }
