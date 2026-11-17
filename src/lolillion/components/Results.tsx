@@ -7,6 +7,7 @@ import { buildShareString } from '../engine/share';
 import { useCountUp } from '../hooks/useCountUp';
 import { useNow } from '../hooks/useNow';
 import { play } from '../sound';
+import AnswerList from './AnswerList';
 import TierBadge from './TierBadge';
 
 interface Props {
@@ -23,6 +24,7 @@ const countdown = (ms: number) => `${Math.floor(ms / HOUR)}h ${Math.floor((ms % 
 export default function Results({ number, questions, progress, entryFor }: Props) {
   const now = useNow(true, MINUTE / 2);
   const [copied, setCopied] = useState(false);
+  const [openId, setOpenId] = useState<string | null>(null);
   const shareRef = useRef<HTMLPreElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   // The "See results" button just disappeared; move focus to the score rather than losing it to the page.
@@ -64,22 +66,41 @@ export default function Results({ number, questions, progress, entryFor }: Props
       >
         {shownTotal} LP
       </h1>
-      <ol className="mt-8 space-y-3">
-        {rows.map(({ q, entry, tier, points }) => (
-          <li key={q.id} className="lol-row grid grid-cols-[auto_1fr_auto] items-center gap-x-3 pb-3">
-            <TierBadge tier={tier?.name ?? null} size={22} />
-            <span>
-              {q.prompt}: <b>{entry ? entry.name : 'time ran out'}</b>
-            </span>
-            <span
-              className="font-bold tabular-nums"
-              style={{ color: tier ? `var(--tier-${tier.name.toLowerCase()})` : 'var(--muted)' }}
-            >
-              +{points}
-            </span>
-            <span className="col-start-2 col-end-4 text-sm text-muted">Rarest: {rarestAnswer(q).name}</span>
-          </li>
-        ))}
+      <p className="mt-6 text-center text-sm text-muted">Select a prompt to see every right answer and its LP.</p>
+      <ol className="mt-3 space-y-1">
+        {rows.map(({ q, entry, tier, points }) => {
+          const open = openId === q.id;
+          return (
+            <li key={q.id} className="lol-row">
+              <button
+                type="button"
+                aria-expanded={open}
+                aria-controls={`answers-${q.id}`}
+                onClick={() => {
+                  play('select');
+                  setOpenId(open ? null : q.id);
+                }}
+                className="lol-row-button grid w-full grid-cols-[auto_1fr_auto_auto] items-center gap-x-3 py-3 text-left"
+              >
+                <TierBadge tier={tier?.name ?? null} size={22} />
+                <span>
+                  {q.prompt}: <b>{entry ? entry.name : 'time ran out'}</b>
+                  <span className="block text-sm text-muted">Rarest: {rarestAnswer(q).name}</span>
+                </span>
+                <span
+                  className="font-bold tabular-nums"
+                  style={{ color: tier ? `var(--tier-${tier.name.toLowerCase()})` : 'var(--muted)' }}
+                >
+                  +{points}
+                </span>
+                <svg viewBox="0 0 16 16" className={`lol-chevron h-4 w-4 text-accent ${open ? 'is-open' : ''}`} aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>
+              </button>
+              {open && <AnswerList id={`answers-${q.id}`} question={q} chosenId={entry?.id ?? null} />}
+            </li>
+          );
+        })}
       </ol>
       <pre
         ref={shareRef}

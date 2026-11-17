@@ -43,3 +43,17 @@ export function rarityPercent(question: Question, entryId: string): number {
 export function isRightAnswer(question: Question, entryId: string): boolean {
   return tierOf(question, entryId) !== null;
 }
+
+/** Every valid answer grouped by the tier it scores, rarest tier first, for the results breakdown. */
+export function answersByTier(question: Question): { tier: Tier; entries: Entry[] }[] {
+  const answers = validAnswers(question);
+  const groups = new Map<Tier, Entry[]>();
+  answers.forEach((entry, i) => {
+    const tier = tierForRank(i, answers.length);
+    groups.set(tier, [...(groups.get(tier) ?? []), entry]);
+  });
+  return [...tiers]
+    .reverse()
+    .filter((t) => groups.has(t))
+    .map((tier) => ({ tier, entries: groups.get(tier)! }));
+}

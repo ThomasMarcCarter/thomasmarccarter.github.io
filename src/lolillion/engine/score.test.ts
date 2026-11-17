@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { questions, validAnswers, type Question } from '../data/questions';
-import { isRightAnswer, rarestAnswer, rarityPercent, scoreAnswer, tierForRank, tierOf } from './score';
+import { answersByTier, isRightAnswer, rarestAnswer, rarityPercent, scoreAnswer, tierForRank, tierOf } from './score';
 
 const names = (n: number) => Array.from({ length: n }, (_, i) => tierForRank(i, n).name);
 
@@ -54,5 +54,26 @@ describe('isRightAnswer', () => {
   it('accepts valid answers and rejects the rest', () => {
     expect(isRightAnswer(question, 'Garen')).toBe(true);
     expect(isRightAnswer(question, 'Jinx')).toBe(false);
+  });
+});
+
+describe('answersByTier', () => {
+  const question = questions.find((q) => q.id === 'region-demacia') as Question;
+  const groups = answersByTier(question);
+
+  it('lists every valid answer exactly once', () => {
+    const ids = groups.flatMap((g) => g.entries.map((e) => e.id));
+    expect(ids.sort()).toEqual(validAnswers(question).map((a) => a.id).sort());
+  });
+
+  it('puts the rarest tier first and leaves out empty tiers', () => {
+    expect(groups[0].tier.name).toBe('Challenger');
+    expect(groups[0].entries).toEqual([rarestAnswer(question)]);
+    expect(groups.at(-1)!.tier.name).toBe('Silver');
+    expect(groups.every((g) => g.entries.length > 0)).toBe(true);
+  });
+
+  it('agrees with the tier each answer scores', () => {
+    for (const g of groups) for (const e of g.entries) expect(tierOf(question, e.id)?.name).toBe(g.tier.name);
   });
 });

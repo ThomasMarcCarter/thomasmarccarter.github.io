@@ -531,3 +531,35 @@
     text-shadow: 0 0 24px color-mix(in srgb, var(--c, var(--accent)) 55%, transparent);
   }
 }
+
+/* Results: each prompt opens to show every right answer by tier. */
+.lol-row-button {
+  border-radius: 2px;
+  transition: background-color 0.15s;
+}
+.lol-row-button:hover {
+  background: rgb(201 162 76 / 0.07);
+}
+.lol-chevron {
+  transition: rotate 0.2s;
+}
+.lol-chevron.is-open {
+  rotate: 180deg;
+}
+.lol-answers {
+  background: rgb(8 12 22 / 0.7);
+  border: 1px solid rgb(201 162 76 / 0.2);
+}
+.lol-chip {
+  background: rgb(17 24 39 / 0.9);
+  border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+}
+.lol-chip img {
+  border: 1px solid color-mix(in srgb, var(--c) 50%, transparent);
+}
+.lol-chip.is-chosen {
+  border-color: var(--c);
+  background: color-mix(in srgb, var(--c) 22%, rgb(17 24 39));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--c) 45%, transparent);
+  font-weight: 700;
+}
