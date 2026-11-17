@@ -1,0 +1,4242 @@
+{
+  "ddragonVersion": "16.22.1",
+  "champions": [
+    {
+      "id": "Aatrox",
+      "name": "Aatrox",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Runeterra",
+      "resource": "Blood Well",
+      "rangeType": "Melee",
+      "releaseYear": 2013,
+      "icon": "Aatrox.png",
+      "species": [
+        "Darkin"
+      ],
+      "gender": "Male",
+      "popularity": 51,
+      "aliases": [
+        "aatrox"
+      ]
+    },
+    {
+      "id": "Ahri",
+      "name": "Ahri",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Ahri.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Female",
+      "popularity": 9,
+      "aliases": [
+        "ahri"
+      ]
+    },
+    {
+      "id": "Akali",
+      "name": "Akali",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Energy",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Akali.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 27,
+      "aliases": [
+        "akali"
+      ]
+    },
+    {
+      "id": "Akshan",
+      "name": "Akshan",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2021,
+      "icon": "Akshan.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 154,
+      "aliases": [
+        "akshan"
+      ]
+    },
+    {
+      "id": "Alistar",
+      "name": "Alistar",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Alistar.png",
+      "species": [
+        "Minotaur"
+      ],
+      "gender": "Male",
+      "popularity": 137,
+      "aliases": [
+        "alistar",
+        "ali"
+      ]
+    },
+    {
+      "id": "Ambessa",
+      "name": "Ambessa",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Noxus",
+      "resource": "Energy",
+      "rangeType": "Melee",
+      "releaseYear": 2024,
+      "icon": "Ambessa.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 159,
+      "aliases": [
+        "ambessa"
+      ]
+    },
+    {
+      "id": "Amumu",
+      "name": "Amumu",
+      "positions": [
+        "Jungle",
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Amumu.png",
+      "species": [
+        "Yordle",
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 75,
+      "aliases": [
+        "amumu"
+      ]
+    },
+    {
+      "id": "Anivia",
+      "name": "Anivia",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Anivia.png",
+      "species": [
+        "Demigod"
+      ],
+      "gender": "Female",
+      "popularity": 146,
+      "aliases": [
+        "anivia"
+      ]
+    },
+    {
+      "id": "Annie",
+      "name": "Annie",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Annie.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 60,
+      "aliases": [
+        "annie"
+      ]
+    },
+    {
+      "id": "Aphelios",
+      "name": "Aphelios",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2019,
+      "icon": "Aphelios.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 55,
+      "aliases": [
+        "aphelios"
+      ]
+    },
+    {
+      "id": "Ashe",
+      "name": "Ashe",
+      "positions": [
+        "Bot",
+        "Support"
+      ],
+      "classes": [
+        "Marksman",
+        "Support"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Ashe.png",
+      "species": [
+        "Human",
+        "Iceborn"
+      ],
+      "gender": "Female",
+      "popularity": 14,
+      "aliases": [
+        "ashe"
+      ]
+    },
+    {
+      "id": "AurelionSol",
+      "name": "Aurelion Sol",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2016,
+      "icon": "AurelionSol.png",
+      "species": [
+        "Celestial"
+      ],
+      "gender": "Male",
+      "popularity": 151,
+      "aliases": [
+        "aurelionsol",
+        "asol",
+        "aurelion"
+      ]
+    },
+    {
+      "id": "Aurora",
+      "name": "Aurora",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Assassin"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2024,
+      "icon": "Aurora.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Female",
+      "popularity": 160,
+      "aliases": [
+        "aurora"
+      ]
+    },
+    {
+      "id": "Azir",
+      "name": "Azir",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage",
+        "Marksman"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2014,
+      "icon": "Azir.png",
+      "species": [
+        "Ascended"
+      ],
+      "gender": "Male",
+      "popularity": 150,
+      "aliases": [
+        "azir"
+      ]
+    },
+    {
+      "id": "Bard",
+      "name": "Bard",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2015,
+      "icon": "Bard.png",
+      "species": [
+        "Celestial"
+      ],
+      "gender": "Male",
+      "popularity": 140,
+      "aliases": [
+        "bard"
+      ]
+    },
+    {
+      "id": "Belveth",
+      "name": "Bel'Veth",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "the Void",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2022,
+      "icon": "Belveth.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Female",
+      "popularity": 73,
+      "aliases": [
+        "belveth"
+      ]
+    },
+    {
+      "id": "Blitzcrank",
+      "name": "Blitzcrank",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Blitzcrank.png",
+      "species": [
+        "Golem"
+      ],
+      "gender": "Male",
+      "popularity": 32,
+      "aliases": [
+        "blitzcrank",
+        "blitz"
+      ]
+    },
+    {
+      "id": "Brand",
+      "name": "Brand",
+      "positions": [
+        "Jungle",
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Brand.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 58,
+      "aliases": [
+        "brand"
+      ]
+    },
+    {
+      "id": "Braum",
+      "name": "Braum",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2014,
+      "icon": "Braum.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 138,
+      "aliases": [
+        "braum"
+      ]
+    },
+    {
+      "id": "Briar",
+      "name": "Briar",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Noxus",
+      "resource": "Fury",
+      "rangeType": "Melee",
+      "releaseYear": 2023,
+      "icon": "Briar.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 72,
+      "aliases": [
+        "briar"
+      ]
+    },
+    {
+      "id": "Caitlyn",
+      "name": "Caitlyn",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Caitlyn.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 8,
+      "aliases": [
+        "caitlyn",
+        "cait"
+      ]
+    },
+    {
+      "id": "Camille",
+      "name": "Camille",
+      "positions": [
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2016,
+      "icon": "Camille.png",
+      "species": [
+        "Human",
+        "Cyborg"
+      ],
+      "gender": "Female",
+      "popularity": 50,
+      "aliases": [
+        "camille"
+      ]
+    },
+    {
+      "id": "Cassiopeia",
+      "name": "Cassiopeia",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Cassiopeia.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 92,
+      "aliases": [
+        "cassiopeia",
+        "cass"
+      ]
+    },
+    {
+      "id": "Chogath",
+      "name": "Cho'Gath",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Mage"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Chogath.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Other",
+      "popularity": 171,
+      "aliases": [
+        "chogath",
+        "cho"
+      ]
+    },
+    {
+      "id": "Corki",
+      "name": "Corki",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Corki.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 131,
+      "aliases": [
+        "corki"
+      ]
+    },
+    {
+      "id": "Darius",
+      "name": "Darius",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Darius.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 15,
+      "aliases": [
+        "darius"
+      ]
+    },
+    {
+      "id": "Diana",
+      "name": "Diana",
+      "positions": [
+        "Jungle",
+        "Mid"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Diana.png",
+      "species": [
+        "Human",
+        "Aspect"
+      ],
+      "gender": "Female",
+      "popularity": 45,
+      "aliases": [
+        "diana"
+      ]
+    },
+    {
+      "id": "Draven",
+      "name": "Draven",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Draven.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 34,
+      "aliases": [
+        "draven"
+      ]
+    },
+    {
+      "id": "DrMundo",
+      "name": "Dr. Mundo",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Zaun",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "DrMundo.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 100,
+      "aliases": [
+        "drmundo",
+        "mundo"
+      ]
+    },
+    {
+      "id": "Ekko",
+      "name": "Ekko",
+      "positions": [
+        "Jungle",
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2015,
+      "icon": "Ekko.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 36,
+      "aliases": [
+        "ekko"
+      ]
+    },
+    {
+      "id": "Elise",
+      "name": "Elise",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Elise.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 69,
+      "aliases": [
+        "elise"
+      ]
+    },
+    {
+      "id": "Evelynn",
+      "name": "Evelynn",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Evelynn.png",
+      "species": [
+        "Demon"
+      ],
+      "gender": "Female",
+      "popularity": 67,
+      "aliases": [
+        "evelynn"
+      ]
+    },
+    {
+      "id": "Ezreal",
+      "name": "Ezreal",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Ezreal.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 1,
+      "aliases": [
+        "ezreal",
+        "ez"
+      ]
+    },
+    {
+      "id": "Fiddlesticks",
+      "name": "Fiddlesticks",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Fiddlesticks.png",
+      "species": [
+        "Demon"
+      ],
+      "gender": "Other",
+      "popularity": 125,
+      "aliases": [
+        "fiddlesticks",
+        "fiddle"
+      ]
+    },
+    {
+      "id": "Fiora",
+      "name": "Fiora",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Fiora.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 49,
+      "aliases": [
+        "fiora"
+      ]
+    },
+    {
+      "id": "Fizz",
+      "name": "Fizz",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Fighter"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Fizz.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 81,
+      "aliases": [
+        "fizz"
+      ]
+    },
+    {
+      "id": "Galio",
+      "name": "Galio",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Mage"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Galio.png",
+      "species": [
+        "Golem"
+      ],
+      "gender": "Male",
+      "popularity": 148,
+      "aliases": [
+        "galio"
+      ]
+    },
+    {
+      "id": "Gangplank",
+      "name": "Gangplank",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Gangplank.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 95,
+      "aliases": [
+        "gangplank",
+        "gp"
+      ]
+    },
+    {
+      "id": "Garen",
+      "name": "Garen",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Demacia",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Garen.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 18,
+      "aliases": [
+        "garen"
+      ]
+    },
+    {
+      "id": "Gnar",
+      "name": "Gnar",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Rage",
+      "rangeType": "Ranged",
+      "releaseYear": 2014,
+      "icon": "Gnar.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 104,
+      "aliases": [
+        "gnar"
+      ]
+    },
+    {
+      "id": "Gragas",
+      "name": "Gragas",
+      "positions": [
+        "Jungle",
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Mage"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Gragas.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 123,
+      "aliases": [
+        "gragas"
+      ]
+    },
+    {
+      "id": "Graves",
+      "name": "Graves",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Graves.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 26,
+      "aliases": [
+        "graves"
+      ]
+    },
+    {
+      "id": "Gwen",
+      "name": "Gwen",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2021,
+      "icon": "Gwen.png",
+      "species": [
+        "Construct"
+      ],
+      "gender": "Female",
+      "popularity": 96,
+      "aliases": [
+        "gwen"
+      ]
+    },
+    {
+      "id": "Hecarim",
+      "name": "Hecarim",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Hecarim.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 66,
+      "aliases": [
+        "hecarim"
+      ]
+    },
+    {
+      "id": "Heimerdinger",
+      "name": "Heimerdinger",
+      "positions": [
+        "Mid",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Heimerdinger.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 145,
+      "aliases": [
+        "heimerdinger",
+        "heimer"
+      ]
+    },
+    {
+      "id": "Hwei",
+      "name": "Hwei",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2023,
+      "icon": "Hwei.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Male",
+      "popularity": 54,
+      "aliases": [
+        "hwei"
+      ]
+    },
+    {
+      "id": "Illaoi",
+      "name": "Illaoi",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2015,
+      "icon": "Illaoi.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 107,
+      "aliases": [
+        "illaoi"
+      ]
+    },
+    {
+      "id": "Irelia",
+      "name": "Irelia",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Irelia.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 37,
+      "aliases": [
+        "irelia"
+      ]
+    },
+    {
+      "id": "Ivern",
+      "name": "Ivern",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2016,
+      "icon": "Ivern.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 127,
+      "aliases": [
+        "ivern"
+      ]
+    },
+    {
+      "id": "Janna",
+      "name": "Janna",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Janna.png",
+      "species": [
+        "Spirit"
+      ],
+      "gender": "Female",
+      "popularity": 139,
+      "aliases": [
+        "janna"
+      ]
+    },
+    {
+      "id": "JarvanIV",
+      "name": "Jarvan IV",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "JarvanIV.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 65,
+      "aliases": [
+        "jarvaniv",
+        "j4",
+        "jarvan"
+      ]
+    },
+    {
+      "id": "Jax",
+      "name": "Jax",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Jax.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 48,
+      "aliases": [
+        "jax"
+      ]
+    },
+    {
+      "id": "Jayce",
+      "name": "Jayce",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Marksman"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Jayce.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 97,
+      "aliases": [
+        "jayce"
+      ]
+    },
+    {
+      "id": "Jhin",
+      "name": "Jhin",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2016,
+      "icon": "Jhin.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 4,
+      "aliases": [
+        "jhin"
+      ]
+    },
+    {
+      "id": "Jinx",
+      "name": "Jinx",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2013,
+      "icon": "Jinx.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 10,
+      "aliases": [
+        "jinx"
+      ]
+    },
+    {
+      "id": "Kaisa",
+      "name": "Kai'Sa",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2018,
+      "icon": "Kaisa.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 3,
+      "aliases": [
+        "kaisa"
+      ]
+    },
+    {
+      "id": "Kalista",
+      "name": "Kalista",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2014,
+      "icon": "Kalista.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Female",
+      "popularity": 165,
+      "aliases": [
+        "kalista"
+      ]
+    },
+    {
+      "id": "Karma",
+      "name": "Karma",
+      "positions": [
+        "Mid",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Karma.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 41,
+      "aliases": [
+        "karma"
+      ]
+    },
+    {
+      "id": "Karthus",
+      "name": "Karthus",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Karthus.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 126,
+      "aliases": [
+        "karthus"
+      ]
+    },
+    {
+      "id": "Kassadin",
+      "name": "Kassadin",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Kassadin.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 78,
+      "aliases": [
+        "kassadin",
+        "kass"
+      ]
+    },
+    {
+      "id": "Katarina",
+      "name": "Katarina",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Noxus",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Katarina.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 24,
+      "aliases": [
+        "katarina",
+        "kat"
+      ]
+    },
+    {
+      "id": "Kayle",
+      "name": "Kayle",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Kayle.png",
+      "species": [
+        "Human",
+        "Celestial"
+      ],
+      "gender": "Female",
+      "popularity": 128,
+      "aliases": [
+        "kayle"
+      ]
+    },
+    {
+      "id": "Kayn",
+      "name": "Kayn",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2017,
+      "icon": "Kayn.png",
+      "species": [
+        "Human",
+        "Darkin"
+      ],
+      "gender": "Male",
+      "popularity": 33,
+      "aliases": [
+        "kayn"
+      ]
+    },
+    {
+      "id": "Kennen",
+      "name": "Kennen",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Energy",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Kennen.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 105,
+      "aliases": [
+        "kennen"
+      ]
+    },
+    {
+      "id": "Khazix",
+      "name": "Kha'Zix",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Khazix.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Male",
+      "popularity": 46,
+      "aliases": [
+        "khazix",
+        "kha"
+      ]
+    },
+    {
+      "id": "Kindred",
+      "name": "Kindred",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2015,
+      "icon": "Kindred.png",
+      "species": [
+        "Spirit"
+      ],
+      "gender": "Other",
+      "popularity": 71,
+      "aliases": [
+        "kindred"
+      ]
+    },
+    {
+      "id": "Kled",
+      "name": "Kled",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Noxus",
+      "resource": "Courage",
+      "rangeType": "Melee",
+      "releaseYear": 2016,
+      "icon": "Kled.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 106,
+      "aliases": [
+        "kled"
+      ]
+    },
+    {
+      "id": "KogMaw",
+      "name": "Kog'Maw",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "KogMaw.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Other",
+      "popularity": 169,
+      "aliases": [
+        "kogmaw",
+        "kog"
+      ]
+    },
+    {
+      "id": "KSante",
+      "name": "K'Sante",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2022,
+      "icon": "KSante.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 157,
+      "aliases": [
+        "ksante"
+      ]
+    },
+    {
+      "id": "Leblanc",
+      "name": "LeBlanc",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Leblanc.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 82,
+      "aliases": [
+        "leblanc",
+        "lb"
+      ]
+    },
+    {
+      "id": "LeeSin",
+      "name": "Lee Sin",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Energy",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "LeeSin.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 2,
+      "aliases": [
+        "leesin",
+        "lee"
+      ]
+    },
+    {
+      "id": "Leona",
+      "name": "Leona",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Leona.png",
+      "species": [
+        "Human",
+        "Aspect"
+      ],
+      "gender": "Female",
+      "popularity": 31,
+      "aliases": [
+        "leona"
+      ]
+    },
+    {
+      "id": "Lillia",
+      "name": "Lillia",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2020,
+      "icon": "Lillia.png",
+      "species": [
+        "Spirit"
+      ],
+      "gender": "Female",
+      "popularity": 124,
+      "aliases": [
+        "lillia"
+      ]
+    },
+    {
+      "id": "Lissandra",
+      "name": "Lissandra",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2013,
+      "icon": "Lissandra.png",
+      "species": [
+        "Human",
+        "Iceborn"
+      ],
+      "gender": "Female",
+      "popularity": 147,
+      "aliases": [
+        "lissandra"
+      ]
+    },
+    {
+      "id": "Locke",
+      "name": "Locke",
+      "positions": [
+        "Mid",
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2026,
+      "icon": "Locke.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 164,
+      "aliases": [
+        "locke"
+      ]
+    },
+    {
+      "id": "Lucian",
+      "name": "Lucian",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2013,
+      "icon": "Lucian.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 20,
+      "aliases": [
+        "lucian"
+      ]
+    },
+    {
+      "id": "Lulu",
+      "name": "Lulu",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Lulu.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Female",
+      "popularity": 44,
+      "aliases": [
+        "lulu"
+      ]
+    },
+    {
+      "id": "Lux",
+      "name": "Lux",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Lux.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 6,
+      "aliases": [
+        "lux"
+      ]
+    },
+    {
+      "id": "Malphite",
+      "name": "Malphite",
+      "positions": [
+        "Mid",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Mage"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Malphite.png",
+      "species": [
+        "Elemental"
+      ],
+      "gender": "Male",
+      "popularity": 52,
+      "aliases": [
+        "malphite"
+      ]
+    },
+    {
+      "id": "Malzahar",
+      "name": "Malzahar",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Malzahar.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 149,
+      "aliases": [
+        "malzahar",
+        "malz"
+      ]
+    },
+    {
+      "id": "Maokai",
+      "name": "Maokai",
+      "positions": [
+        "Jungle",
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Maokai.png",
+      "species": [
+        "Spirit"
+      ],
+      "gender": "Male",
+      "popularity": 121,
+      "aliases": [
+        "maokai"
+      ]
+    },
+    {
+      "id": "MasterYi",
+      "name": "Master Yi",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "MasterYi.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 25,
+      "aliases": [
+        "masteryi",
+        "yi"
+      ]
+    },
+    {
+      "id": "Mel",
+      "name": "Mel",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2025,
+      "icon": "Mel.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 161,
+      "aliases": [
+        "mel"
+      ]
+    },
+    {
+      "id": "Milio",
+      "name": "Milio",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2023,
+      "icon": "Milio.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 64,
+      "aliases": [
+        "milio"
+      ]
+    },
+    {
+      "id": "MissFortune",
+      "name": "Miss Fortune",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "MissFortune.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 13,
+      "aliases": [
+        "missfortune",
+        "mf"
+      ]
+    },
+    {
+      "id": "MonkeyKing",
+      "name": "Wukong",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "MonkeyKing.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Male",
+      "popularity": 115,
+      "aliases": [
+        "wukong",
+        "monkeyking",
+        "wu"
+      ]
+    },
+    {
+      "id": "Mordekaiser",
+      "name": "Mordekaiser",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Mage"
+      ],
+      "region": "Noxus",
+      "resource": "Shield",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Mordekaiser.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 40,
+      "aliases": [
+        "mordekaiser",
+        "morde"
+      ]
+    },
+    {
+      "id": "Morgana",
+      "name": "Morgana",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Morgana.png",
+      "species": [
+        "Human",
+        "Celestial"
+      ],
+      "gender": "Female",
+      "popularity": 21,
+      "aliases": [
+        "morgana"
+      ]
+    },
+    {
+      "id": "Naafiri",
+      "name": "Naafiri",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin",
+        "Fighter"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2023,
+      "icon": "Naafiri.png",
+      "species": [
+        "Darkin"
+      ],
+      "popularity": 158,
+      "gender": "Female",
+      "aliases": [
+        "naafiri"
+      ]
+    },
+    {
+      "id": "Nami",
+      "name": "Nami",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Nami.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Female",
+      "popularity": 47,
+      "aliases": [
+        "nami"
+      ]
+    },
+    {
+      "id": "Nasus",
+      "name": "Nasus",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Nasus.png",
+      "species": [
+        "Ascended"
+      ],
+      "gender": "Male",
+      "popularity": 99,
+      "aliases": [
+        "nasus"
+      ]
+    },
+    {
+      "id": "Nautilus",
+      "name": "Nautilus",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Nautilus.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 22,
+      "aliases": [
+        "nautilus",
+        "naut"
+      ]
+    },
+    {
+      "id": "Neeko",
+      "name": "Neeko",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2018,
+      "icon": "Neeko.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Female",
+      "popularity": 153,
+      "aliases": [
+        "neeko"
+      ]
+    },
+    {
+      "id": "Nidalee",
+      "name": "Nidalee",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin",
+        "Mage"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Nidalee.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 68,
+      "aliases": [
+        "nidalee",
+        "nid"
+      ]
+    },
+    {
+      "id": "Nilah",
+      "name": "Nilah",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2022,
+      "icon": "Nilah.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 156,
+      "aliases": [
+        "nilah"
+      ]
+    },
+    {
+      "id": "Nocturne",
+      "name": "Nocturne",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Nocturne.png",
+      "species": [
+        "Demon"
+      ],
+      "gender": "Other",
+      "popularity": 76,
+      "aliases": [
+        "nocturne",
+        "noc"
+      ]
+    },
+    {
+      "id": "Nunu",
+      "name": "Nunu & Willump",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Tank",
+        "Mage"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Nunu.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 122,
+      "aliases": [
+        "nunuwillump",
+        "nunu",
+        "willump"
+      ]
+    },
+    {
+      "id": "Olaf",
+      "name": "Olaf",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Olaf.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 114,
+      "aliases": [
+        "olaf"
+      ]
+    },
+    {
+      "id": "Orianna",
+      "name": "Orianna",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Orianna.png",
+      "species": [
+        "Construct"
+      ],
+      "gender": "Female",
+      "popularity": 83,
+      "aliases": [
+        "orianna"
+      ]
+    },
+    {
+      "id": "Ornn",
+      "name": "Ornn",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2017,
+      "icon": "Ornn.png",
+      "species": [
+        "Demigod"
+      ],
+      "gender": "Male",
+      "popularity": 102,
+      "aliases": [
+        "ornn"
+      ]
+    },
+    {
+      "id": "Pantheon",
+      "name": "Pantheon",
+      "positions": [
+        "Jungle",
+        "Mid",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Pantheon.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 172,
+      "aliases": [
+        "pantheon"
+      ]
+    },
+    {
+      "id": "Poppy",
+      "name": "Poppy",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Poppy.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Female",
+      "popularity": 117,
+      "aliases": [
+        "poppy"
+      ]
+    },
+    {
+      "id": "Pyke",
+      "name": "Pyke",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Assassin"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2018,
+      "icon": "Pyke.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 29,
+      "aliases": [
+        "pyke"
+      ]
+    },
+    {
+      "id": "Qiyana",
+      "name": "Qiyana",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2019,
+      "icon": "Qiyana.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 80,
+      "aliases": [
+        "qiyana"
+      ]
+    },
+    {
+      "id": "Quinn",
+      "name": "Quinn",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2013,
+      "icon": "Quinn.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 129,
+      "aliases": [
+        "quinn"
+      ]
+    },
+    {
+      "id": "Rakan",
+      "name": "Rakan",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2017,
+      "icon": "Rakan.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Male",
+      "popularity": 136,
+      "aliases": [
+        "rakan"
+      ]
+    },
+    {
+      "id": "Rammus",
+      "name": "Rammus",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Tank"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Rammus.png",
+      "species": [
+        "Other"
+      ],
+      "gender": "Male",
+      "popularity": 118,
+      "aliases": [
+        "rammus"
+      ]
+    },
+    {
+      "id": "RekSai",
+      "name": "Rek'Sai",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "the Void",
+      "resource": "Rage",
+      "rangeType": "Melee",
+      "releaseYear": 2014,
+      "icon": "RekSai.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Female",
+      "popularity": 170,
+      "aliases": [
+        "reksai"
+      ]
+    },
+    {
+      "id": "Rell",
+      "name": "Rell",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2020,
+      "icon": "Rell.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 142,
+      "aliases": [
+        "rell"
+      ]
+    },
+    {
+      "id": "Renata",
+      "name": "Renata Glasc",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2022,
+      "icon": "Renata.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 143,
+      "aliases": [
+        "renataglasc",
+        "renata"
+      ]
+    },
+    {
+      "id": "Renekton",
+      "name": "Renekton",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Shurima",
+      "resource": "Fury",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Renekton.png",
+      "species": [
+        "Ascended"
+      ],
+      "gender": "Male",
+      "popularity": 98,
+      "aliases": [
+        "renekton"
+      ]
+    },
+    {
+      "id": "Rengar",
+      "name": "Rengar",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Assassin",
+        "Fighter"
+      ],
+      "region": "Ixtal",
+      "resource": "Ferocity",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Rengar.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Male",
+      "popularity": 77,
+      "aliases": [
+        "rengar"
+      ]
+    },
+    {
+      "id": "Riven",
+      "name": "Riven",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Noxus",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Riven.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 39,
+      "aliases": [
+        "riven"
+      ]
+    },
+    {
+      "id": "Rumble",
+      "name": "Rumble",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Heat",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Rumble.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 167,
+      "aliases": [
+        "rumble"
+      ]
+    },
+    {
+      "id": "Ryze",
+      "name": "Ryze",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Ryze.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 93,
+      "aliases": [
+        "ryze"
+      ]
+    },
+    {
+      "id": "Samira",
+      "name": "Samira",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2020,
+      "icon": "Samira.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 30,
+      "aliases": [
+        "samira"
+      ]
+    },
+    {
+      "id": "Sejuani",
+      "name": "Sejuani",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Sejuani.png",
+      "species": [
+        "Human",
+        "Iceborn"
+      ],
+      "gender": "Female",
+      "popularity": 119,
+      "aliases": [
+        "sejuani",
+        "sej"
+      ]
+    },
+    {
+      "id": "Senna",
+      "name": "Senna",
+      "positions": [
+        "Bot",
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Marksman"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2019,
+      "icon": "Senna.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 28,
+      "aliases": [
+        "senna"
+      ]
+    },
+    {
+      "id": "Seraphine",
+      "name": "Seraphine",
+      "positions": [
+        "Bot",
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2020,
+      "icon": "Seraphine.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 63,
+      "aliases": [
+        "seraphine",
+        "sera"
+      ]
+    },
+    {
+      "id": "Sett",
+      "name": "Sett",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Ionia",
+      "resource": "Grit",
+      "rangeType": "Melee",
+      "releaseYear": 2020,
+      "icon": "Sett.png",
+      "species": [
+        "Human",
+        "Vastaya"
+      ],
+      "gender": "Male",
+      "popularity": 35,
+      "aliases": [
+        "sett"
+      ]
+    },
+    {
+      "id": "Shaco",
+      "name": "Shaco",
+      "positions": [
+        "Jungle",
+        "Support"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Shaco.png",
+      "species": [
+        "Demon"
+      ],
+      "gender": "Male",
+      "popularity": 70,
+      "aliases": [
+        "shaco"
+      ]
+    },
+    {
+      "id": "Shen",
+      "name": "Shen",
+      "positions": [
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Tank"
+      ],
+      "region": "Ionia",
+      "resource": "Energy",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Shen.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 103,
+      "aliases": [
+        "shen"
+      ]
+    },
+    {
+      "id": "Shyvana",
+      "name": "Shyvana",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Demacia",
+      "resource": "Fury",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Shyvana.png",
+      "species": [
+        "Human",
+        "Dragon"
+      ],
+      "gender": "Female",
+      "popularity": 173,
+      "aliases": [
+        "shyvana"
+      ]
+    },
+    {
+      "id": "Singed",
+      "name": "Singed",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Singed.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 166,
+      "aliases": [
+        "singed"
+      ]
+    },
+    {
+      "id": "Sion",
+      "name": "Sion",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Sion.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 101,
+      "aliases": [
+        "sion"
+      ]
+    },
+    {
+      "id": "Sivir",
+      "name": "Sivir",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Sivir.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 134,
+      "aliases": [
+        "sivir"
+      ]
+    },
+    {
+      "id": "Skarner",
+      "name": "Skarner",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Skarner.png",
+      "species": [
+        "Brackern"
+      ],
+      "gender": "Male",
+      "popularity": 168,
+      "aliases": [
+        "skarner"
+      ]
+    },
+    {
+      "id": "Smolder",
+      "name": "Smolder",
+      "positions": [
+        "Bot",
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2024,
+      "icon": "Smolder.png",
+      "species": [
+        "Dragon"
+      ],
+      "gender": "Male",
+      "popularity": 53,
+      "aliases": [
+        "smolder"
+      ]
+    },
+    {
+      "id": "Sona",
+      "name": "Sona",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Sona.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 61,
+      "aliases": [
+        "sona"
+      ]
+    },
+    {
+      "id": "Soraka",
+      "name": "Soraka",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Soraka.png",
+      "species": [
+        "Celestial"
+      ],
+      "gender": "Female",
+      "popularity": 62,
+      "aliases": [
+        "soraka"
+      ]
+    },
+    {
+      "id": "Swain",
+      "name": "Swain",
+      "positions": [
+        "Bot",
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Swain.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 90,
+      "aliases": [
+        "swain"
+      ]
+    },
+    {
+      "id": "Sylas",
+      "name": "Sylas",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Assassin"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2019,
+      "icon": "Sylas.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 19,
+      "aliases": [
+        "sylas"
+      ]
+    },
+    {
+      "id": "Syndra",
+      "name": "Syndra",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Syndra.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 43,
+      "aliases": [
+        "syndra"
+      ]
+    },
+    {
+      "id": "TahmKench",
+      "name": "Tahm Kench",
+      "positions": [
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Support"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2015,
+      "icon": "TahmKench.png",
+      "species": [
+        "Demon"
+      ],
+      "gender": "Male",
+      "popularity": 135,
+      "aliases": [
+        "tahmkench",
+        "tk",
+        "tahm"
+      ]
+    },
+    {
+      "id": "Taliyah",
+      "name": "Taliyah",
+      "positions": [
+        "Jungle",
+        "Mid"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2016,
+      "icon": "Taliyah.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 152,
+      "aliases": [
+        "taliyah"
+      ]
+    },
+    {
+      "id": "Talon",
+      "name": "Talon",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "Noxus",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Talon.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 79,
+      "aliases": [
+        "talon"
+      ]
+    },
+    {
+      "id": "Taric",
+      "name": "Taric",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Tank"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Taric.png",
+      "species": [
+        "Human",
+        "Aspect"
+      ],
+      "gender": "Male",
+      "popularity": 141,
+      "aliases": [
+        "taric"
+      ]
+    },
+    {
+      "id": "Teemo",
+      "name": "Teemo",
+      "positions": [
+        "Jungle",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Teemo.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 38,
+      "aliases": [
+        "teemo"
+      ]
+    },
+    {
+      "id": "Thresh",
+      "name": "Thresh",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Tank"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2013,
+      "icon": "Thresh.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 5,
+      "aliases": [
+        "thresh"
+      ]
+    },
+    {
+      "id": "Tristana",
+      "name": "Tristana",
+      "positions": [
+        "Bot",
+        "Mid"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Tristana.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Female",
+      "popularity": 130,
+      "aliases": [
+        "tristana"
+      ]
+    },
+    {
+      "id": "Trundle",
+      "name": "Trundle",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "Trundle.png",
+      "species": [
+        "Troll"
+      ],
+      "gender": "Male",
+      "popularity": 113,
+      "aliases": [
+        "trundle"
+      ]
+    },
+    {
+      "id": "Tryndamere",
+      "name": "Tryndamere",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Freljord",
+      "resource": "Fury",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Tryndamere.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 108,
+      "aliases": [
+        "tryndamere",
+        "trynd"
+      ]
+    },
+    {
+      "id": "TwistedFate",
+      "name": "Twisted Fate",
+      "positions": [
+        "Bot",
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Marksman"
+      ],
+      "region": "Bilgewater",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "TwistedFate.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 94,
+      "aliases": [
+        "twistedfate",
+        "tf"
+      ]
+    },
+    {
+      "id": "Twitch",
+      "name": "Twitch",
+      "positions": [
+        "Bot",
+        "Support"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Twitch.png",
+      "species": [
+        "Rat"
+      ],
+      "gender": "Male",
+      "popularity": 57,
+      "aliases": [
+        "twitch"
+      ]
+    },
+    {
+      "id": "Udyr",
+      "name": "Udyr",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Udyr.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 112,
+      "aliases": [
+        "udyr"
+      ]
+    },
+    {
+      "id": "Urgot",
+      "name": "Urgot",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Urgot.png",
+      "species": [
+        "Human",
+        "Cyborg"
+      ],
+      "gender": "Male",
+      "popularity": 110,
+      "aliases": [
+        "urgot"
+      ]
+    },
+    {
+      "id": "Varus",
+      "name": "Varus",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman",
+        "Mage"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Varus.png",
+      "species": [
+        "Darkin"
+      ],
+      "gender": "Male",
+      "popularity": 133,
+      "aliases": [
+        "varus"
+      ]
+    },
+    {
+      "id": "Vayne",
+      "name": "Vayne",
+      "positions": [
+        "Bot",
+        "Top"
+      ],
+      "classes": [
+        "Marksman",
+        "Assassin"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Vayne.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 16,
+      "aliases": [
+        "vayne"
+      ]
+    },
+    {
+      "id": "Veigar",
+      "name": "Veigar",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Veigar.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 59,
+      "aliases": [
+        "veigar"
+      ]
+    },
+    {
+      "id": "Velkoz",
+      "name": "Vel'Koz",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "the Void",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2014,
+      "icon": "Velkoz.png",
+      "species": [
+        "Void-born"
+      ],
+      "gender": "Other",
+      "popularity": 88,
+      "aliases": [
+        "velkoz",
+        "vel"
+      ]
+    },
+    {
+      "id": "Vex",
+      "name": "Vex",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2021,
+      "icon": "Vex.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Female",
+      "popularity": 85,
+      "aliases": [
+        "vex"
+      ]
+    },
+    {
+      "id": "Vi",
+      "name": "Vi",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Piltover",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Vi.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 42,
+      "aliases": [
+        "vi"
+      ]
+    },
+    {
+      "id": "Viego",
+      "name": "Viego",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Shadow Isles",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2021,
+      "icon": "Viego.png",
+      "species": [
+        "Undead"
+      ],
+      "gender": "Male",
+      "popularity": 12,
+      "aliases": [
+        "viego"
+      ]
+    },
+    {
+      "id": "Viktor",
+      "name": "Viktor",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Viktor.png",
+      "species": [
+        "Human",
+        "Cyborg"
+      ],
+      "gender": "Male",
+      "popularity": 84,
+      "aliases": [
+        "viktor"
+      ]
+    },
+    {
+      "id": "Vladimir",
+      "name": "Vladimir",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Mage",
+        "Fighter"
+      ],
+      "region": "Noxus",
+      "resource": "Crimson Rush",
+      "rangeType": "Ranged",
+      "releaseYear": 2010,
+      "icon": "Vladimir.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 91,
+      "aliases": [
+        "vladimir",
+        "vlad"
+      ]
+    },
+    {
+      "id": "Volibear",
+      "name": "Volibear",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Freljord",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Volibear.png",
+      "species": [
+        "Demigod"
+      ],
+      "gender": "Male",
+      "popularity": 111,
+      "aliases": [
+        "volibear",
+        "voli"
+      ]
+    },
+    {
+      "id": "Warwick",
+      "name": "Warwick",
+      "positions": [
+        "Jungle",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2009,
+      "icon": "Warwick.png",
+      "species": [
+        "Chimera"
+      ],
+      "gender": "Male",
+      "popularity": 74,
+      "aliases": [
+        "warwick",
+        "ww"
+      ]
+    },
+    {
+      "id": "Xayah",
+      "name": "Xayah",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2017,
+      "icon": "Xayah.png",
+      "species": [
+        "Vastaya"
+      ],
+      "gender": "Female",
+      "popularity": 56,
+      "aliases": [
+        "xayah"
+      ]
+    },
+    {
+      "id": "Xerath",
+      "name": "Xerath",
+      "positions": [
+        "Mid",
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Shurima",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2011,
+      "icon": "Xerath.png",
+      "species": [
+        "Ascended"
+      ],
+      "gender": "Male",
+      "popularity": 87,
+      "aliases": [
+        "xerath"
+      ]
+    },
+    {
+      "id": "XinZhao",
+      "name": "Xin Zhao",
+      "positions": [
+        "Jungle"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Demacia",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2010,
+      "icon": "XinZhao.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 116,
+      "aliases": [
+        "xinzhao",
+        "xin"
+      ]
+    },
+    {
+      "id": "Yasuo",
+      "name": "Yasuo",
+      "positions": [
+        "Bot",
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Flow",
+      "rangeType": "Melee",
+      "releaseYear": 2013,
+      "icon": "Yasuo.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 7,
+      "aliases": [
+        "yasuo"
+      ]
+    },
+    {
+      "id": "Yone",
+      "name": "Yone",
+      "positions": [
+        "Mid",
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Flow",
+      "rangeType": "Melee",
+      "releaseYear": 2020,
+      "icon": "Yone.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 11,
+      "aliases": [
+        "yone"
+      ]
+    },
+    {
+      "id": "Yorick",
+      "name": "Yorick",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter",
+        "Tank"
+      ],
+      "region": "Shadow Isles",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2011,
+      "icon": "Yorick.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 109,
+      "aliases": [
+        "yorick"
+      ]
+    },
+    {
+      "id": "Yunara",
+      "name": "Yunara",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Ionia",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2025,
+      "icon": "Yunara.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 162,
+      "aliases": [
+        "yunara"
+      ]
+    },
+    {
+      "id": "Yuumi",
+      "name": "Yuumi",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Bandle City",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2019,
+      "icon": "Yuumi.png",
+      "species": [
+        "Cat"
+      ],
+      "gender": "Female",
+      "popularity": 23,
+      "aliases": [
+        "yuumi"
+      ]
+    },
+    {
+      "id": "Zaahen",
+      "name": "Zaahen",
+      "positions": [
+        "Top"
+      ],
+      "classes": [
+        "Fighter"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Melee",
+      "releaseYear": 2025,
+      "icon": "Zaahen.png",
+      "species": [
+        "Darkin"
+      ],
+      "gender": "Male",
+      "popularity": 163,
+      "aliases": [
+        "zaahen"
+      ]
+    },
+    {
+      "id": "Zac",
+      "name": "Zac",
+      "positions": [
+        "Jungle",
+        "Support",
+        "Top"
+      ],
+      "classes": [
+        "Tank",
+        "Fighter"
+      ],
+      "region": "Zaun",
+      "resource": "None",
+      "rangeType": "Melee",
+      "releaseYear": 2013,
+      "icon": "Zac.png",
+      "species": [
+        "Other"
+      ],
+      "gender": "Male",
+      "popularity": 120,
+      "aliases": [
+        "zac"
+      ]
+    },
+    {
+      "id": "Zed",
+      "name": "Zed",
+      "positions": [
+        "Jungle",
+        "Mid"
+      ],
+      "classes": [
+        "Assassin"
+      ],
+      "region": "Ionia",
+      "resource": "Energy",
+      "rangeType": "Melee",
+      "releaseYear": 2012,
+      "icon": "Zed.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 17,
+      "aliases": [
+        "zed"
+      ]
+    },
+    {
+      "id": "Zeri",
+      "name": "Zeri",
+      "positions": [
+        "Bot"
+      ],
+      "classes": [
+        "Marksman"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2022,
+      "icon": "Zeri.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Female",
+      "popularity": 155,
+      "aliases": [
+        "zeri"
+      ]
+    },
+    {
+      "id": "Ziggs",
+      "name": "Ziggs",
+      "positions": [
+        "Bot",
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Zaun",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Ziggs.png",
+      "species": [
+        "Yordle"
+      ],
+      "gender": "Male",
+      "popularity": 132,
+      "aliases": [
+        "ziggs"
+      ]
+    },
+    {
+      "id": "Zilean",
+      "name": "Zilean",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Support",
+        "Mage"
+      ],
+      "region": "Runeterra",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2009,
+      "icon": "Zilean.png",
+      "species": [
+        "Human"
+      ],
+      "gender": "Male",
+      "popularity": 144,
+      "aliases": [
+        "zilean"
+      ]
+    },
+    {
+      "id": "Zoe",
+      "name": "Zoe",
+      "positions": [
+        "Mid"
+      ],
+      "classes": [
+        "Mage"
+      ],
+      "region": "Targon",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2017,
+      "icon": "Zoe.png",
+      "species": [
+        "Aspect"
+      ],
+      "gender": "Female",
+      "popularity": 86,
+      "aliases": [
+        "zoe"
+      ]
+    },
+    {
+      "id": "Zyra",
+      "name": "Zyra",
+      "positions": [
+        "Support"
+      ],
+      "classes": [
+        "Mage",
+        "Support"
+      ],
+      "region": "Ixtal",
+      "resource": "Mana",
+      "rangeType": "Ranged",
+      "releaseYear": 2012,
+      "icon": "Zyra.png",
+      "species": [
+        "Plant"
+      ],
+      "gender": "Female",
+      "popularity": 89,
+      "aliases": [
+        "zyra"
+      ]
+    }
+  ]
+}

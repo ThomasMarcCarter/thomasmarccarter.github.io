@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lolillion:data": "node scripts/lolillion/build-dataset.ts"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",

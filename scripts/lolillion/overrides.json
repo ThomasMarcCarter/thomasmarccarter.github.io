@@ -1,0 +1,1349 @@
+{
+  "Aatrox": {
+    "species": [
+      "Darkin"
+    ],
+    "gender": "Male",
+    "popularity": 51
+  },
+  "Ahri": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Female",
+    "popularity": 9
+  },
+  "Akali": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 27
+  },
+  "Akshan": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 154
+  },
+  "Alistar": {
+    "species": [
+      "Minotaur"
+    ],
+    "gender": "Male",
+    "popularity": 137,
+    "aliases": [
+      "ali"
+    ]
+  },
+  "Ambessa": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 159
+  },
+  "Amumu": {
+    "species": [
+      "Yordle",
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 75
+  },
+  "Anivia": {
+    "species": [
+      "Demigod"
+    ],
+    "gender": "Female",
+    "popularity": 146
+  },
+  "Annie": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 60
+  },
+  "Aphelios": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 55
+  },
+  "Ashe": {
+    "species": [
+      "Human",
+      "Iceborn"
+    ],
+    "gender": "Female",
+    "popularity": 14
+  },
+  "AurelionSol": {
+    "species": [
+      "Celestial"
+    ],
+    "gender": "Male",
+    "popularity": 151,
+    "aliases": [
+      "asol",
+      "aurelion"
+    ]
+  },
+  "Aurora": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Female",
+    "popularity": 160
+  },
+  "Azir": {
+    "species": [
+      "Ascended"
+    ],
+    "gender": "Male",
+    "popularity": 150
+  },
+  "Bard": {
+    "species": [
+      "Celestial"
+    ],
+    "gender": "Male",
+    "popularity": 140
+  },
+  "Belveth": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Female",
+    "popularity": 73
+  },
+  "Blitzcrank": {
+    "species": [
+      "Golem"
+    ],
+    "gender": "Male",
+    "popularity": 32,
+    "aliases": [
+      "blitz"
+    ]
+  },
+  "Brand": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 58
+  },
+  "Braum": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 138
+  },
+  "Briar": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 72
+  },
+  "Caitlyn": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 8,
+    "aliases": [
+      "cait"
+    ]
+  },
+  "Camille": {
+    "species": [
+      "Human",
+      "Cyborg"
+    ],
+    "gender": "Female",
+    "popularity": 50
+  },
+  "Cassiopeia": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 92,
+    "aliases": [
+      "cass"
+    ]
+  },
+  "Chogath": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Other",
+    "popularity": 171,
+    "aliases": [
+      "cho"
+    ]
+  },
+  "Corki": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 131
+  },
+  "Darius": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 15
+  },
+  "Diana": {
+    "species": [
+      "Human",
+      "Aspect"
+    ],
+    "gender": "Female",
+    "popularity": 45
+  },
+  "Draven": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 34
+  },
+  "DrMundo": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 100,
+    "aliases": [
+      "mundo"
+    ]
+  },
+  "Ekko": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 36
+  },
+  "Elise": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 69
+  },
+  "Evelynn": {
+    "species": [
+      "Demon"
+    ],
+    "gender": "Female",
+    "popularity": 67
+  },
+  "Ezreal": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 1,
+    "aliases": [
+      "ez"
+    ]
+  },
+  "Fiddlesticks": {
+    "species": [
+      "Demon"
+    ],
+    "gender": "Other",
+    "popularity": 125,
+    "aliases": [
+      "fiddle"
+    ]
+  },
+  "Fiora": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 49
+  },
+  "Fizz": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 81
+  },
+  "Galio": {
+    "species": [
+      "Golem"
+    ],
+    "gender": "Male",
+    "popularity": 148
+  },
+  "Gangplank": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 95,
+    "aliases": [
+      "gp"
+    ]
+  },
+  "Garen": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 18
+  },
+  "Gnar": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 104
+  },
+  "Gragas": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 123
+  },
+  "Graves": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 26
+  },
+  "Gwen": {
+    "species": [
+      "Construct"
+    ],
+    "gender": "Female",
+    "popularity": 96
+  },
+  "Hecarim": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 66
+  },
+  "Heimerdinger": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 145,
+    "aliases": [
+      "heimer"
+    ]
+  },
+  "Hwei": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Male",
+    "popularity": 54
+  },
+  "Illaoi": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 107
+  },
+  "Irelia": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 37
+  },
+  "Ivern": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 127
+  },
+  "Janna": {
+    "species": [
+      "Spirit"
+    ],
+    "gender": "Female",
+    "popularity": 139
+  },
+  "JarvanIV": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 65,
+    "aliases": [
+      "j4",
+      "jarvan"
+    ]
+  },
+  "Jax": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 48
+  },
+  "Jayce": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 97
+  },
+  "Jhin": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 4
+  },
+  "Jinx": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 10
+  },
+  "Kaisa": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 3
+  },
+  "Kalista": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Female",
+    "popularity": 165
+  },
+  "Karma": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 41
+  },
+  "Karthus": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 126
+  },
+  "Kassadin": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 78,
+    "aliases": [
+      "kass"
+    ]
+  },
+  "Katarina": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 24,
+    "aliases": [
+      "kat"
+    ]
+  },
+  "Kayle": {
+    "species": [
+      "Human",
+      "Celestial"
+    ],
+    "gender": "Female",
+    "popularity": 128
+  },
+  "Kayn": {
+    "species": [
+      "Human",
+      "Darkin"
+    ],
+    "gender": "Male",
+    "popularity": 33
+  },
+  "Kennen": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 105
+  },
+  "Khazix": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Male",
+    "popularity": 46,
+    "aliases": [
+      "kha"
+    ]
+  },
+  "Kindred": {
+    "species": [
+      "Spirit"
+    ],
+    "gender": "Other",
+    "popularity": 71
+  },
+  "Kled": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 106
+  },
+  "KogMaw": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Other",
+    "popularity": 169,
+    "aliases": [
+      "kog"
+    ]
+  },
+  "KSante": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 157
+  },
+  "Leblanc": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 82,
+    "aliases": [
+      "lb"
+    ]
+  },
+  "LeeSin": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 2,
+    "aliases": [
+      "lee"
+    ]
+  },
+  "Leona": {
+    "species": [
+      "Human",
+      "Aspect"
+    ],
+    "gender": "Female",
+    "popularity": 31
+  },
+  "Lillia": {
+    "species": [
+      "Spirit"
+    ],
+    "gender": "Female",
+    "popularity": 124
+  },
+  "Lissandra": {
+    "species": [
+      "Human",
+      "Iceborn"
+    ],
+    "gender": "Female",
+    "popularity": 147
+  },
+  "Locke": {
+    "positions": [
+      "Mid",
+      "Jungle"
+    ],
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 164
+  },
+  "Lucian": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 20
+  },
+  "Lulu": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Female",
+    "popularity": 44
+  },
+  "Lux": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 6
+  },
+  "Malphite": {
+    "species": [
+      "Elemental"
+    ],
+    "gender": "Male",
+    "popularity": 52
+  },
+  "Malzahar": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 149,
+    "aliases": [
+      "malz"
+    ]
+  },
+  "Maokai": {
+    "species": [
+      "Spirit"
+    ],
+    "gender": "Male",
+    "popularity": 121
+  },
+  "MasterYi": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 25,
+    "aliases": [
+      "yi"
+    ]
+  },
+  "Mel": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 161
+  },
+  "Milio": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 64
+  },
+  "MissFortune": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 13,
+    "aliases": [
+      "mf"
+    ]
+  },
+  "MonkeyKing": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Male",
+    "popularity": 115,
+    "aliases": [
+      "wu"
+    ]
+  },
+  "Mordekaiser": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 40,
+    "aliases": [
+      "morde"
+    ]
+  },
+  "Morgana": {
+    "species": [
+      "Human",
+      "Celestial"
+    ],
+    "gender": "Female",
+    "popularity": 21
+  },
+  "Naafiri": {
+    "species": [
+      "Darkin"
+    ],
+    "popularity": 158,
+    "gender": "Female"
+  },
+  "Nami": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Female",
+    "popularity": 47
+  },
+  "Nasus": {
+    "species": [
+      "Ascended"
+    ],
+    "gender": "Male",
+    "popularity": 99
+  },
+  "Nautilus": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 22,
+    "aliases": [
+      "naut"
+    ]
+  },
+  "Neeko": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Female",
+    "popularity": 153
+  },
+  "Nidalee": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 68,
+    "aliases": [
+      "nid"
+    ]
+  },
+  "Nilah": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 156
+  },
+  "Nocturne": {
+    "species": [
+      "Demon"
+    ],
+    "gender": "Other",
+    "popularity": 76,
+    "aliases": [
+      "noc"
+    ]
+  },
+  "Nunu": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 122,
+    "aliases": [
+      "willump"
+    ]
+  },
+  "Olaf": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 114
+  },
+  "Orianna": {
+    "species": [
+      "Construct"
+    ],
+    "gender": "Female",
+    "popularity": 83
+  },
+  "Ornn": {
+    "species": [
+      "Demigod"
+    ],
+    "gender": "Male",
+    "popularity": 102
+  },
+  "Pantheon": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 172
+  },
+  "Poppy": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Female",
+    "popularity": 117
+  },
+  "Pyke": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 29
+  },
+  "Qiyana": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 80
+  },
+  "Quinn": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 129
+  },
+  "Rakan": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Male",
+    "popularity": 136
+  },
+  "Rammus": {
+    "species": [
+      "Other"
+    ],
+    "gender": "Male",
+    "popularity": 118
+  },
+  "RekSai": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Female",
+    "popularity": 170
+  },
+  "Rell": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 142
+  },
+  "Renata": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 143
+  },
+  "Renekton": {
+    "species": [
+      "Ascended"
+    ],
+    "gender": "Male",
+    "popularity": 98
+  },
+  "Rengar": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Male",
+    "popularity": 77
+  },
+  "Riven": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 39
+  },
+  "Rumble": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 167
+  },
+  "Ryze": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 93
+  },
+  "Samira": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 30
+  },
+  "Sejuani": {
+    "species": [
+      "Human",
+      "Iceborn"
+    ],
+    "gender": "Female",
+    "popularity": 119,
+    "aliases": [
+      "sej"
+    ]
+  },
+  "Senna": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 28
+  },
+  "Seraphine": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 63,
+    "aliases": [
+      "sera"
+    ]
+  },
+  "Sett": {
+    "species": [
+      "Human",
+      "Vastaya"
+    ],
+    "gender": "Male",
+    "popularity": 35
+  },
+  "Shaco": {
+    "species": [
+      "Demon"
+    ],
+    "gender": "Male",
+    "popularity": 70
+  },
+  "Shen": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 103
+  },
+  "Shyvana": {
+    "species": [
+      "Human",
+      "Dragon"
+    ],
+    "gender": "Female",
+    "popularity": 173
+  },
+  "Singed": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 166
+  },
+  "Sion": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 101
+  },
+  "Sivir": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 134
+  },
+  "Skarner": {
+    "species": [
+      "Brackern"
+    ],
+    "gender": "Male",
+    "popularity": 168
+  },
+  "Smolder": {
+    "species": [
+      "Dragon"
+    ],
+    "gender": "Male",
+    "popularity": 53
+  },
+  "Sona": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 61
+  },
+  "Soraka": {
+    "species": [
+      "Celestial"
+    ],
+    "gender": "Female",
+    "popularity": 62
+  },
+  "Swain": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 90
+  },
+  "Sylas": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 19
+  },
+  "Syndra": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 43
+  },
+  "TahmKench": {
+    "species": [
+      "Demon"
+    ],
+    "gender": "Male",
+    "popularity": 135,
+    "aliases": [
+      "tk",
+      "tahm"
+    ]
+  },
+  "Taliyah": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 152
+  },
+  "Talon": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 79
+  },
+  "Taric": {
+    "species": [
+      "Human",
+      "Aspect"
+    ],
+    "gender": "Male",
+    "popularity": 141
+  },
+  "Teemo": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 38
+  },
+  "Thresh": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 5
+  },
+  "Tristana": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Female",
+    "popularity": 130
+  },
+  "Trundle": {
+    "species": [
+      "Troll"
+    ],
+    "gender": "Male",
+    "popularity": 113
+  },
+  "Tryndamere": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 108,
+    "aliases": [
+      "trynd"
+    ]
+  },
+  "TwistedFate": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 94,
+    "aliases": [
+      "tf"
+    ]
+  },
+  "Twitch": {
+    "species": [
+      "Rat"
+    ],
+    "gender": "Male",
+    "popularity": 57
+  },
+  "Udyr": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 112
+  },
+  "Urgot": {
+    "species": [
+      "Human",
+      "Cyborg"
+    ],
+    "gender": "Male",
+    "popularity": 110
+  },
+  "Varus": {
+    "species": [
+      "Darkin"
+    ],
+    "gender": "Male",
+    "popularity": 133
+  },
+  "Vayne": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 16
+  },
+  "Veigar": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 59
+  },
+  "Velkoz": {
+    "species": [
+      "Void-born"
+    ],
+    "gender": "Other",
+    "popularity": 88,
+    "aliases": [
+      "vel"
+    ]
+  },
+  "Vex": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Female",
+    "popularity": 85
+  },
+  "Vi": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 42
+  },
+  "Viego": {
+    "species": [
+      "Undead"
+    ],
+    "gender": "Male",
+    "popularity": 12
+  },
+  "Viktor": {
+    "species": [
+      "Human",
+      "Cyborg"
+    ],
+    "gender": "Male",
+    "popularity": 84
+  },
+  "Vladimir": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 91,
+    "aliases": [
+      "vlad"
+    ]
+  },
+  "Volibear": {
+    "species": [
+      "Demigod"
+    ],
+    "gender": "Male",
+    "popularity": 111,
+    "aliases": [
+      "voli"
+    ]
+  },
+  "Warwick": {
+    "species": [
+      "Chimera"
+    ],
+    "gender": "Male",
+    "popularity": 74,
+    "aliases": [
+      "ww"
+    ]
+  },
+  "Xayah": {
+    "species": [
+      "Vastaya"
+    ],
+    "gender": "Female",
+    "popularity": 56
+  },
+  "Xerath": {
+    "species": [
+      "Ascended"
+    ],
+    "gender": "Male",
+    "popularity": 87
+  },
+  "XinZhao": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 116,
+    "aliases": [
+      "xin"
+    ]
+  },
+  "Yasuo": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 7
+  },
+  "Yone": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 11
+  },
+  "Yorick": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 109
+  },
+  "Yunara": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 162
+  },
+  "Yuumi": {
+    "species": [
+      "Cat"
+    ],
+    "gender": "Female",
+    "popularity": 23
+  },
+  "Zaahen": {
+    "positions": [
+      "Top"
+    ],
+    "species": [
+      "Darkin"
+    ],
+    "gender": "Male",
+    "popularity": 163
+  },
+  "Zac": {
+    "species": [
+      "Other"
+    ],
+    "gender": "Male",
+    "popularity": 120
+  },
+  "Zed": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 17
+  },
+  "Zeri": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Female",
+    "popularity": 155
+  },
+  "Ziggs": {
+    "species": [
+      "Yordle"
+    ],
+    "gender": "Male",
+    "popularity": 132
+  },
+  "Zilean": {
+    "species": [
+      "Human"
+    ],
+    "gender": "Male",
+    "popularity": 144
+  },
+  "Zoe": {
+    "species": [
+      "Aspect"
+    ],
+    "gender": "Female",
+    "popularity": 86
+  },
+  "Zyra": {
+    "species": [
+      "Plant"
+    ],
+    "gender": "Female",
+    "popularity": 89
+  }
+}
