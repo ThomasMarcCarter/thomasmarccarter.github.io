@@ -22,7 +22,7 @@ export default function HowToPlay({ className = 'lol-button-ghost' }: { classNam
       <dialog
         ref={dialog}
         aria-labelledby="how-to-play-title"
-        className="lol-panel m-auto w-[min(32rem,calc(100%-2rem))] p-0 text-ink backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+        className="lol-panel m-auto max-h-[calc(100dvh-2rem)] w-[min(32rem,calc(100%-2rem))] overflow-y-auto p-0 text-ink backdrop:bg-black/70 backdrop:backdrop-blur-sm"
         onClick={(e) => e.target === dialog.current && dialog.current.close()}
       >
         <div className="p-6">
@@ -48,7 +48,12 @@ export default function HowToPlay({ className = 'lol-button-ghost' }: { classNam
               </li>
             ))}
           </ul>
-          <form method="dialog" className="mt-6">
+          <p className="mt-5 text-xs leading-relaxed text-muted">
+            Lolillion isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone
+            officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties
+            are trademarks or registered trademarks of Riot Games, Inc.
+          </p>
+          <form method="dialog" className="mt-5">
             <button className="lol-button">Got it</button>
           </form>
         </div>

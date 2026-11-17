@@ -154,7 +154,7 @@ export default function Game() {
   // The climb fills the window behind everything; the panel sits at the bottom, scrolling inside itself,
   // so the page never scrolls the climber out of view. The empty `sky` area is where the camera keeps them.
   return (
-    <section className="mx-auto flex min-h-dvh max-w-xl flex-col pt-4 pb-4 sm:pb-8">
+    <section className="lol-game mx-auto flex h-dvh max-w-xl flex-col pt-3 pb-2">
       <Climb lp={totalLp(questions, progress)} focus={sky} />
       <div className="lol-topbar flex items-center justify-between">
         <a href={url('/')} className="text-sm transition-colors hover:text-accent">
@@ -162,8 +162,16 @@ export default function Game() {
         </a>
         <MuteButton />
       </div>
-      <div ref={sky} className="min-h-28 flex-1" />
-      <div className="lol-panel max-h-[72dvh] overflow-y-auto px-5 py-7 sm:px-9 sm:py-10">{screen}</div>
+      <div ref={sky} className="min-h-[14dvh] flex-1" />
+      {/* Only the panel may scroll, and only when a screen can't fit (the full results list on a small phone). */}
+      <div className="lol-panel min-h-0 shrink overflow-y-auto px-5 py-[clamp(1rem,3dvh,2.25rem)] sm:px-8">{screen}</div>
+      <p className="lol-legal mt-1.5 text-center text-[0.7rem] leading-tight">
+        Not endorsed by Riot Games. Sounds by{' '}
+        <a href="https://kenney.nl" className="link" rel="noopener" target="_blank">
+          Kenney
+        </a>
+        .
+      </p>
     </section>
   );
 }

@@ -2,9 +2,10 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import { CENTRE, CLIMB_MAX_LP, SUMMIT_ALT, VIEW_W, halfWidth, trailPoint } from '../engine/climb';
 import { finalRank, ranks } from '../engine/ranks';
 
-// Original pixel art, drawn into a small buffer each frame and scaled up by a whole number without smoothing.
-// The scene fills the window behind the game; the climber walks the switchback trail as LP comes in,
-// and each rank has a flag at its corner.
+// Original pixel art: a spear-carrying warrior climbing a sandstone peak under the stars, drawn into a small buffer
+// each frame and scaled up by a whole number without smoothing. The scene fills the window behind the game; the
+// warrior walks the switchback trail as LP comes in, each rank has a flag at its corner, and starlight pours down
+// on the summit.
 
 interface Props {
   /** Today's LP so far; a change walks the climber to the new spot. */
@@ -44,27 +45,29 @@ const px = (hex: string) => {
 };
 
 const C = {
-  ground: px('#2a4a2e'),
-  groundDark: px('#22402a'),
-  grass: px('#4f8a4a'),
-  grassDark: px('#3c6e3d'),
+  ground: px('#5e4630'),
+  groundDark: px('#4a3624'),
+  grass: px('#b08d5a'),
+  grassDark: px('#8a6c44'),
   ridgeFar: px('#2b2a5e'),
   ridgeNear: px('#1e1f47'),
   cloud: px('#4d4788'),
   cloudTop: px('#6c65a8'),
-  rockLight: px('#7a6a8c'),
-  rock: px('#5f5174'),
-  rockDark: px('#463b5a'),
-  rockEdge: px('#2c2440'),
+  rockLight: px('#b07a52'),
+  rock: px('#8a5a3c'),
+  rockDark: px('#5e3b2a'),
+  rockEdge: px('#2e1a14'),
   snow: px('#eef1ff'),
   snowShade: px('#aab3df'),
-  trail: px('#a2917c'),
+  trail: px('#d2b98f'),
   trailWalked: px('#f0d58a'),
   trailShadow: px('#3a2f4a'),
   star: px('#fff6dc'),
   starDim: px('#8f87c9'),
   pole: px('#d9d2c0'),
   flagOff: px('#4a4560'),
+  beam: px('#5d6fc4'),
+  beamBright: px('#a9b8ff'),
 };
 const FLAG_COLOURS = Object.fromEntries(Object.entries(RANK_COLOURS).map(([k, v]) => [k, px(v)]));
 const SKY = ['#3b4a85', '#34306e', '#221d4d', '#140f33', '#09071d'].map(px);
@@ -105,25 +108,49 @@ const TRAIL: { x: number; alt: number; lp: number }[] = [];
 
 type Sprite = { rows: string[]; colours: Record<string, number> };
 
-const climber = (legs: [string, string]): Sprite => ({
-  rows: ['..oooo..', '.ohhhho.', 'ohhhhhho', 'ohhffefo', 'ohhffffo', '.occbbo.', 'occcbbbo', 'occcbbbo', '.oobboo.', ...legs],
+// The warrior, facing right: plumed silver helm, teal tunic, spear behind, round shield in front.
+const warrior = (legs: [string, string]): Sprite => ({
+  rows: [
+    '..t.........',
+    '.ttt.rrrr...',
+    '..p.rrRRrr..',
+    '..p..oggggo.',
+    '..p.ogggggGo',
+    '..p.oggvvvGo',
+    '..p.oggvgggo',
+    '..p..oaaaoh.',
+    '..psoaaaAhhh',
+    '..p.oaaaAhHh',
+    '..p.okkkAhHh',
+    '..p.okkkkhh.',
+    ...legs,
+  ],
   colours: {
     o: px('#140c1c'),
-    h: px('#3f6fb5'),
-    f: px('#f2c9a0'),
-    e: px('#140c1c'),
-    c: px('#e3b341'),
-    b: px('#2d3f73'),
+    t: px('#e6ecf5'),
+    p: px('#8a6a4a'),
+    r: px('#4fb3e8'),
+    R: px('#2a6f9e'),
+    g: px('#c9d1dc'),
+    G: px('#77818f'),
+    v: px('#140c1c'),
+    s: px('#c98b62'),
+    a: px('#2f8f83'),
+    A: px('#1d5c55'),
+    k: px('#3d4a6b'),
+    h: px('#d9a441'),
+    H: px('#8e6a22'),
     l: px('#6b4a33'),
   },
 });
-const STAND = climber(['.ol..lo.', '.oo..oo.']);
-const STRIDE = climber(['ol....lo', 'oo....oo']);
-const PASS = climber(['..olo...', '..ooo...']);
+const STAND = warrior(['..p..ol.lo..', '..p..oo.oo..']);
+const STRIDE = warrior(['..p.ol...lo.', '..p.oo...oo.']);
+const PASS = warrior(['..p...olo...', '..p...ooo...']);
+const SPRITE_HALF = 6;
 
 const PINE: Sprite = {
   rows: ['..g..', '.ggg.', '..g..', '.ggg.', 'ggggg', '..t..'],
-  colours: { g: px('#24553a'), t: px('#4a3324') },
+  colours: { g: px('#4f5a2e'), t: px('#4a3324') },
 };
 const TENT: Sprite = {
   rows: ['...o...', '..oro..', '.orrro.', 'orrdrro', 'orrdrro'],
@@ -201,6 +228,7 @@ export default function Climb({ lp, focus }: Props) {
       const moving = p < 1 && span > 0;
 
       const me = trailPoint(a.shown);
+      const summitLit = a.shown >= CLIMB_MAX_LP;
       const camTarget = me.alt - (H - 1 - anchorRow());
       a.cam = Number.isNaN(a.cam) || reduced ? camTarget : a.cam + (camTarget - a.cam) * 0.12;
       const cam = Math.round(a.cam);
@@ -243,7 +271,16 @@ export default function Climb({ lp, focus }: Props) {
             buf[i] = alt > cloud.alt + 1 ? C.cloudTop : C.cloud;
             continue;
           }
-          const density = Math.min(1, Math.max(0, (alt - 70) / 260)) * 0.025;
+          // Starlight pours down onto the peak; it burns brighter once the warrior stands on the summit.
+          if (alt > SUMMIT_ALT - 4) {
+            const off = Math.abs(wx + 0.5 - CENTRE);
+            const width = 2.5 + Math.min(6, (alt - SUMMIT_ALT) * 0.06);
+            if (off < width && BAYER[(x & 3) + ((alt & 3) << 2)] < (summitLit ? 14 : 8) - off * 2) {
+              buf[i] = off < 1.2 && summitLit ? C.beamBright : C.beam;
+              continue;
+            }
+          }
+          const density = (0.006 + Math.min(1, Math.max(0, (alt - 30) / 240)) * 0.03);
           if (hash(wx, alt) < density) {
             const twinkle = !reduced && hash(wx * 3 + Math.floor(t * 2.5), alt) < 0.18;
             buf[i] = twinkle ? C.starDim : C.star;
@@ -283,11 +320,11 @@ export default function Climb({ lp, focus }: Props) {
       });
 
       // The climber: strides while walking, faces the way the trail runs, cheers at the summit.
-      const summit = !moving && a.shown >= CLIMB_MAX_LP;
+      const summit = !moving && summitLit;
       const stepFrame = Math.floor(now / 110) % 2;
       const sprite = moving ? (stepFrame ? STRIDE : PASS) : STAND;
       const hop = moving ? stepFrame : summit && !reduced && Math.floor(now / 280) % 2 ? 2 : 0;
-      blit(sprite, offX + Math.round(me.x) - 4, rowOf(me.alt) - 1 - hop, me.dir === -1);
+      blit(sprite, offX + Math.round(me.x) - SPRITE_HALF, rowOf(me.alt) - 1 - hop, me.dir === -1);
 
       ctx.putImageData(image, 0, 0);
       a.dirty = moving || Math.abs(camTarget - a.cam) > 0.5;

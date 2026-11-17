@@ -109,7 +109,7 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
             setFeedback(null);
           }
         }}
-        className={`lol-input w-full px-4 py-3.5 text-lg text-ink placeholder:text-muted ${
+        className={`lol-input w-full px-4 py-[clamp(0.6rem,2dvh,0.875rem)] text-lg text-ink placeholder:text-muted ${
           shakes && feedback?.kind === 'wrong' ? 'lol-shake' : ''
         }`}
       />

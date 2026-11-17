@@ -15,7 +15,8 @@ const FILL: Record<string, string> = {
 
 interface Props {
   tier: TierName | null;
-  size?: number;
+  /** Pixels, or any CSS length such as a clamp() that shrinks on short screens. */
+  size?: number | string;
   /** Rays, ring and particles: used once per reveal, not in lists. */
   celebrate?: boolean;
   /** Overrides the tier colour, e.g. for the day's final rank. */

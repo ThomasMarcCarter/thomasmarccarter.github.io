@@ -148,8 +148,9 @@
   --gold-dark: #8e6a22;
   --outline: #140c1c;
   --wrong: #ff6b5e;
-  --body-font: "Pixelify Sans", ui-monospace, monospace;
-  --display-font: "Pixelify Sans", ui-monospace, monospace;
+  /* The League client's own faces when installed, otherwise the closest free matches. */
+  --body-font: "Spiegel", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --display-font: "Beaufort for LOL", "Cinzel", Georgia, serif;
   --tier-silver: #b8c0cc;
   --tier-gold: #e3b341;
   --tier-platinum: #3fc1a5;
@@ -174,8 +175,17 @@
   );
   color-scheme: dark;
 }
+:root[data-skin="lolillion"],
 :root[data-skin="lolillion"] body {
-  -webkit-font-smoothing: none;
+  /* The game is sized to the window; nothing scrolls the page. */
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.lol-legal {
+  color: var(--muted);
+  text-shadow: 0 1px 0 var(--outline);
 }
 
 /* Reveal rays spin wider than the panel; keep them from adding a sideways scroll. */
@@ -270,9 +280,9 @@
 .lol-title {
   color: var(--gold-light);
   text-shadow:
-    0 3px 0 var(--accent),
-    3px 6px 0 var(--gold-dark),
-    6px 9px 0 var(--outline);
+    0 2px 0 var(--accent),
+    2px 4px 0 var(--gold-dark),
+    4px 6px 0 var(--outline);
 }
 @media (prefers-reduced-motion: no-preference) {
   .lol-title {
@@ -287,9 +297,9 @@
 
 /* Gold block button that presses down a few pixels. */
 .lol-button {
-  @apply block w-full px-4 pt-3 pb-4 text-center font-bold tracking-[0.06em] uppercase;
+  @apply block w-full px-4 pt-[clamp(0.5rem,1.6dvh,0.75rem)] pb-[clamp(0.75rem,2dvh,1rem)] text-center font-bold tracking-[0.06em] uppercase;
   font-family: var(--display-font);
-  font-size: 1.05rem;
+  font-size: 1rem;
   background: var(--accent);
   color: var(--outline);
   clip-path: var(--notched);
@@ -310,7 +320,7 @@
     inset 0 2px 0 0 var(--gold-dark);
 }
 .lol-button-ghost {
-  @apply block w-full px-4 py-3 text-center font-bold tracking-[0.06em] text-accent uppercase;
+  @apply block w-full px-4 py-[clamp(0.5rem,1.6dvh,0.75rem)] text-center font-bold tracking-[0.06em] text-accent uppercase;
   font-family: var(--display-font);
   clip-path: var(--notched);
   box-shadow: inset 0 0 0 3px var(--accent);

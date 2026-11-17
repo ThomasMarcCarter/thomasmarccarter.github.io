@@ -70,21 +70,21 @@ export default function Results({ number, questions, progress, entryFor }: Props
         aria-label={`${rank.name}, ${total} LP`}
         className="focus:outline-none"
       >
-        <span className="lol-rank mt-4 grid place-items-center" style={{ ['--c' as string]: rankColour }}>
-          <TierBadge tier={null} colour={rankColour} size={120} celebrate />
-          <span className="lol-display mt-3 block text-4xl font-bold" style={{ color: rankColour }}>
+        <span className="lol-rank mt-2 grid place-items-center" style={{ ['--c' as string]: rankColour }}>
+          <TierBadge tier={null} colour={rankColour} size="clamp(52px, 11dvh, 104px)" celebrate />
+          <span className="lol-display mt-2 block text-[clamp(1.5rem,5dvh,2.25rem)] font-bold" style={{ color: rankColour }}>
             {rank.name}
           </span>
         </span>
-        <span className="lol-display lol-title mt-1 block text-center text-5xl font-bold">{shownTotal} LP</span>
+        <span className="lol-display lol-title mt-1 block text-center text-[clamp(1.75rem,6dvh,3rem)] font-bold">{shownTotal} LP</span>
       </h1>
       {next && (
         <p className="mt-2 text-center text-sm text-muted">
           {next.min - total} LP short of {next.name}
         </p>
       )}
-      <p className="mt-6 text-center text-sm text-muted">Select a prompt to see every right answer and its LP.</p>
-      <ol className="mt-3 space-y-1">
+      <p className="mt-3 text-center text-sm text-muted">Select a prompt to see every right answer and its LP.</p>
+      <ol className="mt-1">
         {rows.map(({ q, entry, tier, points }) => {
           const open = openId === q.id;
           return (
@@ -97,7 +97,7 @@ export default function Results({ number, questions, progress, entryFor }: Props
                   play('select');
                   setOpenId(open ? null : q.id);
                 }}
-                className="lol-row-button grid w-full grid-cols-[auto_1fr_auto_auto] items-center gap-x-3 py-3 text-left"
+                className="lol-row-button grid w-full grid-cols-[auto_1fr_auto_auto] items-center gap-x-3 py-2 text-left text-[0.95rem] leading-snug"
               >
                 <TierBadge tier={tier?.name ?? null} size={22} />
                 <span>
@@ -121,13 +121,13 @@ export default function Results({ number, questions, progress, entryFor }: Props
       </ol>
       <pre
         ref={shareRef}
-        className="lol-share mt-6 p-3 font-mono text-sm whitespace-pre-wrap text-ink/80"
+        className="lol-share mt-4 p-3 font-mono text-sm whitespace-pre-wrap text-ink/80"
       >
         {share}
       </pre>
       <button
         type="button"
-        className="lol-button mt-4"
+        className="lol-button mt-3"
         onClick={() => {
           play('copy');
           copy();
@@ -135,7 +135,7 @@ export default function Results({ number, questions, progress, entryFor }: Props
       >
         {copied ? 'Copied' : 'Copy result'}
       </button>
-      <p className="mt-4 text-center text-sm text-muted">Next puzzle in {countdown(msUntilNextPuzzle(new Date(now)))}</p>
+      <p className="mt-3 text-center text-sm text-muted">Next puzzle in {countdown(msUntilNextPuzzle(new Date(now)))}</p>
     </div>
   );
 }
