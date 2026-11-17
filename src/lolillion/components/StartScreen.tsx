@@ -22,7 +22,7 @@ export default function StartScreen({ number, streak, played, best, resuming, on
         <p className="mt-3 text-muted">
           Seven prompts. Any right answer climbs. The rarer your answer, the more LP you gain.
         </p>
-        <button type="button" className="lol-button mt-6" onClick={onPlay} autoFocus>
+        <button type="button" className="lol-button mt-6" onClick={onPlay}>
           {resuming ? `Continue #${number}` : `Play #${number}`}
         </button>
         <div className="mt-3">

@@ -61,9 +61,10 @@ export function totalLp(questions: Question[], p: DayProgress): number {
 
 const previousDay = (day: string) => new Date(Date.parse(day) - DAY_MS).toISOString().slice(0, 10);
 
-/** Records a finished day; calling it again for the same day changes nothing. */
+/** Records a finished day; calling it again for the same or an earlier day changes nothing. */
 export function finishDay(stats: Stats, day: string, lp: number): Stats {
-  if (stats.lastDay === day) return stats;
+  // ISO dates compare as strings; an older day comes from a tab left open past midnight.
+  if (stats.lastDay !== null && day <= stats.lastDay) return stats;
   return {
     played: stats.played + 1,
     streak: stats.lastDay === previousDay(day) ? stats.streak + 1 : 1,

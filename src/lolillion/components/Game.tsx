@@ -133,7 +133,11 @@ export default function Game() {
         played={stats.played}
         best={stats.best}
         resuming={index > 0}
-        onPlay={() => act((p) => startPrompt(p, Date.now()))}
+        onPlay={() => {
+          // A tab left on the start screen past midnight UTC should play the new puzzle, not yesterday's.
+          if (index === 0 && utcDay(new Date()) !== day) location.reload();
+          else act((p) => startPrompt(p, Date.now()));
+        }}
       />
     );
   }

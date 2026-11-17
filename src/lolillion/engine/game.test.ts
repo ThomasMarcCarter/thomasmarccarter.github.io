@@ -122,3 +122,10 @@ describe('currentStreak', () => {
     expect(currentStreak(stats, '2026-12-03')).toBe(0);
   });
 });
+
+describe('finishDay from a stale tab', () => {
+  it('never moves stats back to an earlier day', () => {
+    const today: Stats = { played: 3, streak: 3, best: 400, lastDay: '2026-12-02' };
+    expect(finishDay(today, '2026-12-01', 500)).toEqual(today);
+  });
+});

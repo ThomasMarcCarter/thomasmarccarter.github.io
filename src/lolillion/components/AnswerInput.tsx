@@ -34,7 +34,9 @@ export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Pr
       e.preventDefault();
       if (!options.length) return;
       const step = e.key === 'ArrowDown' ? 1 : -1;
-      setActive((highlightedIndex + step + options.length) % options.length);
+      // With nothing highlighted, Down goes to the first suggestion and Up to the last.
+      const from = highlightedIndex === -1 && step < 0 ? options.length : highlightedIndex;
+      setActive((from + step + options.length) % options.length);
     } else if (e.key === 'Enter') {
       e.preventDefault();
       choose(highlighted);

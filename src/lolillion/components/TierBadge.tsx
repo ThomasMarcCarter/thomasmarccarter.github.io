@@ -8,7 +8,7 @@ export default function TierBadge({ tier, size = 92 }: { tier: TierName | null; 
       style={{
         width: size,
         height: size,
-        ['--c' as string]: tier ? `var(--tier-${tier.toLowerCase()})` : 'var(--line)',
+        ['--c' as string]: tier ? `var(--tier-${tier.toLowerCase()})` : 'var(--muted)',
       }}
       aria-hidden="true"
     />
