@@ -32,3 +32,9 @@ export function scoreAnswer(question: Question, entryId: string | null): { tier:
 export function rarestAnswer(question: Question): Entry {
   return validAnswers(question).at(-1)!;
 }
+
+/** How many right answers are more popular than this one, as a whole percent (0 for the most popular). */
+export function rarityPercent(question: Question, entryId: string): number {
+  const answers = validAnswers(question);
+  return Math.round((100 * answers.findIndex((a) => a.id === entryId)) / answers.length);
+}
