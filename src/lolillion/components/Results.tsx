@@ -71,10 +71,7 @@ export default function Results({ number, questions, progress, entryFor }: Props
         className="focus:outline-none"
       >
         <span className="lol-rank mt-4 grid place-items-center" style={{ ['--c' as string]: rankColour }}>
-          <span className="lol-badge lol-pop" style={{ width: 120, height: 120 }} aria-hidden="true">
-            <span className="lol-rays" />
-            <span className="lol-ring" />
-          </span>
+          <TierBadge tier={null} colour={rankColour} size={120} celebrate />
           <span className="lol-display mt-3 block text-4xl font-bold" style={{ color: rankColour }}>
             {rank.name}
           </span>

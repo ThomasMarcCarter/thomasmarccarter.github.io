@@ -4,24 +4,36 @@ import type { TierName } from '../engine/tiers';
 // Higher tiers get a bigger celebration; Silver and Gold stay quiet.
 const PARTICLES: Partial<Record<TierName, number>> = { Diamond: 12, Master: 18, Challenger: 32 };
 
+// Original pixel gem: o outline, h highlight, m body, d shade.
+const GEM = ['...ooo...', '..ohhmo..', '.ohhmmmo.', 'ohmmmmmdo', 'ommmmmmdo', '.ommmmdo.', '..ommdo..', '...odo...', '....o....'];
+const FILL: Record<string, string> = {
+  o: '#140c1c',
+  h: 'color-mix(in srgb, var(--c) 45%, white)',
+  m: 'var(--c)',
+  d: 'color-mix(in srgb, var(--c) 60%, black)',
+};
+
 interface Props {
   tier: TierName | null;
   size?: number;
   /** Rays, ring and particles: used once per reveal, not in lists. */
   celebrate?: boolean;
+  /** Overrides the tier colour, e.g. for the day's final rank. */
+  colour?: string;
 }
 
-/** Original CSS gem in the tier's colour; `null` is a miss. */
-export default function TierBadge({ tier, size = 92, celebrate = false }: Props) {
-  const colour = tier ? `var(--tier-${tier.toLowerCase()})` : 'var(--muted)';
+/** Pixel gem in the tier's colour; `null` with no colour is a miss. */
+export default function TierBadge({ tier, size = 92, celebrate = false, colour }: Props) {
+  const c = colour ?? (tier ? `var(--tier-${tier.toLowerCase()})` : 'var(--muted)');
+  const lit = tier !== null || colour !== undefined;
   const particles = celebrate && tier ? (PARTICLES[tier] ?? 0) : 0;
   return (
     <span
       className={`lol-badge ${celebrate ? 'lol-pop' : ''} ${tier === 'Challenger' && celebrate ? 'lol-challenger' : ''}`}
-      style={{ width: size, height: size, ['--c' as string]: colour } as CSSProperties}
+      style={{ width: size, height: size, ['--c' as string]: c } as CSSProperties}
       aria-hidden="true"
     >
-      {celebrate && tier && (
+      {celebrate && lit && (
         <>
           <span className="lol-rays" />
           <span className="lol-ring" />
@@ -41,6 +53,13 @@ export default function TierBadge({ tier, size = 92, celebrate = false }: Props)
           ))}
         </>
       )}
+      <svg viewBox="0 0 9 9" shapeRendering="crispEdges">
+        {GEM.flatMap((row, y) =>
+          [...row].map((ch, x) =>
+            ch === '.' ? null : <rect key={`${x},${y}`} x={x} y={y} width={1.02} height={1.02} style={{ fill: FILL[ch] }} />,
+          ),
+        )}
+      </svg>
     </span>
   );
 }

@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Game from '../lolillion/components/Game';
-import championData from '../lolillion/data/champions.json';
-
-const rift = `https://ddragon.leagueoflegends.com/cdn/${championData.ddragonVersion}/img/map/map11.png`;
 ---
 
 <BaseLayout
@@ -12,7 +9,7 @@ const rift = `https://ddragon.leagueoflegends.com/cdn/${championData.ddragonVers
   skin="lolillion"
   bare
 >
-  <div class="lol-rift" style={`--rift: url(${rift})`} aria-hidden="true"></div>
+  <div class="lol-backdrop" aria-hidden="true"></div>
   <Game client:only="react" />
   <p class="mx-auto max-w-xl pb-16 text-center text-xs leading-relaxed text-muted">
     Lolillion isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { champions, items, type Question } from '../data/questions';
 import type { Entry } from '../data/types';
 import { puzzleNumber, questionsForDay, utcDay } from '../engine/daily';
@@ -21,6 +21,7 @@ import { isRightAnswer } from '../engine/score';
 import { readJson, writeJson } from '../engine/storage';
 import { useNow } from '../hooks/useNow';
 import { url } from '../../data/site';
+import Climb from './Climb';
 import MuteButton from './MuteButton';
 import QuestionCard from './QuestionCard';
 import Results from './Results';
@@ -44,6 +45,7 @@ export default function Game() {
   const questions = useMemo(() => questionsForDay(date, progress.questionIds), [date, progress.questionIds]);
   const [stats, setStats] = useState<Stats>(() => readJson('stats', emptyStats()));
   const [revealing, setRevealing] = useState(false);
+  const sky = useRef<HTMLDivElement>(null);
 
   const finished = isFinished(progress, questions.length);
   const asking = progress.startedAt !== null && !finished;
@@ -149,15 +151,19 @@ export default function Game() {
     );
   }
 
+  // The climb fills the window behind everything; the panel sits at the bottom, scrolling inside itself,
+  // so the page never scrolls the climber out of view. The empty `sky` area is where the camera keeps them.
   return (
-    <section className="mx-auto max-w-xl pt-6 pb-10 sm:pt-12">
-      <div className="mb-3 flex items-center justify-between">
-        <a href={url('/')} className="text-sm text-muted transition-colors hover:text-accent">
+    <section className="mx-auto flex min-h-dvh max-w-xl flex-col pt-4 pb-4 sm:pb-8">
+      <Climb lp={totalLp(questions, progress)} focus={sky} />
+      <div className="lol-topbar flex items-center justify-between">
+        <a href={url('/')} className="text-sm transition-colors hover:text-accent">
           Thomas-Marc Carter
         </a>
         <MuteButton />
       </div>
-      <div className="lol-panel px-5 py-7 sm:px-9 sm:py-10">{screen}</div>
+      <div ref={sky} className="min-h-28 flex-1" />
+      <div className="lol-panel max-h-[72dvh] overflow-y-auto px-5 py-7 sm:px-9 sm:py-10">{screen}</div>
     </section>
   );
 }

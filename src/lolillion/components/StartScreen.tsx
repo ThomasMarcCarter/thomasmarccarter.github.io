@@ -20,7 +20,7 @@ export default function StartScreen({ number, streak, played, best, resuming, on
     <div className="text-center">
       <h1 className="lol-display lol-title text-[clamp(3rem,13vw,4.75rem)] leading-none font-bold">Lolillion</h1>
       <p className="mx-auto mt-4 max-w-[34ch] text-lg text-ink/85">
-        Seven prompts a day. Any right answer climbs, but the rarer it is, the more LP you gain.
+        Seven prompts a day. Every right answer climbs the mountain, and the rarer it is, the further you climb.
       </p>
       <button
         type="button"
