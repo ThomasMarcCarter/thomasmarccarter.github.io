@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { champions, items, type Question } from '../data/questions';
 import type { Entry } from '../data/types';
-import { getDailyQuestions, puzzleNumber, utcDay } from '../engine/daily';
+import { puzzleNumber, questionsForDay, utcDay } from '../engine/daily';
 import {
   currentStreak,
   emptyProgress,
@@ -34,13 +34,14 @@ export default function Game() {
   // Fixed for this visit, so a puzzle started just before midnight UTC can still be finished.
   const [date] = useState(() => new Date());
   const day = utcDay(date);
-  const questions = useMemo(() => getDailyQuestions(date), [date]);
   const number = puzzleNumber(date);
 
   // A refresh resumes today's progress; a prompt whose time ran out while away counts as a timeout.
-  const [progress, setProgress] = useState<DayProgress>(() =>
-    expireIfTimedOut(readJson(`day:${day}`, emptyProgress()), Date.now()),
-  );
+  const [progress, setProgress] = useState<DayProgress>(() => {
+    const saved = expireIfTimedOut(readJson(`day:${day}`, emptyProgress()), Date.now());
+    return { ...saved, questionIds: questionsForDay(date, saved.questionIds).map((q) => q.id) };
+  });
+  const questions = useMemo(() => questionsForDay(date, progress.questionIds), [date, progress.questionIds]);
   const [stats, setStats] = useState<Stats>(() => readJson('stats', emptyStats()));
   const [revealing, setRevealing] = useState(false);
 

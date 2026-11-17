@@ -129,3 +129,10 @@ describe('finishDay from a stale tab', () => {
     expect(finishDay(today, '2026-12-01', 500)).toEqual(today);
   });
 });
+
+describe('saved prompt ids', () => {
+  it('survive answering', () => {
+    const p = { ...startPrompt(emptyProgress(), T0), questionIds: ['a', 'b'] };
+    expect(recordAnswer(p, 'Garen', 'garen').questionIds).toEqual(['a', 'b']);
+  });
+});

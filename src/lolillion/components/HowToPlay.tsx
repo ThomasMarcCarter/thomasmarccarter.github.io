@@ -32,7 +32,7 @@ export default function HowToPlay({ className = 'lol-button-ghost' }: { classNam
           <ul className="mt-4 list-disc space-y-2 pl-5 marker:text-accent">
             <li>Every day there are 7 prompts: 4 about champions and 3 about items. Everyone gets the same ones.</li>
             <li>
-              You have 25 seconds per prompt. Suggestions search everything, so they never give the answer away.
+              You have 25 seconds per prompt. Type a name and press Enter; if it looks like a typo you will be asked to confirm it.
             </li>
             <li>A wrong guess only costs time: keep guessing until you find a right answer.</li>
             <li>Any right answer gains LP. The fewer players who would think of it, the more LP it is worth.</li>

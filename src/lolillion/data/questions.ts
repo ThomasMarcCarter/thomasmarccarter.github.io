@@ -149,7 +149,82 @@ const championQuestions: ChampionQuestion[] = [
   champion('combo-ranged-jungle', 'Name a ranged jungler', (c) => c.positions.includes('Jungle') && c.rangeType === 'Ranged'),
   champion('combo-melee-mid', 'Name a melee mid laner', (c) => c.positions.includes('Mid') && c.rangeType === 'Melee'),
   champion('combo-melee-support', 'Name a melee support', (c) => c.positions.includes('Support') && c.rangeType === 'Melee'),
+  ...moreChampionQuestions(),
 ];
+
+// ---------- More champion prompts ----------
+
+function moreChampionQuestions(): ChampionQuestion[] {
+  const has = (c: Champion, k: ChampionClass) => c.classes.includes(k);
+  const plays = (c: Champion, p: Position) => c.positions.includes(p);
+  const years: [string, string, (y: number) => boolean][] = [
+    ['2010', 'in 2010', (y) => y === 2010],
+    ['2011', 'in 2011', (y) => y === 2011],
+    ['2012', 'in 2012', (y) => y === 2012],
+    ['2013-2016', 'between 2013 and 2016', (y) => y >= 2013 && y <= 2016],
+    ['2017-2019', 'between 2017 and 2019', (y) => y >= 2017 && y <= 2019],
+  ];
+  const femaleRoles: [string, string, (c: Champion) => boolean][] = [
+    ['assassin', 'a female assassin', (c) => has(c, 'Assassin')],
+    ['mage', 'a female mage', (c) => has(c, 'Mage')],
+    ['marksman', 'a female marksman', (c) => has(c, 'Marksman')],
+    ['fighter', 'a female fighter', (c) => has(c, 'Fighter')],
+    ['top', 'a female top laner', (c) => plays(c, 'Top')],
+    ['jungle', 'a female jungler', (c) => plays(c, 'Jungle')],
+    ['support', 'a female support', (c) => plays(c, 'Support')],
+  ];
+  const classPairs: [ChampionClass, ChampionClass, string][] = [
+    ['Mage', 'Support', 'a champion who is both a mage and a support'],
+    ['Fighter', 'Tank', 'a champion who is both a fighter and a tank'],
+    ['Fighter', 'Assassin', 'a champion who is both a fighter and an assassin'],
+    ['Mage', 'Assassin', 'a champion who is both a mage and an assassin'],
+    ['Marksman', 'Mage', 'a champion who is both a marksman and a mage'],
+  ];
+  const roleClass: [Position, ChampionClass, string][] = [
+    ['Jungle', 'Assassin', 'an assassin who plays jungle'],
+    ['Jungle', 'Tank', 'a tank who plays jungle'],
+    ['Top', 'Tank', 'a tank who plays top'],
+    ['Mid', 'Assassin', 'an assassin who plays mid'],
+    ['Support', 'Tank', 'a tank who plays support'],
+    ['Support', 'Mage', 'a mage who plays support'],
+    ['Bot', 'Mage', 'a mage who plays bot lane'],
+  ];
+  const regionRole: [Region, Position][] = [
+    ['Ionia', 'Mid'],
+    ['Ionia', 'Top'],
+    ['Demacia', 'Top'],
+    ['Noxus', 'Top'],
+    ['Freljord', 'Jungle'],
+  ];
+  return [
+    ...years.map(([id, text, test]) =>
+      champion(`release-${id}`, `Name a champion released ${text}`, (c) => test(c.releaseYear)),
+    ),
+    ...femaleRoles.map(([id, text, test]) =>
+      champion(`gender-female-${id}`, `Name ${text}`, (c) => c.gender === 'Female' && test(c)),
+    ),
+    ...classPairs.map(([a, b, text]) =>
+      champion(`class-${slug(a)}-${slug(b)}`, `Name ${text}`, (c) => has(c, a) && has(c, b)),
+    ),
+    ...roleClass.map(([p, k, text]) =>
+      champion(`role-${slug(p)}-${slug(k)}`, `Name ${text}`, (c) => plays(c, p) && has(c, k)),
+    ),
+    ...regionRole.map(([r, p]) =>
+      champion(
+        `region-${slug(r)}-${slug(p)}`,
+        `Name ${regionAdjectives[r] ?? `a ${r}`} ${positionPrompts[p].replace(/^an? /, '')}`,
+        (c) => c.region === r && plays(c, p),
+      ),
+    ),
+    champion('combo-melee-mage', 'Name a melee mage', (c) => has(c, 'Mage') && c.rangeType === 'Melee'),
+    champion('combo-yordle-mage', 'Name a yordle mage', (c) => c.species.includes('Yordle') && has(c, 'Mage')),
+    champion('name-short', 'Name a champion with 4 letters or fewer in their name', (c) => c.name.replace(/[^A-Za-z]/g, '').length <= 4),
+    champion('name-long', 'Name a champion with 9 or more letters in their name', (c) => c.name.replace(/[^A-Za-z]/g, '').length >= 9),
+    champion('name-ends-a', 'Name a champion whose name ends in A', (c) => /a$/i.test(c.name)),
+    champion('name-has-z', 'Name a champion with a Z in their name', (c) => /z/i.test(c.name)),
+    champion('name-starts-c-d-e', 'Name a champion whose name starts with C, D or E', (c) => /^[CDE]/.test(c.name)),
+  ];
+}
 
 // ---------- Items ----------
 
@@ -247,7 +322,46 @@ const itemQuestions: ItemQuestion[] = [
       (i) => hasStat(i, s) && (band === 'over' ? i.cost >= PRICEY : i.cost < PRICEY),
     ),
   ),
+  ...moreItemQuestions(),
 ];
+
+// ---------- More item prompts ----------
+
+function moreItemQuestions(): ItemQuestion[] {
+  const statPairs: [ItemStat, ItemStat][] = [
+    ['Attack Damage', 'Health'],
+    ['Ability Power', 'Health'],
+    ['Ability Power', 'Mana'],
+    ['Armor', 'Health'],
+    ['Magic Resist', 'Health'],
+    ['Attack Speed', 'Critical Strike Chance'],
+    ['Attack Damage', 'Ability Haste'],
+    ['Ability Power', 'Ability Haste'],
+    ['Health', 'Ability Haste'],
+    ['Attack Speed', 'Move Speed'],
+  ];
+  const word = (s: ItemStat) => (statWording[s] ?? s);
+  return [
+    ...statPairs.map(([a, b]) =>
+      item(
+        `item-pair-${slug(a)}-${slug(b)}`,
+        `Name an item that gives both ${word(a)} and ${word(b)}`,
+        (i) => hasStat(i, a) && hasStat(i, b),
+      ),
+    ),
+    item('item-cost-1000s', 'Name an item that costs from 1000 to 1999 gold', (i) => i.cost >= 1000 && i.cost < 2000),
+    item('item-cost-2000s', 'Name an item that costs from 2000 to 2499 gold', (i) => i.cost >= 2000 && i.cost < 2500),
+    item('item-cost-under-500', 'Name an item that costs less than 500 gold', (i) => i.cost < 500),
+    item('item-active', 'Name an item with an active you can use', (i) => i.tags.includes('Active')),
+    item('item-jungle', 'Name a jungle item', (i) => i.tags.includes('Jungle')),
+    item('item-starter', 'Name a starting item', (i) => i.tags.includes('Lane') && i.cost <= 500 && i.from.length === 0),
+    item('item-vision', 'Name an item that helps with vision', (i) => i.tags.includes('Vision')),
+    item('item-slow', 'Name an item that slows enemies', (i) => i.tags.includes('Slow')),
+    item('item-on-hit', 'Name an item with an on-hit effect', (i) => i.tags.includes('OnHit')),
+    item('item-gold', 'Name an item that earns you gold', (i) => i.tags.includes('GoldPer')),
+    item('item-finished-under-2500', 'Name a finished item that costs less than 2500 gold', (i) => i.into.length === 0 && i.from.length > 0 && i.cost < 2500 && !isBoots(i)),
+  ];
+}
 
 export const questions: Question[] = [...championQuestions, ...itemQuestions];
 

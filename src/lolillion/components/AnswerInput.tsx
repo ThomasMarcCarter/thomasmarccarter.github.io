@@ -1,7 +1,7 @@
-import { useId, useMemo, useState, type KeyboardEvent } from 'react';
+import { useId, useState, type FormEvent } from 'react';
 import type { Entry } from '../data/types';
 import type { Question } from '../data/questions';
-import { matchAnswer, suggest } from '../engine/match';
+import { resolveAnswer } from '../engine/match';
 import { play } from '../sound';
 import { iconUrl } from './icons';
 
@@ -14,112 +14,105 @@ interface Props {
   describedBy: string;
 }
 
-/** Combobox over every entry in the pool, so suggestions never reveal which answers are right. */
+type Feedback =
+  | { kind: 'guess'; entry: Entry }
+  | { kind: 'wrong'; text: string }
+  | { kind: 'info'; text: string }
+  | null;
+
+const MAX_LISTED = 4;
+
+const listNames = (entries: Entry[]) =>
+  entries.length === 2
+    ? `${entries[0].name} or ${entries[1].name}`
+    : `${entries.slice(0, -1).map((e) => e.name).join(', ')} or ${entries.at(-1)!.name}`;
+
+/** Free-text answer box. No suggestions: exact names submit, near misses ask "Did you mean…?" first. */
 export default function AnswerInput({ pool, entries, onSubmit, describedBy }: Props) {
   const id = useId();
   const [input, setInput] = useState('');
-  // -1 means "whatever Enter would match", which may be nothing when two spellings tie.
-  const [active, setActive] = useState(-1);
-  const [hint, setHint] = useState('');
-  const [wrong, setWrong] = useState(false);
-  // Bumped on every wrong guess so the shake animation restarts even for repeat misses.
+  const [feedback, setFeedback] = useState<Feedback>(null);
+  // Bumped on every wrong answer so the shake animation restarts even for repeat misses.
   const [shakes, setShakes] = useState(0);
-  const options = useMemo(() => suggest(input, entries), [input, entries]);
-  const best = useMemo(() => matchAnswer(input, entries), [input, entries]);
-  const highlighted = active >= 0 ? options[active] : best;
-  const highlightedIndex = highlighted ? options.indexOf(highlighted) : -1;
+  const noun = pool === 'champion' ? 'champion' : 'item';
 
-  const reset = () => {
-    setInput('');
-    setActive(-1);
-  };
-
-  const choose = (entry: Entry | null | undefined) => {
-    if (!entry) {
-      if (input.trim()) setHint('No exact match. Pick one of the suggestions.');
-      return;
-    }
+  const answer = (entry: Entry) => {
     if (onSubmit(entry, input)) return;
     play('wrong');
-    setWrong(true);
     setShakes((n) => n + 1);
-    setHint(`${entry.name} isn’t a right answer. Try another.`);
-    reset();
+    setFeedback({ kind: 'wrong', text: `${entry.name} isn’t a right answer. Try another.` });
+    setInput('');
   };
 
-  const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (!options.length) return;
-      const step = e.key === 'ArrowDown' ? 1 : -1;
-      // With nothing highlighted, Down goes to the first suggestion and Up to the last.
-      const from = highlightedIndex === -1 && step < 0 ? options.length : highlightedIndex;
-      setActive((from + step + options.length) % options.length);
+  const submit = (e: FormEvent) => {
+    e.preventDefault();
+    // Second Enter on an unchanged "Did you mean" confirms it.
+    if (feedback?.kind === 'guess') return answer(feedback.entry);
+
+    const r = resolveAnswer(input, entries);
+    if (r.kind === 'exact') return answer(r.entry);
+    if (r.kind === 'guess') {
       play('select');
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      choose(highlighted);
-    } else if (e.key === 'Escape') {
-      reset();
-      setHint('');
+      return setFeedback({ kind: 'guess', entry: r.entry });
     }
+    if (r.kind === 'ambiguous') {
+      const text =
+        r.entries.length <= MAX_LISTED
+          ? `Did you mean ${listNames(r.entries)}? Type a little more.`
+          : `${r.entries.length} ${noun}s start with that. Type a little more.`;
+      return setFeedback({ kind: 'info', text });
+    }
+    if (input.trim()) setFeedback({ kind: 'info', text: `No ${noun} called “${input.trim()}”. Check the spelling.` });
   };
 
-  const listId = `${id}-list`;
-  const optionId = (i: number) => `${id}-opt-${i}`;
+  const feedbackId = `${id}-feedback`;
 
   return (
-    <div>
+    <form onSubmit={submit} noValidate>
+      <div id={feedbackId} role="status" className="mb-2 min-h-12 text-sm">
+        {feedback?.kind === 'guess' && (
+          <button
+            type="button"
+            onClick={() => answer(feedback.entry)}
+            className="lol-guess flex w-full items-center gap-3 px-3 py-2 text-left"
+          >
+            <img src={iconUrl(pool, feedback.entry.icon)} alt="" width={32} height={32} />
+            <span>
+              Did you mean <b className="text-ink">{feedback.entry.name}</b>?
+              <span className="block text-xs text-muted">Press Enter again or tap here to answer.</span>
+            </span>
+          </button>
+        )}
+        {feedback?.kind === 'wrong' && <p className="pt-3 text-[var(--wrong)]">{feedback.text}</p>}
+        {feedback?.kind === 'info' && <p className="pt-3 text-muted">{feedback.text}</p>}
+      </div>
       <input
         key={shakes}
         type="text"
-        role="combobox"
-        aria-label={pool === 'champion' ? 'Your answer: a champion' : 'Your answer: an item'}
-        aria-expanded={options.length > 0}
-        aria-controls={listId}
-        aria-autocomplete="list"
-        aria-activedescendant={highlightedIndex >= 0 ? optionId(highlightedIndex) : undefined}
-        aria-describedby={`${describedBy} ${id}-hint`}
-        aria-invalid={wrong}
+        enterKeyHint="go"
+        aria-label={`Your answer: a ${noun}`}
+        aria-describedby={`${describedBy} ${feedbackId}`}
+        aria-invalid={feedback?.kind === 'wrong'}
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}
         autoFocus
         value={input}
-        placeholder={pool === 'champion' ? 'Type a champion' : 'Type an item'}
+        placeholder={`Type a ${noun}`}
         onChange={(e) => {
           setInput(e.target.value);
-          setActive(-1);
-          setHint('');
-          setWrong(false);
+          setFeedback(null);
         }}
-        onKeyDown={onKeyDown}
-        className={`lol-input w-full px-4 py-3.5 text-lg text-ink placeholder:text-muted ${shakes && wrong ? 'lol-shake' : ''}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            setInput('');
+            setFeedback(null);
+          }
+        }}
+        className={`lol-input w-full px-4 py-3.5 text-lg text-ink placeholder:text-muted ${
+          shakes && feedback?.kind === 'wrong' ? 'lol-shake' : ''
+        }`}
       />
-      <ul id={listId} role="listbox" aria-label="Suggestions" className="lol-suggestions empty:hidden">
-        {options.map((entry, i) => (
-          <li
-            key={entry.id}
-            id={optionId(i)}
-            role="option"
-            aria-selected={i === highlightedIndex}
-            onMouseDown={(e) => e.preventDefault()}
-            onClick={() => choose(entry)}
-            className="lol-option flex min-h-13 cursor-pointer items-center gap-3 px-3 py-2"
-          >
-            <img src={iconUrl(pool, entry.icon)} alt="" width={32} height={32} />
-            {entry.name}
-            {i === highlightedIndex && <kbd className="ml-auto text-xs text-muted">Enter</kbd>}
-          </li>
-        ))}
-      </ul>
-      <p
-        id={`${id}-hint`}
-        role="status"
-        className={`mt-2 min-h-5 text-sm ${wrong ? 'text-[var(--wrong)]' : 'text-muted'}`}
-      >
-        {hint}
-      </p>
-    </div>
+    </form>
   );
 }

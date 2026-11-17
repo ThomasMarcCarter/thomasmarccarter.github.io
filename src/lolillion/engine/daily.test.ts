@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDailyQuestions, puzzleNumber, utcDay } from './daily';
+import { getDailyQuestions, puzzleNumber, questionsForDay, utcDay } from './daily';
 
 const ids = (d: Date) => getDailyQuestions(d).map((q) => q.id);
 
@@ -44,5 +44,18 @@ describe('variety', () => {
       return ids(new Date(Date.UTC(2026, 10, 18 + i))).filter((id) => today.has(id));
     }).flat();
     expect(repeats).toEqual([]);
+  });
+});
+
+describe('questionsForDay', () => {
+  const date = new Date('2026-12-01T12:00:00Z');
+  it('uses the stored prompts so a later question update cannot change a day already started', () => {
+    const stored = getDailyQuestions(new Date('2026-12-05T12:00:00Z')).map((q) => q.id);
+    expect(questionsForDay(date, stored).map((q) => q.id)).toEqual(stored);
+  });
+  it('falls back to the daily pick when nothing is stored or a stored prompt no longer exists', () => {
+    const today = getDailyQuestions(date).map((q) => q.id);
+    expect(questionsForDay(date, undefined).map((q) => q.id)).toEqual(today);
+    expect(questionsForDay(date, ['gone', ...today.slice(1)]).map((q) => q.id)).toEqual(today);
   });
 });

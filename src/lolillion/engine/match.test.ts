@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { champions, items } from '../data/questions';
-import { editDistance, matchAnswer, suggest } from './match';
+import { editDistance, resolveAnswer, type Resolution } from './match';
+import type { Entry } from '../data/types';
 
-const names = (entries: { name: string }[]) => entries.map((e) => e.name);
+const exact = (r: Resolution) => (r.kind === 'exact' ? r.entry.name : `not exact (${r.kind})`);
+const guess = (r: Resolution) => (r.kind === 'guess' ? r.entry.name : `not a guess (${r.kind})`);
+const options = (r: Resolution) => (r.kind === 'ambiguous' ? r.entries.map((e: Entry) => e.name) : []);
 
 describe('editDistance', () => {
   it('counts single-character edits', () => {
@@ -15,72 +18,57 @@ describe('editDistance', () => {
   });
 });
 
-describe('matchAnswer', () => {
+describe('resolveAnswer: exact answers submit straight away', () => {
   it('ignores spacing, case and punctuation', () => {
-    expect(matchAnswer('kai sa', champions)?.name).toBe("Kai'Sa");
-    expect(matchAnswer('DR MUNDO', champions)?.name).toBe('Dr. Mundo');
+    expect(exact(resolveAnswer('kai sa', champions))).toBe("Kai'Sa");
+    expect(exact(resolveAnswer('DR MUNDO', champions))).toBe('Dr. Mundo');
+    expect(exact(resolveAnswer('Dr. Mundo', champions))).toBe('Dr. Mundo');
   });
-  it('accepts aliases and ids', () => {
-    expect(matchAnswer('mf', champions)?.name).toBe('Miss Fortune');
-    expect(matchAnswer('wukong', champions)?.id).toBe('MonkeyKing');
-    expect(matchAnswer('monkeyking', champions)?.id).toBe('MonkeyKing');
-    expect(matchAnswer('ie', items)?.name).toBe('Infinity Edge');
+  it('accepts nicknames and ids', () => {
+    expect(exact(resolveAnswer('mf', champions))).toBe('Miss Fortune');
+    expect(exact(resolveAnswer('wukong', champions))).toBe('Wukong');
+    expect(exact(resolveAnswer('monkeyking', champions))).toBe('Wukong');
+    expect(exact(resolveAnswer('ie', items))).toBe('Infinity Edge');
+    expect(exact(resolveAnswer('ward', items))).toBe('Stealth Ward');
+    expect(exact(resolveAnswer('pink', items))).toBe('Control Ward');
   });
-  it('falls back to the closest spelling', () => {
-    expect(matchAnswer('jinxx', champions)?.name).toBe('Jinx');
-    expect(matchAnswer('malphit', champions)?.name).toBe('Malphite');
+});
+
+describe('resolveAnswer: "Did you mean" for near misses', () => {
+  it('asks about a misspelling', () => {
+    expect(guess(resolveAnswer('dr mndo', champions))).toBe('Dr. Mundo');
+    expect(guess(resolveAnswer('jinxx', champions))).toBe('Jinx');
+    expect(guess(resolveAnswer('yasou', champions))).toBe('Yasuo');
   });
-  it('returns null for empty or unmatched input', () => {
-    expect(matchAnswer('', champions)).toBeNull();
-    expect(matchAnswer("'''", champions)).toBeNull();
-    expect(matchAnswer('zzzzzzzz', champions)).toBeNull();
+  it('asks about a partial name only one answer starts with', () => {
+    expect(guess(resolveAnswer('dar', champions))).toBe('Darius');
+    expect(guess(resolveAnswer('malphit', champions))).toBe('Malphite');
+    expect(guess(resolveAnswer('drea', items))).toBe('Dream Maker');
+  });
+  it('prefers a name that starts with the input over a nickname that does', () => {
+    expect(guess(resolveAnswer('hor', items))).toBe('Horizon Focus');
+  });
+  it('prefers the entry whose name is closest', () => {
+    expect(guess(resolveAnswer('ami', champions))).toBe('Nami');
+    expect(guess(resolveAnswer('nass', champions))).toBe('Nasus');
+  });
+});
+
+describe('resolveAnswer: ambiguous and empty input', () => {
+  it('asks for more letters when several names start with the input', () => {
+    expect(resolveAnswer('ka', champions).kind).toBe('ambiguous');
+    expect(options(resolveAnswer('ka', champions))).toEqual(expect.arrayContaining(["Kai'Sa", 'Karma']));
+  });
+  it('lists the options when two spellings are equally close', () => {
+    expect(options(resolveAnswer('jnx', champions))).toEqual(expect.arrayContaining(['Jinx', 'Jax']));
+    expect(options(resolveAnswer('kaista', champions))).toEqual(expect.arrayContaining(["Kai'Sa", 'Kalista']));
+  });
+  it('finds nothing for gibberish or empty input', () => {
+    expect(resolveAnswer('zzzzzzzz', champions).kind).toBe('none');
+    expect(resolveAnswer('  ', champions).kind).toBe('none');
+    expect(resolveAnswer("'''", champions).kind).toBe('none');
   });
   it('only searches the pool it is given', () => {
-    expect(matchAnswer('infinity edge', champions)).toBeNull();
-  });
-});
-
-describe('suggest', () => {
-  it('lists prefix matches in name order', () => {
-    expect(names(suggest('ka', champions))).toEqual(["Kai'Sa", 'Kalista', 'Karma', 'Karthus', 'Kassadin', 'Katarina']);
-  });
-  it('puts an exact alias match first', () => {
-    expect(names(suggest('vi', champions))[0]).toBe('Vi');
-    expect(names(suggest('mf', champions))[0]).toBe('Miss Fortune');
-  });
-  it('limits the number of suggestions', () => {
-    expect(suggest('a', champions, 3)).toHaveLength(3);
-  });
-  it('adds close spellings after prefix matches', () => {
-    expect(names(suggest('yasou', champions))).toContain('Yasuo');
-  });
-  it('suggests nothing for empty input', () => {
-    expect(suggest('  ', champions)).toEqual([]);
-  });
-});
-
-describe('typo and prefix traps', () => {
-  it('prefers the entry whose name is closest, then the more popular one', () => {
-    expect(matchAnswer('ami', champions)?.name).toBe('Nami');
-    expect(matchAnswer('nass', champions)?.name).toBe('Nasus');
-  });
-
-  it('refuses to guess between equally close spellings', () => {
-    expect(matchAnswer('kaista', champions)).toBeNull();
-    expect(matchAnswer('jnx', champions)).toBeNull();
-    expect(names(suggest('jnx', champions)).slice(0, 2)).toEqual(['Jinx', 'Jax']);
-    expect(names(suggest('kaista', champions))).toEqual(expect.arrayContaining(["Kai'Sa", 'Kalista']));
-  });
-
-  it('ranks names that start with the input above nickname-only hits', () => {
-    expect(names(suggest('m', champions))[0]).toBe('Malphite');
-    expect(names(suggest('drea', items))[0]).toBe('Dream Maker');
-    expect(names(suggest('win', items))[0]).toMatch(/^Win/);
-    expect(names(suggest('hor', items))[0]).toBe('Horizon Focus');
-  });
-
-  it('understands common item shorthand', () => {
-    expect(matchAnswer('ward', items)?.name).toBe('Stealth Ward');
-    expect(matchAnswer('pink', items)?.name).toBe('Control Ward');
+    expect(resolveAnswer('infinity edge', champions).kind).toBe('none');
   });
 });

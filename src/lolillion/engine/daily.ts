@@ -60,3 +60,10 @@ export function getDailyQuestions(date: Date): Question[] {
   const picked = [...take(championOrder, day, CHAMPION_PROMPTS), ...take(itemOrder, day, ITEM_PROMPTS)];
   return shuffle(picked, seeded(hash(utcDay(date))));
 }
+
+/** The day's prompts: the ones saved when the day was started, or today's pick if none were saved (or one was removed). */
+export function questionsForDay(date: Date, storedIds: readonly string[] | undefined): Question[] {
+  const byId = new Map(questions.map((q) => [q.id, q]));
+  const stored = storedIds?.map((id) => byId.get(id));
+  return stored && stored.length && stored.every(Boolean) ? (stored as Question[]) : getDailyQuestions(date);
+}

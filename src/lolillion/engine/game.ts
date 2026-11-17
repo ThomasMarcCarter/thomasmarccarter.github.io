@@ -15,6 +15,8 @@ export interface DayProgress {
   answers: Answer[];
   /** When the current prompt was shown (epoch ms), so a refresh can't reset the clock. */
   startedAt: number | null;
+  /** The day's prompt ids, saved so a question update mid-day can't change prompts already being answered. */
+  questionIds?: string[];
 }
 
 export interface Stats {
@@ -34,7 +36,7 @@ export function startPrompt(p: DayProgress, now: number): DayProgress {
 /** Records the answer to the running prompt; does nothing when no prompt is running (e.g. it already timed out). */
 export function recordAnswer(p: DayProgress, entryId: string | null, input: string): DayProgress {
   if (p.startedAt === null) return p;
-  return { answers: [...p.answers, { entryId, input }], startedAt: null };
+  return { ...p, answers: [...p.answers, { entryId, input }], startedAt: null };
 }
 
 /** Two tabs can hold different copies of today; the one further along wins, so no prompt can be replayed. */

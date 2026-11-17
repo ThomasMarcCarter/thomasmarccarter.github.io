@@ -389,25 +389,16 @@
   }
 }
 
-.lol-suggestions {
-  border: 1px solid rgb(201 162 76 / 0.3);
-  border-top: 0;
-  background: rgb(8 12 22 / 0.92);
-}
-.lol-option + .lol-option {
-  border-top: 1px solid rgb(42 50 70 / 0.8);
-}
-.lol-option {
+/* "Did you mean" sits above the answer box; tapping it answers. */
+.lol-guess {
+  background: rgb(201 162 76 / 0.12);
+  border: 1px solid rgb(201 162 76 / 0.5);
   transition: background-color 0.15s;
 }
-.lol-option:hover {
-  background: rgb(201 162 76 / 0.1);
+.lol-guess:hover {
+  background: rgb(201 162 76 / 0.2);
 }
-.lol-option[aria-selected="true"] {
-  background: linear-gradient(90deg, rgb(201 162 76 / 0.28), rgb(201 162 76 / 0.06));
-  box-shadow: inset 3px 0 0 var(--accent);
-}
-.lol-option img,
+.lol-guess img,
 .lol-icon {
   border: 1px solid rgb(201 162 76 / 0.45);
 }
