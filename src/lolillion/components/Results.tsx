@@ -71,12 +71,12 @@ export default function Results({ number, questions, progress, entryFor }: Props
         className="focus:outline-none"
       >
         <span className="mt-2 grid place-items-center">
-          <TierBadge tier={null} colour={rankColour} size="clamp(52px, 11dvh, 104px)" celebrate />
-          <span className="lol-display mt-2 block text-[clamp(1.5rem,5dvh,2.25rem)] font-bold" style={{ color: rankColour }}>
+          <TierBadge tier={null} colour={rankColour} size="clamp(52px, 11cqh, 104px)" celebrate />
+          <span className="lol-display mt-2 block text-[clamp(1.5rem,5cqh,2.25rem)] font-bold" style={{ color: rankColour }}>
             {rank.name}
           </span>
         </span>
-        <span className="lol-display lol-title mt-1 block text-center text-[clamp(1.75rem,6dvh,3rem)] font-bold">{shownTotal} LP</span>
+        <span className="lol-display lol-title mt-1 block text-center text-[clamp(1.75rem,6cqh,3rem)] font-bold">{shownTotal} LP</span>
       </h1>
       {next && (
         <p className="mt-2 text-center text-sm text-muted">

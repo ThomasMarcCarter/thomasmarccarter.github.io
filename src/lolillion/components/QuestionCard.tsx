@@ -40,10 +40,10 @@ export default function QuestionCard({ question, index, total, remaining, entrie
   return (
     <div>
       <Progress done={index} total={total} />
-      <p className="lol-display mt-[clamp(0.75rem,2.5dvh,1.5rem)] text-sm text-accent">
+      <p className="lol-display mt-[clamp(0.75rem,2.5cqh,1.5rem)] text-sm text-accent">
         {question.pool === 'champion' ? 'Champion' : 'Item'} prompt {index + 1} of {total}
       </p>
-      <h1 id={promptId} className="lol-display mt-1 mb-[clamp(0.75rem,2.5dvh,1.5rem)] text-[clamp(1.25rem,min(6vw,4.5dvh),2rem)] leading-tight font-semibold">
+      <h1 id={promptId} className="lol-display mt-1 mb-[clamp(0.75rem,2.5cqh,1.5rem)] text-[clamp(1.25rem,min(6vw,4.5cqh),2rem)] leading-tight font-semibold">
         {question.prompt}
       </h1>
       <div

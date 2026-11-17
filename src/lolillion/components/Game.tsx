@@ -20,8 +20,9 @@ import {
 import { isRightAnswer } from '../engine/score';
 import { readJson, writeJson } from '../engine/storage';
 import { useNow } from '../hooks/useNow';
+import { useVisualViewport } from '../hooks/useVisualViewport';
 import { url } from '../../data/site';
-import Climb from './Climb';
+import Climb, { ClimbHud } from './Climb';
 import MuteButton from './MuteButton';
 import QuestionCard from './QuestionCard';
 import Results from './Results';
@@ -46,6 +47,7 @@ export default function Game() {
   const [stats, setStats] = useState<Stats>(() => readJson('stats', emptyStats()));
   const [revealing, setRevealing] = useState(false);
   const sky = useRef<HTMLDivElement>(null);
+  const visible = useVisualViewport();
 
   const finished = isFinished(progress, questions.length);
   const lp = totalLp(questions, progress);
@@ -152,27 +154,40 @@ export default function Game() {
     );
   }
 
-  // The climb fills the window behind everything; the panel sits at the bottom, scrolling inside itself,
-  // so the page never scrolls the climber out of view. The empty `sky` area is where the camera keeps them.
+  // The climb fills the window behind everything. The game itself is pinned to the visible area, so when a
+  // phone keyboard opens it shrinks to the space above the keyboard: the panel sits just over the keys and the
+  // climber stays in the `sky` gap above it, where the camera keeps them. Sizes inside use cqh (this section's
+  // height), so they shrink with it. Only the panel may scroll, and only when a screen can't fit.
+  // The scene sits outside the section: size containment there would trap its position: fixed inside the column.
   return (
-    <section className="lol-game mx-auto flex h-dvh max-w-xl flex-col pt-3 pb-2">
+    <>
       <Climb lp={lp} best={stats.best} focus={sky} />
-      <div className="lol-topbar flex items-center justify-between">
-        <a href={url('/')} className="text-sm transition-colors hover:text-accent">
-          Thomas-Marc Carter
-        </a>
-        <MuteButton />
-      </div>
-      <div ref={sky} className="min-h-[14dvh] flex-1" />
-      {/* Only the panel may scroll, and only when a screen can't fit (the full results list on a small phone). */}
-      <div className="lol-panel min-h-0 shrink overflow-y-auto px-5 py-[clamp(1rem,3dvh,2.25rem)] sm:px-8">{screen}</div>
-      <p className="lol-legal mt-1.5 text-center text-[0.7rem] leading-tight">
-        Not endorsed by Riot Games. Sounds by{' '}
-        <a href="https://kenney.nl" className="link" rel="noopener" target="_blank">
-          Kenney
-        </a>
-        .
-      </p>
-    </section>
+      <section
+        className="lol-game fixed inset-x-0 mx-auto flex max-w-xl flex-col px-3 pt-2 pb-2 sm:px-4 sm:pt-3"
+        style={{ top: visible?.top ?? 0, height: visible ? visible.height : '100dvh', containerType: 'size' }}
+      >
+        <div className="lol-topbar grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+          <a href={url('/')} className="truncate text-sm transition-colors hover:text-accent">
+            Thomas-Marc Carter
+          </a>
+          <ClimbHud lp={lp} best={stats.best} />
+          <span className="justify-self-end">
+            <MuteButton />
+          </span>
+        </div>
+        <div ref={sky} className="min-h-[16cqh] flex-1" />
+        <div className="lol-panel min-h-0 shrink overflow-y-auto px-4 py-[clamp(0.75rem,3cqh,2.25rem)] sm:px-8">{screen}</div>
+        {/* Hidden while answering, to give the prompt every pixel; How to play carries the full disclaimer. */}
+        {!asking && (
+          <p className="lol-legal mt-1.5 text-center text-[0.7rem] leading-tight">
+            Not endorsed by Riot Games. Sounds by{' '}
+            <a href="https://kenney.nl" className="link" rel="noopener" target="_blank">
+              Kenney
+            </a>
+            .
+          </p>
+        )}
+      </section>
+    </>
   );
 }

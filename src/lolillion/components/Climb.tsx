@@ -394,11 +394,18 @@ export default function Climb({ lp, best, focus }: Props) {
           style={{ width: view.w * view.scale, height: view.h * view.scale }}
         />
       )}
-      <div className="lol-hud" aria-hidden="true">
-        <span style={{ color: `var(--rank-${rank.name.toLowerCase()})` }}>{rank.name}</span>
-        <span>{lp} LP</span>
-        {best > 0 && <span className="lol-hud-best">Best {best}</span>}
-      </div>
+    </div>
+  );
+}
+
+/** Rank, LP and best for the top bar. Hidden from screen readers: the scene's label already says it. */
+export function ClimbHud({ lp, best }: { lp: number; best: number }) {
+  const rank = finalRank(lp);
+  return (
+    <div className="lol-hud" aria-hidden="true">
+      <span style={{ color: `var(--rank-${rank.name.toLowerCase()})` }}>{rank.name}</span>
+      <span>{lp} LP</span>
+      {best > 0 && <span className="lol-hud-best">Best {best}</span>}
     </div>
   );
 }

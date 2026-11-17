@@ -30,18 +30,18 @@ export default function Reveal({ question, entry, index, total, onNext }: Props)
   return (
     <div className="text-center" style={{ ['--c' as string]: colour }}>
       <Progress done={index + 1} total={total} />
-      <p className="lol-display mt-[clamp(0.75rem,2.5dvh,1.5rem)] text-sm text-accent">{question.prompt}</p>
-      <p id="reveal-answer" className="mt-[clamp(0.5rem,1.5dvh,1rem)] flex items-center justify-center gap-3 text-lg font-bold">
+      <p className="lol-display mt-[clamp(0.75rem,2.5cqh,1.5rem)] text-sm text-accent">{question.prompt}</p>
+      <p id="reveal-answer" className="mt-[clamp(0.5rem,1.5cqh,1rem)] flex items-center justify-center gap-3 text-lg font-bold">
         {entry && <img src={iconUrl(question.pool, entry.icon)} alt="" width={40} height={40} className="lol-icon" />}
         {entry ? entry.name : 'Time ran out'}
       </p>
-      <div className="mt-[clamp(0.5rem,2.5dvh,1.5rem)] grid place-items-center">
-        <TierBadge tier={tier?.name ?? null} size="clamp(56px, 12dvh, 104px)" celebrate />
+      <div className="mt-[clamp(0.5rem,2.5cqh,1.5rem)] grid place-items-center">
+        <TierBadge tier={tier?.name ?? null} size="clamp(56px, 12cqh, 104px)" celebrate />
       </div>
-      <h1 id="reveal-tier" className="lol-display mt-[clamp(0.25rem,1.5dvh,1rem)] text-[clamp(1.5rem,4.5dvh,1.875rem)] font-bold" style={{ color: colour }}>
+      <h1 id="reveal-tier" className="lol-display mt-[clamp(0.25rem,1.5cqh,1rem)] text-[clamp(1.5rem,4.5cqh,1.875rem)] font-bold" style={{ color: colour }}>
         {tier ? tier.name : 'No LP this time'}
       </h1>
-      <p id="reveal-lp" className="lol-display lol-lp my-1 text-[clamp(2rem,7dvh,3rem)] font-bold" aria-label={`+${points} LP`}>
+      <p id="reveal-lp" className="lol-display lol-lp my-1 text-[clamp(2rem,7cqh,3rem)] font-bold" aria-label={`+${points} LP`}>
         +{shown} LP
       </p>
       {tier && entry && (
@@ -52,7 +52,7 @@ export default function Reveal({ question, entry, index, total, onNext }: Props)
       {/* Focus lands on the button, so it carries the outcome for screen readers. */}
       <button
         type="button"
-        className="lol-button mt-[clamp(0.75rem,3dvh,2rem)]"
+        className="lol-button mt-[clamp(0.75rem,3cqh,2rem)]"
         onClick={() => {
           play('click');
           onNext();

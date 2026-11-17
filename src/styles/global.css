@@ -183,6 +183,16 @@
   overscroll-behavior: none;
 }
 
+/* Phones: everything sized in rem shrinks by an eighth. The answer box stays at 16px, or iOS zooms in on focus. */
+@media (max-width: 640px) {
+  :root[data-skin="lolillion"] {
+    font-size: 87.5%;
+  }
+  :root[data-skin="lolillion"] .lol-input {
+    font-size: 16px;
+  }
+}
+
 .lol-legal {
   color: var(--muted);
   text-shadow: 0 1px 0 var(--outline);
@@ -242,15 +252,11 @@
     2px 2px 0 var(--outline);
 }
 .lol-hud {
-  position: absolute;
-  top: calc(env(safe-area-inset-top, 0px) + 1.1rem);
-  left: 50%;
-  translate: -50% 0;
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   font-family: var(--display-font);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1;
   white-space: nowrap;
   color: var(--ink);
@@ -286,7 +292,7 @@
 
 /* Gold block button that presses down a few pixels. */
 .lol-button {
-  @apply block w-full px-4 pt-[clamp(0.5rem,1.6dvh,0.75rem)] pb-[clamp(0.75rem,2dvh,1rem)] text-center font-bold tracking-[0.06em] uppercase;
+  @apply block w-full px-4 pt-[clamp(0.5rem,1.6cqh,0.75rem)] pb-[clamp(0.75rem,2cqh,1rem)] text-center font-bold tracking-[0.06em] uppercase;
   font-family: var(--display-font);
   font-size: 1rem;
   background: var(--accent);
@@ -309,7 +315,7 @@
     inset 0 2px 0 0 var(--gold-dark);
 }
 .lol-button-ghost {
-  @apply block w-full px-4 py-[clamp(0.5rem,1.6dvh,0.75rem)] text-center font-bold tracking-[0.06em] text-accent uppercase;
+  @apply block w-full px-4 py-[clamp(0.5rem,1.6cqh,0.75rem)] text-center font-bold tracking-[0.06em] text-accent uppercase;
   font-family: var(--display-font);
   clip-path: var(--notched);
   box-shadow: inset 0 0 0 3px var(--accent);
