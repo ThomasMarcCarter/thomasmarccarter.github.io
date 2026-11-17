@@ -122,13 +122,14 @@ export function buildItems(dd: Record<string, DdItem>, overrides: Record<string,
       cost: source.gold.total,
       combineCost: source.gold.base,
       sell: source.gold.sell,
-      tags: source.tags,
       from: (source.from ?? []).filter((x) => keptIds.has(x)),
       into: (source.into ?? []).filter((x) => keptIds.has(x)),
       icon: source.image.full,
       ...override,
       // Overrides add stats that only a passive grants (Spear of Shojin's ability haste); 0 means it scales.
       stats: { ...stats, ...override.stats },
+      // Overrides add tags Data Dragon leaves off (Serylda's Grudge slows but isn't tagged Slow).
+      tags: [...new Set([...source.tags, ...(override.tags ?? [])])],
       aliases: [
         ...new Set(
           [

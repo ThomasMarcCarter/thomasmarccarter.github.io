@@ -74,6 +74,11 @@ describe('buildItems', () => {
     });
   });
 
+  it('adds override tags to the Data Dragon ones', () => {
+    const r = buildItems(dd, { '3031': { tags: ['Slow'] } });
+    expect(get(r, '3031').tags).toEqual(['Damage', 'Slow']);
+  });
+
   it('drops joke nicknames', () => {
     const r = buildItems({ '2051': item("Guardian's Horn", { colloq: ';horn;goldenarmofkobe;manwolf' }) }, {});
     expect(get(r, '2051').aliases).toEqual(['guardianshorn', 'horn']);

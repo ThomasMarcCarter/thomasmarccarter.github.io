@@ -78,7 +78,10 @@
     "popularity": 199
   },
   "1101": {
-    "popularity": 19
+    "popularity": 19,
+    "tags": [
+      "Slow"
+    ]
   },
   "1102": {
     "popularity": 20
@@ -250,7 +253,10 @@
     ]
   },
   "3050": {
-    "popularity": 150
+    "popularity": 150,
+    "tags": [
+      "Slow"
+    ]
   },
   "3051": {
     "popularity": 162
@@ -433,7 +439,10 @@
     "popularity": 82
   },
   "3146": {
-    "popularity": 119
+    "popularity": 119,
+    "tags": [
+      "Slow"
+    ]
   },
   "3147": {
     "popularity": 176
@@ -564,7 +573,10 @@
     "popularity": 18
   },
   "3869": {
-    "popularity": 138
+    "popularity": 138,
+    "tags": [
+      "Slow"
+    ]
   },
   "3870": {
     "popularity": 139
@@ -699,7 +711,10 @@
     "popularity": 74
   },
   "6694": {
-    "popularity": 132
+    "popularity": 132,
+    "tags": [
+      "Slow"
+    ]
   },
   "6695": {
     "popularity": 135
